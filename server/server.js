@@ -34,8 +34,8 @@ app.use(express.static('../client/public'));
 //     res.render('error');
 // });
 
-
-app.listen(8000, ()=>{console.log('listenining at port 8000')})
+var port = process.env.PORT || 8080;
+app.listen(port, ()=>{console.log(`listening at ${port}`)})
 
 
 module.exports = app;
