@@ -4,20 +4,30 @@ const DIST_DIR = path.join(__dirname, '/public');
 module.exports = {
   entry: `${SRC_DIR}/index.js`,
   output: {
-  filename: 'bundle.js',
-  path: DIST_DIR
+    filename: 'bundle.js',
+    path: DIST_DIR
   },
-  module : {
-    rules : [
+  module: {
+    rules: [
       {
         test: /\.(js|mjs|jsx)$/,
         enforce: 'pre',
         loader: 'eslint-loader'
       },
       {
-        test : /\.js?/,
-        include : SRC_DIR,
-        loader : 'babel-loader'
+        test: /\.js?/,
+        include: SRC_DIR,
+        loader: 'babel-loader'
+      },
+      {
+        test: /\.(png|jp(e*)g|svg)$/,
+        use: [{
+          loader: 'url-loader',
+          options: {
+            limit: 8000, // Convert images < 8kb to base64 strings
+            name: 'images/[hash]-[name].[ext]'
+          },
+        }]
       },
       {
         test: /\.css$/,
