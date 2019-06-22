@@ -10,8 +10,7 @@
     "lint:client": "cd ./client && ./node_modules/.bin/eslint \"src/**/*.{js,jsx}\" && echo 'Your code has passed the linting guidelines' || echo 'Please fix the errors listed above'",
     "lint:server": "cd ./server && ../node_modules/.bin/eslint \"routes/**/*.js\" 2>/dev/null && echo 'Your code has passed the linting guidelines' || echo 'Please fix the errors listed above'",
     "start": "cd ./client && npm run server",
-    "heroku-postbuild": "webpack -p"
-
+    "heroku-postbuild": "cd ./client && webpack -p"
   },
   "repository": {
     "type": "git",
@@ -24,7 +23,8 @@
   },
   "homepage": "https://github.com/selder18/blue-ocean-rewrite#readme",
   "dependencies": {
-    "dotenv": "^8.0.0"
+    "dotenv": "^8.0.0",
+    "webpack": "^4.35.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
