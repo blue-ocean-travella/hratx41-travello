@@ -7,7 +7,153 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      seaCreatures: []
+      results: {
+        city: "Austin, Tx",
+        topSpots: [
+          {
+          name: 'Barton Spring Municipal Pool',
+          rating: 4.5,
+          totalReviews: 150,
+          distance: 2.3,
+          open: true,
+          time: '10am-3pm',
+          description: '3 acre swimming pool in Zilker',
+          image: 'https://assets.simpleviewinc.com/simpleview/image/fetch/c_limit,q_75,w_1200/https://assets.simpleviewinc.com/simpleview/image/upload/crm/austin/Barton-Springs-Photo-Credit-Austin-Convention-Visitors-Bureau_72dpi_2b98f9c6-dab3-628a-c9075a49719a59cb.jpg'
+          },
+          {
+            name: 'Barton Spring Municipal Pool',
+            rating: 4.5,
+            totalReviews: 150,
+            distance: 2.3,
+            open: true,
+            time: '10am-3pm',
+            description: '3 acre swimming pool in Zilker',
+            image: 'https://assets.simpleviewinc.com/simpleview/image/fetch/c_limit,q_75,w_1200/https://assets.simpleviewinc.com/simpleview/image/upload/crm/austin/Barton-Springs-Photo-Credit-Austin-Convention-Visitors-Bureau_72dpi_2b98f9c6-dab3-628a-c9075a49719a59cb.jpg'
+          },
+          {
+            name: 'Barton Spring Municipal Pool',
+            rating: 4.5,
+            totalReviews: 150,
+            distance: 2.3,
+            open: true,
+            time: '10am-3pm',
+            description: '3 acre swimming pool in Zilker',
+            image: 'https://assets.simpleviewinc.com/simpleview/image/fetch/c_limit,q_75,w_1200/https://assets.simpleviewinc.com/simpleview/image/upload/crm/austin/Barton-Springs-Photo-Credit-Austin-Convention-Visitors-Bureau_72dpi_2b98f9c6-dab3-628a-c9075a49719a59cb.jpg'
+          },
+          {
+            name: 'Barton Spring Municipal Pool',
+            rating: 4.5,
+            totalReviews: 150,
+            distance: 2.3,
+            open: true,
+            time: '10am-3pm',
+            description: '3 acre swimming pool in Zilker',
+            image: 'https://assets.simpleviewinc.com/simpleview/image/fetch/c_limit,q_75,w_1200/https://assets.simpleviewinc.com/simpleview/image/upload/crm/austin/Barton-Springs-Photo-Credit-Austin-Convention-Visitors-Bureau_72dpi_2b98f9c6-dab3-628a-c9075a49719a59cb.jpg'
+          },
+          {
+            name: 'Barton Spring Municipal Pool',
+            rating: 4.5,
+            totalReviews: 150,
+            distance: 2.3,
+            open: true,
+            time: '10am-3pm',
+            description: '3 acre swimming pool in Zilker',
+            image: 'https://assets.simpleviewinc.com/simpleview/image/fetch/c_limit,q_75,w_1200/https://assets.simpleviewinc.com/simpleview/image/upload/crm/austin/Barton-Springs-Photo-Credit-Austin-Convention-Visitors-Bureau_72dpi_2b98f9c6-dab3-628a-c9075a49719a59cb.jpg'
+          },
+          {
+            name: 'Barton Spring Municipal Pool',
+            rating: 4.5,
+            totalReviews: 150,
+            distance: 2.3,
+            open: true,
+            time: '10am-3pm',
+            description: '3 acre swimming pool in Zilker',
+            image: 'https://assets.simpleviewinc.com/simpleview/image/fetch/c_limit,q_75,w_1200/https://assets.simpleviewinc.com/simpleview/image/upload/crm/austin/Barton-Springs-Photo-Credit-Austin-Convention-Visitors-Bureau_72dpi_2b98f9c6-dab3-628a-c9075a49719a59cb.jpg'
+          },
+          {
+            name: 'Barton Spring Municipal Pool',
+            rating: 4.5,
+            totalReviews: 150,
+            distance: 2.3,
+            open: true,
+            time: '10am-3pm',
+            description: '3 acre swimming pool in Zilker',
+            image: 'https://assets.simpleviewinc.com/simpleview/image/fetch/c_limit,q_75,w_1200/https://assets.simpleviewinc.com/simpleview/image/upload/crm/austin/Barton-Springs-Photo-Credit-Austin-Convention-Visitors-Bureau_72dpi_2b98f9c6-dab3-628a-c9075a49719a59cb.jpg'
+          },
+        ],
+        thingsToDo: [
+          {
+          name: 'Barton Spring Municipal Pool',
+          rating: 4.5,
+          totalReviews: 150,
+          distance: 2.3,
+          open: true,
+          time: '10am-3pm',
+          description: '3 acre swimming pool in Zilker',
+          image: 'https://pmcvariety.files.wordpress.com/2017/12/us-capitol-2.jpg?w=1000',
+          },
+          {
+            name: 'Barton Spring Municipal Pool',
+            rating: 4.5,
+            totalReviews: 150,
+            distance: 2.3,
+            open: true,
+            time: '10am-3pm',
+            description: '3 acre swimming pool in Zilker',
+            image: 'https://cdn.thecrazytourist.com/wp-content/uploads/2018/11/ccimage-shutterstock_696881512.jpg'
+          },
+          {
+            name: 'Barton Spring Municipal Pool',
+            rating: 4.5,
+            totalReviews: 150,
+            distance: 2.3,
+            open: true,
+            time: '10am-3pm',
+            description: '3 acre swimming pool in Zilker',
+            image: 'https://assets.simpleviewinc.com/simpleview/image/fetch/c_limit,q_75,w_1200/https://assets.simpleviewinc.com/simpleview/image/upload/crm/austin/Barton-Springs-Photo-Credit-Austin-Convention-Visitors-Bureau_72dpi_2b98f9c6-dab3-628a-c9075a49719a59cb.jpg'
+          },
+          {
+            name: 'Barton Spring Municipal Pool',
+            rating: 4.5,
+            totalReviews: 150,
+            distance: 2.3,
+            open: true,
+            time: '10am-3pm',
+            description: '3 acre swimming pool in Zilker',
+            image: 'https://assets.simpleviewinc.com/simpleview/image/fetch/c_limit,q_75,w_1200/https://assets.simpleviewinc.com/simpleview/image/upload/crm/austin/Barton-Springs-Photo-Credit-Austin-Convention-Visitors-Bureau_72dpi_2b98f9c6-dab3-628a-c9075a49719a59cb.jpg'
+          },
+          {
+            name: 'Barton Spring Municipal Pool',
+            rating: 4.5,
+            totalReviews: 150,
+            distance: 2.3,
+            open: true,
+            time: '10am-3pm',
+            description: '3 acre swimming pool in Zilker',
+            image: 'https://assets.simpleviewinc.com/simpleview/image/fetch/c_limit,q_75,w_1200/https://assets.simpleviewinc.com/simpleview/image/upload/crm/austin/Barton-Springs-Photo-Credit-Austin-Convention-Visitors-Bureau_72dpi_2b98f9c6-dab3-628a-c9075a49719a59cb.jpg'
+          },
+          {
+            name: 'Barton Spring Municipal Pool',
+            rating: 4.5,
+            totalReviews: 150,
+            distance: 2.3,
+            open: true,
+            time: '10am-3pm',
+            description: '3 acre swimming pool in Zilker',
+            image: 'https://assets.simpleviewinc.com/simpleview/image/fetch/c_limit,q_75,w_1200/https://assets.simpleviewinc.com/simpleview/image/upload/crm/austin/Barton-Springs-Photo-Credit-Austin-Convention-Visitors-Bureau_72dpi_2b98f9c6-dab3-628a-c9075a49719a59cb.jpg'
+          },
+          {
+            name: 'Barton Spring Municipal Pool',
+            rating: 4.5,
+            totalReviews: 150,
+            distance: 2.3,
+            open: true,
+            time: '10am-3pm',
+            description: '3 acre swimming pool in Zilker',
+            image: 'https://assets.simpleviewinc.com/simpleview/image/fetch/c_limit,q_75,w_1200/https://assets.simpleviewinc.com/simpleview/image/upload/crm/austin/Barton-Springs-Photo-Credit-Austin-Convention-Visitors-Bureau_72dpi_2b98f9c6-dab3-628a-c9075a49719a59cb.jpg'
+          },
+        ],
+      }
     };
     // this.api = `http://localhost:8000/api/example`;
   }
@@ -22,8 +168,7 @@ export default class App extends Component {
   render() {
     return (
       <>
-        <CategoriesAndResults/>
-   
+        <CategoriesAndResults results={this.state.results}/>
       </>
     );
   }

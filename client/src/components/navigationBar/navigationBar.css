@@ -1,9 +1,11 @@
 .navigationBar {
+  /* position: fixed; */
   padding-top: 20px;  
   display: flex;
   justify-content: space-around;
   border-bottom: 1px #808080 solid;
   padding-bottom: 10px;
+  background-color: #ffffff;
 }
 
 .category {

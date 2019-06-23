@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './header.css'
 
-const Header = () => {
+const Header = ({city}) => {
     return (
        <div className='header'>
-         Austin, Tx
+         {city}
        </div>
     )
 }

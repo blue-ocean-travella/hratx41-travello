@@ -1,0 +1,12 @@
+.headerAndNavigationBar {
+  position: fixed; 
+  width: 100%;
+  top: 0; 
+  z-index: 300;
+}
+
+
+.main-content-results {
+  margin-top: 309px;
+
+}
