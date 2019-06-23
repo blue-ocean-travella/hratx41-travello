@@ -1,32 +1,19 @@
 import React, { Component } from 'react';
-import TopSpots from '../topSpots.jsx';
-import ThingsToDo from '../thingsToDo.jsx';
-import NigthLife from '../nightLife.jsx';
-import FoodAndDrink from '../foodAndDrink.jsx';
-import DayTrips from '../dayTrips.jsx';
-// import './navigationBar.css';
+import './navigationBar.css';
 
-class NavigationBar extends Component {
-  constructor() {
-    super()
-  }
 
-  render () {
+const NavigationBar =  () => {
     return (
       <>
         <div className='navigationBar'>
-          <TopSpots/>
-          <ThingsToDo/>
-          <FoodAndDrink/>
-          <NigthLife/>
-          <DayTrips/>
-          
+          <button className='category'>TOP SPOTS</button>
+          <button className='category'>THINGS TO DO</button>
+          <button className='category'>FOOD {'&'} DRINK</button>
+          <button className='category'>NIGTHLIFE</button>
+          <button className='category'>DAY TRIPS</button>        
         </div>
       </>
     )
-  }
-
-
 }
 
 export default NavigationBar;

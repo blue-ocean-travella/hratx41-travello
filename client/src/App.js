@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import fetch from 'node-fetch';
-import NavigationBar from './components/navigationBar/navigationBar.jsx'
+import CategoriesAndResults from '../src/components/categoriesAndResults/categoriesAndResults.jsx'
 // import './App.css';
 
 export default class App extends Component {
@@ -22,7 +22,8 @@ export default class App extends Component {
   render() {
     return (
       <>
-        <NavigationBar/>
+        <CategoriesAndResults/>
+   
       </>
     );
   }
