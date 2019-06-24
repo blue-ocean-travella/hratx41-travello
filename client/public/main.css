@@ -1,3 +1,5 @@
+/* <----------- Timeline Line -----------> */
+
 .vertical-timeline {
     width: 95%;
     max-width: 1170px;
@@ -20,7 +22,7 @@
     left: 18px;
     height: 100%;
     width: 4px;
-    background: white;
+    background:white;
   }
   
   @media only screen and (min-width: 1170px) {
@@ -34,6 +36,8 @@
       margin-left: -2px;
     }
   }
+
+/* <----------- Timeline Cards/Icons -----------> */
 
   .vertical-timeline-element {
     position: relative;
@@ -167,13 +171,18 @@
       transform: scale(1);
     }
   }
+
+  /* <----------- TIMELINE CARDS ------------> */
+
   .vertical-timeline-element-content {
     position: relative;
     margin-left: 60px;
-    background: white;
-    border-radius: 0.25em;
-    padding: 1em;
-    box-shadow: 0 3px 0 #ddd;
+    background: rgb(0, 0, 0, .65);
+    border-radius: 7px;
+    /* padding: 1em; */
+    font: white;
+    padding-bottom: 0
+    /* box-shadow: 0 3px 0 #ddd; */
   }
   .vertical-timeline-element--no-children .vertical-timeline-element-content {
     background: transparent;
@@ -202,17 +211,23 @@
   }
   
   .vertical-timeline-element-title {
-    margin: 0;
+    color: white;
+    margin-top: -50px;
+    margin-bottom: 0;
+    padding-left: 5px;
   }
   
   .vertical-timeline-element-subtitle {
+    color: white;
     margin: 0;
+    padding-left: 5px;
   }
   
   .vertical-timeline-element-content .vertical-timeline-element-date {
     float: left;
     padding: .8em 0;
-    opacity: .7;
+    opacity: 1;
+    color: white
   }
   .vertical-timeline-element-content::before {
     content: '';
@@ -221,8 +236,8 @@
     right: 100%;
     height: 0;
     width: 0;
-    border: 7px solid transparent;
-    border-right: 7px solid white;
+    border: 7px solid grey;
+    border-right: 7px solid black;
   }
   .vertical-timeline-element--no-children .vertical-timeline-element-content::before {
     display: none;
@@ -244,20 +259,21 @@
   @media only screen and (min-width: 1170px) {
     .vertical-timeline--two-columns .vertical-timeline-element-content {
       margin-left: 0;
-      padding: 1.5em;
+      /* padding: 1.5em; */
       width: 40%;
     }
     .vertical-timeline--two-columns .vertical-timeline-element-content::before {
       top: 24px;
       left: 100%;
-      border-color: transparent;
-      border-left-color: white;
+      border-color:transparent;
+      border-left-color: black;
+      opacity: .7;
     }
   
     .vertical-timeline--two-columns .vertical-timeline-element-content .vertical-timeline-element-date {
       position: absolute;
       width: 100%;
-      left: 124%;
+      left: 140%;
       top: 6px;
       font-size: 16px;
       font-size: 1rem;
@@ -273,13 +289,14 @@
       left: auto;
       right: 100%;
       border-color: transparent;
-      border-right-color: white;
+      border-right-color: black;
+      opacity: .7;
     }
   
     .vertical-timeline--two-columns .vertical-timeline-element:nth-child(even):not(.vertical-timeline-element--left) .vertical-timeline-element-content .vertical-timeline-element-date,
     .vertical-timeline--two-columns .vertical-timeline-element.vertical-timeline-element--right .vertical-timeline-element-content .vertical-timeline-element-date {
       left: auto;
-      right: 124%;
+      right: 140%;
       text-align: right;
     }
   }
@@ -428,10 +445,67 @@
       transform: translateX(0);
     }
   }
-  .itin-page {
-    background: grey
-  }
 
   /* .opaque{
     opacity: .5;
   } */
+
+  #bg-img {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    min-width: 100%;
+    min-height: 100%;
+
+    opacity: .5;
+  }
+
+  .timeline-image {
+    height: 200px;
+    width: auto;
+    opacity: 1 !important;
+  }
+
+  .header-image {
+    width: 100%;
+    max-height: 200px
+  }
+
+  .timeline-description {
+    margin-top: 12px;
+    color: white;
+    padding-bottom: 5px;
+  }
+
+  .timeline-element-container {
+      display: inline-flex;
+      flex-direction: row;
+      color: white;
+      width: 100%;
+  }
+
+  .timeline-open {
+    border-right: 1px solid white;
+    border-top: 1px solid white;
+    width: 50%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+  }
+
+  .timeline-goto {
+    border-top: 1px solid white;
+    width: 50%;
+    padding-top: 15px;
+    text-align: center;
+  }
+
+  .timeline-element-top-container {
+    padding: 1em;
+  }
+
+  .timeline-clock, .up-arrow {
+    height: 30px;
+    width: 30px;
+  }

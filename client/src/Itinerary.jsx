@@ -1,5 +1,12 @@
 import React from 'react';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
+import austin from '../assets/images/Austin-Skyline-Sunset-Aerial-Drone-Photo.jpg';
+import clock from '../assets/images/white-clock3.png';
+import arrow from '../assets/images/up-arrow.jpg'
+// import Row from 'react-bootstrap/Row';
+// import Col from 'react-bootstrap/Col';
+// import Container from 'react-bootstrap/Container'
+
 
 
 class Itinerary extends React.Component {
@@ -9,99 +16,153 @@ class Itinerary extends React.Component {
         this.state = {
 
         }
+
     }
 
     render() {
         return (
-            <div className="itin-page">
+            < div className="page-wrapper">
+                <img src='http://retailsolutionsre.com/wp-content/uploads/2017/01/Austin-Skyline.jpg' id="bg-img"></img>
                 <VerticalTimeline className="opaque">
                     <VerticalTimelineElement
                         className="vertical-timeline-element--work"
-                        date="2011 - present"
-                        iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                        date="8:00 AM"
+                        iconStyle={{ background: 'rgb(255, 255, 255)', color: '#fff' }}
 
 
                     >
-                        <h3 className="vertical-timeline-element-title">Creative Director</h3>
-                        <h4 className="vertical-timeline-element-subtitle">Miami, FL</h4>
-                        <p>
-                            Creative Direction, User Experience, Visual Design, Project Management, Team Leading
-    </p>
+                        <div className="timeline-element-top-container">
+                            <img src={austin} className="timeline-image"></img>
+                            <h3 className="vertical-timeline-element-title">Location: Barton Springs</h3>
+                            <h4 className="vertical-timeline-element-subtitle">Visit Duration: 1 hr</h4>
+                            <div className="timeline-description">
+                                Description: Barton Springs is an outdoor public pool. What a great place to lay out, sip cocktails, and catch some sun.
+    </div></div>
+                        <div className="timeline-element-container">
+                            <div className="timeline-open">Open</div>
+                            <div className="timeline-goto">Go To</div>
+                        </div>
                     </VerticalTimelineElement>
                     <VerticalTimelineElement
                         className="vertical-timeline-element--work"
-                        date="2010 - 2011"
-                        iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                        date="8:00 AM"
+                        iconStyle={{ background: 'rgb(255, 255, 255)', color: '#fff' }}
+
 
                     >
-                        <h3 className="vertical-timeline-element-title">Art Director</h3>
-                        <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>
-                        <p>
-                            Creative Direction, User Experience, Visual Design, SEO, Online Marketing
-    </p>
+                        <div className="timeline-element-top-container">
+                            <img src={austin} className="timeline-image"></img>
+                            <h3 className="vertical-timeline-element-title">Location: Barton Springs</h3>
+                            <h4 className="vertical-timeline-element-subtitle">Visit Duration: 1 hr</h4>
+                            <div className="timeline-description">
+                                Description: Barton Springs is an outdoor public pool. What a great place to lay out, sip cocktails, and catch some sun.
+    </div></div>
+                        <div className="timeline-element-container">
+                            <div className="timeline-open">Open</div>
+                            <div className="timeline-goto">Go To</div>
+                        </div>
                     </VerticalTimelineElement>
                     <VerticalTimelineElement
                         className="vertical-timeline-element--work"
-                        date="2008 - 2010"
-                        iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                        date="8:00 AM"
+                        iconStyle={{ background: 'rgb(255, 255, 255)', color: '#fff' }}
+
 
                     >
-                        <h3 className="vertical-timeline-element-title">Web Designer</h3>
-                        <h4 className="vertical-timeline-element-subtitle">Los Angeles, CA</h4>
-                        <p>
-                            User Experience, Visual Design
-    </p>
+                        <div className="timeline-element-top-container">
+                            <img src={austin} className="timeline-image"></img>
+                            <h3 className="vertical-timeline-element-title">Location: Barton Springs</h3>
+                            <h4 className="vertical-timeline-element-subtitle">Visit Duration: 1 hr</h4>
+                            <div className="timeline-description">
+                                Description: Barton Springs is an outdoor public pool. What a great place to lay out, sip cocktails, and catch some sun.
+    </div></div>
+                        <div className="timeline-element-container">
+                            <div className="timeline-open">
+                                <img className="timeline-clock" src={clock}></img>
+                            </div>
+                            <div className="timeline-goto">
+                                <img className="up-arrow" src={arrow}></img>
+                            </div>
+                        </div>
                     </VerticalTimelineElement>
                     <VerticalTimelineElement
                         className="vertical-timeline-element--work"
-                        date="2006 - 2008"
-                        iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                        date="8:00 AM"
+                        iconStyle={{ background: 'rgb(255, 255, 255)', color: '#fff' }}
+
 
                     >
-                        <h3 className="vertical-timeline-element-title">Web Designer</h3>
-                        <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>
-                        <p>
-                            User Experience, Visual Design
-    </p>
+                        <div className="timeline-element-top-container">
+                            <img src={austin} className="timeline-image"></img>
+                            <h3 className="vertical-timeline-element-title">Location: Barton Springs</h3>
+                            <h4 className="vertical-timeline-element-subtitle">Visit Duration: 1 hr</h4>
+                            <div className="timeline-description">
+                                Description: Barton Springs is an outdoor public pool. What a great place to lay out, sip cocktails, and catch some sun.
+    </div></div>
+                        <div className="timeline-element-container">
+                            <div className="timeline-open">Open</div>
+                            <div className="timeline-goto">Go To</div>
+                        </div>
                     </VerticalTimelineElement>
                     <VerticalTimelineElement
-                        className="vertical-timeline-element--education"
-                        date="April 2013"
-                        iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
+                        className="vertical-timeline-element--work"
+                        date="8:00 AM"
+                        iconStyle={{ background: 'rgb(255, 255, 255)', color: '#fff' }}
+
 
                     >
-                        <h3 className="vertical-timeline-element-title">Content Marketing for Web, Mobile and Social Media</h3>
-                        <h4 className="vertical-timeline-element-subtitle">Online Course</h4>
-                        <p>
-                            Strategy, Social Media
-    </p>
+                        <div className="timeline-element-top-container">
+                            <img src={austin} className="timeline-image"></img>
+                            <h3 className="vertical-timeline-element-title">Location: Barton Springs</h3>
+                            <h4 className="vertical-timeline-element-subtitle">Visit Duration: 1 hr</h4>
+                            <div className="timeline-description">
+                                Description: Barton Springs is an outdoor public pool. What a great place to lay out, sip cocktails, and catch some sun.
+    </div></div>
+                        <div className="timeline-element-container">
+                            <div className="timeline-open">Open</div>
+                            <div className="timeline-goto">Go To</div>
+                        </div>
                     </VerticalTimelineElement>
                     <VerticalTimelineElement
-                        className="vertical-timeline-element--education"
-                        date="November 2012"
-                        iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
+                        className="vertical-timeline-element--work"
+                        date="8:00 AM"
+                        iconStyle={{ background: 'rgb(255, 255, 255)', color: '#fff' }}
+
 
                     >
-                        <h3 className="vertical-timeline-element-title">Agile Development Scrum Master</h3>
-                        <h4 className="vertical-timeline-element-subtitle">Certification</h4>
-                        <p>
-                            Creative Direction, User Experience, Visual Design
-    </p>
+                        <div className="timeline-element-top-container">
+                            <img src={austin} className="timeline-image"></img>
+                            <h3 className="vertical-timeline-element-title">Location: Barton Springs</h3>
+                            <h4 className="vertical-timeline-element-subtitle">Visit Duration: 1 hr</h4>
+                            <div className="timeline-description">
+                                Description: Barton Springs is an outdoor public pool. What a great place to lay out, sip cocktails, and catch some sun.
+    </div></div>
+                        <div className="timeline-element-container">
+                            <div className="timeline-open">Open</div>
+                            <div className="timeline-goto">Go To</div>
+                        </div>
                     </VerticalTimelineElement>
                     <VerticalTimelineElement
-                        className="vertical-timeline-element--education"
-                        date="2002 - 2006"
-                        iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
+                        className="vertical-timeline-element--work"
+                        date="8:00 AM"
+                        iconStyle={{ background: 'rgb(255, 255, 255)', color: '#fff' }}
+
 
                     >
-                        <h3 className="vertical-timeline-element-title">Bachelor of Science in Interactive Digital Media Visual Imaging</h3>
-                        <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>
-                        <p>
-                            Creative Direction, Visual Design
-    </p>
+                        <div className="timeline-element-top-container">
+                            <img src={austin} className="timeline-image"></img>
+                            <h3 className="vertical-timeline-element-title">Location: Barton Springs</h3>
+                            <h4 className="vertical-timeline-element-subtitle">Visit Duration: 1 hr</h4>
+                            <div className="timeline-description">
+                                Description: Barton Springs is an outdoor public pool. What a great place to lay out, sip cocktails, and catch some sun.
+    </div></div>
+                        <div className="timeline-element-container">
+                            <div className="timeline-open">Open</div>
+                            <div className="timeline-goto">Go To</div>
+                        </div>
                     </VerticalTimelineElement>
                     <VerticalTimelineElement
-                        iconStyle={{ background: 'rgb(16, 204, 82)', color: '#fff' }}
+                        iconStyle={{ background: 'rgb(255, 255, 255)', color: '#fff' }}
 
                     />
                 </VerticalTimeline>
