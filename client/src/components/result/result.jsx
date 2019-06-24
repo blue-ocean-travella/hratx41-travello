@@ -25,6 +25,10 @@ class Result extends Component {
     this.setState({ show: true });
   }
 
+  handleShowModalTime() {
+    this.setState({ showTimeModal: true});
+  }
+
   handleTimeChange(e) {
     console.log(e.target.value);
     this.setState({
