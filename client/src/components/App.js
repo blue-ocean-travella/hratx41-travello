@@ -21,7 +21,7 @@ export default class App extends Component {
     //     this.setState({ seaCreatures: seaCreatures.data });
     //   });
 
-    this.audio.play();
+    this.audio.play().catch(error => console.log(error));
     console.log('running');
     
   }
