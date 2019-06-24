@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, Modal } from 'react-bootstrap';
 import '../modalDescription/modalDescription.css'
 import StarRatings from '../../../node_modules/react-star-ratings';
+
 // import TimePicker from 'react-bootstrap-time-picker';
 // var  TimePicker  = require('react-bootstrap-time-picker');
 // import TimePicker from 'react-time-picker';
@@ -11,6 +12,9 @@ const ModalDescription = ({show, onHide, handleClose, handleTimeChange, time, on
   console.log(handleTimeChange)
   let open;
   let closeTime=dataResult.time.slice(5);
+  // let phoneFirstDigits = dataResult.phone.slice(0, 3).join('');
+  // let phoneRestDigits =  dataResult.phone.slice(3);
+  // let phone = `(${phoneFirstDigits}) ${phoneRestDigits}`;
   if(dataResult.open === true) {
     open = 'Open';
   } else {
@@ -62,14 +66,14 @@ const ModalDescription = ({show, onHide, handleClose, handleTimeChange, time, on
               </span>
             </div>
             <div className='modal-bigDescription'>
-            {dataResult.bigDescription}
+              {dataResult.bigDescription}
             </div>
             <div className='modal-addres-hours-phone-info'>
               <div>
                 <b>Addres:</b> <span>{dataResult.address}</span>
               </div>
               <div>
-                <b>Hours:</b> <b>{open}</b> <span>Closes  {closeTime} </span>
+                <b>Hours:</b> <b>{open}</b> <span>Closes at {closeTime} </span>
               </div>
               <div>
                 <b>Phone:</b> <span>{dataResult.phone}</span>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import StarRatings from '../../../node_modules/react-star-ratings';
 import ModalDescription from '../modalDescription/modalDescription.jsx';
+import ModalTime from  '../modalTime/modalTime.jsx';
 import './result.css'
 
 class Result extends Component {
@@ -8,6 +9,7 @@ class Result extends Component {
     super()
     this.state = {
       show: false,
+      showTimeModal: false,
       time: '7:00',
     };
 
@@ -15,6 +17,8 @@ class Result extends Component {
     this.handleClose = this.handleClose.bind(this);
     this.handleTimeChange = this.handleTimeChange.bind(this);
     this.onTimeChangeHandler  = this.onTimeChangeHandler.bind(this);
+    this.handleCloseModalTime = this.handleCloseModalTime.bind(this);
+    this.handleShowModalTime = this.handleShowModalTime.bind(this);
   } 
 
   handleClose() {
@@ -26,7 +30,11 @@ class Result extends Component {
   }
 
   handleShowModalTime() {
-    this.setState({ showTimeModal: true});
+    this.setState({ showTimeModal: true });
+  }
+
+  handleCloseModalTime() {
+    this.setState({ showTimeModal: false });
   }
 
   handleTimeChange(e) {
@@ -73,7 +81,8 @@ class Result extends Component {
             <div className="card-text"> 
                 <span className="distance">{`${this.props.dataResult.distance} mi`}</span> <span className="available_and_time">OPEN TODAY</span> <span className="available_and_time">10 AM - 3PM</span>
             </div>
-            <a href="#" className="btn btn-primary addToItenerary">+</a>
+            <a href="#" className="btn btn-primary addToItenerary" onClick={() => this.handleShowModalTime()}>+</a>
+            <ModalTime show={this.state.showTimeModal} onHide={this.handleCloseModalTime} handleCloseModalTime={this.handleCloseModalTime}/>
           </div>
           <p className="card-text description_place">{this.props.dataResult.description}</p>      
         </div>
