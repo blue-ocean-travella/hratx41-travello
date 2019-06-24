@@ -6,19 +6,27 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      seaCreatures: []
+      seaCreatures: [],
+      play: true
     };
-    this.api = `http://localhost:8000/api/example`;
+    // this.api = `http://localhost:8000/api/example`;
+    this.url  =`ocean.mp3`;
+    this.audio = new Audio(this.url);
+    
   }
   componentDidMount() {
-    fetch(this.api)
-      .then(res => res.json())
-      .then(seaCreatures => {
-        this.setState({ seaCreatures: seaCreatures.data });
-      });
+    // fetch(this.api)
+    //   .then(res => res.json())
+    //   .then(seaCreatures => {
+    //     this.setState({ seaCreatures: seaCreatures.data });
+    //   });
+
+    this.audio.play();
+    console.log('running');
+    
   }
 
-  render() {
+  render(){
     return (
       <>
         {/* <h1>Welcome to Blue Ocean!</h1>

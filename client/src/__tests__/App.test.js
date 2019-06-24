@@ -3,7 +3,7 @@ import {render, fireEvent, cleanup, waitForElement} from 'react-testing-library'
 
 // this adds custom jest matchers from jest-dom
 import 'jest-dom/extend-expect'
-import App from '../App';
+import App from '../components/App.js';
 
 afterEach(cleanup);
 
