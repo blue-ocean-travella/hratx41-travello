@@ -70,7 +70,7 @@ export default class Search extends Component {
         <h1>Welcome to Blue Ocean!</h1>
         <div>
           <Script
-            url="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvU1Z6IiPGgXDnm04zvmi5XB0Q7DH9LQU"
+            url="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvU1no"
             onLoad={this.HandleScriptLoad}
           />
           <input
