@@ -5,7 +5,7 @@
     max-width: 1170px;
     margin: 2em auto;
     position: relative;
-    padding: 2em 0;
+    /* padding: 2em 0; */
   }
   .vertical-timeline::after {
     /* clearfix */
@@ -27,7 +27,7 @@
   
   @media only screen and (min-width: 1170px) {
     .vertical-timeline.vertical-timeline--two-columns {
-      margin-top: 3em;
+      margin-top: 7em;
       margin-bottom: 3em;
       width: 90%;
     }
@@ -70,6 +70,9 @@
   }
   
   .vertical-timeline-element-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     top: 0;
     left: 0;
@@ -212,7 +215,7 @@
   
   .vertical-timeline-element-title {
     color: white;
-    margin-top: -50px;
+    margin-top: -30px;
     margin-bottom: 0;
     padding-left: 5px;
   }
@@ -458,12 +461,12 @@
     min-width: 100%;
     min-height: 100%;
 
-    opacity: .5;
+    opacity: .95;
   }
 
   .timeline-image {
-    height: 200px;
-    width: auto;
+    height: auto;
+    width: 250px;
     opacity: 1 !important;
   }
 
@@ -475,7 +478,12 @@
   .timeline-description {
     margin-top: 12px;
     color: white;
+    width: 140px;
+    height: 150px;
     padding-bottom: 5px;
+    text-overflow: ellipsis;
+    white-space: wrap;
+    overflow: hidden;
   }
 
   .timeline-element-container {
@@ -495,10 +503,11 @@
   }
 
   .timeline-goto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-top: 1px solid white;
     width: 50%;
-    padding-top: 15px;
-    text-align: center;
   }
 
   .timeline-element-top-container {
@@ -508,4 +517,87 @@
   .timeline-clock, .up-arrow {
     height: 30px;
     width: 30px;
+  }
+
+  #timeline-header {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    opacity: 1;
+    z-index: 99;
+    /* margin-top: -25px; */;
+  }
+
+  .headline-itinerary {
+    color:white;
+  }
+
+  .timeline-logo {
+     height: 100px;
+     width: auto;
+     padding-top: 10px;
+     padding-left: 35px;
+  }
+
+  .timeline-arrow {
+    height: 60px;
+    width: auto;
+    padding-top: 10px;
+    padding-right: 35px;
+  }
+
+  .right-arrow{
+    background-color: white;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+  }
+
+  body {
+    font-family: 'Lato', sans-serif;
+  }
+
+  .btn:hover {
+    cursor: pointer;
+  }
+
+  .nightlife-icon {
+    height: 40px;
+    width: 40px;
+    padding-top: 5px;
+  }
+
+  .timeline-element-outer-container {
+    display: inline-flex;
+    flex-direction: row;
+    width: 400px;
+    padding-bottom: 1em;
+  }
+
+  .duration{
+    font-weight: bold;
+    color: white;
+  }
+
+  .time{
+    color: white;
+    width: 140px;
+  }
+
+  .timeline-information{
+    padding-top: 1em;
+    width: 100%;
+  }
+
+  .timeline-map {
+    height: 30px;
+    width: 30px;
+  }
+
+  .timeline-clock {
+    border-radius: 50%;
   }
