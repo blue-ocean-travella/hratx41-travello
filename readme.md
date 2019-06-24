@@ -8,6 +8,9 @@ You should replace the existing readme.md in your repo with the following inform
 
 ## Catchy headline / cool graphic
 
+![alt text][logo]
+[logo]: https://github.com/blue-ocean-travello/hratx41-travello/blob/master/travello.png
+
 ## Who are the contributors (names should link to their github or portfolio page)
 
 ## Introduction
