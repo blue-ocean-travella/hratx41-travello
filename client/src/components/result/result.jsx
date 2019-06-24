@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import StarRatings from '../../../node_modules/react-star-ratings';
-import ModalTime from '../modal-time/modalTime.jsx';
+import ModalDescription from '../modalDescription/modalDescription.jsx';
 import './result.css'
 
 class Result extends Component {
@@ -8,10 +8,13 @@ class Result extends Component {
     super()
     this.state = {
       show: false,
+      time: '7:00',
     };
 
     this.handleShow = this.handleShow.bind(this);
     this.handleClose = this.handleClose.bind(this);
+    this.handleTimeChange = this.handleTimeChange.bind(this);
+    this.onTimeChangeHandler  = this.onTimeChangeHandler.bind(this);
   } 
 
   handleClose() {
@@ -20,6 +23,19 @@ class Result extends Component {
 
   handleShow() {
     this.setState({ show: true });
+  }
+
+  handleTimeChange(e) {
+    console.log(e.target.value);
+    this.setState({
+      time: e.target.value,
+    })
+  }
+
+  onTimeChangeHandler(e) {
+   this.setState({
+     time: e.target.value
+   })
   }
 
   render() {
@@ -32,7 +48,7 @@ class Result extends Component {
            <h5 className="card-title result-position" >{this.props.dataResult.name}</h5>
         </div>
         </a>
-        <ModalTime show={this.state.show} onHide={this.handleClose} handleClose={this.handleClose}/>
+        <ModalDescription dataResult={this.props.dataResult} show={this.state.show} onHide={this.handleClose} handleClose={this.handleClose} handleTimeChange={this.handleTimeChange} time={this.state.time} onTimeChangeHandler={this.onTimeChangeHandler}/>
         </div>
         <div className="card-body">
           <div>

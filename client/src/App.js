@@ -8,7 +8,7 @@ export default class App extends Component {
     super(props);
     this.state = {
       results: {
-        city: "Austin, Tx",
+        city: "Austin, TX",
         topSpots: [
           {
           name: 'Barton Spring Municipal Pool',
@@ -18,6 +18,9 @@ export default class App extends Component {
           open: true,
           time: '10am-3pm',
           description: '3 acre swimming pool in Zilker',
+          bigDescription: 'Barting Springs is a recreational  outdoor swimming pool tha is filled entirely with water from nearby  natural  spring. It is located on the grounds of Zilker Park in Austin, Texas. The pool exits within the channel of Barton Creek and utilizes water  from  Main Barton Spring, the fourth largest spring in Texas',
+          address: '2131 William Barton Dr, Austin, Tx  78456',
+          phone: '512 974 6300',
           image: 'https://assets.simpleviewinc.com/simpleview/image/fetch/c_limit,q_75,w_1200/https://assets.simpleviewinc.com/simpleview/image/upload/crm/austin/Barton-Springs-Photo-Credit-Austin-Convention-Visitors-Bureau_72dpi_2b98f9c6-dab3-628a-c9075a49719a59cb.jpg'
           },
           {
@@ -28,6 +31,9 @@ export default class App extends Component {
             open: true,
             time: '10am-3pm',
             description: '3 acre swimming pool in Zilker',
+            bigDescription: 'Barting Springs is a recreational  outdoor swimming pool tha is filled entirely with water from nearby  natural  spring. It is located on the grounds of Zilker Park in Austin, Texas. The pool exits within the channel of Barton Creek and utilizes water  from  Main Barton Spring, the fourth largest spring in Texas',
+            address: '2131 William Barton Dr, Austin, Tx  78456',
+            phone: '512 974 6300',
             image: 'https://assets.simpleviewinc.com/simpleview/image/fetch/c_limit,q_75,w_1200/https://assets.simpleviewinc.com/simpleview/image/upload/crm/austin/Barton-Springs-Photo-Credit-Austin-Convention-Visitors-Bureau_72dpi_2b98f9c6-dab3-628a-c9075a49719a59cb.jpg'
           },
           {
@@ -38,6 +44,9 @@ export default class App extends Component {
             open: true,
             time: '10am-3pm',
             description: '3 acre swimming pool in Zilker',
+            bigDescription: 'Barting Springs is a recreational  outdoor swimming pool tha is filled entirely with water from nearby  natural  spring. It is located on the grounds of Zilker Park in Austin, Texas. The pool exits within the channel of Barton Creek and utilizes water  from  Main Barton Spring, the fourth largest spring in Texas',
+            address: '2131 William Barton Dr, Austin, Tx  78456',
+            phone: '512 974 6300',
             image: 'https://assets.simpleviewinc.com/simpleview/image/fetch/c_limit,q_75,w_1200/https://assets.simpleviewinc.com/simpleview/image/upload/crm/austin/Barton-Springs-Photo-Credit-Austin-Convention-Visitors-Bureau_72dpi_2b98f9c6-dab3-628a-c9075a49719a59cb.jpg'
           },
           {
@@ -48,6 +57,9 @@ export default class App extends Component {
             open: true,
             time: '10am-3pm',
             description: '3 acre swimming pool in Zilker',
+            bigDescription: 'Barting Springs is a recreational  outdoor swimming pool tha is filled entirely with water from nearby  natural  spring. It is located on the grounds of Zilker Park in Austin, Texas. The pool exits within the channel of Barton Creek and utilizes water  from  Main Barton Spring, the fourth largest spring in Texas',
+            address: '2131 William Barton Dr, Austin, Tx  78456',
+            phone: '512 974 6300',
             image: 'https://assets.simpleviewinc.com/simpleview/image/fetch/c_limit,q_75,w_1200/https://assets.simpleviewinc.com/simpleview/image/upload/crm/austin/Barton-Springs-Photo-Credit-Austin-Convention-Visitors-Bureau_72dpi_2b98f9c6-dab3-628a-c9075a49719a59cb.jpg'
           },
           {
@@ -58,6 +70,9 @@ export default class App extends Component {
             open: true,
             time: '10am-3pm',
             description: '3 acre swimming pool in Zilker',
+            bigDescription: 'Barting Springs is a recreational  outdoor swimming pool tha is filled entirely with water from nearby  natural  spring. It is located on the grounds of Zilker Park in Austin, Texas. The pool exits within the channel of Barton Creek and utilizes water  from  Main Barton Spring, the fourth largest spring in Texas',
+            address: '2131 William Barton Dr, Austin, Tx  78456',
+            phone: '512 974 6300',
             image: 'https://assets.simpleviewinc.com/simpleview/image/fetch/c_limit,q_75,w_1200/https://assets.simpleviewinc.com/simpleview/image/upload/crm/austin/Barton-Springs-Photo-Credit-Austin-Convention-Visitors-Bureau_72dpi_2b98f9c6-dab3-628a-c9075a49719a59cb.jpg'
           },
           {
@@ -68,6 +83,9 @@ export default class App extends Component {
             open: true,
             time: '10am-3pm',
             description: '3 acre swimming pool in Zilker',
+            bigDescription: 'Barting Springs is a recreational  outdoor swimming pool tha is filled entirely with water from nearby  natural  spring. It is located on the grounds of Zilker Park in Austin, Texas. The pool exits within the channel of Barton Creek and utilizes water  from  Main Barton Spring, the fourth largest spring in Texas',
+            address: '2131 William Barton Dr, Austin, Tx  78456',
+            phone: '512 974 6300',
             image: 'https://assets.simpleviewinc.com/simpleview/image/fetch/c_limit,q_75,w_1200/https://assets.simpleviewinc.com/simpleview/image/upload/crm/austin/Barton-Springs-Photo-Credit-Austin-Convention-Visitors-Bureau_72dpi_2b98f9c6-dab3-628a-c9075a49719a59cb.jpg'
           },
           {
@@ -78,6 +96,9 @@ export default class App extends Component {
             open: true,
             time: '10am-3pm',
             description: '3 acre swimming pool in Zilker',
+            bigDescription: 'Barting Springs is a recreational  outdoor swimming pool tha is filled entirely with water from nearby  natural  spring. It is located on the grounds of Zilker Park in Austin, Texas. The pool exits within the channel of Barton Creek and utilizes water  from  Main Barton Spring, the fourth largest spring in Texas',
+            address: '2131 William Barton Dr, Austin, Tx  78456',
+            phone: '512 974 6300',
             image: 'https://assets.simpleviewinc.com/simpleview/image/fetch/c_limit,q_75,w_1200/https://assets.simpleviewinc.com/simpleview/image/upload/crm/austin/Barton-Springs-Photo-Credit-Austin-Convention-Visitors-Bureau_72dpi_2b98f9c6-dab3-628a-c9075a49719a59cb.jpg'
           },
         ],
@@ -90,6 +111,9 @@ export default class App extends Component {
           open: true,
           time: '10am-3pm',
           description: '3 acre swimming pool in Zilker',
+          bigDescription: 'Barting Springs is a recreational  outdoor swimming pool tha is filled entirely with water from nearby  natural  spring. It is located on the grounds of Zilker Park in Austin, Texas. The pool exits within the channel of Barton Creek and utilizes water  from  Main Barton Spring, the fourth largest spring in Texas',
+          address: '2131 William Barton Dr, Austin, Tx  78456',
+          phone: '512 974 6300',
           image: 'https://pmcvariety.files.wordpress.com/2017/12/us-capitol-2.jpg?w=1000',
           },
           {
@@ -100,6 +124,9 @@ export default class App extends Component {
             open: true,
             time: '10am-3pm',
             description: '3 acre swimming pool in Zilker',
+            bigDescription: 'Barting Springs is a recreational  outdoor swimming pool tha is filled entirely with water from nearby  natural  spring. It is located on the grounds of Zilker Park in Austin, Texas. The pool exits within the channel of Barton Creek and utilizes water  from  Main Barton Spring, the fourth largest spring in Texas',
+            address: '2131 William Barton Dr, Austin, Tx  78456',
+            phone: '512 974 6300',
             image: 'https://cdn.thecrazytourist.com/wp-content/uploads/2018/11/ccimage-shutterstock_696881512.jpg'
           },
           {
@@ -110,6 +137,9 @@ export default class App extends Component {
             open: true,
             time: '10am-3pm',
             description: '3 acre swimming pool in Zilker',
+            bigDescription: 'Barting Springs is a recreational  outdoor swimming pool tha is filled entirely with water from nearby  natural  spring. It is located on the grounds of Zilker Park in Austin, Texas. The pool exits within the channel of Barton Creek and utilizes water  from  Main Barton Spring, the fourth largest spring in Texas',
+            address: '2131 William Barton Dr, Austin, Tx  78456',
+            phone: '512 974 6300',
             image: 'https://assets.simpleviewinc.com/simpleview/image/fetch/c_limit,q_75,w_1200/https://assets.simpleviewinc.com/simpleview/image/upload/crm/austin/Barton-Springs-Photo-Credit-Austin-Convention-Visitors-Bureau_72dpi_2b98f9c6-dab3-628a-c9075a49719a59cb.jpg'
           },
           {
@@ -120,6 +150,9 @@ export default class App extends Component {
             open: true,
             time: '10am-3pm',
             description: '3 acre swimming pool in Zilker',
+            bigDescription: 'Barting Springs is a recreational  outdoor swimming pool tha is filled entirely with water from nearby  natural  spring. It is located on the grounds of Zilker Park in Austin, Texas. The pool exits within the channel of Barton Creek and utilizes water  from  Main Barton Spring, the fourth largest spring in Texas',
+            address: '2131 William Barton Dr, Austin, Tx  78456',
+            phone: '512 974 6300',
             image: 'https://assets.simpleviewinc.com/simpleview/image/fetch/c_limit,q_75,w_1200/https://assets.simpleviewinc.com/simpleview/image/upload/crm/austin/Barton-Springs-Photo-Credit-Austin-Convention-Visitors-Bureau_72dpi_2b98f9c6-dab3-628a-c9075a49719a59cb.jpg'
           },
           {
@@ -130,6 +163,9 @@ export default class App extends Component {
             open: true,
             time: '10am-3pm',
             description: '3 acre swimming pool in Zilker',
+            bigDescription: 'Barting Springs is a recreational  outdoor swimming pool tha is filled entirely with water from nearby  natural  spring. It is located on the grounds of Zilker Park in Austin, Texas. The pool exits within the channel of Barton Creek and utilizes water  from  Main Barton Spring, the fourth largest spring in Texas',
+            address: '2131 William Barton Dr, Austin, Tx  78456',
+            phone: '512 974 6300',
             image: 'https://assets.simpleviewinc.com/simpleview/image/fetch/c_limit,q_75,w_1200/https://assets.simpleviewinc.com/simpleview/image/upload/crm/austin/Barton-Springs-Photo-Credit-Austin-Convention-Visitors-Bureau_72dpi_2b98f9c6-dab3-628a-c9075a49719a59cb.jpg'
           },
           {
@@ -140,6 +176,9 @@ export default class App extends Component {
             open: true,
             time: '10am-3pm',
             description: '3 acre swimming pool in Zilker',
+            bigDescription: 'Barting Springs is a recreational  outdoor swimming pool tha is filled entirely with water from nearby  natural  spring. It is located on the grounds of Zilker Park in Austin, Texas. The pool exits within the channel of Barton Creek and utilizes water  from  Main Barton Spring, the fourth largest spring in Texas',
+            address: '2131 William Barton Dr, Austin, Tx  78456',
+            phone: '512 974 6300',
             image: 'https://assets.simpleviewinc.com/simpleview/image/fetch/c_limit,q_75,w_1200/https://assets.simpleviewinc.com/simpleview/image/upload/crm/austin/Barton-Springs-Photo-Credit-Austin-Convention-Visitors-Bureau_72dpi_2b98f9c6-dab3-628a-c9075a49719a59cb.jpg'
           },
           {
@@ -150,6 +189,9 @@ export default class App extends Component {
             open: true,
             time: '10am-3pm',
             description: '3 acre swimming pool in Zilker',
+            bigDescription: 'Barting Springs is a recreational outdoor swimming pool tha is filled entirely with water from nearby  natural  spring. It is located on the grounds of Zilker Park in Austin, Texas. The pool exits within the channel of Barton Creek and utilizes water  from  Main Barton Spring, the fourth largest spring in Texas',
+            address: '2131 William Barton Dr, Austin, Tx  78456',
+            phone: '512 974 6300',
             image: 'https://assets.simpleviewinc.com/simpleview/image/fetch/c_limit,q_75,w_1200/https://assets.simpleviewinc.com/simpleview/image/upload/crm/austin/Barton-Springs-Photo-Credit-Austin-Convention-Visitors-Bureau_72dpi_2b98f9c6-dab3-628a-c9075a49719a59cb.jpg'
           },
         ],
