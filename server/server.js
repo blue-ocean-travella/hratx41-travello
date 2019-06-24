@@ -11,6 +11,7 @@ const app = express();
 //     next();
 // });
 
+//hello;
 app.use(express.static('../client/public'));
 // app.use(logger('dev'));
 
