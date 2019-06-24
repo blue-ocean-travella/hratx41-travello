@@ -6,7 +6,8 @@
   "scripts": {
     "build": "webpack -d -w",
     "test": "jest",
-    "server": "webpack-dev-server --mode development --open --hot"
+    "start":"webpack-dev-server --mode development --open --hot",
+    "heroku-postbuild": "webpack -p"
   },
   "author": "",
   "license": "ISC",
