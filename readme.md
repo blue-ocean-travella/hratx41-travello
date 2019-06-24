@@ -11,7 +11,7 @@ You should replace the existing readme.md in your repo with the following inform
 ![alt text](https://github.com/blue-ocean-travello/hratx41-travello/blob/master/travella.png)
 
 ## Who are the contributors (names should link to their github or portfolio page)
-## Fawnie du Plessis
+## [Fawnie du Plessis](https://github.com/fduplessis01)
 ## Gladys Benitez
 ## Jimmy Hung
 ## David Guenther 
