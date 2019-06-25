@@ -20,20 +20,20 @@
 This project was a brief 1-week sprint where our team tried to complete an MVP for an external user **Eric Anthony**
 
  - Our goal is to do MVP with some additional functionality. 
- - Visialy we want the application to look amazing including some features.
+ - Vissually we want the application to look amazing and include some additional features beyond MVP.
 
 ## What does the app do? 
 
  - Travella is a personal travel assistant application. 
- - Travella builds a unique customized travel itinerary according to the users travel dates and destination. 
+ - Travella builds an unique customized travel itinerary according to the users travel dates and destination. 
  - Travella is for any traveller, experience or first time traveller.
  - Travella addresses a very specific need, it customize your travel needs and give you selective options.
  - Travella assist by addressing the issues of the internet being flooded with none relevent info. 
  - Travella only gives the user relevent current info.
  - Users will enter their destination and travel dates and the app does all the work for you!
  - Travella will offer you an array of options that are all categorized.
- - The user/s custom build their itinerary at a click of a buttons.
- - The user can edit changes or delete any options choosen and easily make changes to their itinerary.
+ - Users custom build their itinerary at a click of a button.
+ - User can edit changes or delete any options choosen and easily make changes to their itinerary.
 
 ## Tech stack
 
@@ -47,7 +47,7 @@ This project was a brief 1-week sprint where our team tried to complete an MVP f
 
 ## Technical Challenges and research that you anticipated
 
-- Using figma to visialy build out the user interface
+- Using figma to visually build out the user interface
   * Why
   * What
   * How
@@ -82,7 +82,7 @@ This project was a brief 1-week sprint where our team tried to complete an MVP f
   * What
   * How
   
-- Testing
+- Testing with Jest and Travis CI
   * Why
   * What
   * How
