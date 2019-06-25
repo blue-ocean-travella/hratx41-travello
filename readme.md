@@ -19,19 +19,29 @@
 
 This project was a brief 1-week sprint where our team tried to complete an MVP for an external user **Eric Anthony**
 
- - Add any additional content here pertaining to timeline, any personal goals, etc
- - Travella is a personal travel assistant app that assist you with booking travel according to your needs and destination. 
- - It builds a unique customized travel itinerary for the user. 
+ - Add any additional content here pertaining to timeline, any personal goals, et
 
 
 ## What does the app do? 
 
-    * What problem does it solve? Who uses it?
-    
-    * Why was it built?
-    * User Inputs and Outputs
-    * 
+ - Travella is a personal travel assistant application. 
+ - Travella builds a unique customized travel itinerary according to the users travel dates and destination. 
+ - Travella is for any traveller, experience or first time traveller.
+ - Travella addresses a very specific need, it customize your travel needs and give you selective options.
+ - Travella assist by addressing the issues of the internet being flooded with none relevent info. 
+ - Travella only gives the user relevent current info.
+ - Users will enter their destination and travel dates and the app does all the work for you!
+ - Travella will offer you an array of options that are all categorized.
+ - The user/s custom build their itinerary at a click of a buttons.
+ - The user can edit changes or delete any options choosen and easily make changes to their itinerary.
+
 ## Tech stack ( you can include logos)
+
+- ReactJS
+- JavaScript
+- MongoDB
+- NodeJS and Express
+- 
 
 ## Technical Challenges and research that you anticipated
 
