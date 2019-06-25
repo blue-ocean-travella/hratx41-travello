@@ -63,9 +63,11 @@ This project was a brief 1-week sprint where our team tried to complete an MVP f
   * How
   
 - Git workflow
-  * Why
-  * What
-  * How
+  * Ensuring the team follow a set workflow as we working off one code base. 
+  * Correctly working off feature branches when the team creats new features. 
+  * Rebase and test the code via a pull request before it gets merged into master. 
+  * As the code base is deployed we want to ensure that the code is working a bug free before it gets merged with master.
+  * We set up a Git Workflow document for the team too work off and also did one on one session with each member of the team.
   
 - Navigation of front end pages
   * Why
@@ -73,9 +75,11 @@ This project was a brief 1-week sprint where our team tried to complete an MVP f
   * How
   
 - Data flow between each component, server and database
-  * Why
-  * What
-  * How
+  * Ensuring that the team fully understand the data stucktures we will be working with.
+  * Ensuring each team member knows the flow of data and how each component will interact with the data.
+  * Ensuring each team member understand when data will be store in state or in the database
+  * We did whiteboard session with the whole team talking and drawing out the flow of data.
+  * Team members worked in pairs and groups to ensure everyne is interacting with the data correctly
   
 - Using Google API to scrape data from Google
   * Why
