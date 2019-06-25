@@ -47,6 +47,9 @@ This project was a brief 1-week sprint where our team tried to complete an MVP f
 ## Technical Challenges and research that you anticipated
 
 - Using the React vertical time line library to create an itenerary with a vertical time line
+  * Why
+  * What
+  * How
 - Using React bootstrap for styling and modals.
 - Git workflow
   * Why
