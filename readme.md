@@ -63,11 +63,11 @@ This project was a brief 1-week sprint where our team tried to complete an MVP f
   * How
   
 - Git workflow
-  * Ensuring the team follow a set workflow as we working off one code base. 
-  * Correctly working off feature branches when the team creats new features. 
-  * Rebase and test the code via a pull request before it gets merged into master. 
-  * As the code base is deployed we want to ensure that the code is working a bug free before it gets merged with master.
-  * We set up a Git Workflow document for the team too work off and also did one on one session with each member of the team.
+  * Ensuring the team follows a set workflow as we working off one code base. 
+  * Correctly working off feature branches when the team creates new features. 
+  * Rebase to development and testing the code via a pull request before it gets merged into master. 
+  * As the code base is deployed we want to ensure that the code is working bug free before it gets merged with master.
+  * We set up a Git Workflow document for the team to guide everyone and also did one on one session.
   
 - Navigation of front end pages
   * Why
