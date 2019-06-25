@@ -1,12 +1,5 @@
-# Readme.md template (est time: 4+ hours)
 
-An extremely important part of your Blue Ocean project is the readme.md that accompanies your code repository.
-
-It is recommended that you *start* the readme.md during the sprint, and complete it afterwards.
-
-You should replace the existing readme.md in your repo with the following information:
-
-## Catchy headline / cool graphic
+# Travella - Travel done the way you like it!
 
 ![alt text](https://github.com/blue-ocean-travello/hratx41-travello/blob/master/travella.png)
 
