@@ -216,8 +216,10 @@
   .vertical-timeline-element-title {
     color: white;
     margin-top: -30px;
+    font-size: 20px;
     margin-bottom: 0;
     padding-left: 5px;
+    background-color: black;
   }
   
   .vertical-timeline-element-subtitle {
@@ -467,7 +469,7 @@
   .timeline-image {
     height: auto;
     width: 250px;
-    opacity: 1 !important;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0), 90%, rgba(0,0,0,1));
   }
 
   .header-image {
@@ -479,11 +481,12 @@
     margin-top: 12px;
     color: white;
     width: 140px;
-    height: 150px;
+    height: 140px;
     padding-bottom: 5px;
     text-overflow: ellipsis;
     white-space: wrap;
     overflow: hidden;
+    font-size: 14px;
   }
 
   .timeline-element-container {
@@ -496,7 +499,7 @@
   .timeline-open {
     border-right: 1px solid white;
     border-top: 1px solid white;
-    width: 50%;
+    width: 33%;
     padding-top: 15px;
     padding-bottom: 15px;
     text-align: center;
@@ -507,7 +510,16 @@
     align-items: center;
     justify-content: center;
     border-top: 1px solid white;
-    width: 50%;
+    border-right: 1px solid white;
+    width: 33%;
+  }
+
+  .remove-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid white;
+    width: 33%;
   }
 
   .timeline-element-top-container {
@@ -529,11 +541,11 @@
     height: 100px;
     opacity: 1;
     z-index: 99;
-    /* margin-top: -25px; */;
   }
 
   .headline-itinerary {
-    color:white;
+    padding-top: 5px;
+    color: white;
   }
 
   .timeline-logo {
@@ -588,7 +600,7 @@
     width: 140px;
   }
 
-  .timeline-information{
+  .timeline-information {
     padding-top: 1em;
     width: 100%;
   }
@@ -600,4 +612,29 @@
 
   .timeline-clock {
     border-radius: 50%;
+  }
+
+  .timeline-image:hover, .timeline-arrow:hover {
+    cursor: pointer;
+  }
+
+  .time-modal {
+    width: 400px;
+  }
+
+  .modal-time {
+    margin-left: 5px;
+  }
+
+  .time-modal-hours {
+    font-size: 16px;
+  }
+
+  .modal-map {
+    font-size: 16px;
+  }
+
+  .map-modal-body {
+    display: flex;
+    justify-content: center;
   }
