@@ -20,11 +20,14 @@
 This project was a brief 1-week sprint where our team tried to complete an MVP for an external user **Eric Anthony**
 
  - Add any additional content here pertaining to timeline, any personal goals, etc
+ - Travella is a personal travel assistant app that assist you with booking travel according to your needs and destination. 
+ - It builds a unique customized travel itinerary for the user. 
 
 
 ## What does the app do? 
 
     * What problem does it solve? Who uses it?
+    
     * Why was it built?
     * User Inputs and Outputs
     * 
