@@ -6,6 +6,9 @@ import CategoriesAndResults from '../src/components/categoriesAndResults/categor
 export default class App extends Component {
   constructor(props) {
     super(props);
+
+    this.handleAddToItenerary = this.handleAddToItenerary.bind(this);
+
     this.state = {
       results: {
         city: "Austin, TX",
@@ -195,7 +198,8 @@ export default class App extends Component {
             image: 'https://assets.simpleviewinc.com/simpleview/image/fetch/c_limit,q_75,w_1200/https://assets.simpleviewinc.com/simpleview/image/upload/crm/austin/Barton-Springs-Photo-Credit-Austin-Convention-Visitors-Bureau_72dpi_2b98f9c6-dab3-628a-c9075a49719a59cb.jpg'
           },
         ],
-      }
+      },
+      itenrary : [],
     };
     // this.api = `http://localhost:8000/api/example`;
   }
@@ -207,10 +211,16 @@ export default class App extends Component {
   //     });
   // }
 
+  handleAddToItenerary(schedule) {
+    this.setState({
+      itenrary : this.state.itenrary.concat(schedule)
+    })
+  }
+
   render() {
     return (
       <>
-        <CategoriesAndResults results={this.state.results}/>
+        <CategoriesAndResults results={this.state.results} handdleAddToItenerary={this.handleAddToItenerary}/>
       </>
     );
   }

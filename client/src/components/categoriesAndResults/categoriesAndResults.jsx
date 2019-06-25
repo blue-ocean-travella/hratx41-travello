@@ -30,7 +30,7 @@ class CategoriesAndResults extends Component {
             <NavigationBar onCategoryChange={this.changeCategory}/>
           </div> 
           <div className='main-content-results'>
-            <Results categoryResults={this.props.results[`${category}`]}/>
+            <Results categoryResults={this.props.results[`${category}`]} handdleAddToItenerary={this.props.handdleAddToItenerary}/>
           </div>
         </div>
       )  

@@ -10,15 +10,18 @@ class Result extends Component {
     this.state = {
       show: false,
       showTimeModal: false,
-      time: '7:00',
-    };
+      time: '',
+  };
 
     this.handleShow = this.handleShow.bind(this);
     this.handleClose = this.handleClose.bind(this);
     this.handleTimeChange = this.handleTimeChange.bind(this);
-    this.onTimeChangeHandler  = this.onTimeChangeHandler.bind(this);
     this.handleCloseModalTime = this.handleCloseModalTime.bind(this);
     this.handleShowModalTime = this.handleShowModalTime.bind(this);
+    this.createItineraryObject = this.createItineraryObject.bind(this);
+
+
+  
   } 
 
   handleClose() {
@@ -38,16 +41,45 @@ class Result extends Component {
   }
 
   handleTimeChange(e) {
-    console.log(e.target.value);
+    let hour = e.hours();
+    let minutes = e.minutes().toString();
+    let amOrPm = 'am';
+    
+    if(minutes.length === 1) {
+      minutes = 0 + minutes;
+    }
+
+    if(hour === 0) {
+      hour = 12;
+      amOrPm = 'am';
+    } else if (hour === 12) {
+      hour = 12;
+      amOrPm = 'pm';
+    }
+   
+    if(hour >= 13) {
+      hour =  Number(hour) - 12;
+      amOrPm = 'pm';
+    }
+
     this.setState({
-      time: e.target.value,
+      time : `${`${hour}:${minutes} ${amOrPm}`}`
     })
+   
+    // this.setState({
+    //   time: e.target.value,
+    // })
   }
 
-  onTimeChangeHandler(e) {
-   this.setState({
-     time: e.target.value
-   })
+  createItineraryObject () {
+    const destination = {
+      name: this.props.dataResult.name,
+      duration: this.state.time,
+      description: this.props.dataResult.bigDescription,
+      image: this.props.dataResult.image
+    }
+
+    this.props.handdleAddToItenerary(destination);
   }
 
   render() {
@@ -82,7 +114,7 @@ class Result extends Component {
                 <span className="distance">{`${this.props.dataResult.distance} mi`}</span> <span className="available_and_time">OPEN TODAY</span> <span className="available_and_time">10 AM - 3PM</span>
             </div>
             <a href="#" className="btn btn-primary addToItenerary" onClick={() => this.handleShowModalTime()}>+</a>
-            <ModalTime show={this.state.showTimeModal} onHide={this.handleCloseModalTime} handleCloseModalTime={this.handleCloseModalTime}/>
+            <ModalTime dataResult={this.props.dataResult} show={this.state.showTimeModal} onHide={this.handleCloseModalTime} handleCloseModalTime={this.handleCloseModalTime} handleTimeChange={this.handleTimeChange} addToItenerary={this.createItineraryObject}/>
           </div>
           <p className="card-text description_place">{this.props.dataResult.description}</p>      
         </div>
