@@ -12,12 +12,17 @@ You should replace the existing readme.md in your repo with the following inform
 
 ## Travella Contributors:
 ## [Fawnie du Plessis](https://github.com/fduplessis01)
+![pic:](https://avatars1.githubusercontent.com/u/42327915?s=400&v=4)
 ## [Gladys Benitez](https://github.com/gladysbenitez)
+![pic:](https://avatars1.githubusercontent.com/u/42365770?s=400&v=4)
 ## [Jimmy Hung](https://github.com/jmhung) 
 ![Pic:](https://avatars1.githubusercontent.com/u/10273125?s=400&v=4)
 ## [David Guenther](https://github.com/DcguentherATX)
+![pic:](https://avatars2.githubusercontent.com/u/46075198?s=400&v=4)
 ## [Maria Navarro](https://github.com/MariaJose)
+![pic:](https://avatars2.githubusercontent.com/u/39739180?s=400&v=4)
 ## [Louis Rangel](https://github.com/lui914)
+![pic:]()
 
 ## Introduction
 
