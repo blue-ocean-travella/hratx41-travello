@@ -1,6 +1,7 @@
 const path = require('path');
 const SRC_DIR = path.join(__dirname, '/src');
 const DIST_DIR = path.join(__dirname, '/public');
+const Dotenv = require('dotenv-webpack');
 module.exports = {
   entry: `${SRC_DIR}/index.js`,
   output: {
@@ -30,5 +31,8 @@ module.exports = {
     contentBase: DIST_DIR,
     compress: true,
     port: 9000
-  }
+  },
+  plugins:[
+    new Dotenv({path: "../.env"})
+  ]
 };
