@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components'; 
 
 const StyledDiv = styled.div` 
+textarea:focus, input:focus{
+    outline: none;
+}
 input::-webkit-input-placeholder { /* WebKit browsers */
     color:    #fff;
     opacity: 0.8
@@ -48,8 +51,7 @@ input, select, textarea{
           <img style={{paddingTop:"40px", paddingRight:"40px",opacity:"0.8",height:"60px", width:'auto'}} src="white-down-arrow-png-2.png"></img>
         </div>
         <div style={{display:"flex",flexDirection:"row" ,position:"absolute", top:'0', left:'0', width:'100%', height:'100%', justifyContent:"center"}}>
-        <input id='autocomplete' onChange={this.props.onInputChange} onKeyPress={this.props.onSubmit} style={{fontFamily: 'Lato',fontStyle: 'normal', fontWeight:'bold',fontSize: '28px',border:"none", borderBottom:"4px solid black",textAlign:'center', opacity:"0.8",backgroundColor:'transparent', height:"45px", marginTop:'380px', width:'450px',borderBottomColor:'white'}} type="text" placeholder="Where are you going?" name="search"></input>
-        
+        <input id='autoComplete' onChange={this.props.onInputChange} onKeyPress={this.props.onSubmit} style={{fontFamily: "Helvetica Neue",fontStyle: 'normal',fontSize: '40px',border:"none", borderBottom:"4px solid black",textAlign:'center', opacity:"0.8",backgroundColor:'transparent', height:"45px", marginTop:'380px', width:'450px',borderBottomColor:'white'}} type="text" placeholder="Where are you going?" name="search"></input>
         </div>
     
       </div>

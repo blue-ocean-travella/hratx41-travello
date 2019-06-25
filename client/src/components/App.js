@@ -8,7 +8,8 @@ export default class App extends Component {
     super(props);
     this.state = {
       data:[],
-      query:''
+      query:'',
+      currentActivity:''
     }; 
     this.onInputChange = this.onInputChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
