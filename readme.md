@@ -39,6 +39,7 @@ This project was a brief 1-week sprint where our team tried to complete an MVP f
 
 - ReactJS
 - JavaScript
+- Axios
 - MongoDB
 - NodeJS and Express
 - Google API 
@@ -79,9 +80,9 @@ This project was a brief 1-week sprint where our team tried to complete an MVP f
 - Data flow between each component, server and database
   * Ensuring that the team fully understand the data stucktures we will be working with.
   * Ensuring each team member knows the flow of data and how each component will interact with the data.
-  * Ensuring each team member understand when data will be store in state or in the database
+  * Ensuring each team member understand when data will be store in state or in the database.
   * We did whiteboard session with the whole team talking and drawing out the flow of data.
-  * Team members worked in pairs and groups to ensure everyne is interacting with the data correctly
+  * Team members worked in pairs and groups to ensure everyne is interacting with the data correctly.
   
 - Using Google API to scrape data from Google
   * Why
@@ -101,6 +102,22 @@ This project was a brief 1-week sprint where our team tried to complete an MVP f
   
 ## Challenges that were unexpected
 
+- 
+  * Why
+  * What
+  * How
+  
+- 
+  * Why
+  * What
+  * How
+  
+- 
+  * Why
+  * What
+  * How
+  
+  
     * Why was it a challenge
     * What did you learn?
   
@@ -109,6 +126,18 @@ This project was a brief 1-week sprint where our team tried to complete an MVP f
     * What were the user stories /  what was MVP (mention Minimal Viable Product)
   
 ## How does the app work?
+
+- The user enters in a destination on the Search Bar Page component of the React Application.
+- The application makes an API call to Express server. 
+- The Express server makes an API call to Google API and scrape the appliable data needed.
+- The data received from Google API is constructed into an object and send to state in React.
+- The Category Page component extracts the data from state and display the data according to the users category preferences.
+- The user makes seletions in each category and these options selected are send back to the Express server.
+- The Express server saves the data into MongoDB with a quiery and uses the user name as a reference when saving the options.
+- The Itenarary Page component make a Express server request for the applicable optiond according to the users name.
+- The server makes a quiery to the databse for the data and send the options back to the Itenanrary Page componant.
+- The Itenarary Page component displays the options using Reacts time line library
+- The user have the option to delete the options selected in the itenarary, or display more info on options.
 
     * What happens behind the scenes when the user interacts with it? 
     * OR What are all the place the data travels?  What happens to that data?
