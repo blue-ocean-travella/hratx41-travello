@@ -56,14 +56,14 @@ This project was a brief 1-week sprint where our team tried to complete an MVP f
   * How
 
 - Using the React vertical time line library to create an itenerary with a vertical time line
-  * Why
-  * What
-  * How
+  * Best option to visaully display the itenarary for our travel application
+  * Obstacles we faced was working with with the main back ground images and bootstrap modals
+  * Reading documentations with trail and error until we resolved all bugs
   
 - Using React bootstrap for styling and modals
-  * Why
-  * What
-  * How
+  * Bootstrap offered grid styling layout with an option to use cards and modals. For our project this was a perfect fit.
+  * Obstacles we faced was modals hidden behind the back ground.
+  * 
   
 - Git workflow
   * Ensuring the team follows a set workflow as we working off one code base. 
