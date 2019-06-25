@@ -6,7 +6,7 @@ import './result.css'
 
 class Result extends Component {
   constructor(props) {
-    super()
+    super(props)
     this.state = {
       show: false,
       showTimeModal: false,

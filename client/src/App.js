@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 import fetch from 'node-fetch';
 import CategoriesAndResults from '../src/components/categoriesAndResults/categoriesAndResults.jsx'
+
+
 // import './App.css';
+
 
 export default class App extends Component {
   constructor(props) {
     super(props);
 
     this.handleAddToItenerary = this.handleAddToItenerary.bind(this);
-
-    this.state = {
+      this.state = { 
+      // page: this.props.HOME.component // start at home pag
       results: {
         city: "Austin, TX",
         topSpots: [

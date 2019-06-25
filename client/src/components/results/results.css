@@ -4,6 +4,9 @@
     grid-row-gap: 10px;
     grid-template-columns: auto auto auto;
     justify-items: center;
+    margin-top: 350px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 
