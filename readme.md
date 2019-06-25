@@ -10,13 +10,13 @@ You should replace the existing readme.md in your repo with the following inform
 
 ![alt text](https://github.com/blue-ocean-travello/hratx41-travello/blob/master/travella.png)
 
-## Who are the contributors (names should link to their github or portfolio page)
+## Travella Contributors:
 ## [Fawnie du Plessis](https://github.com/fduplessis01)
-## Gladys Benitez
-## Jimmy Hung
-## David Guenther 
-## Maria Navarro
-## Louis Rangel
+## [Gladys Benitez](https://github.com/gladysbenitez)
+## [Jimmy Hung](https://github.com/jmhung)[](https://avatars1.githubusercontent.com/u/10273125?s=400&v=4)
+## [David Guenther](https://github.com/DcguentherATX)
+## [Maria Navarro](https://github.com/MariaJose)
+## [Louis Rangel](https://github.com/lui914)
 
 ## Introduction
 
