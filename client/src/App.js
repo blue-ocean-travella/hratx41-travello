@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import fetch from "node-fetch";
+import Axios from "axios";
+// import './App.css
 
-// import './App.css';
+const apiKey = process.env.API_KEY;
+
 import Script from "react-load-script";
 
 export default class Search extends Component {
@@ -10,19 +13,41 @@ export default class Search extends Component {
     this.state = {
       city: "",
       query: "",
-      latitutde: "",
+      latitude: "",
       longitude: ""
     };
-    this.api = `http://localhost:8000/api/example`;
+
     this.HandleScriptLoad = this.HandleScriptLoad.bind(this);
     this.HandlePlaceSelect = this.HandlePlaceSelect.bind(this);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
+    this.Initialize = this.Initialize.bind(this);
   }
+
+  Initialize() {
+    Axios.get("/city", {
+      params: {
+        city: this.state.city,
+        latitude: this.state.latitude,
+        longitude: this.state.longitude
+      }
+    }).then(data => console.log(data));
+  }
+
+  // handleKeyDown(e) {
+  //   if (e.key === "Enter") {
+  //     this.Initialize();
+  //   }
+  // }
 
   HandleScriptLoad() {
     // Declare Options For Autocomplete
     var options = {
       types: ["(regions)"]
     }; // To disable any eslint 'google not defined' errors
+
+    Axios.get("/apiKey")
+      .then(data => this.setState({ apiKey: data.data }))
+      .then(() => console.log(this.state.apiKey));
 
     // Initialize Google Autocomplete
     /*global google*/ this.autocomplete = new google.maps.places.Autocomplete(
@@ -53,25 +78,25 @@ export default class Search extends Component {
       this.setState({
         city: address[0].long_name,
         query: addressObject.formatted_address,
-        latitutde: lat,
+        latitude: lat,
         longitude: long
       });
     }
     console.log(this.state.query);
     console.log(this.state.city);
-    console.log(this.state.latitutde);
+    console.log(this.state.latitude);
     console.log(this.state.longitude);
   }
 
   render() {
     return (
-<<<<<<< HEAD:client/src/App.js
       <div>
         <h1>Welcome to Blue Ocean!</h1>
         <div>
           <Script
-            url="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvU1no"
+            url={`https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=places`}
             onLoad={this.HandleScriptLoad}
+            onClick={this.Initialize}
           />
           <input
             id="autocomplete"
@@ -79,31 +104,12 @@ export default class Search extends Component {
               margin: "0 auto",
               maxWidth: 800
             }}
-            onClick={this.Initialize}
+            onKeyDown={this.handleKeyDown}
           />
           <input type="hidden" id="cityLat" name="cityLat" />
           <input type="hidden" id="cityLng" name="cityLng" />
         </div>
       </div>
-=======
-      <>
-        {/* <h1>Welcome to Blue Ocean!</h1>
-        <ul>
-          {this.state.seaCreatures.map((creature, index) => (
-            <li key={index}>{creature}</li>
-            
-          ))}
-        </ul> */}
-
-      <div className="flx-embed">
-      <div style={{position:"relative", height:"0", paddingBottom:"56.22%",width:"100%"}}>
-      <iframe style={{pointerEvents: "none", position: "absolute", top:"0", left:"0", width:"100%", height:"100%"}} src="https://media.flixel.com/cinemagraph/llnshyphvx0lmkz6ceqq?hd=true" frameBorder="0" allowFullScreen allow='autoplay'></iframe>
-      </div>
-      </div>
-        
-       
-      </>
->>>>>>> 1adb7ac837f77beed60e1a805af62832b5fa4395:client/src/components/App.js
     );
   }
 }

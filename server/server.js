@@ -1,20 +1,148 @@
 // const createError = require('http-errors');
 // const logger = require('morgan');
-const express = require('express');
+const express = require("express");
 const app = express();
+require("dotenv").config({ path: "../.env" });
+const fetch = require("node-fetch");
+const api = process.env.API_KEY;
+var fs = require("fs");
 
-
-// open up CORS 
+// open up CORS
 // app.use((_, res, next) => {
 //     res.header("Access-Control-Allow-Origin", "*");
-//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//     res.header("Access-Control-Allow-Headers", "Origin, X-Reqed-With, Content-Type, Accept");
 //     next();
 // });
+console.log("this is api test 1", api);
+console.log("this is api test 2", { api });
 
 //hello;
-app.use(express.static('../client/public'));
+app.use(express.static("../client/public"));
 // app.use(logger('dev'));
 
+// const nightLife = function(req, res, next) {
+//   let response;
+//   fetch(
+//     "https://maps.googleapis.com/maps/api/place/textsearch/json?query=night+life+in+austin+tx&key=AIzaSyCKeNf2hkXA_KuH8kvFdjV6dAvI3Xh9l9k"
+//   )
+//     .then(res => res.json())
+//     .then(data => (req["nightlife"] = data));
+
+//   next();
+// };
+
+// const cb1 = function(req, res, next) {
+//   req["CB1"] = "Result of CB1";
+//   console.log(req.query.latitude);
+//   next();
+// };
+
+// const cb2 = function(req, res) {
+//   console.log("CB2: Result of CB0: " + req["CB0"]);
+//   console.log("CB2: Result of CB1: " + req["CB1"]);
+//   res.send(req["nightlife"]);
+// };
+
+app.get("/apiKey", (req, res) => {
+  console.log("request rescieved");
+  res.send(api);
+});
+
+app.get("/city", (req, res) => {
+  let location = req.query.city;
+  let latitude = req.query.latitude;
+  let longitude = req.query.longitude;
+  let topSpots, thingsToDo, restaurants, nightLife, dayTrips;
+  fetch(
+    `https://maps.googleapis.com/maps/api/place/textsearch/json?query=night+life+in+${location}+tx&key=${api}`
+  )
+    .then(res => res.json())
+    .then(data => {
+      nightLife = data.results;
+    });
+  fetch(
+    `https://maps.googleapis.com/maps/api/place/textsearch/json?query=outdoor+activities+in+${location}+tx&key=${api}`
+  )
+    .then(res => res.json())
+    .then(data => {
+      thingsToDo = data.results;
+    });
+  fetch(
+    `https://maps.googleapis.com/maps/api/place/textsearch/json?query=day+trips+in+${location}+tx&key=${api}`
+  )
+    .then(res => res.json())
+    .then(data => {
+      dayTrips = data.results;
+    })
+    .then(() => {
+      fetch(
+        `https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+${location}+tx&key=${api}`
+      )
+        .then(res => res.json())
+        .then(data => (restaurants = data.results))
+        .then(() => {
+          let locationData = {};
+          locationData["nightLife"] = parseData(nightLife);
+          locationData["restaurants"] = parseData(restaurants);
+          locationData["thingsToDo"] = parseData(thingsToDo);
+          locationData["dayTrips"] = parseData(dayTrips);
+
+          res.send(locationData);
+        });
+    });
+});
+// app.get("/city", [cb0, cb1, cb2]) => {
+//   console.log("im inside express");
+//   let location = req.query.city;
+//   let latitude = req.query.latitude;
+//   let longitude = req.query.longitude;
+//   let topSpots, thingsToDo, restaurants, nightLife, dayTrips;
+//     app.get("https://maps.googleapis.com/maps/api/place/textsearch/json?query=night+life+in+austin+tx&key=AIzaSyDvU1Z6IiPGgXDnm04zvmi5XB0Q7DH9LQU")
+
+//   console.log(location, latitude, longitude);
+//   //res.send(req.query);
+// });
+
+let parseData = array => {
+  let results = [];
+  let long, lat, name, photo, rating, userRating, address, place_id;
+
+  for (let i = 0; i < array.length; i++) {
+    lat = array[i].geometry.location.lat;
+    long = array[i].geometry.location.lat;
+    name = array[i].name;
+    address = array[i].formatted_address;
+    place_id = array[i].place_id;
+
+    photo = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=
+      ${array[i].photos[0].photo_reference}&key=${api}`;
+
+    rating = array[i].rating;
+    userRating = array[i].user_ratings_total;
+    results.push({
+      name: name,
+      address: address,
+      long: long,
+      lat: lat,
+      photo: photo,
+      rating: rating,
+      userRating: userRating,
+      place_id: place_id
+    });
+  }
+
+  return results;
+};
+
+app.get("/topspots");
+
+app.get("/thingstodo");
+
+app.get("/restaurants", (req, res) => {});
+
+app.get("nightlife");
+
+app.get("daytrips");
 // // You can place your routes here, feel free to refactor:
 // const { example } = require('./routes');
 // app.use('/api/example', example)
@@ -35,8 +163,9 @@ app.use(express.static('../client/public'));
 //     res.render('error');
 // });
 
-var port = process.env.PORT || 8080;
-app.listen(port, ()=>{console.log(`listening at ${port}`)})
-
+const port = process.env.PORT || 3009;
+app.listen(port, () => {
+  console.log(`listening at ${port}`);
+});
 
 module.exports = app;
