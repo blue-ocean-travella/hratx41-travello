@@ -13,6 +13,7 @@ export default class App extends Component {
     this.url  =`ocean.mp3`;
     this.audio = new Audio(this.url);
     
+    
   }
   componentDidMount() {
     // fetch(this.api)
@@ -20,14 +21,21 @@ export default class App extends Component {
     //   .then(seaCreatures => {
     //     this.setState({ seaCreatures: seaCreatures.data });
     //   });
-
-    this.audio.play().catch(error => console.log(error));
-    console.log('running');
+    console.log('didmount');
+    this.audio.play().catch(err => (console.log(err)));
     
+   
+    
+
+  
   }
 
   render(){
+    
+    
+
     return (
+      
       <>
         {/* <h1>Welcome to Blue Ocean!</h1>
         <ul>
