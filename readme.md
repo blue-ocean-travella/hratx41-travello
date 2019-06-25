@@ -17,7 +17,7 @@
 
 ## Introduction
 
-This project was a brief 1-week sprint where our team tried to complete an MVP for an external user **(Jane Doe)**
+This project was a brief 1-week sprint where our team tried to complete an MVP for an external user **Eric Anthony**
 
  - Add any additional content here pertaining to timeline, any personal goals, etc
 
