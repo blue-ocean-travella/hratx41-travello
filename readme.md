@@ -49,7 +49,9 @@ This project was a brief 1-week sprint where our team tried to complete an MVP f
 - Using the React vertical time line library to create an itenerary with a vertical time line
 - Using React bootstrap for styling and modals.
 - Git workflow
-  * 
+  * Why
+  * What
+  * How
 - Navigation of front end pages
 - Data flow between each component, server and database
 - Using Google API to scrape data from Google
