@@ -13,7 +13,7 @@
 ## [Maria Navarro](https://github.com/MariaJose)
 ![pic:](https://avatars2.githubusercontent.com/u/39739180?s=400&v=4)
 ## [Louis Rangel](https://github.com/lui914)
-![pic:]()
+![pic:](https://avatars0.githubusercontent.com/u/46331990?s=400&v=4)
 
 ## Introduction
 
