@@ -8,7 +8,7 @@ import StarRatings from '../../../node_modules/react-star-ratings';
 // import TimePicker from 'react-time-picker';
 // var TimePicker = require('basic-react-timepicker');
 
-const ModalDescription = ({show, onHide, handleClose, handleTimeChange, time, onTimeChangeHandler, dataResult}) => {
+const ModalDescription = ({show, onHide, handleClose, handleTimeChange, goToItinerary, time, onTimeChangeHandler, dataResult}) => {
   console.log(handleTimeChange)
   let open;
   let closeTime=dataResult.time.slice(5);
@@ -30,8 +30,7 @@ const ModalDescription = ({show, onHide, handleClose, handleTimeChange, time, on
       <Modal.Header closeButton>
         <Modal.Title id='modalTitle'></Modal.Title>
       </Modal.Header>
-      <Modal.Body>
-        
+      <Modal.Body>   
         {/* <TimePicker className='timePicker'>
           onChange={handleTimeChange}
           value={time}
@@ -86,8 +85,8 @@ const ModalDescription = ({show, onHide, handleClose, handleTimeChange, time, on
         <Button variant="secondary" onClick={handleClose}>
         Close
         </Button>
-        <Button variant="primary" onClick={handleClose}>
-        Save Changes
+        <Button variant="primary" onClick={goToItinerary}>
+        Select Time
         </Button>
       </Modal.Footer>
     </Modal>

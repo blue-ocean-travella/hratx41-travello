@@ -19,9 +19,7 @@ class Result extends Component {
     this.handleCloseModalTime = this.handleCloseModalTime.bind(this);
     this.handleShowModalTime = this.handleShowModalTime.bind(this);
     this.createItineraryObject = this.createItineraryObject.bind(this);
-
-
-  
+    this.goToItinerary = this.goToItinerary.bind(this);
   } 
 
   handleClose() {
@@ -65,10 +63,6 @@ class Result extends Component {
     this.setState({
       time : `${`${hour}:${minutes} ${amOrPm}`}`
     })
-   
-    // this.setState({
-    //   time: e.target.value,
-    // })
   }
 
   createItineraryObject () {
@@ -82,6 +76,17 @@ class Result extends Component {
     this.props.handdleAddToItenerary(destination);
   }
 
+  goToItinerary () {
+    this.setState({
+      show: false,
+      showTimeModal: true,
+    })
+
+    return (
+      <ModalTime dataResult={this.props.dataResult} show={this.state.showTimeModal} onHide={this.handleCloseModalTime} handleCloseModalTime={this.handleCloseModalTime} handleTimeChange={this.handleTimeChange} addToItenerary={this.createItineraryObject}/>
+    )
+  }
+
   render() {
     return (
      <div className="card card_result" style={{width: '30rem'}}>
@@ -92,13 +97,13 @@ class Result extends Component {
            <h5 className="card-title result-position" >{this.props.dataResult.name}</h5>
         </div>
         </a>
-        <ModalDescription dataResult={this.props.dataResult} show={this.state.show} onHide={this.handleClose} handleClose={this.handleClose} handleTimeChange={this.handleTimeChange} time={this.state.time} onTimeChangeHandler={this.onTimeChangeHandler}/>
+        <ModalDescription dataResult={this.props.dataResult} show={this.state.show} onHide={this.handleClose} handleClose={this.handleClose} handleTimeChange={this.handleTimeChange} time={this.state.time} onTimeChangeHandler={this.onTimeChangeHandler} goToItinerary={this.goToItinerary}/>
         </div>
         <div className="card-body">
           <div>
             <span className="result_rating">{this.props.dataResult.rating}</span>
             <StarRatings
-                rating={3}
+                rating={Number(this.props.dataResult.rating)}
                 starRatedColor="blue"
                 // changeRating={this.changeRating}
                 starDimension="17px"
