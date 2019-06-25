@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import fetch from 'node-fetch';
+import axios from 'axios';
 // import './App.css';
 
 export default class App extends Component {
@@ -12,6 +13,8 @@ export default class App extends Component {
     // this.api = `http://localhost:8000/api/example`;
     this.url  =`ocean.mp3`;
     this.audio = new Audio(this.url);
+
+    axios.get('./postUser/Cappuccino').then(result=>console.log(result))
     
     
   }
