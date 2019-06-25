@@ -35,7 +35,7 @@ This project was a brief 1-week sprint where our team tried to complete an MVP f
  - The user/s custom build their itinerary at a click of a buttons.
  - The user can edit changes or delete any options choosen and easily make changes to their itinerary.
 
-## Tech stack ( you can include logos)
+## Tech stack
 
 - ReactJS
 - JavaScript
@@ -43,23 +43,51 @@ This project was a brief 1-week sprint where our team tried to complete an MVP f
 - NodeJS and Express
 - Google API 
 - Bootstrap
+- Figma
 
 ## Technical Challenges and research that you anticipated
+
+- Using figma to visialy build out the user interface
+  * Why
+  * What
+  * How
 
 - Using the React vertical time line library to create an itenerary with a vertical time line
   * Why
   * What
   * How
-- Using React bootstrap for styling and modals.
+  
+- Using React bootstrap for styling and modals
+  * Why
+  * What
+  * How
+  
 - Git workflow
   * Why
   * What
   * How
+  
 - Navigation of front end pages
+  * Why
+  * What
+  * How
+  
 - Data flow between each component, server and database
+  * Why
+  * What
+  * How
+  
 - Using Google API to scrape data from Google
+  * Why
+  * What
+  * How
+  
 - Testing
-- 
+  * Why
+  * What
+  * How
+  
+-
  
 
     * Why, what was the plan to overcome those challenges?
