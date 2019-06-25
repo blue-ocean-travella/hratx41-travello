@@ -44,6 +44,8 @@ This project was a brief 1-week sprint where our team tried to complete an MVP f
 - Google API 
 - Bootstrap
 - Figma
+- Jest
+- Travis CI
 
 ## Technical Challenges and research that you anticipated
 
