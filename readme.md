@@ -19,8 +19,8 @@
 
 This project was a brief 1-week sprint where our team tried to complete an MVP for an external user **Eric Anthony**
 
- - Add any additional content here pertaining to timeline, any personal goals, et
-
+ - Our goal is to do MVP with some additional functionality. 
+ - Visialy we want the application to look amazing including some features.
 
 ## What does the app do? 
 
@@ -41,9 +41,21 @@ This project was a brief 1-week sprint where our team tried to complete an MVP f
 - JavaScript
 - MongoDB
 - NodeJS and Express
-- 
+- Google API 
+- Bootstrap
 
 ## Technical Challenges and research that you anticipated
+
+- Using the React vertical time line library to create an itenerary with a vertical time line
+- Using React bootstrap for styling and modals.
+- Git workflow
+  * 
+- Navigation of front end pages
+- Data flow between each component, server and database
+- Using Google API to scrape data from Google
+- Testing
+- 
+ 
 
     * Why, what was the plan to overcome those challenges?
     * What did you learn?
