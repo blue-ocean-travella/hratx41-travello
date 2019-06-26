@@ -1,5 +1,6 @@
 import React from 'react';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
+import TimelineActivity from './TimelineActivity.jsx';
 import DescriptionModal from './DescriptionModal.jsx';
 import TimeModal from './TimeModal.jsx';
 import MapModal from './MapModal.jsx';
@@ -16,6 +17,8 @@ import dine from '../assets/images/food.png';
 import todos from '../assets/images/thingstodo.png';
 import topSpot from '../assets/images/topspot.png';
 import dayTrip from '../assets/images/daytrip2.png';
+import xout from '../assets/images/xout.png';
+import finishLine from '../assets/images/finishline.png';
 
 // import Row from 'react-bootstrap/Row';
 // import Col from 'react-bootstrap/Col';
@@ -26,6 +29,7 @@ import dayTrip from '../assets/images/daytrip2.png';
 class Itinerary extends React.Component {
     constructor(props) {
         super(props)
+
 
         this.state = {
             showDescriptionModal: false,
@@ -51,7 +55,9 @@ class Itinerary extends React.Component {
                 'https://cdn.civitatis.com/reino-unido/londres/galeria/london-eye-atardecer.jpg',
                 'http://www.talkativeman.com/img/Enormous_Christ_the_Redeemer_Statue_in_Rio_de_Janeiro.jpg',
                 'https://www.jetsetter.com/uploads/sites/7/2019/03/bobmd-bungalow-2973-hor-clsc-1160x690.jpg'
-            ]
+            ],
+            backgroundImage: '',
+            activities: [{ category: 'nightlife' }, { category: 'topspot' }, { category: 'food' }]
         }
 
         this.handleArrowClick = this.handleArrowClick.bind(this);
@@ -62,6 +68,7 @@ class Itinerary extends React.Component {
         this.handleShowMapModal = this.handleShowMapModal.bind(this);
         this.handleCloseMapModal = this.handleCloseMapModal.bind(this);
         this.getRandomElement = this.getRandomElement.bind(this);
+        this.getImage = this.getImage.bind(this);
     }
 
 
@@ -98,9 +105,17 @@ class Itinerary extends React.Component {
         return random;
     }
 
+    componentDidMount() {
+        this.setState({
+            backgroundImage: this.getImage()
+        })
+    }
+    getImage() {
+        const randomImage = this.state.backgroundImages[this.getRandomElement(this.state.backgroundImages)];
+        return randomImage;
+    }
+
     render() {
-        let randomImage = this.state.backgroundImages[this.getRandomElement(this.state.backgroundImages)];
-        // console.log(randomImage);
         return (
             < div className="page-wrapper">
                 <div id="timeline-header">
@@ -108,16 +123,23 @@ class Itinerary extends React.Component {
                     <h1 className="headline-itinerary">Your Austin Itinerary</h1>
                     <img className="timeline-arrow" src={navArrow} onClick={this.handleArrowClick}></img>
                 </div>
-                <img src={randomImage} id="bg-img"></img>
+                <img src={this.state.backgroundImage} id="bg-img"></img>
+
                 <VerticalTimeline className="timeline-line">
+                    {/* <VerticalTimelineElement className="vertical-timeline-element--work"
+                        date="8:00 AM"
+                        iconStyle={{ background: 'rgb(255, 255, 255)', color: '#fff' }}
+                        icon={<img className="nightlife-icon" src={nightlife}></img>}>
+                        {this.state.activities.map((activity, i) => <TimelineActivity key={i} activity={activity} />)}
+                    </VerticalTimelineElement> */}
+
                     <VerticalTimelineElement
                         className="vertical-timeline-element--work"
                         date="8:00 AM"
                         iconStyle={{ background: 'rgb(255, 255, 255)', color: '#fff' }}
                         icon={<img className="nightlife-icon" src={nightlife}></img>}
-
-
                     >
+
                         <div className="timeline-element-outer-container">
                             <a className="timeline-element-top-container">
                                 <img src={austin} className="timeline-image" onClick={this.handleShowDescriptionModal}></img>
@@ -129,6 +151,7 @@ class Itinerary extends React.Component {
                                 <div className="timeline-description">
                                     Barton Springs is an outdoor public pool. What a great place to lay out, sip cocktails, and catch some sun.  This is a really long description to see if overflow works.
             </div></div></div>
+
                         <div className="timeline-element-container">
                             <a className="timeline-open btn" onClick={() => this.handleShowTimeModal()}>
                                 <img className="timeline-clock" src={clock}></img>
@@ -138,8 +161,8 @@ class Itinerary extends React.Component {
                                 <img className="timeline-map" src={map}></img>
                             </a>
                             <MapModal show={this.state.showMapModal} onHide={this.handleCloseMapModal} handleClose={this.handleCloseMapModal} />
-                            <a>
-                                <img className="remove-image" src={todos}></img>
+                            <a className="remove-container btn">
+                                <img className="remove-image" src={xout}></img>
                             </a>
                         </div>
                     </VerticalTimelineElement>
@@ -307,9 +330,10 @@ class Itinerary extends React.Component {
                     </VerticalTimelineElement>
                     <VerticalTimelineElement
                         iconStyle={{ background: 'rgb(255, 255, 255)', color: '#fff' }}
-
+                        icon={<img className="nightlife-icon" src={finishLine}></img>}
                     />
                 </VerticalTimeline >
+                <div className="footer"></div>
             </div >
         )
     }

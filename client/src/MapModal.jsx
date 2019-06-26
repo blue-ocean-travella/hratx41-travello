@@ -2,9 +2,6 @@ import React from 'react';
 import { Button, Modal } from 'react-bootstrap';
 import { GoogleMap, LoadScript } from '@react-google-maps/api';
 
-// const apiKey =
-// process.env.API_KEY
-
 const MapModal = (props) => {
     // console.log('MapModal props: ', props)
     return (
