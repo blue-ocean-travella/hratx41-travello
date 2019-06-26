@@ -1,10 +1,12 @@
 // const createError = require('http-errors');
 // const logger = require('morgan');
+const connect = require('./db/index.js')
 const express = require('express');
 const app = express();
 app.use(express.static('../client/public'));
 require("dotenv").config({ path: "../.env" });
 const fetch = require("node-fetch");
+
 const api = process.env.API_KEY;
 var fs = require("fs")
 
