@@ -19,6 +19,7 @@ app.get("/apiKey", (req, res) => {
 
 app.get("/fakeData", (req,res)=>{
   // console.log(NightLife);
+  
   NightLife.find({}, (err,data)=>{res.send(data)});
 })
 

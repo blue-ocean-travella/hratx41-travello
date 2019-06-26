@@ -11,6 +11,7 @@ class Result extends Component {
       show: false,
       showTimeModal: false,
       time: '12:00 pm',
+      // duration: null,
   };
 
     this.handleShow = this.handleShow.bind(this);
@@ -20,6 +21,7 @@ class Result extends Component {
     this.handleShowModalTime = this.handleShowModalTime.bind(this);
     this.createItineraryObject = this.createItineraryObject.bind(this);
     this.goToItinerary = this.goToItinerary.bind(this);
+    this.changeDuration = this.changeDuration.bind(this);
   } 
 
   handleClose() {
@@ -65,19 +67,30 @@ class Result extends Component {
     });
   }
 
+
+
   createItineraryObject () {
     const destination = {
       name: this.props.dataResult.name,
-      duration: this.state.time,
+      start_time: this.state.time,
+      duration: this.state.duration,
       description: this.props.dataResult.bigDescription,
-      image: this.props.dataResult.image
+      image: this.props.dataResult.image,
+      category: this.props.currentCategory,
+      lat: 30.265824,
+      lng: -97.74926,
+      uuid: 1,
+
+      
+      
+
+      // category: 
     };
 
     console.log(destination);
 
     // this.props.handdleAddToItenerary(destination);
   }
-
   goToItinerary () {
     this.setState({
       show: false,
@@ -89,11 +102,27 @@ class Result extends Component {
     );
   }
 
+  changeDuration (duration) {
+    // console.log(this.state.duration, 'before')
+    // this.setState({
+    //   duration : duration,
+    // })
+    // this.setState((prevState) => {duration: duration})
+    // this.setState({duration: duration}, () => {
+    //   console.log(this.state.duration, 'inside set')
+    //   this.setState({duration: duration});
+    // })
+
+    this.setState({duration: duration});
+    // console.log(this.state.duration, 'after');
+  }
+
   render() {
+    console.log(this.props.id);
     return (
      <div className="card card_result" style={{width: '30rem'}}>
         <div className="card bg-dark text-white card_result">
-         <img src={this.props.dataResult.image} className="card-img image-result-card" alt="..."/>
+         <img src="https://assets.simpleviewinc.com/simpleview/image/fetch/c_limit,q_75,w_1200/https://assets.simpleviewinc.com/simpleview/image/upload/crm/austin/Barton-Springs-Photo-Credit-Austin-Convention-Visitors-Bureau_72dpi_2b98f9c6-dab3-628a-c9075a49719a59cb.jpg" className="card-img image-result-card" alt="..."/>
          <a href="#" className='modal-button' onClick={() => this.handleShow()}>
           <div className="card-img-overlay">
            <h5 className="card-title result-position" >{this.props.dataResult.name}</h5>
@@ -114,16 +143,15 @@ class Result extends Component {
                 name='rating'
                 starRatedColor="#f08804"
             />   
-            <span className="result_total_reviews">{`${this.props.dataResult.totalReviews} reviews`}</span>
+            <span className="result_total_reviews">{`${this.props.dataResult.userRating} reviews`}</span>
           </div>
           <div className="result_distance_time_section_container">
             <div className="card-text"> 
-                <span className="distance">{`${this.props.dataResult.distance} mi`}</span> <span className="available_and_time">OPEN TODAY</span> <span className="available_and_time">10 AM - 3PM</span>
+                <span className="address">{`${this.props.dataResult.address}`}</span>
             </div>
             <a href="#" className="btn btn-primary addToItenerary" onClick={() => this.handleShowModalTime()}>+</a>
-            <ModalTime dataResult={this.props.dataResult} show={this.state.showTimeModal} onHide={this.handleCloseModalTime} handleCloseModalTime={this.handleCloseModalTime} handleTimeChange={this.handleTimeChange} addToItenerary={this.createItineraryObject}/>
-          </div>
-          <p className="card-text description_place">{this.props.dataResult.description}</p>      
+            <ModalTime dataResult={this.props.dataResult} show={this.state.showTimeModal} onHide={this.handleCloseModalTime} handleCloseModalTime={this.handleCloseModalTime} handleTimeChange={this.handleTimeChange} addToItenerary={this.createItineraryObject} changeDuration={this.changeDuration}/>
+          </div>      
         </div>
      </div>
     );

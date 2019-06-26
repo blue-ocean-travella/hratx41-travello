@@ -8,7 +8,7 @@ class CategoriesAndResults extends Component {
     constructor(props) {
       super(props);
       this.state = {
-        currentCategory:'topSpots'
+        currentCategory:'restaurants'
       };
       this.changeCategory = this.changeCategory.bind(this);
     }
@@ -32,7 +32,7 @@ class CategoriesAndResults extends Component {
             <Results categoryResults={this.props.results[`${category}`]} handdleAddToItenerary={this.props.handdleAddToItenerary} currentCategory={this.state.currentCategory}/>
           </div>
         </div>
-      );
+      );  
     }    
 }
 

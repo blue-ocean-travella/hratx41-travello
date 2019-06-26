@@ -2,6 +2,8 @@ import React from 'react';
 import { Button, Modal } from 'react-bootstrap';
 import '../modalDescription/modalDescription.css';
 import StarRatings from '../../../node_modules/react-star-ratings';
+import {GoogleMap, LoadScript} from '@react-google-maps/api';
+const apiKey = process.env.API_KEY;
 
 
 // import TimePicker from 'react-bootstrap-time-picker';
@@ -10,9 +12,8 @@ import StarRatings from '../../../node_modules/react-star-ratings';
 // var TimePicker = require('basic-react-timepicker');
 
 const ModalDescription = ({show, onHide, handleClose, handleTimeChange, goToItinerary, time, onTimeChangeHandler, dataResult}) => {
-  console.log(handleTimeChange);
   let open;
-  let closeTime=dataResult.time.slice(5);
+  // let closeTime=dataResult.time.slice(5);
   // let phoneFirstDigits = dataResult.phone.slice(0, 3).join('');
   // let phoneRestDigits =  dataResult.phone.slice(3);
   // let phone = `(${phoneFirstDigits}) ${phoneRestDigits}`;
@@ -42,8 +43,24 @@ const ModalDescription = ({show, onHide, handleClose, handleTimeChange, goToItin
         <div className='imagesMapAndDescriptionContainer'>
           <div className='imageAndMap-container'>
             <img src={dataResult.image} className='imagePlace'></img>
-            <img src={dataResult.image} className='imageMap'></img>
+            {/* <img src={dataResult.image} className='imageMap'></img> */}
           {/* <img src={dataResult.image}></img> */}
+           <div>
+            <LoadScript id="timeline-map-script-loader" googleMapsApiKey={apiKey}>
+              <GoogleMap
+                id='timeline-modal-map' 
+                mapContainerStyle={{
+                  height: '200px',
+                  width: '350px'
+                }}
+                zoom={16}
+                center={{
+                  lat: 30.265824,
+                  lng: -97.74926
+                }}
+              />
+            </LoadScript>
+            </div>
           </div>
           <div>
             <div className='modalPlaceName'>
@@ -62,7 +79,7 @@ const ModalDescription = ({show, onHide, handleClose, handleTimeChange, goToItin
                 starRatedColor="#f08804"
               />  
               <span>
-                 <a className='modal-totalReviews' href='#'>{dataResult.totalReviews} Google Reviews</a>
+                 <a className='modal-totalReviews' href='#'>{dataResult.userRating} Google Reviews</a>
               </span>
             </div>
             <div className='modal-bigDescription'>
@@ -73,7 +90,7 @@ const ModalDescription = ({show, onHide, handleClose, handleTimeChange, goToItin
                 <b>Addres:</b> <span>{dataResult.address}</span>
               </div>
               <div>
-                <b>Hours:</b> <b>{open}</b> <span>Closes at {closeTime} </span>
+                <b>Hours:</b> <b>{open}</b> <span>Closes at SOMETHING</span>
               </div>
               <div>
                 <b>Phone:</b> <span>{dataResult.phone}</span>

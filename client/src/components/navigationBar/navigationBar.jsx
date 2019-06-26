@@ -8,13 +8,13 @@ const NavigationBar = ({onCategoryChange}) => {
     <>
       <div className='navigationBar'>
         <button className='category' onClick={() => onCategoryChange('topSpots')}>TOP SPOTS</button>
-        <button className='category' onClick={() => onCategoryChange('thingsToDo')}>THINGS TO DO</button>
-        <button className='category' onClick={() => onCategoryChange('food&Drink')}>FOOD {'&'} DRINK</button>
-        <button className='category' onClick={() => onCategoryChange('nigthLife')}>NIGHTLIFE</button>
+        {/* <button className='category' onClick={() => onCategoryChange('thingsToDo')}>THINGS TO DO</button> */}
+        <button className='category' onClick={() => onCategoryChange('restaurants')}>FOOD {'&'} DRINK</button>
+        <button className='category' onClick={() => onCategoryChange('nightLife')}>NIGHTLIFE</button>
         <button className='category' onClick={() => onCategoryChange('dayTrips')}>DAY TRIPS</button>        
       </div>
     </>
-  );
+  );   
 };
 
 export default NavigationBar;

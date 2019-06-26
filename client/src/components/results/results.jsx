@@ -7,7 +7,7 @@ const Results = ({ categoryResults = [], handdleAddToItenerary, currentCategory 
   return (
      <div className='grid-container'>
        {categoryResults.map((result, i) => (
-          <Result className='grid-item' id={i} dataResult={result} handdleAddToItenerary={handdleAddToItenerary} currentCategory={currentCategory}/>
+         <Result className='grid-item' key={i} dataResult={result} handdleAddToItenerary={handdleAddToItenerary} currentCategory={currentCategory} id={i}/>
        ))}
       </div>
   );

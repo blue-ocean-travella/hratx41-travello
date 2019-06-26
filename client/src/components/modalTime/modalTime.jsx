@@ -9,7 +9,7 @@ import '../../../node_modules/rc-time-picker/assets/index.css';
 // import TimePicker from 'react-time-picker';
 // var TimePicker = require('basic-react-timepicker');
 
-const ModalTime = ({dataResult, show, onHide, handleCloseModalTime, handleTimeChange, addToItenerary }) => { 
+const ModalTime = ({dataResult, show, onHide, handleCloseModalTime, handleTimeChange, addToItenerary, changeDuration }) => { 
 
 const format = 'h:mm a';
 const now = moment().hour(0).minute(0);
@@ -27,8 +27,8 @@ function onChange(value) {
       </Modal.Header>
       <Modal.Body>
          <div className='selectTime-section'> 
-          <div style={{fontWeight:'bold'}}>Select time:</div><br/>
-          <div>
+          <div style={{fontWeight:'bold', textAlign:'center'}}>Select your time:</div><br/>
+          <div className="selectDropDownTime">
             <TimePicker
               showSecond={false}
               defaultValue={now}
@@ -39,6 +39,15 @@ function onChange(value) {
               inputReadOnly
             />
           </div>
+          </div>
+          <div className='durationTime'>
+            <div style={{fontWeight:'bold', textAlign:'center'}}>Duration:</div><br/>
+            <div className='durationHoursOptions'>
+                <button className='durationOption' onClick={() => {changeDuration(1);}}> 1Hr </button>
+                <button className='durationOption' onClick={() => {changeDuration(2);}}> 2Hr </button>
+                <button className='durationOption' onClick={() => {changeDuration(3);}}> 3Hr</button>
+                <button className='durationOption' onClick={() => {changeDuration(4);}}> 4Hr </button>
+            </div>
           </div>
         </Modal.Body>
       <Modal.Footer>
