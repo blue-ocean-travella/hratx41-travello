@@ -107,15 +107,20 @@ app.get("/location", (req, res) => {
           let dayTrips = locationData.dayTrips;
           let restaurants = locationData.restaurants;
           let thingsToDo = locationData.thingsToDo;
+          // addPhotos(nightLife, dayTrips, restaurants, thingsToDo);
           let topSpots = topPlaces(
             nightLife,
             dayTrips,
             restaurants,
             thingsToDo
           );
+
           locationData.topSpots = topSpots;
-          // let string = JSON.stringify(locationData)
-          // fs.writeFile("locationdata.json",string)
+
+          // let string = JSON.stringify(locationData);
+          // fs.writeFile("thing.json", string, function(err, result) {
+          //   if (err) console.log("error", err);
+          // });
           res.send(locationData);
         });
     });
@@ -134,24 +139,28 @@ app.get("/location", (req, res) => {
 
 let parseData = array => {
   let results = [];
-  let long, lat, name, photo, rating, userRating, address, place_id;
+  let long, lat, name, photo, rating, totalReviews, address, place_id;
 
   for (let i = 0; i < array.length; i++) {
+    let uuid = i;
+
     lat = array[i].geometry.location.lat;
     long = array[i].geometry.location.lat;
     name = array[i].name;
     address = array[i].formatted_address;
     place_id = array[i].place_id;
     rating = array[i].rating;
-    userRating = array[i].user_ratings_total;
+    totalReviews = array[i].user_ratings_total;
+    //photo = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=${photoRef}&key=${api}`;
     results.push({
+      uuid: uuid,
       name: name,
       address: address,
       long: long,
       lat: lat,
       photo: photo,
       rating: rating,
-      userRating: userRating,
+      totalReviews: totalReviews,
       place_id: place_id
     });
   }
@@ -161,19 +170,36 @@ let parseData = array => {
 
 let topPlaces = (arr1, arr2, arr3, arr4) => {
   arr1.sort((a, b) => a.rating - b.rating);
-  let newArr1 = arr1.slice(-4);
+  let newArr1 = arr1.slice(-5);
 
   arr2.sort((a, b) => a.rating - b.rating);
-  let newArr2 = arr2.slice(-4);
+  let newArr2 = arr2.slice(-5);
   arr3.sort((a, b) => a.rating - b.rating);
-  let newArr3 = arr3.slice(-4);
+  let newArr3 = arr3.slice(-5);
   arr4.sort((a, b) => a.rating - b.rating);
-  let newArr4 = arr4.slice(-4);
-
+  let newArr4 = arr4.slice(-6);
   let result = newArr1.concat(newArr2, newArr3, newArr4);
 
   return result;
 };
+
+// let addPhotos = (arr1, arr2, arr3, arr4) => {
+//   let mapArray = arr => {
+//     arr.map(x => {
+//       x.photos = [];
+//       x.photos.push(
+//         `https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=${
+//           x.photo.photo_reference
+//         }&key=${api}`
+//       );
+//     });
+//   };
+
+//   mapArray(arr1);
+//   mapArray(arr2);
+//   mapArray(arr3);
+//   mapArray(arr4);
+// };
 
 // // You can place your routes here, feel free to refactor:
 // const { example } = require('./routes');
