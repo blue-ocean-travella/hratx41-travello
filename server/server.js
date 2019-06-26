@@ -16,20 +16,8 @@ app.get("/location/details", (req, res) => {
     `https://maps.googleapis.com/maps/api/place/details/json?placeid=${placeId}&fields=name,formatted_phone_number,website,opening_hours,price_level,photos,types&key=${api}`
   )
     .then(res => res.json())
-    .then(data => res.send(data));
-});
-
-app.get("/jsonstuff", (req, res) => {
-  console.log("REREEEQQQQQQQ>QQUQUUUEEEERRRRRYYYYY", req.query.state);
-  let string = JSON.stringify(req.query.state);
-  fs.writeFile("thin.json", string, function(err, result) {
-    if (err) console.log("error", err);
-  });
-});
-
-app.get("/apiKey", (req, res) => {
-  console.log("request recieved");
-  res.send(api);
+    .then(data => res.send(data))
+    .catch(err => console.log(err));
 });
 
 app.get("/location", (req, res) => {
@@ -44,14 +32,16 @@ app.get("/location", (req, res) => {
     .then(res => res.json())
     .then(data => {
       nightLife = data.results;
-    });
+    })
+    .catch(err => console.log(err));
   fetch(
     `https://maps.googleapis.com/maps/api/place/textsearch/json?query=outdoor+activities+in+${location}+tx&key=${api}`
   )
     .then(res => res.json())
     .then(data => {
       thingsToDo = data.results;
-    });
+    })
+    .catch(err => console.log(err));
   fetch(
     `https://maps.googleapis.com/maps/api/place/textsearch/json?query=day+trips+in+${location}+tx&key=${api}`
   )
@@ -59,6 +49,7 @@ app.get("/location", (req, res) => {
     .then(data => {
       dayTrips = data.results;
     })
+    .catch(err => console.log(err))
     .then(() => {
       fetch(
         `https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+${location}+tx&key=${api}`
@@ -95,8 +86,10 @@ app.get("/location", (req, res) => {
           //   if (err) console.log("error", err);
           // });
           res.send(locationData);
-        });
-    });
+        })
+        .catch(err => console.log(err));
+    })
+    .catch(err => console.log(err));
 });
 
 let parseData = array => {

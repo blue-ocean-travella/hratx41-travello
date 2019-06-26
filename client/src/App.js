@@ -70,7 +70,8 @@ export default class Search extends Component {
       .then(() => this.getDetails(this.state.thingsToDo))
       .then(() => this.getDetails(this.state.dayTrips))
       .then(() => this.getDetails(this.state.topSpots))
-      .then(() => console.log("this is state", this.state));
+      .then(() => console.log("this is state", this.state))
+      .catch(err => console.log(err));
   }
 
   handleKeyDown(e) {
@@ -126,32 +127,35 @@ export default class Search extends Component {
         params: {
           placeId: x.place_id
         }
-      }).then(data => {
-        let photoData = data.data.result.photos;
-        let operatingData = data.data.result.opening_hours.weekday_text;
-        let openNowData = data.data.result.opening_hours.open_now;
-        let priceData = data.data.result.price_level;
-        let typeData = data.data.result.types;
-        let website = data.data.result.website;
-        let phoneNumber = data.data.result.formatted_phone_number;
+      })
+        .then(data => {
+          const result = data.data.result;
+          let photoData = result.photos;
+          let operatingData = result.opening_hours.weekday_text;
+          let openNowData = result.opening_hours.open_now;
+          let priceData = result.price_level;
+          let typeData = result.types;
+          let website = result.website;
+          let phoneNumber = result.formatted_phone_number;
 
-        //console.log("does this exits?", photoData);
-        let photos = [];
-        photoData.map(x => {
-          photos.push(
-            `https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=${
-              x.photo_reference
-            }&key=${apiKey}`
-          );
-        });
-        x.photos = photos;
-        x.hoursOfOperation = operatingData;
-        x.openOrNot = openNowData;
-        x.priceLevel = priceData;
-        x.type = typeData;
-        x.websiteUrl = website;
-        x.phoneNumber = phoneNumber;
-      });
+          //console.log("does this exits?", photoData);
+          let photos = [];
+          photoData.map(x => {
+            photos.push(
+              `https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=${
+                x.photo_reference
+              }&key=${apiKey}`
+            );
+          });
+          x.photos = photos;
+          x.hoursOfOperation = operatingData;
+          x.openOrNot = openNowData;
+          x.priceLevel = priceData;
+          x.type = typeData;
+          x.websiteUrl = website;
+          x.phoneNumber = phoneNumber;
+        })
+        .catch(err => console.log(err));
     });
   }
 
