@@ -3,13 +3,15 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components'; 
 import SearchBar from './searchBar/searchBar.jsx';
 import testPage from './testPage.jsx';
+import CategoriesAndResults from './categoriesAndResults/categoriesAndResults.jsx';
 import Axios from 'axios';
+
 
 export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      allPages: [SearchBar, testPage],
+      allPages: [SearchBar, testPage, CategoriesAndResults],
       currentPage: SearchBar,
       nightLife:[]
     }; 
@@ -18,11 +20,11 @@ export default class App extends Component {
 
   componentDidMount(){
     Axios.get('/fakeData')
-    .then(result => {this.setState({nightLife:result.data})});
+    .then(result => {this.setState({nightLife:result.data});});
   }
   nextPage(e){
     if(e.key ==='Enter'){
-      this.setState({currentPage: testPage});
+      this.setState({currentPage: CategoriesAndResults});
     }
   }
 
@@ -31,7 +33,7 @@ export default class App extends Component {
     return (
       <>
       <a onKeyDown={this.nextPage}>
-      <this.state.currentPage />
+      <this.state.currentPage results={this.state.nightLife}/>
       </a>
      </>
     );
