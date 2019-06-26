@@ -14,40 +14,114 @@ export default class Search extends Component {
       city: "",
       query: "",
       latitude: "",
-      longitude: ""
+      longitude: "",
+      nightLife: [],
+      restaurants: [],
+      thingsToDo: [],
+      dayTrips: [],
+      topSpots: []
     };
 
     this.HandleScriptLoad = this.HandleScriptLoad.bind(this);
     this.HandlePlaceSelect = this.HandlePlaceSelect.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
     this.Initialize = this.Initialize.bind(this);
+    this.handlePlaceDetail = this.handlePlaceDetail.bind(this);
+  }
+
+  TopSpots(arr1, arr2, arr3, arr4) {
+    arr1.sort((a, b) => a.rating - b.rating);
+    let newArr1 = arr1.slice(-4);
+
+    arr2.sort((a, b) => a.rating - b.rating);
+    let newArr2 = arr2.slice(-4);
+    arr3.sort((a, b) => a.rating - b.rating);
+    let newArr3 = arr3.slice(-4);
+    arr4.sort((a, b) => a.rating - b.rating);
+    let newArr4 = arr4.slice(-4);
+
+    let result = newArr1.concat(newArr2, newArr3, newArr4);
+
+    return result;
   }
 
   Initialize() {
-    Axios.get("/city", {
+    Axios.get("/location", {
       params: {
         city: this.state.city,
         latitude: this.state.latitude,
         longitude: this.state.longitude
       }
-    }).then(data => console.log(data));
+    })
+      .then(data => {
+        console.log("how data is sent from server", data.data);
+        let nightLife = data.data.nightLife;
+        let dayTrips = data.data.dayTrips;
+        let restaurants = data.data.restaurants;
+        let thingsToDo = data.data.thingsToDo;
+        let topSpots = data.data.topSpots;
+        this.state.nightLife = nightLife;
+        this.state.dayTrips = dayTrips;
+        this.state.restaurants = restaurants;
+        this.state.thingsToDo = thingsToDo;
+        this.state.topSpots = topSpots;
+        // dayTrips.map(x => this.state.dayTrips.push(x));
+        // restaurants.map(x => this.state.restaurants.push(x));
+        // thingsToDo.map(x => this.state.thingsToDo.push(x));
+        // topSpots.map(x => this.state.topSpots.push(x));
+      })
+      .then(() => console.log("this is state", this.state));
   }
 
-  // handleKeyDown(e) {
-  //   if (e.key === "Enter") {
-  //     this.Initialize();
-  //   }
-  // }
+  handleKeyDown(e) {
+    if (e.key === "Enter") {
+      this.Initialize();
+    }
+  }
+
+  handlePlaceDetail(e) {
+    if (e.key === "Enter") {
+      console.log("looking for area details");
+
+      Axios.get("/location/details", {
+        params: {
+          placeId: this.state.restaurants[0].place_id
+        }
+      })
+        .then(data => {
+          console.log(data.data.result);
+          let photoData = data.data.result.photos;
+          let operatingData = data.data.result.opening_hours.weekday_text;
+          let openNowData = data.data.result.opening_hours.open_now;
+          let priceData = data.data.result.price_level;
+          let typeData = data.data.result.types;
+          let website = data.data.result.website;
+
+          //console.log("does this exits?", photoData);
+          let photos = [];
+          photoData.map(x => {
+            photos.push(
+              `https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=${
+                x.photo_reference
+              }&key=${apiKey}`
+            );
+          });
+          this.state.restaurants[0].photos = photos;
+          this.state.restaurants[0].hoursOfOperation = operatingData;
+          this.state.restaurants[0].openOrNot = openNowData;
+          this.state.restaurants[0].priceLevel = priceData;
+          this.state.restaurants[0].type = typeData;
+          this.state.restaurants[0].websiteUrl = website;
+        })
+        .then(console.log(this.state.restaurants));
+    }
+  }
 
   HandleScriptLoad() {
     // Declare Options For Autocomplete
     var options = {
       types: ["(regions)"]
     }; // To disable any eslint 'google not defined' errors
-
-    Axios.get("/apiKey")
-      .then(data => this.setState({ apiKey: data.data }))
-      .then(() => console.log(this.state.apiKey));
 
     // Initialize Google Autocomplete
     /*global google*/ this.autocomplete = new google.maps.places.Autocomplete(
@@ -75,17 +149,20 @@ export default class Search extends Component {
     // Check if address is valid
     if (address) {
       // Set State
-      this.setState({
-        city: address[0].long_name,
-        query: addressObject.formatted_address,
-        latitude: lat,
-        longitude: long
-      });
+      this.setState(
+        {
+          city: address[0].long_name,
+          query: addressObject.formatted_address,
+          latitude: lat,
+          longitude: long
+        },
+        this.Initialize
+      );
     }
-    console.log(this.state.query);
-    console.log(this.state.city);
-    console.log(this.state.latitude);
-    console.log(this.state.longitude);
+    //console.log(this.state.query);
+    //console.log(this.state.city);
+    // console.log(this.state.latitude);
+    // console.log(this.state.longitude);
   }
 
   render() {
@@ -108,6 +185,13 @@ export default class Search extends Component {
           />
           <input type="hidden" id="cityLat" name="cityLat" />
           <input type="hidden" id="cityLng" name="cityLng" />
+        </div>
+        <div>
+          <input
+            type="text"
+            id="throwAway"
+            onKeyDown={this.handlePlaceDetail}
+          />
         </div>
       </div>
     );

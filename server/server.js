@@ -18,6 +18,17 @@ console.log("this is api test 2", { api });
 
 //hello;
 app.use(express.static("../client/public"));
+
+app.get("/location/details", (req, res) => {
+  let placeId = req.query.placeId;
+  console.log(placeId);
+  fetch(
+    `https://maps.googleapis.com/maps/api/place/details/json?placeid=${placeId}&fields=name,formatted_phone_number,website,opening_hours,price_level,photos,types&key=${api}`
+  )
+    .then(res => res.json())
+    .then(data => res.send(data));
+});
+
 // app.use(logger('dev'));
 
 // const nightLife = function(req, res, next) {
@@ -44,11 +55,12 @@ app.use(express.static("../client/public"));
 // };
 
 app.get("/apiKey", (req, res) => {
-  console.log("request rescieved");
+  console.log("request recieved");
   res.send(api);
 });
 
-app.get("/city", (req, res) => {
+app.get("/location", (req, res) => {
+  console.log(req.query);
   let location = req.query.city;
   let latitude = req.query.latitude;
   let longitude = req.query.longitude;
@@ -87,6 +99,23 @@ app.get("/city", (req, res) => {
           locationData["thingsToDo"] = parseData(thingsToDo);
           locationData["dayTrips"] = parseData(dayTrips);
 
+          //res.send(locationData);
+          return locationData;
+        })
+        .then(locationData => {
+          let nightLife = locationData.nightLife;
+          let dayTrips = locationData.dayTrips;
+          let restaurants = locationData.restaurants;
+          let thingsToDo = locationData.thingsToDo;
+          let topSpots = topPlaces(
+            nightLife,
+            dayTrips,
+            restaurants,
+            thingsToDo
+          );
+          locationData.topSpots = topSpots;
+          // let string = JSON.stringify(locationData)
+          // fs.writeFile("locationdata.json",string)
           res.send(locationData);
         });
     });
@@ -113,10 +142,6 @@ let parseData = array => {
     name = array[i].name;
     address = array[i].formatted_address;
     place_id = array[i].place_id;
-
-    photo = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=
-      ${array[i].photos[0].photo_reference}&key=${api}`;
-
     rating = array[i].rating;
     userRating = array[i].user_ratings_total;
     results.push({
@@ -134,15 +159,22 @@ let parseData = array => {
   return results;
 };
 
-app.get("/topspots");
+let topPlaces = (arr1, arr2, arr3, arr4) => {
+  arr1.sort((a, b) => a.rating - b.rating);
+  let newArr1 = arr1.slice(-4);
 
-app.get("/thingstodo");
+  arr2.sort((a, b) => a.rating - b.rating);
+  let newArr2 = arr2.slice(-4);
+  arr3.sort((a, b) => a.rating - b.rating);
+  let newArr3 = arr3.slice(-4);
+  arr4.sort((a, b) => a.rating - b.rating);
+  let newArr4 = arr4.slice(-4);
 
-app.get("/restaurants", (req, res) => {});
+  let result = newArr1.concat(newArr2, newArr3, newArr4);
 
-app.get("nightlife");
+  return result;
+};
 
-app.get("daytrips");
 // // You can place your routes here, feel free to refactor:
 // const { example } = require('./routes');
 // app.use('/api/example', example)
