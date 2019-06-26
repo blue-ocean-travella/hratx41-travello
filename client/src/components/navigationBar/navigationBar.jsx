@@ -14,7 +14,7 @@ const NavigationBar = ({onCategoryChange}) => {
         <button className='category' onClick={() => onCategoryChange('dayTrips')}>DAY TRIPS</button>        
       </div>
     </>
-  )    
-}
+  );   
+};
 
 export default NavigationBar;

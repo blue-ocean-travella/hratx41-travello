@@ -3,8 +3,31 @@
    border:  1px  black solid;
 }
 
-.selectTime-section {
+
+
+.durationHoursOptions {
   display: flex;
-  justify-content: center;
-  /* flex-direction: column; */
+  justify-content: space-around;
 }
+
+.durationTime {
+  display: felx;
+  /* align-items: center; */
+  padding-top: 20px;
+}
+
+.durationOption {
+  border: 3px black solid;
+  width:150px;
+  margin-right: 10px;
+  border-radius: 20px
+}
+
+.selectDropDownTime {
+  text-align: center;
+}
+
+/* .selectTime-section {
+  display:flex;
+  justify-content: center;
+} */

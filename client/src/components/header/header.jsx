@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './header.css'
+import './header.css';
 
 const Header = ({city}) => {
     return (
@@ -8,7 +8,7 @@ const Header = ({city}) => {
          <div className='city'>{city}</div>
          <button className='iteneraryButton'>Go to Itenerary </button>
        </div>
-    )
-}
+    );
+};
 
 export default Header;

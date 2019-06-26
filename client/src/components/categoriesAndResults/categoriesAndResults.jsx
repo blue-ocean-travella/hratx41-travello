@@ -6,17 +6,17 @@ import '../categoriesAndResults/categoriesAndResults.css';
 
 class CategoriesAndResults extends Component {
     constructor(props) {
-      super(props)
+      super(props);
       this.state = {
         currentCategory:'topSpots',
-      }
+      };
       this.changeCategory = this.changeCategory.bind(this);
     }
 
     changeCategory (category) {
       this.setState({
-        currentCategory: category,
-      })
+        currentCategory: category
+      });
     }
 
     render() {
@@ -32,7 +32,7 @@ class CategoriesAndResults extends Component {
             <Results categoryResults={this.props.results[`${category}`]} handdleAddToItenerary={this.props.handdleAddToItenerary} currentCategory={this.state.currentCategory}/>
           </div>
         </div>
-      )  
+      );  
     }    
 }
 
