@@ -17,5 +17,14 @@
   color: #838181;
   letter-spacing: -0.05em;
   font-weight: 600;
+  outline:none;
 }
 
+button:focus {
+  outline-style: none;
+}
+
+button:active {
+  color: black;
+  border-bottom-color: black;
+}

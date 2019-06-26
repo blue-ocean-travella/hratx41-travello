@@ -10,7 +10,6 @@ class CategoriesAndResults extends Component {
       this.state = {
         currentCategory:'topSpots',
       }
-
       this.changeCategory = this.changeCategory.bind(this);
     }
 
@@ -30,7 +29,7 @@ class CategoriesAndResults extends Component {
             <NavigationBar onCategoryChange={this.changeCategory}/>
           </div> 
           <div className='main-content-results'>
-            <Results categoryResults={this.props.results[`${category}`]} handdleAddToItenerary={this.props.handdleAddToItenerary}/>
+            <Results categoryResults={this.props.results[`${category}`]} handdleAddToItenerary={this.props.handdleAddToItenerary} currentCategory={this.state.currentCategory}/>
           </div>
         </div>
       )  

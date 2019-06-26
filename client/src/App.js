@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import fetch from 'node-fetch';
 import CategoriesAndResults from '../src/components/categoriesAndResults/categoriesAndResults.jsx'
+import Axios from 'axios';
 
 
 // import './App.css';
@@ -206,7 +207,7 @@ export default class App extends Component {
     };
     // this.api = `http://localhost:8000/api/example`;
   }
-  // componentDidMount() {
+  // componen[tDidMount() {
   //   fetch(this.api)
   //     .then(res => res.json())
   //     .then(seaCreatures => {
@@ -217,7 +218,7 @@ export default class App extends Component {
   handleAddToItenerary(schedule) {
     this.setState({
       itenrary : this.state.itenrary.concat(schedule)
-    })
+    })  
   }
 
   render() {

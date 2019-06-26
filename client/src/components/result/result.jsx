@@ -10,7 +10,7 @@ class Result extends Component {
     this.state = {
       show: false,
       showTimeModal: false,
-      time: '',
+      time: '12:00 pm',
   };
 
     this.handleShow = this.handleShow.bind(this);
@@ -73,7 +73,9 @@ class Result extends Component {
       image: this.props.dataResult.image
     }
 
-    this.props.handdleAddToItenerary(destination);
+    console.log(destination);
+
+    // this.props.handdleAddToItenerary(destination);
   }
 
   goToItinerary () {
