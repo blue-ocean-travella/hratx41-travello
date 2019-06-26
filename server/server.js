@@ -1,6 +1,6 @@
 // const createError = require('http-errors');
 // const logger = require('morgan');
-const connect = require('./db/index.js')
+const  {connect, User, NightLife, Restaurant, DayTrip, ThingsToDo} = require('./db/index.js')
 const express = require('express');
 const app = express();
 app.use(express.static('../client/public'));
@@ -16,6 +16,11 @@ app.get("/apiKey", (req, res) => {
   // console.log("request received");
   res.send(api);
 });
+
+app.get("/fakeData", (req,res)=>{
+  // console.log(NightLife);
+  NightLife.find({}, (err,data)=>{res.send(data)});
+})
 
 app.get("/city", (req, res) => {
   let location = req.query.city;

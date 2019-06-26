@@ -5,7 +5,7 @@ import Axios from 'axios';
 import Script from 'react-load-script';
 const apiKey = process.env.API_KEY;
 
-console.log(apiKey);
+// console.log(apiKey);
 const StyledDiv = styled.div` 
 input::-webkit-input-placeholder { /* WebKit browsers */
     color:    #fff;
@@ -55,8 +55,9 @@ input, select, textarea{
         city: this.state.city,
         latitude: this.state.latitude,
         longitude: this.state.longitude
-      }
-    }).then(data => console.log(data));
+      }})
+      .then(data => console.log(data))
+      .catch(err => console.log('didnt get query data'));
   }
 
   handleKeyDown(e) {
@@ -87,12 +88,12 @@ input, select, textarea{
     // Extract City From Address Object
     let addressObject = this.autocomplete.getPlace();
     let address = addressObject.address_components;
-    document.getElementById(
-      "cityLat"
-    ).value = addressObject.geometry.location.lat();
-    document.getElementById(
-      "cityLng"
-    ).value = addressObject.geometry.location.lng();
+    // document.getElementById(
+    //   "cityLat"
+    // ).value = addressObject.geometry.location.lat();
+    // document.getElementById(
+    //   "cityLng"
+    // ).value = addressObject.geometry.location.lng();
     let lat = addressObject.geometry.location.lat();
     let long = addressObject.geometry.location.lng();
 
@@ -101,15 +102,14 @@ input, select, textarea{
       // Set State
       this.setState({
         city: address[0].long_name,
-        query: addressObject.formatted_address,
-        latitude: lat,
-        longitude: long
+        query: addressObject.formatted_address
+
       });
     }
-    console.log(this.state.query);
-    console.log(this.state.city);
-    console.log(this.state.latitude);
-    console.log(this.state.longitude);
+    // console.log(this.state.query);
+    // console.log(this.state.city);
+    // console.log(this.state.latitude);
+    // console.log(this.state.longitude);
   }
 
   render(){     
