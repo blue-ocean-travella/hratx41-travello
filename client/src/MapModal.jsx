@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Modal } from 'react-bootstrap';
 import { GoogleMap, LoadScript } from '@react-google-maps/api';
+const apiKey = process.env.API_KEY;
 
 const MapModal = (props) => {
     // console.log('MapModal props: ', props)
@@ -16,7 +17,7 @@ const MapModal = (props) => {
             <Modal.Body className="map-modal-body">
                 <LoadScript
                     id="timeline-map-script-loader"
-                // googleMapsApiKey=
+                    googleMapsApiKey={apiKey}
                 >
 
                     <GoogleMap
