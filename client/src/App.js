@@ -23,7 +23,6 @@ export default class Search extends Component {
     this.HandlePlaceSelect = this.HandlePlaceSelect.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
     this.Initialize = this.Initialize.bind(this);
-    this.handlePlaceDetail = this.handlePlaceDetail.bind(this);
     this.getDetails = this.getDetails.bind(this);
   }
 
@@ -63,10 +62,6 @@ export default class Search extends Component {
         this.state.restaurants = restaurants;
         this.state.thingsToDo = thingsToDo;
         this.state.topSpots = topSpots;
-        // dayTrips.map(x => this.state.dayTrips.push(x));
-        // restaurants.map(x => this.state.restaurants.push(x));
-        // thingsToDo.map(x => this.state.thingsToDo.push(x));
-        // topSpots.map(x => this.state.topSpots.push(x));
       })
       .then(() => {
         this.getDetails(this.state.nightLife);
@@ -82,54 +77,6 @@ export default class Search extends Component {
     if (e.key === "Enter") {
       this.Initialize();
     }
-  }
-
-  handlePlaceDetail(e) {
-    if (e.key === "Enter") {
-      Axios.get("/jsonstuff", {
-        params: {
-          placeId: this.state
-        }
-      });
-    }
-
-    //   console.log("looking for area details");
-
-    //   Axios.get("/location/details", {
-    //     params: {
-    //       placeId: this.state.restaurants[0].place_id
-    //     }
-    //   })
-    //     .then(data => {
-    //       console.log(data.data.result);
-    //       let photoData = data.data.result.photos;
-    //       let operatingData = data.data.result.opening_hours.weekday_text;
-    //       let openNowData = data.data.result.opening_hours.open_now;
-    //       let priceData = data.data.result.price_level;
-    //       let typeData = data.data.result.types;
-    //       let website = data.data.result.website;
-    //       let phoneNumber = data.data.result.formatted_phone_number;
-
-    //       //console.log("does this exits?", photoData);
-    //       let photos = [];
-    //       photoData.map(x => {
-    //         photos.push(
-    //           `https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=${
-    //             x.photo_reference
-    //           }&key=${apiKey}`
-    //         );
-    //       });
-    //       this.state.restaurants[0].photos = photos;
-    //       this.state.restaurants[0].hoursOfOperation = operatingData;
-    //       this.state.restaurants[0].openOrNot = openNowData;
-    //       this.state.restaurants[0].priceLevel = priceData;
-    //       this.state.restaurants[0].type = typeData;
-    //       this.state.restaurants[0].websiteUrl = website;
-    //       this.state.restaurants[0].phoneNumber = phoneNumber;
-    //     })
-
-    //     .then(console.log(this.state.restaurants));
-    // }
   }
 
   HandleScriptLoad() {
@@ -171,10 +118,6 @@ export default class Search extends Component {
         this.Initialize
       );
     }
-    //console.log(this.state.query);
-    //console.log(this.state.city);
-    // console.log(this.state.latitude);
-    // console.log(this.state.longitude);
   }
 
   getDetails(array) {
@@ -184,7 +127,6 @@ export default class Search extends Component {
           placeId: x.place_id
         }
       }).then(data => {
-        console.log(data.data.result);
         let photoData = data.data.result.photos;
         let operatingData = data.data.result.opening_hours.weekday_text;
         let openNowData = data.data.result.opening_hours.open_now;
