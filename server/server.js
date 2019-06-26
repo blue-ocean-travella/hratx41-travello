@@ -29,6 +29,13 @@ app.get("/location/details", (req, res) => {
     .then(data => res.send(data));
 });
 
+app.get("/jsonstuff", (req, res) => {
+  console.log("REREEEQQQQQQQ>QQUQUUUEEEERRRRRYYYYY", req.query.state);
+  let string = JSON.stringify(req.query.state);
+  fs.writeFile("thin.json", string, function(err, result) {
+    if (err) console.log("error", err);
+  });
+});
 // app.use(logger('dev'));
 
 // const nightLife = function(req, res, next) {
