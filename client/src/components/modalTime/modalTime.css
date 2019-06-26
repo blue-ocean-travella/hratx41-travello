@@ -1,0 +1,10 @@
+.addToItenararyButton {
+   border-radius: 50px;
+   border:  1px  black solid;
+}
+
+.selectTime-section {
+  display: flex;
+  justify-content: center;
+  /* flex-direction: column; */
+}
