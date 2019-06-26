@@ -143,16 +143,15 @@ class Result extends Component {
                 name='rating'
                 starRatedColor="#f08804"
             />   
-            <span className="result_total_reviews">{`${this.props.dataResult.totalReviews} reviews`}</span>
+            <span className="result_total_reviews">{`${this.props.dataResult.userRating} reviews`}</span>
           </div>
           <div className="result_distance_time_section_container">
             <div className="card-text"> 
-                <span className="distance">{`${this.props.dataResult.distance} mi`}</span> <span className="available_and_time">OPEN TODAY</span> <span className="available_and_time">10 AM - 3PM</span>
+                <span className="address">{`${this.props.dataResult.address}`}</span>
             </div>
             <a href="#" className="btn btn-primary addToItenerary" onClick={() => this.handleShowModalTime()}>+</a>
             <ModalTime dataResult={this.props.dataResult} show={this.state.showTimeModal} onHide={this.handleCloseModalTime} handleCloseModalTime={this.handleCloseModalTime} handleTimeChange={this.handleTimeChange} addToItenerary={this.createItineraryObject} changeDuration={this.changeDuration}/>
-          </div>
-          <p className="card-text description_place">{this.props.dataResult.description}</p>      
+          </div>      
         </div>
      </div>
     );

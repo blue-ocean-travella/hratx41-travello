@@ -79,7 +79,7 @@ const ModalDescription = ({show, onHide, handleClose, handleTimeChange, goToItin
                 starRatedColor="#f08804"
               />  
               <span>
-                 <a className='modal-totalReviews' href='#'>{dataResult.totalReviews} Google Reviews</a>
+                 <a className='modal-totalReviews' href='#'>{dataResult.userRating} Google Reviews</a>
               </span>
             </div>
             <div className='modal-bigDescription'>
