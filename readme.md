@@ -1,39 +1,123 @@
-# Readme.md template (est time: 4+ hours)
 
-An extremely important part of your Blue Ocean project is the readme.md that accompanies your code repository.
+# ![alt text](https://github.com/blue-ocean-travello/hratx41-travello/blob/master/travella.png)   Travel done the way you like it!
 
-It is recommended that you *start* the readme.md during the sprint, and complete it afterwards.
-
-You should replace the existing readme.md in your repo with the following information:
-
-## Catchy headline / cool graphic
-
-![alt text](https://github.com/blue-ocean-travello/hratx41-travello/blob/master/travello.png)
-
-## Who are the contributors (names should link to their github or portfolio page)
+## Travella Contributors:
+## [Fawnie du Plessis](https://github.com/fduplessis01)
+![pic:](https://avatars1.githubusercontent.com/u/42327915?s=400&v=4)
+## [Gladys Benitez](https://github.com/gladysbenitez)
+![pic:](https://avatars1.githubusercontent.com/u/42365770?s=400&v=4)
+## [Jimmy Hung](https://github.com/jmhung) 
+![Pic:](https://avatars1.githubusercontent.com/u/10273125?s=400&v=4)
+## [David Guenther](https://github.com/DcguentherATX)
+![pic:](https://avatars2.githubusercontent.com/u/46075198?s=400&v=4)
+## [Maria Navarro](https://github.com/MariaJose)
+![pic:](https://avatars2.githubusercontent.com/u/39739180?s=400&v=4)
+## [Louis Rangel](https://github.com/lui914)
+![pic:](https://avatars0.githubusercontent.com/u/46331990?s=400&v=4)
 
 ## Introduction
 
-This project was a brief 1-week sprint where our team tried to complete an MVP for an external user **(Jane Doe)**
+This project was a brief 1-week sprint where our team tried to complete an MVP for an external user **Eric Anthony**
 
- - Add any additional content here pertaining to timeline, any personal goals, etc
-
+ - Our goal is to do MVP with some additional functionality. 
+ - Vissually we want the application to look amazing and include some additional features beyond MVP.
 
 ## What does the app do? 
 
-    * What problem does it solve? Who uses it?
-    * Why was it built?
-    * User Inputs and Outputs
-    * 
-## Tech stack ( you can include logos)
+ - Travella is a personal travel assistant application. 
+ - Travella builds an unique customized travel itinerary according to the users travel dates and destination. 
+ - Travella is for any traveller, experience or first time traveller.
+ - Travella addresses a very specific need, it customize your travel needs and give you selective options.
+ - Travella assist by addressing the issues of the internet being flooded with none relevent info. 
+ - Travella only gives the user relevent current info.
+ - Users will enter their destination and travel dates and the app does all the work for you!
+ - Travella will offer you an array of options that are all categorized.
+ - Users custom build their itinerary at a click of a button.
+ - User can edit changes or delete any options choosen and easily make changes to their itinerary.
+
+## Tech stack
+
+- ReactJS
+- JavaScript
+- Axios
+- MongoDB
+- NodeJS and Express
+- Google API 
+- Bootstrap
+- Figma
+- Jest
+- Travis CI
 
 ## Technical Challenges and research that you anticipated
+
+- Using figma to visually build out the user interface
+  * Why
+  * What
+  * How
+
+- Using the React vertical time line library to create an itenerary with a vertical time line
+  * Best option to visaully display the itenarary for our travel application
+  * Obstacles we faced was working with with the main back ground images and bootstrap modals
+  * Reading documentations with trail and error until we resolved all bugs
+  
+- Using React bootstrap for styling and modals
+  * Bootstrap offered grid styling layout with an option to use cards and modals. For our project this was a perfect fit.
+  * Obstacles we faced was modals hidden behind the back ground.
+  * 
+  
+- Git workflow
+  * Ensuring the team follows a set workflow as we working off one code base. 
+  * Correctly working off feature branches when the team creates new features. 
+  * Rebase to development and testing the code via a pull request before it gets merged into master. 
+  * As the code base is deployed we want to ensure that the code is working bug free before it gets merged with master.
+  * We set up a Git Workflow document for the team to guide everyone and also did one on one session.
+  
+- Navigation of front end pages
+  * Why
+  * What
+  * How
+  
+- Data flow between each component, server and database
+  * Ensuring that the team fully understand the data stucktures we will be working with.
+  * Ensuring each team member knows the flow of data and how each component will interact with the data.
+  * Ensuring each team member understand when data will be store in state or in the database.
+  * We did whiteboard session with the whole team talking and drawing out the flow of data.
+  * Team members worked in pairs and groups to ensure everyne is interacting with the data correctly.
+  
+- Using Google API to scrape data from Google
+  * Why
+  * What
+  * How
+  
+- Testing with Jest and Travis CI
+  * Why
+  * What
+  * How
+  
+-
+ 
 
     * Why, what was the plan to overcome those challenges?
     * What did you learn?
   
 ## Challenges that were unexpected
 
+- 
+  * Why
+  * What
+  * How
+  
+- 
+  * Why
+  * What
+  * How
+  
+- 
+  * Why
+  * What
+  * How
+  
+  
     * Why was it a challenge
     * What did you learn?
   
@@ -42,6 +126,18 @@ This project was a brief 1-week sprint where our team tried to complete an MVP f
     * What were the user stories /  what was MVP (mention Minimal Viable Product)
   
 ## How does the app work?
+
+- The user enters in a destination on the Search Bar Page component of the React Application.
+- The application makes an API call to Express server. 
+- The Express server makes an API call to Google API and scrape the appliable data needed.
+- The data received from Google API is constructed into an object and send to state in React.
+- The Category Page component extracts the data from state and display the data according to the users category preferences.
+- The user makes seletions in each category and these options selected are send back to the Express server.
+- The Express server saves the data into MongoDB with a quiery and uses the user name as a reference when saving the options.
+- The Itenarary Page component make a Express server request for the applicable optiond according to the users name.
+- The server makes a quiery to the databse for the data and send the options back to the Itenanrary Page componant.
+- The Itenarary Page component displays the options using Reacts time line library
+- The user have the option to delete the options selected in the itenarary, or display more info on options.
 
     * What happens behind the scenes when the user interacts with it? 
     * OR What are all the place the data travels?  What happens to that data?
