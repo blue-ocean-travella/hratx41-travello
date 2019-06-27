@@ -7,17 +7,76 @@ app.use(express.static('../client/public'));
 require("dotenv").config({ path: "../.env" });
 const fetch = require("node-fetch");
 var faker = require("faker");
+var db = require("./db/index");
 
 const api = process.env.API_KEY;
 var fs = require("fs")
 
 // console.log(api, 'this is api from env file')
+// app.post("/delete/:{itinerary}", (req, res) => {
+//   let user = req.query.user;
+//   let card = req.query.card;
+//   let query = {name:user, itinerary: { $elemMatch: { card: card } } }
+//   console.log("delete started ");
 
-app.get("/fakeData", (req,res)=>{
-  // console.log(NightLife);
-  
-  NightLife.find({}, (err,data)=>{res.send(data)});
-})
+//   db.deleteData(query, (err, response) => {
+//     if (err) {
+//       console.log(err);
+//     } else {
+//       res.send(`${uuid} was deleted`);
+//     }
+//   });
+// });
+
+// app.post("/update/:{itinerary}", (req, res) => {
+//   console.log("update started ", req.query);
+//   let predated = req.query.change;
+//   let updated = req.query.update;
+//   db.updateData(predated, updated, (err, response) => {
+//     if (err) {
+//       console.log(err);
+//     } else {
+//       console.log(response);
+//       res.send(`something was updated ${response}`);
+//     }
+//   });
+//   //res.send(req.query);
+// });
+
+app.post("/insert/:{itenerary}", function(req, res) {
+  console.log("update started ", req.query);
+  let user = req.query.user;
+  var card = req.query.card;
+  let query = `{name:${user}},{$push: {itinerary: ${card}}}`
+ 
+//may need to use uuid and not user?
+  db.insertData(query, (err, response) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(response);
+      res.send(`something was updated ${response}`);
+    }
+  });
+});
+
+// app.get("/select/:{itinerary}", function(req, res) {
+//   console.log("this is req query", req.query);
+//   let user = req.query.user;
+//   let card = req.query.card;
+//   let query = {itinerary: {$elemMatch: {card: card}}}
+
+//   db.findData(req.query, (err, response) => {
+//     if (err) {
+//       console.log(err, "err");
+//     } else {
+//       res.send(response);
+//     }
+//   });
+// });
+
+
+
 
 app.get("/location/details", (req, res) => {
   let placeId = req.query.placeId;

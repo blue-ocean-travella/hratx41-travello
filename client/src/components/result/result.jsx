@@ -82,8 +82,6 @@ class Result extends Component {
       uuid: 1,
 
       
-      
-
       // category: 
     };
 

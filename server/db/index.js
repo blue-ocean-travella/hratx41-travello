@@ -76,7 +76,54 @@ var Restaurant= mongoose.model('restaurants', locationSchema);
 var DayTrip= mongoose.model('daytrips', locationSchema);
 var ThingsToDo= mongoose.model('thingstodos', locationSchema);
 
+/////////////////CRUDS//////////////////////////////
 
+const deleteData = (obj, cb) => {
+  User.deleteOne(obj, function (err, info) {
+      if (err) {
+          console.log(err);
+      } else {
+          console.log(info);
+          cb(null, info);
+          // console.log('db info', info)
+      }
+  });
+};
+
+const findData = (obj, cb) => {
+  User.findOne(obj, function (err, info) {
+      if (err) {
+          console.log(err);
+      } else {
+          // console.log(info);
+          cb(null, info);
+          // console.log('db info', info)
+      }
+  });
+};
+
+const updateData = (query, change, cb) => {
+  User.updateOne(query, change, (err, info) => {
+      if (err) {
+          console.log(err);
+      } else {
+          cb(null, info);
+      }
+  });
+};
+
+
+const insertData = (object, cb) => {
+  User.insertMany(object, (err, info) => {
+      if (err) {
+          console.log(err);
+      } else {
+          cb(null, info);
+      }
+  });
+};
+
+/////////////////CRUDS//////////////////////////////
 
 
 
