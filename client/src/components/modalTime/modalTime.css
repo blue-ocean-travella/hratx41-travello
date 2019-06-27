@@ -23,6 +23,11 @@
   border-radius: 20px
 }
 
+.durationOption:active {
+  background-color: black;
+  color: white;
+}
+
 .selectDropDownTime {
   text-align: center;
 }

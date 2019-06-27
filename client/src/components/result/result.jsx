@@ -147,7 +147,7 @@ class Result extends Component {
           </div>
           <div className='result_distance_time_section_container'>
             <div className="card-text"> 
-                <span className='address'>{`${this.props.dataResult.address}`}</span>
+                <span className='address'>{`${this.props.dataResult.address} bla bla bla bla bla bla`}</span>
             </div>
             <a href="#" className="btn btn-primary addToItenerary" onClick={() => this.handleShowModalTime()}>+</a>
             <ModalTime dataResult={this.props.dataResult} show={this.state.showTimeModal} onHide={this.handleCloseModalTime} handleCloseModalTime={this.handleCloseModalTime} handleTimeChange={this.handleTimeChange} addToItenerary={this.createItineraryObject} changeDuration={this.changeDuration}/>

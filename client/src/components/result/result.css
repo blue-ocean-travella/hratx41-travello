@@ -74,6 +74,7 @@ a:hover {
 .address {
   color: #008000;
   font-size: 13px;
+  letter-spacing: -0.05em
 }
 
 .card-body {

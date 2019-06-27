@@ -24,8 +24,10 @@ const ModalDescription = ({show, onHide, handleClose, handleTimeChange, goToItin
   }
   return (
     <Modal show={show} onHide={onHide} className='modal-container'
-      size="lg"
+      size='lg'
+      scrollable='true'
       aria-labelledby="contained-modal-title-vcenter"
+      dialogClassName="modal-200w"
       centered
     >
       
@@ -33,19 +35,10 @@ const ModalDescription = ({show, onHide, handleClose, handleTimeChange, goToItin
         <Modal.Title id='modalTitle'></Modal.Title>
       </Modal.Header>
       <Modal.Body>   
-        {/* <TimePicker className='timePicker'>
-          onChange={handleTimeChange}
-          value={time}
-          disabled= {true}
-        </TimePicker> */}
-        {/* <TimePicker start="10:00" end="21:00" step={30} /> */}
-        {/* <TimePicker  name="defaul"/> */}
         <div className='imagesMapAndDescriptionContainer'>
           <div className='imageAndMap-container'>
             <img src={dataResult.image} className='imagePlace'></img>
-            {/* <img src={dataResult.image} className='imageMap'></img> */}
-          {/* <img src={dataResult.image}></img> */}
-           <div>
+           <div  className='google-map-description'>
             <LoadScript id="timeline-map-script-loader" googleMapsApiKey={apiKey}>
               <GoogleMap
                 id='timeline-modal-map' 
@@ -67,12 +60,12 @@ const ModalDescription = ({show, onHide, handleClose, handleTimeChange, goToItin
               {dataResult.name}
             </div>
             <div>
-              <span>{dataResult.rating}</span>
+              <span className='modalDescription_rating'>{dataResult.rating}</span>
               <StarRatings
                 rating={3}
                 starRatedColor="blue"
                 // changeRating={this.changeRating}
-                starDimension="17px"
+                starDimension="13px"
                 starSpacing=".5px"
                 numberOfStars={5}
                 name='rating'

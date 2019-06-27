@@ -40,12 +40,13 @@
 }
 
 .modalPlaceName {
-  font-size: 50px;
+  font-size: 30px;
   line-height: 1.05;
 }
 
 .modal-totalReviews {
-  color: #000099
+  color: #000099;
+  font-size: 13px;
 }
 
 a:hover {
@@ -54,12 +55,22 @@ a:hover {
 
 .modal-bigDescription  {
   padding-top: 20px;
+  font-size: 15px;
 }
 
 .modal-addres-hours-phone-info {
-  margin-top: 30px;
+  margin-top: 60px;
+  font-size:15px;
 }
 
+
+.modalDescription_rating {
+  font-size: 13px;
+}
+
+.google-map-description {
+  padding-top: 10px;
+}
 
 
 
