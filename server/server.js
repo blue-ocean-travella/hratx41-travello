@@ -6,12 +6,65 @@ require("dotenv").config({ path: "../.env" });
 const fetch = require("node-fetch");
 const api = process.env.API_KEY;
 var fs = require("fs");
+var faker = require("faker");
 
 app.use(express.static("../client/public"));
 
+app.post("/delete:{item}", (req, res) => {
+  let uuid = req.query.uuid;
+  console.log("delete started ");
+
+  db.deleteData({ uuid: uuid }, (err, response) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send(`${uuid} was deleted`);
+    }
+  });
+});
+
+app.post("/update:{itinerary}", (req, res) => {
+  console.log("update started ", req.query);
+  let predated = req.query.change;
+  let updated = req.query.update;
+  db.updateData(predated, updated, (err, response) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(response);
+      res.send(`something was updated ${response}`);
+    }
+  });
+  //res.send(req.query);
+});
+
+app.post("/insert:{itenerary}", function(req, res) {
+  console.log("update started ", req.query);
+  let insertThis = req.query;
+
+  db.insertData(insertThis, (err, response) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(response);
+      res.send(`something was updated ${response}`);
+    }
+  });
+});
+
+app.get("/select:{itinerary}", function(req, res) {
+  console.log("this is req query", req.query);
+  db.findData(req.query, (err, response) => {
+    if (err) {
+      console.log(err, "err");
+    } else {
+      res.send(response);
+    }
+  });
+});
+
 app.get("/location/details", (req, res) => {
   let placeId = req.query.placeId;
-  console.log(placeId);
   fetch(
     `https://maps.googleapis.com/maps/api/place/details/json?placeid=${placeId}&fields=name,formatted_phone_number,website,opening_hours,price_level,photos,types&key=${api}`
   )
@@ -26,26 +79,26 @@ app.get("/location", (req, res) => {
   let topSpots, thingsToDo, restaurants, nightLife, dayTrips;
 
   fetch(
-    `https://maps.googleapis.com/maps/api/place/textsearch/json?query=night+life+in+${location}+tx&key=${api}`
+    `https://maps.googleapis.com/maps/api/place/textsearch/json?query=night+life+in+${location}&key=${api}`
   )
     .then(res => res.json())
     .then(data => (nightLife = data.results))
 
     .then(() => {
       fetch(
-        `https://maps.googleapis.com/maps/api/place/textsearch/json?query=outdoor+activities+in+${location}+tx&key=${api}`
+        `https://maps.googleapis.com/maps/api/place/textsearch/json?query=outdoor+activities+in+${location}&key=${api}`
       )
         .then(res => res.json())
         .then(data => (thingsToDo = data.results))
         .then(() => {
           fetch(
-            `https://maps.googleapis.com/maps/api/place/textsearch/json?query=day+trips+in+${location}+tx&key=${api}`
+            `https://maps.googleapis.com/maps/api/place/textsearch/json?query=day+trips+in+${location}&key=${api}`
           )
             .then(res => res.json())
             .then(data => (dayTrips = data.results))
             .then(() => {
               fetch(
-                `https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+${location}+tx&key=${api}`
+                `https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+${location}&key=${api}`
               )
                 .then(res => res.json())
                 .then(data => (restaurants = data.results))
@@ -78,7 +131,7 @@ app.get("/location", (req, res) => {
                   // fs.writeFile("thing.json", string, function(err, result) {
                   //   if (err) console.log("error", err);
                   // });
-                 // console.log("sending to app");
+                  // console.log("sending to app");
                   res.send(locationData);
                 })
                 .catch(err => console.log(err));
@@ -95,6 +148,7 @@ let parseData = array => {
   let long, lat, name, photo, rating, totalReviews, address, place_id;
 
   for (let i = 0; i < array.length; i++) {
+    let paragraph = faker.lorem.paragraph();
     let uuid = i;
 
     lat = array[i].geometry.location.lat;
@@ -114,7 +168,8 @@ let parseData = array => {
       photo: photo,
       rating: rating,
       totalReviews: totalReviews,
-      place_id: place_id
+      place_id: place_id,
+      description: paragraph
     });
   }
 
