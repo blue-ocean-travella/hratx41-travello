@@ -12,11 +12,12 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      allPages: [SearchBar, testPage, CategoriesAndResults],
+      allPages: [SearchBar, CategoriesAndResults, testPage],
       currentPage: SearchBar,
       results:{}
     }; 
     this.nextPage = this.nextPage.bind(this);
+    this.setResults = this.setResults.bind(this);
   }
 
   componentDidMount(){
@@ -27,16 +28,21 @@ export default class App extends Component {
   nextPage(e){
     if(e.key ==='Enter'){
       this.setState({currentPage: CategoriesAndResults});
+    } else if (e.key === undefined) {
+      this.setState({currentPage: testPage});
     }
+    
   }
 
-  
+  setResults(results){
+    this.setState({results});
+  }
   render(){
     return (
       <>
-      {/* <div onKeyDown={this.nextPage}> */}
-      <this.state.currentPage results={this.state.results}/>
-      {/* </div> */}
+      
+      <this.state.currentPage results={this.state.results} setResults={this.setResults} nextPage={this.nextPage}/>
+      
      </>
      );
   }

@@ -20,7 +20,7 @@ app.get("/fakeData", (req,res)=>{
 
 app.get("/location/details", (req, res) => {
   let placeId = req.query.placeId;
-  console.log(placeId);
+  // console.log(placeId);
   fetch(
     `https://maps.googleapis.com/maps/api/place/details/json?placeid=${placeId}&fields=name,formatted_phone_number,website,opening_hours,price_level,photos,types&key=${api}`
   )
@@ -32,69 +32,68 @@ app.get("/location/details", (req, res) => {
 app.get("/location", (req, res) => {
   // console.log(req.query);
   let location = req.query.city;
-  let latitude = req.query.latitude;
-  let longitude = req.query.longitude;
   let topSpots, thingsToDo, restaurants, nightLife, dayTrips;
+
   fetch(
     `https://maps.googleapis.com/maps/api/place/textsearch/json?query=night+life+in+${location}+tx&key=${api}`
   )
     .then(res => res.json())
-    .then(data => {
-      nightLife = data.results;
-    })
-    .catch(err => console.log(err));
-  fetch(
-    `https://maps.googleapis.com/maps/api/place/textsearch/json?query=outdoor+activities+in+${location}+tx&key=${api}`
-  )
-    .then(res => res.json())
-    .then(data => {
-      thingsToDo = data.results;
-    })
-    .catch(err => console.log(err));
-  fetch(
-    `https://maps.googleapis.com/maps/api/place/textsearch/json?query=day+trips+in+${location}+tx&key=${api}`
-  )
-    .then(res => res.json())
-    .then(data => {
-      dayTrips = data.results;
-    })
-    .catch(err => console.log(err))
+    .then(data => (nightLife = data.results))
+
     .then(() => {
       fetch(
-        `https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+${location}+tx&key=${api}`
+        `https://maps.googleapis.com/maps/api/place/textsearch/json?query=outdoor+activities+in+${location}+tx&key=${api}`
       )
         .then(res => res.json())
-        .then(data => (restaurants = data.results))
+        .then(data => (thingsToDo = data.results))
         .then(() => {
-          let locationData = {};
-          locationData["nightLife"] = parseData(nightLife);
-          locationData["restaurants"] = parseData(restaurants);
-          locationData["thingsToDo"] = parseData(thingsToDo);
-          locationData["dayTrips"] = parseData(dayTrips);
+          fetch(
+            `https://maps.googleapis.com/maps/api/place/textsearch/json?query=day+trips+in+${location}+tx&key=${api}`
+          )
+            .then(res => res.json())
+            .then(data => (dayTrips = data.results))
+            .then(() => {
+              fetch(
+                `https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+${location}+tx&key=${api}`
+              )
+                .then(res => res.json())
+                .then(data => (restaurants = data.results))
+                .then(() => {
+                  let locationData = {};
+                  locationData["nightLife"] = parseData(nightLife);
+                  locationData["restaurants"] = parseData(restaurants);
+                  locationData["thingsToDo"] = parseData(thingsToDo);
+                  locationData["dayTrips"] = parseData(dayTrips);
 
-          //res.send(locationData);
-          return locationData;
-        })
-        .then(locationData => {
-          let nightLife = locationData.nightLife;
-          let dayTrips = locationData.dayTrips;
-          let restaurants = locationData.restaurants;
-          let thingsToDo = locationData.thingsToDo;
-          // addPhotos(nightLife, dayTrips, restaurants, thingsToDo);
-          let topSpots = topPlaces(
-            nightLife,
-            dayTrips,
-            restaurants,
-            thingsToDo
-          );
+                  //res.send(locationData);
+                  return locationData;
+                })
+                .then(locationData => {
+                  let nightLife = locationData.nightLife;
+                  let dayTrips = locationData.dayTrips;
+                  let restaurants = locationData.restaurants;
+                  let thingsToDo = locationData.thingsToDo;
+                  // addPhotos(nightLife, dayTrips, restaurants, thingsToDo);
+                  let topSpots = topPlaces(
+                    nightLife,
+                    dayTrips,
+                    restaurants,
+                    thingsToDo
+                  );
 
-          locationData.topSpots = topSpots;
+                  locationData.topSpots = topSpots;
 
-          // let string = JSON.stringify(locationData);
-          // fs.writeFile("thing.json", string, function(err, result) {
-          //   if (err) console.log("error", err);
-          // });
-          res.send(locationData);
+                  // let string = JSON.stringify(locationData);
+                  // fs.writeFile("thing.json", string, function(err, result) {
+                  //   if (err) console.log("error", err);
+                  // });
+                 // console.log("sending to app");
+                 console.log(locationData, 'THIS LOCATION DATA SEARCH LEVEL')
+                  res.send(locationData);
+                })
+                .catch(err => console.log(err));
+            })
+            .catch(err => console.log(err));
         })
         .catch(err => console.log(err));
     })
@@ -146,7 +145,6 @@ let topPlaces = (arr1, arr2, arr3, arr4) => {
 
   return result;
 };
-
 
 
 var port = process.env.PORT || 8000;
