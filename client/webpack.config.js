@@ -13,11 +13,13 @@ module.exports = {
       {
         test: /\.(js|mjs|jsx)$/,
         enforce: 'pre',
+        exclude:/node_modules/,
         loader: 'eslint-loader'
       },
       {
         test : /\.js?/,
         include : SRC_DIR,
+        exclude: /node_modules/,
         loader : 'babel-loader'
       },
       {
