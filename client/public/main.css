@@ -621,6 +621,7 @@
 
   .timeline-image:hover, .timeline-arrow:hover {
     cursor: pointer;
+    background: transparent;
   }
 
   .time-modal {
@@ -647,3 +648,96 @@
   .footer {
     height: 200px;
   }
+
+  .btn-primary{
+    background: transparent !important;
+    border-color: transparent !important;
+    border: none;
+    outline: none;
+  }
+
+  .btn-primary:hover{
+    background: transparent;
+    border-color: transparent !important;
+    border: none;
+    outline: none;
+  }
+
+  .show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: transparent;
+    border-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.navbar .dropdown-menu:after{
+  display:none;
+  border: none;
+  outline: none;
+ }
+
+ #timeline-header > div > div > div {
+   border-color: transparent;
+   border: none;
+   outline: none;
+ }
+ 
+ /* .js-focus-visible :focus:not(.focus-visible) {
+  border: none;
+  outline: none;
+} */
+
+button{
+  border: none !important;
+  outline: none !important;
+ }
+
+ #timeline-header > div > div > div {
+   background-color: rgba(0, 0, 0, 0.65);
+   border: none;
+   outline: none;
+ }
+
+ #timeline-header > div > div > div > a {
+   color: white;
+   background-color:transparent;
+   margin-right: 10px;
+   border: none;
+   outline: none;
+ }
+
+ #timeline-header > div > div > div > a:hover{
+   background-color: black;
+   border: none;
+   outline: none;
+ }
+
+ #dropdown-menu-align-right {
+   margin-right: -25px;
+   border: none;
+   outline: none;
+ }
+
+ .drop {
+   font-size: 24px;
+   width: 100%;
+   border-bottom: 1px solid white;
+   padding-top: 10px;
+   border: none;
+   outline: none;
+ }
+
+ .lastdrop {
+  font-size: 24px;
+  width: 100%;
+  padding-top: 10px;
+  border: none;
+  outline: none;
+ }
+
+ #timeline-header > div > div > div{
+   border-radius: 7px;
+ }
+
+ button:focus {outline:0;}

@@ -48,7 +48,7 @@ const TimeModal = (props) => {
                 </Container>
             </Modal.Body>
             <Modal.Footer>
-                <Button variant="primary" onClick={props.handleClose}>
+                <Button variant="secondary" onClick={props.handleClose}>
                     Close
                 </Button>
             </Modal.Footer>

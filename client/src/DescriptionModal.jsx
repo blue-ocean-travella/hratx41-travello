@@ -41,7 +41,7 @@ const DescriptionModal = (props) => {
                         </div>
                         <div className='modal-addres-hours-phone-info'>
                             <div>
-                                <b>Addres:</b>
+                                <b>Address:</b>
                             </div>
                             <div>
                                 <b>Hours:</b>
@@ -54,7 +54,7 @@ const DescriptionModal = (props) => {
                 </div>
             </Modal.Body>
             <Modal.Footer>
-                <Button variant="primary" onClick={props.handleClose}>
+                <Button variant="secondary" onClick={props.handleClose}>
                     Close
           </Button>
             </Modal.Footer>
