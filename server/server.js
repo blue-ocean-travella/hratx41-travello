@@ -7,14 +7,17 @@ const fetch = require("node-fetch");
 const api = process.env.API_KEY;
 var fs = require("fs");
 var faker = require("faker");
+var db = require("./db/index")
 
 app.use(express.static("../client/public"));
 
-app.post("/delete:{item}", (req, res) => {
-  let uuid = req.query.uuid;
+app.post("/delete:{itinerary}", (req, res) => {
+  let user = req.query.user
+  let card = req.query.card
+  let query = {name:user, itinerary: { $elemMatch: { card: card } } }
   console.log("delete started ");
 
-  db.deleteData({ uuid: uuid }, (err, response) => {
+  db.deleteData(query, (err, response) => {
     if (err) {
       console.log(err);
     } else {
@@ -40,9 +43,12 @@ app.post("/update:{itinerary}", (req, res) => {
 
 app.post("/insert:{itenerary}", function(req, res) {
   console.log("update started ", req.query);
-  let insertThis = req.query;
-
-  db.insertData(insertThis, (err, response) => {
+  let user = req.query.user
+  let card = req.query.card
+  let query = {name:user},{ $push: {itinerary:card}}
+ 
+//may need to use uuid and not user?
+  db.insertData(query, (err, response) => {
     if (err) {
       console.log(err);
     } else {
@@ -54,6 +60,10 @@ app.post("/insert:{itenerary}", function(req, res) {
 
 app.get("/select:{itinerary}", function(req, res) {
   console.log("this is req query", req.query);
+  let user = req.query.user
+  let card = req.query.card
+  let query = {itinerary: {$elemMatch: {card: card}}}
+
   db.findData(req.query, (err, response) => {
     if (err) {
       console.log(err, "err");
