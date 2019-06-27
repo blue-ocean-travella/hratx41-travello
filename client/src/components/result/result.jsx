@@ -79,9 +79,7 @@ class Result extends Component {
       category: this.props.currentCategory,
       lat: 30.265824,
       lng: -97.74926,
-      uuid: 1,
-
-      
+      uuid: 1
       // category: 
     };
 
