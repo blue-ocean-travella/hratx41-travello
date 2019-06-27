@@ -74,8 +74,10 @@ class Itinerary extends React.Component {
                     latitude: 48.8584,
                     reviews: 175,
                     stars: 4,
+                    open: true,
                     address: '119 Nueces St., Austin, TX 78741',
                     phone: '555-555-5555',
+                    website: 'http://www.eiffeltower.com',
                     image: 'https://img.jakpost.net/c/2017/02/10/2017_02_10_21340_1486708892._large.jpg'
                 }
             }, {
@@ -92,8 +94,10 @@ class Itinerary extends React.Component {
                     latitude: 35.714661,
                     reviews: 4000,
                     stars: 3.5,
+                    open: true,
                     address: '119 Nueces St., Austin, TX 78741',
                     phone: '555-555-5555',
+                    website: 'http://www.sensojitemple.com',
                     image: 'https://www.touropia.com/gfx/d/tourist-attractions-in-tokyo/sensoji_temple.jpg?v=29a16b16edae6dc242531c1dd1fb3188'
                 }
             }, {
@@ -110,8 +114,71 @@ class Itinerary extends React.Component {
                     latitude: 30.2670,
                     reviews: 40,
                     stars: 5,
+                    open: false,
                     address: '119 Nueces St., Austin, TX 78741',
                     phone: '555-555-5555',
+                    website: 'http://www.bartonsprings.com',
+                    image: 'https://ak6.picdn.net/shutterstock/videos/1021179886/thumb/1.jpg'
+                }
+            },
+            {
+                uuid: 4,
+                location:
+                {
+                    name: 'Eiffel Tower',
+                    duration: 1,
+                    description: 'lorem ipsum',
+                    startTime: '2:00 PM',
+                    category: 'restaurants',
+                    hoursOfOperation: 'big string',
+                    longitude: 2.2945,
+                    latitude: 48.8584,
+                    reviews: 175,
+                    stars: 4,
+                    open: true,
+                    address: '119 Nueces St., Austin, TX 78741',
+                    phone: '555-555-5555',
+                    website: 'http://www.eiffeltower.com',
+                    image: 'https://img.jakpost.net/c/2017/02/10/2017_02_10_21340_1486708892._large.jpg'
+                }
+            }, {
+                uuid: 5,
+                location:
+                {
+                    name: 'Sensoji Temple',
+                    duration: 3,
+                    description: 'lorem ipsum',
+                    startTime: '7:00 PM',
+                    category: 'dayTrips',
+                    hoursOfOperation: 'big string',
+                    longitude: 139.796783,
+                    latitude: 35.714661,
+                    reviews: 4000,
+                    stars: 3.5,
+                    open: true,
+                    address: '119 Nueces St., Austin, TX 78741',
+                    phone: '555-555-5555',
+                    website: 'http://www.sensojitemple.com',
+                    image: 'https://www.touropia.com/gfx/d/tourist-attractions-in-tokyo/sensoji_temple.jpg?v=29a16b16edae6dc242531c1dd1fb3188'
+                }
+            }, {
+                uuid: 6,
+                location:
+                {
+                    name: 'Barton Springs',
+                    duration: 2,
+                    description: 'lorem ipsum',
+                    startTime: '4:00 PM',
+                    category: 'topSpots',
+                    hoursOfOperation: 'big string',
+                    longitude: -97.7729,
+                    latitude: 30.2670,
+                    reviews: 40,
+                    stars: 5,
+                    open: false,
+                    address: '119 Nueces St., Austin, TX 78741',
+                    phone: '555-555-5555',
+                    website: 'http://www.bartonsprings.com',
                     image: 'https://ak6.picdn.net/shutterstock/videos/1021179886/thumb/1.jpg'
                 }
             }],

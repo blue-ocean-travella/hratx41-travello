@@ -722,7 +722,7 @@ button{
  .drop {
    font-size: 24px;
    width: 100%;
-   border-bottom: 1px solid white;
+   border-bottom: 1px solid white !important;
    padding-top: 10px;
    border: none;
    outline: none;
@@ -742,9 +742,9 @@ button{
 
  button:focus {outline:0;};
 
-#description-image {
-  width: 100%;
-  height: auto;
+.description-image {
+  width: 300px !important;
+  height: 250px !important;
 }
 
  .imageAndMap-container {
@@ -754,3 +754,18 @@ button{
  /* max-height: 200px;
    max-width: 250px; */
    /* max-height: 200px; */
+
+   .itinerary-stars {
+      align-items: center;
+   }
+.time-modal-open {
+  font-size: 16px;
+}
+
+.open {
+  color: green;
+}
+
+.closed {
+  color: red;
+}
