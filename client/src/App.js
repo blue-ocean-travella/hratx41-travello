@@ -11,12 +11,7 @@ export default class Search extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      city: "",
-      nightLife: [],
-      restaurants: [],
-      thingsToDo: [],
-      dayTrips: [],
-      topSpots: []
+      results: {}
     };
 
     this.HandleScriptLoad = this.HandleScriptLoad.bind(this);
@@ -45,9 +40,7 @@ export default class Search extends Component {
   Initialize() {
     Axios.get("/location", {
       params: {
-        city: this.state.city,
-        latitude: this.state.latitude,
-        longitude: this.state.longitude
+        city: this.state.results.city
       }
     })
       .then(data => {
@@ -57,19 +50,19 @@ export default class Search extends Component {
         let restaurants = data.data.restaurants;
         let thingsToDo = data.data.thingsToDo;
         let topSpots = data.data.topSpots;
-        this.state.nightLife = nightLife;
-        this.state.dayTrips = dayTrips;
-        this.state.restaurants = restaurants;
-        this.state.thingsToDo = thingsToDo;
-        this.state.topSpots = topSpots;
+        this.state.results.nightLife = nightLife;
+        this.state.results.dayTrips = dayTrips;
+        this.state.results.restaurants = restaurants;
+        this.state.results.thingsToDo = thingsToDo;
+        this.state.results.topSpots = topSpots;
       })
       .then(() => {
-        this.getDetails(this.state.nightLife);
+        this.getDetails(this.state.results.nightLife);
       })
-      .then(() => this.getDetails(this.state.restaurants))
-      .then(() => this.getDetails(this.state.thingsToDo))
-      .then(() => this.getDetails(this.state.dayTrips))
-      .then(() => this.getDetails(this.state.topSpots))
+      .then(() => this.getDetails(this.state.results.restaurants))
+      .then(() => this.getDetails(this.state.results.thingsToDo))
+      .then(() => this.getDetails(this.state.results.dayTrips))
+      .then(() => this.getDetails(this.state.results.topSpots))
       .then(() => console.log("this is state", this.state))
       .catch(err => console.log(err));
   }
@@ -112,12 +105,8 @@ export default class Search extends Component {
     // Check if address is valid
     if (address) {
       // Set State
-      this.setState(
-        {
-          city: address[0].long_name
-        },
-        this.Initialize
-      );
+      this.state.results.city = address[0].long_name;
+      this.Initialize();
     }
   }
 
@@ -131,8 +120,8 @@ export default class Search extends Component {
         .then(data => {
           const result = data.data.result;
           let photoData = result.photos;
-          let operatingData = result.opening_hours.weekday_text;
           let openNowData = result.opening_hours.open_now;
+          let operatingData = result.opening_hours.weekday_text;
           let priceData = result.price_level;
           let typeData = result.types;
           let website = result.website;
