@@ -50,7 +50,7 @@ input, select, textarea{
   }  
 
   Initialize() {
-    Axios.get("/city", {
+    Axios.get("/location", {
       params: {
         city: this.state.city,
         latitude: this.state.latitude,
@@ -62,6 +62,7 @@ input, select, textarea{
 
   handleKeyDown(e) {
     if (e.key === "Enter") {
+      console.log('i pressed enter');
       this.Initialize();
     }
   }
@@ -71,7 +72,6 @@ input, select, textarea{
     var options = {
       types: ["(regions)"]
     }; // To disable any eslint 'google not defined' errors
-
 
     // Initialize Google Autocomplete
     /*global google*/ 

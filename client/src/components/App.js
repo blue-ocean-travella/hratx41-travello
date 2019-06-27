@@ -22,7 +22,7 @@ export default class App extends Component {
   componentDidMount(){
     // Axios.get('/fakeData')
     // .then(result => {this.setState({nightLife:result.data});});
-    this.setState({results:fakeData});
+    // this.setState({results:fakeData});
   }
   nextPage(e){
     if(e.key ==='Enter'){
@@ -34,11 +34,11 @@ export default class App extends Component {
   render(){
     return (
       <>
-      <div onKeyDown={this.nextPage}>
+      {/* <div onKeyDown={this.nextPage}> */}
       <this.state.currentPage results={this.state.results}/>
-      </div>
+      {/* </div> */}
      </>
-    );
+     );
   }
 }
 

@@ -21,7 +21,7 @@ class CategoriesAndResults extends Component {
 
     render() {
       const category = this.state.currentCategory;
-      console.log(this.props.results[`${category}`]);
+      // console.log(this.props.results[`${category}`]);
       return (
         <div>
           <div className='headerAndNavigationBar'>

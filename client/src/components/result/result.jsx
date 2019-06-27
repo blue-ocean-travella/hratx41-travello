@@ -87,7 +87,7 @@ class Result extends Component {
       // category: 
     };
 
-    console.log(destination);
+    // console.log(destination);
 
     // this.props.handdleAddToItenerary(destination);
   }
@@ -118,7 +118,7 @@ class Result extends Component {
   }
 
   render() {
-    console.log(this.props.id);
+    // console.log(this.props.id);
     return (
      <div className="card card_result" style={{width: '30rem'}}>
         <div className="card bg-dark text-white card_result">
