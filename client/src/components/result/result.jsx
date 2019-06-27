@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import StarRatings from '../../../node_modules/react-star-ratings';
 import ModalDescription from '../modalDescription/modalDescription.jsx';
 import ModalTime from  '../modalTime/modalTime.jsx';
-import './result.module.css';
+import '../result/result.css'
 
 class Result extends Component {
   constructor(props) {
@@ -120,10 +120,10 @@ class Result extends Component {
   render() {
     console.log(this.props.id);
     return (
-     <div className="card card_result" style={{width: '30rem'}}>
+     <div className="card card_result" style={{width: '24rem'}}>
         <div className="card bg-dark text-white card_result">
          <img src={this.props.dataResult.image} className="card-img image-result-card" alt="..."/>
-         <a href="#" className={styles.modal-button} onClick={() => this.handleShow()}>
+         <a href="#" className='modal-button' onClick={() => this.handleShow()}>
           <div className="card-img-overlay">
            <h5 className="card-title result-position" >{this.props.dataResult.name}</h5>
         </div>
@@ -137,17 +137,17 @@ class Result extends Component {
                 rating={Number(this.props.dataResult.rating)}
                 starRatedColor="blue"
                 // changeRating={this.changeRating}
-                starDimension="17px"
+                starDimension="13px"
                 starSpacing=".5px"
                 numberOfStars={5}
                 name='rating'
                 starRatedColor="#f08804"
             />   
-            <span className={styles.result_total_reviews}>{`${this.props.dataResult.userRating} reviews`}</span>
+            <span className='result_total_reviews'>{`${this.props.dataResult.userRating} reviews`}</span>
           </div>
-          <div className={styles.result_distance_time_section_container}>
+          <div className='result_distance_time_section_container'>
             <div className="card-text"> 
-                <span className={styles.address}>{`${this.props.dataResult.address}`}</span>
+                <span className='address'>{`${this.props.dataResult.address}`}</span>
             </div>
             <a href="#" className="btn btn-primary addToItenerary" onClick={() => this.handleShowModalTime()}>+</a>
             <ModalTime dataResult={this.props.dataResult} show={this.state.showTimeModal} onHide={this.handleCloseModalTime} handleCloseModalTime={this.handleCloseModalTime} handleTimeChange={this.handleTimeChange} addToItenerary={this.createItineraryObject} changeDuration={this.changeDuration}/>

@@ -1,0 +1,83 @@
+.result-position {
+  padding-top: 150px;
+  font-size: 20px;
+  margin-left: 5px; 
+}
+
+.image-card {
+  border-radius: 30px;
+}
+
+.addToItenerary {
+  border: 2px #000000 solid;
+  border-radius: 50px;
+  color: #000000;
+  background-color: #ffffff;
+  font-weight: bold;
+  font-size: 18px;
+  font-weight: bold;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 0px
+}
+
+.result_rating {
+  color: #f08804;
+  font-size: 13px;
+}
+
+.result_total_reviews {
+  color: #808080;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+}
+
+.card_result {
+  border: 1px white solid;
+}
+
+.result_distance_time_section_container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.distance {
+  color: #808080;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.available_and_time {
+  color: #008000;
+}
+
+.description_place {
+  color: #808080;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+}
+
+.image-result-card{
+  height: 213px !important;
+
+}
+
+.modal-button {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+a:hover {
+  color:#ffffff;
+}
+
+.address {
+  color: #008000;
+  font-size: 13px;
+}
+
+.card-body {
+  padding: 0px;
+}
+
+

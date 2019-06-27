@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Modal } from 'react-bootstrap';
-import '../modalTime/modalTime.module.css';
+import '../modalTime/modalTime.css';
 import TimePicker from 'rc-time-picker';
 import moment from 'moment';
 import '../../../node_modules/rc-time-picker/assets/index.css';
@@ -26,9 +26,9 @@ function onChange(value) {
         <Modal.Title id='modalTitle'>{dataResult.name}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-         <div className={styles.selectTime-section}> 
+         <div className='selectTime-section'> 
           <div style={{fontWeight:'bold', textAlign:'center'}}>Select your time:</div><br/>
-          <div className={styles.selectDropDownTime}>
+          <div className='selectDropDownTime'>
             <TimePicker
               showSecond={false}
               defaultValue={now}
@@ -40,9 +40,9 @@ function onChange(value) {
             />
           </div>
           </div>
-          <div className={styles.durationTime}>
+          <div className='durationTime'>
             <div style={{fontWeight:'bold', textAlign:'center'}}>Duration:</div><br/>
-            <div className={styles.durationHoursOptions}>
+            <div className='durationHoursOptions'>
                 <button className='durationOption' onClick={() => {changeDuration(1);}}> 1Hr </button>
                 <button className='durationOption' onClick={() => {changeDuration(2);}}> 2Hr </button>
                 <button className='durationOption' onClick={() => {changeDuration(3);}}> 3Hr</button>

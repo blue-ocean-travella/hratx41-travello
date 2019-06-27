@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import NavigationBar from '../navigationBar/navigationBar.jsx';
 import Header from '../header/header.jsx';
 import Results from '../results/results.jsx';
-import '../categoriesAndResults/categoriesAndResults.module.css';
+import '../categoriesAndResults/categoriesAndResults.css';
 
 class CategoriesAndResults extends Component {
     constructor(props) {
@@ -24,11 +24,11 @@ class CategoriesAndResults extends Component {
       console.log(this.props.results[`${category}`]);
       return (
         <div>
-          <div className={styles.headerAndNavigationBar}>
+          <div className='headerAndNavigationBar'>
             <Header city={this.props.results.city}/>
             <NavigationBar onCategoryChange={this.changeCategory}/>
           </div> 
-          <div className={styles.main-content-results}>
+          <div className='main-content-results'>
             <Results categoryResults={this.props.results[`${category}`]} handdleAddToItenerary={this.props.handdleAddToItenerary} currentCategory={this.state.currentCategory}/>
           </div>
         </div>

@@ -1,0 +1,33 @@
+.navigationBar {
+  /* position: fixed; */
+  padding-top: 20px;  
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px #838181 solid;
+  padding-bottom: 10px;
+  background-color: #ffffff;
+  padding-left: 100px;
+  padding-right: 100px;
+  height: 50px;
+}
+
+.category {
+  border: none;
+  font-family: 'Lato', sans-serif;
+  font-size: 17px;
+  color: #838181;
+  letter-spacing: -0.05em;
+  font-weight: 600;
+  outline:none;
+  padding-top: 0px;
+  height:20px;
+}
+
+button:focus {
+  outline-style: none;
+}
+
+button:active {
+  color: black;
+  border-bottom-color: black;
+}
