@@ -1,6 +1,8 @@
 import React from 'react';
 import { Button, Modal } from 'react-bootstrap';
 import StarRatings from '../node_modules/react-star-ratings';
+// import '../public/main.css';
+
 
 const DescriptionModal = (props) => {
     // console.log('DescriptionModal props: ', props)
@@ -12,19 +14,20 @@ const DescriptionModal = (props) => {
         >
 
             <Modal.Header closeButton>
-                <Modal.Title id='modalTitle'>Location Name</Modal.Title>
+                <Modal.Title id='modalTitle'>{props.activity.location.name}</Modal.Title>
             </Modal.Header>
             <Modal.Body>
 
                 <div className='imagesMapAndDescriptionContainer'>
                     <div className='imageAndMap-container'>
+                        {/* <img id='description-image' src={props.activity.location.image}></img> */}
                     </div>
                     <div>
                         <div className='modalPlaceName'>
                         </div>
                         <div>
                             <StarRatings
-                                rating={3}
+                                rating={props.activity.location.stars}
                                 starRatedColor="blue"
                                 // changeRating={this.changeRating}
                                 starDimension="17px"
@@ -34,20 +37,20 @@ const DescriptionModal = (props) => {
                                 starRatedColor="#f08804"
                             />
                             <span>
-                                <a className='modal-totalReviews' href='#'> Google Reviews</a>
+                                <a className='modal-totalReviews' href='#'> {props.activity.location.reviews} Google Reviews</a>
                             </span>
                         </div>
                         <div className='modal-bigDescription'>
                         </div>
                         <div className='modal-addres-hours-phone-info'>
                             <div>
-                                <b>Address:</b>
+                                <b>Address: {props.activity.location.address}</b>
                             </div>
                             <div>
                                 <b>Hours:</b>
                             </div>
                             <div>
-                                <b>Phone:</b>
+                                <b>Phone: {props.activity.location.phone}</b>
                             </div>
                         </div>
                     </div>

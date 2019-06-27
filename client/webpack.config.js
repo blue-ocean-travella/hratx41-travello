@@ -33,8 +33,8 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        include: SRC_DIR,
-        loader: 'css-loader'
+        // include: SRC_DIR,
+        loader: ['style-loader', 'css-loader']
       }
     ]
   },

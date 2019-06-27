@@ -16,7 +16,7 @@ const ItineraryDropdown = (props) => {
                 <Dropdown.Item className="drop" eventKey="1">About Us</Dropdown.Item>
                 <Dropdown.Item className="drop" eventKey="2">More Activities</Dropdown.Item>
                 <Dropdown.Item className="drop" eventKey="3">Book Another Trip </Dropdown.Item>
-                <Dropdown.Item className="lastdrop" eventKey="4">Delete Itinerary</Dropdown.Item>
+                <Dropdown.Item className="lastdrop" eventKey="4" onClick={props.handleDeleteItineraryClick}>Delete Itinerary</Dropdown.Item>
             </DropdownButton>
         </div>
     )

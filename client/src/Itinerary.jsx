@@ -1,4 +1,5 @@
 import React from 'react';
+import Axios from 'axios';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import TimelineActivity from './TimelineActivity.jsx';
 // import DescriptionModal from './DescriptionModal.jsx';
@@ -59,8 +60,8 @@ class Itinerary extends React.Component {
                 'https://www.jetsetter.com/uploads/sites/7/2019/03/bobmd-bungalow-2973-hor-clsc-1160x690.jpg'
             ],
             backgroundImage: '',
+            city: 'Paris',
             itineraryItems: [{
-                city: 'Paris',
                 uuid: 1,
                 location:
                 {
@@ -68,10 +69,10 @@ class Itinerary extends React.Component {
                     duration: 1,
                     description: 'lorem ipsum',
                     startTime: '2:00 PM',
-                    category: 'topspot',
+                    category: 'topSpots',
                     hoursOfOperation: 'big string',
-                    longitude: -97.74926,
-                    latitude: 30.265824,
+                    longitude: 2.2945,
+                    latitude: 48.8584,
                     reviews: 175,
                     stars: 4,
                     address: '119 Nueces St., Austin, TX 78741',
@@ -79,7 +80,6 @@ class Itinerary extends React.Component {
                     image: 'https://img.jakpost.net/c/2017/02/10/2017_02_10_21340_1486708892._large.jpg'
                 }
             }, {
-                city: 'Tokyo',
                 uuid: 2,
                 location:
                 {
@@ -87,10 +87,10 @@ class Itinerary extends React.Component {
                     duration: 3,
                     description: 'lorem ipsum',
                     startTime: '7:00 PM',
-                    category: 'todos',
+                    category: 'thingsToDo',
                     hoursOfOperation: 'big string',
-                    longitude: -97.74926,
-                    latitude: 30.265824,
+                    longitude: 139.796783,
+                    latitude: 35.714661,
                     reviews: 175,
                     stars: 4,
                     address: '119 Nueces St., Austin, TX 78741',
@@ -98,7 +98,6 @@ class Itinerary extends React.Component {
                     image: 'https://www.touropia.com/gfx/d/tourist-attractions-in-tokyo/sensoji_temple.jpg?v=29a16b16edae6dc242531c1dd1fb3188'
                 }
             }, {
-                city: 'Austin',
                 uuid: 3,
                 location:
                 {
@@ -106,10 +105,10 @@ class Itinerary extends React.Component {
                     duration: 7,
                     description: 'lorem ipsum',
                     startTime: '4:00 PM',
-                    category: 'nightlife',
+                    category: 'nightLife',
                     hoursOfOperation: 'big string',
-                    longitude: -97.74926,
-                    latitude: 30.265824,
+                    longitude: -97.7729,
+                    latitude: 30.2670,
                     reviews: 175,
                     stars: 4,
                     address: '119 Nueces St., Austin, TX 78741',
@@ -126,10 +125,14 @@ class Itinerary extends React.Component {
         // this.handleCloseDescriptionModal = this.handleCloseDescriptionModal.bind(this);
         // this.handleShowMapModal = this.handleShowMapModal.bind(this);
         // this.handleCloseMapModal = this.handleCloseMapModal.bind(this);
+        this.handleDeleteItineraryClick = this.handleDeleteItineraryClick.bind(this);
         this.getRandomElement = this.getRandomElement.bind(this);
         this.getImage = this.getImage.bind(this);
     }
 
+    handleDeleteItineraryClick() {
+        console.log('delete entire itinerary');
+    }
 
     // handleArrowClick() {
 
@@ -165,9 +168,17 @@ class Itinerary extends React.Component {
     }
 
     componentDidMount() {
+        let uuid = (this.state.uuid);
         this.setState({
             backgroundImage: this.getImage()
         })
+        // Axios.get(`/itineraries?uuid=${uuid}`)
+        //     .then(function (response) {
+        //         console.log(response);
+        //     })
+        //     .catch(function (error) {
+        //         console.log('client side error retrieving itinerary: ', error)
+        //     })
     }
     getImage() {
         const randomImage = this.state.backgroundImages[this.getRandomElement(this.state.backgroundImages)];
@@ -181,7 +192,7 @@ class Itinerary extends React.Component {
                 < div className="page-wrapper">
                     <div id="timeline-header">
                         <img className="timeline-logo" src={logo}></img>
-                        <h1 className="headline-itinerary">Your {this.state.itineraryItems[0].city} Itinerary</h1>
+                        <h1 className="headline-itinerary">Your {this.state.city} Itinerary</h1>
                         {/* <img className="timeline-arrow" src={navArrow} /> */}
                         <ItineraryDropdown />
                     </div>

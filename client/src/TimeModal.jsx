@@ -12,8 +12,8 @@ const TimeModal = (props) => {
             centered
         >
             <Modal.Header closeButton>
-                <Modal.Title id="modalTitle">Location Name
-                <div className="time-modal-hours">Hours of Operation:</div></Modal.Title>
+                <Modal.Title id="modalTitle">{props.activity.location.name}
+                    <div className="time-modal-hours">Hours of Operation:</div></Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <Container>

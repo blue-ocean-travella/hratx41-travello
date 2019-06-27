@@ -740,4 +740,17 @@ button{
    border-radius: 7px;
  }
 
- button:focus {outline:0;}
+ button:focus {outline:0;};
+
+#description-image {
+  width: 100%;
+  height: auto;
+}
+
+ .imageAndMap-container {
+   max-height: 200px;
+   max-width: 250px;
+ }
+ /* max-height: 200px;
+   max-width: 250px; */
+   /* max-height: 200px; */
