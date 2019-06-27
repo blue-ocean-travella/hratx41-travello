@@ -42,7 +42,7 @@ const ModalDescription = ({show, onHide, handleClose, handleTimeChange, goToItin
         {/* <TimePicker  name="defaul"/> */}
         <div className='imagesMapAndDescriptionContainer'>
           <div className='imageAndMap-container'>
-            <img src={dataResult.image} className='imagePlace'></img>
+            <img src="https://assets.simpleviewinc.com/simpleview/image/fetch/c_limit,q_75,w_1200/https://assets.simpleviewinc.com/simpleview/image/upload/crm/austin/Barton-Springs-Photo-Credit-Austin-Convention-Visitors-Bureau_72dpi_2b98f9c6-dab3-628a-c9075a49719a59cb.jpg" className='imagePlace'></img>
             {/* <img src={dataResult.image} className='imageMap'></img> */}
           {/* <img src={dataResult.image}></img> */}
            <div>
