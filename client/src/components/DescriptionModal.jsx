@@ -23,7 +23,7 @@ const getOpen = (bool) => {
 };
 
 const DescriptionModal = (props) => {
-    console.log('DescriptionModal props: ', props);
+    // console.log('DescriptionModal props: ', props);
 
     return (
         <Modal show={props.show} onHide={props.onHide} className='modal-container'

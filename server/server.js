@@ -6,6 +6,7 @@ const app = express();
 app.use(express.static('../client/public'));
 require("dotenv").config({ path: "../.env" });
 const fetch = require("node-fetch");
+var faker = require("faker");
 
 const api = process.env.API_KEY;
 var fs = require("fs")
@@ -105,6 +106,7 @@ let parseData = array => {
   let long, lat, name, photo, rating, totalReviews, address, place_id;
 
   for (let i = 0; i < array.length; i++) {
+    let paragraph = faker.lorem.paragraph();
     let uuid = i;
 
     lat = array[i].geometry.location.lat;
@@ -124,7 +126,8 @@ let parseData = array => {
       photo: photo,
       rating: rating,
       totalReviews: totalReviews,
-      place_id: place_id
+      place_id: place_id,
+      longDescription: paragraph
     });
   }
 
