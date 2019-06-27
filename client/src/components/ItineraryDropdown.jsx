@@ -1,7 +1,7 @@
 import React from 'react';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
-import navArrow from '../assets/images/white-down-arrow-png-2.png';
+import navArrow from '../../assets/images/white-down-arrow-png-2.png';
 
 const ItineraryDropdown = (props) => {
     return (

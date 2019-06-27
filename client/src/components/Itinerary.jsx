@@ -9,9 +9,8 @@ import ItineraryDropdown from './ItineraryDropdown.jsx';
 
 // images
 
-// import austin from '../assets/images/austin.jpg';
 // import clock from '../assets/images/clock.jpg';
-import logo from '../assets/images/16a60b31-4a4b-41eb-9cf2-b6f71c4a83e5_200x200.png'
+import logo from '../../assets/images/16a60b31-4a4b-41eb-9cf2-b6f71c4a83e5_200x200.png'
 // import nightlife from '../assets/images/martini.png';
 // import map from '../assets/images/directions.png';
 // import dine from '../assets/images/food.png';
@@ -19,7 +18,7 @@ import logo from '../assets/images/16a60b31-4a4b-41eb-9cf2-b6f71c4a83e5_200x200.
 // import topSpot from '../assets/images/topspot.png';
 // import dayTrip from '../assets/images/daytrip2.png';
 // import xout from '../assets/images/xout.png';
-import finishLine from '../assets/images/finishline.png';
+import finishLine from '../../assets/images/finishline.png';
 // import navArrow from '../assets/images/white-down-arrow-png-2.png';
 
 
@@ -91,8 +90,8 @@ class Itinerary extends React.Component {
                     hoursOfOperation: 'big string',
                     longitude: 139.796783,
                     latitude: 35.714661,
-                    reviews: 175,
-                    stars: 4,
+                    reviews: 4000,
+                    stars: 3.5,
                     address: '119 Nueces St., Austin, TX 78741',
                     phone: '555-555-5555',
                     image: 'https://www.touropia.com/gfx/d/tourist-attractions-in-tokyo/sensoji_temple.jpg?v=29a16b16edae6dc242531c1dd1fb3188'
@@ -102,15 +101,15 @@ class Itinerary extends React.Component {
                 location:
                 {
                     name: 'Barton Springs',
-                    duration: 7,
+                    duration: 2,
                     description: 'lorem ipsum',
                     startTime: '4:00 PM',
                     category: 'nightLife',
                     hoursOfOperation: 'big string',
                     longitude: -97.7729,
                     latitude: 30.2670,
-                    reviews: 175,
-                    stars: 4,
+                    reviews: 40,
+                    stars: 5,
                     address: '119 Nueces St., Austin, TX 78741',
                     phone: '555-555-5555',
                     image: 'https://ak6.picdn.net/shutterstock/videos/1021179886/thumb/1.jpg'
@@ -130,8 +129,22 @@ class Itinerary extends React.Component {
         this.getImage = this.getImage.bind(this);
     }
 
-    handleDeleteItineraryClick() {
+    handleDeleteItineraryClick(event) {
+        event.preventDefault()
         console.log('delete entire itinerary');
+        // let city = this.state.city;
+
+        //     Axios.delete('/itineraries', {
+        //         params: {
+        //             city: city
+        //         }
+        //     })
+        //         .then((response) => {
+        //             console.log('successfully deleted current itinerary: ', response)
+        //         })
+        //         .catch((error) => {
+        //             console.log('error deleting current inventory: ', error)
+        //         })
     }
 
     // handleArrowClick() {
@@ -162,10 +175,6 @@ class Itinerary extends React.Component {
     //     this.setState({ showMapModal: false });
     // }
 
-    getRandomElement(array) {
-        let random = Math.floor(Math.random() * array.length)
-        return random;
-    }
 
     componentDidMount() {
         let uuid = (this.state.uuid);
@@ -180,9 +189,17 @@ class Itinerary extends React.Component {
         //         console.log('client side error retrieving itinerary: ', error)
         //     })
     }
+
+    // background image functions
+
     getImage() {
         const randomImage = this.state.backgroundImages[this.getRandomElement(this.state.backgroundImages)];
         return randomImage;
+    }
+
+    getRandomElement(array) {
+        let random = Math.floor(Math.random() * array.length)
+        return random;
     }
 
     render() {
@@ -194,7 +211,7 @@ class Itinerary extends React.Component {
                         <img className="timeline-logo" src={logo}></img>
                         <h1 className="headline-itinerary">Your {this.state.city} Itinerary</h1>
                         {/* <img className="timeline-arrow" src={navArrow} /> */}
-                        <ItineraryDropdown />
+                        <ItineraryDropdown handleDeleteItineraryClick={this.handleDeleteItineraryClick} />
                     </div>
 
                     <VerticalTimeline className="timeline-line">

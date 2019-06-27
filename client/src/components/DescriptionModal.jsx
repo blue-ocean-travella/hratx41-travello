@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Modal } from 'react-bootstrap';
-import StarRatings from '../node_modules/react-star-ratings';
+import StarRatings from '../../node_modules/react-star-ratings';
 // import '../public/main.css';
 
 

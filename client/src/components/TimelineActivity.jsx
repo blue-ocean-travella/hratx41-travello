@@ -1,24 +1,26 @@
 import React from 'react';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 
-import austin from '../assets/images/austin.jpg';
-import clock from '../assets/images/clock.jpg';
-import xout from '../assets/images/xout.png';
-import map from '../assets/images/directions.png';
+// timeline card icons
 
-import nightlife from '../assets/images/martini.png';
-import dine from '../assets/images/food.png';
-import todos from '../assets/images/thingstodo.png';
-import topSpot from '../assets/images/topspot.png';
-import dayTrip from '../assets/images/daytrip2.png';
+import clock from '../../assets/images/clock.jpg';
+import xout from '../../assets/images/xout.png';
+import map from '../../assets/images/directions.png';
+
+// timeline icons
+
+import nightlife from '../../assets/images/martini.png';
+import dine from '../../assets/images/food.png';
+import todos from '../../assets/images/thingstodo.png';
+import topSpot from '../../assets/images/topspot.png';
+import dayTrip from '../../assets/images/daytrip2.png';
+
+// modals
 
 import DescriptionModal from './DescriptionModal.jsx';
 import TimeModal from './TimeModal.jsx';
 import MapModal from './MapModal.jsx';
 import Axios from 'axios';
-
-
-
 
 
 class TimelineActivity extends React.Component {
@@ -43,7 +45,7 @@ class TimelineActivity extends React.Component {
 
     }
 
-    // delete functions
+    // delete function
 
     handleDeleteItemClick(event) {
         // let currentItineraryUuid = event.target.value.uuid;
