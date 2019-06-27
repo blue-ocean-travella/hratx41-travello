@@ -25,13 +25,13 @@ import Axios from 'axios';
 
 class TimelineActivity extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
 
         this.state = {
             showDescriptionModal: false,
             showTimeModal: false,
             showMapModal: false
-        }
+        };
 
         this.handleDeleteItemClick = this.handleDeleteItemClick.bind(this);
         this.handleShowTimeModal = this.handleShowTimeModal.bind(this);
@@ -49,7 +49,7 @@ class TimelineActivity extends React.Component {
 
     handleDeleteItemClick(event) {
         // let currentItineraryUuid = event.target.value.uuid;
-        console.log('delete one clicked')
+        console.log('delete one clicked');
         // Axios.delete('/itineraries', { params: { uuid: currentItineraryUuid } })
         //     .then((response) => {
         //         console.log('item correctly deleted from itinerary: ', response)
@@ -94,7 +94,7 @@ class TimelineActivity extends React.Component {
         } else {
             position = 'right';
         }
-        return position
+        return position;
     }
 
     getIcon(category) {
@@ -156,7 +156,7 @@ class TimelineActivity extends React.Component {
                     </div>
                 </ VerticalTimelineElement>
             </div >
-        )
+        );
     }
 }
 

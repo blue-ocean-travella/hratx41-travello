@@ -19,7 +19,7 @@ const ItineraryDropdown = (props) => {
                 <Dropdown.Item className="lastdrop" eventKey="4" onClick={props.handleDeleteItineraryClick}>Delete Itinerary</Dropdown.Item>
             </DropdownButton>
         </div>
-    )
-}
+    );
+};
 
 export default ItineraryDropdown;

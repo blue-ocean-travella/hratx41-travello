@@ -5,7 +5,7 @@ const apiKey = process.env.API_KEY;
 
 const MapModal = (props) => {
     let latitude = props.activity.location.latitude;
-    let longitude = props.activity.location.longitude
+    let longitude = props.activity.location.longitude;
     // console.log('MapModal props: ', props)
     return (
         <Modal show={props.show} onHide={props.onHide}
@@ -43,7 +43,7 @@ const MapModal = (props) => {
             </Modal.Footer>
         </Modal>
     );
-}
+};
 
 
 export default MapModal;

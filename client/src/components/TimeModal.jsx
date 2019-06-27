@@ -5,12 +5,16 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 const getOpen = (bool) => {
-    let open = ''
+    let open = '';
 
     if (bool === true) {
-        open = 'Currently Open'
+        open = 'Currently Open';
+        // document.getElementById("time-modal-open").className = 'open';
     } else {
         open = 'Currently Closed';
+        // let target = document.getElementById("time-modal-open");
+        // console.log(target);
+
     }
     return open;
 }
@@ -25,7 +29,7 @@ const TimeModal = (props) => {
             <Modal.Header closeButton>
                 <Modal.Title id="modalTitle">{props.activity.location.name}
                     <div className="time-modal-hours">Hours of Operation:</div>
-                    <div className="time-modal-open">{getOpen(props.activity.location.open)}</div>
+                    <div id="time-modal-open">{getOpen(props.activity.location.open)}</div>
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
@@ -67,7 +71,7 @@ const TimeModal = (props) => {
             </Modal.Footer>
         </Modal>
     );
-}
+};
 
 
 export default TimeModal;

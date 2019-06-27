@@ -10,7 +10,7 @@ import ItineraryDropdown from './ItineraryDropdown.jsx';
 // images
 
 // import clock from '../assets/images/clock.jpg';
-import logo from '../../assets/images/16a60b31-4a4b-41eb-9cf2-b6f71c4a83e5_200x200.png'
+import logo from '../../assets/images/16a60b31-4a4b-41eb-9cf2-b6f71c4a83e5_200x200.png';
 // import nightlife from '../assets/images/martini.png';
 // import map from '../assets/images/directions.png';
 // import dine from '../assets/images/food.png';
@@ -30,7 +30,7 @@ import finishLine from '../../assets/images/finishline.png';
 
 class Itinerary extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
 
 
         this.state = {
@@ -182,7 +182,7 @@ class Itinerary extends React.Component {
                     image: 'https://ak6.picdn.net/shutterstock/videos/1021179886/thumb/1.jpg'
                 }
             }],
-        }
+        };
 
         // this.handleArrowClick = this.handleArrowClick.bind(this);
         // this.handleShowTimeModal = this.handleShowTimeModal.bind(this);
@@ -197,7 +197,7 @@ class Itinerary extends React.Component {
     }
 
     handleDeleteItineraryClick(event) {
-        event.preventDefault()
+        event.preventDefault();
         console.log('delete entire itinerary');
         // let city = this.state.city;
 
@@ -247,7 +247,7 @@ class Itinerary extends React.Component {
         let uuid = (this.state.uuid);
         this.setState({
             backgroundImage: this.getImage()
-        })
+        });
         // Axios.get(`/itineraries?uuid=${uuid}`)
         //     .then(function (response) {
         //         console.log(response);
@@ -265,7 +265,7 @@ class Itinerary extends React.Component {
     }
 
     getRandomElement(array) {
-        let random = Math.floor(Math.random() * array.length)
+        let random = Math.floor(Math.random() * array.length);
         return random;
     }
 
@@ -503,7 +503,7 @@ class Itinerary extends React.Component {
                     <div className="footer"></div>
                 </div >
             </div>
-        )
+        );
     }
 }
 
