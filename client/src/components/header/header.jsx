@@ -25,7 +25,9 @@ class Header extends Component {
        <div className='header'>
          <img src='https://www.elite-dentistry.net/wp-content/uploads/2018/08/xheader-banner-home.jpg.pagespeed.ic.q4-4b2pub4.webp' className='background-image'></img>
          <div className='city'>{this.props.city}</div>
-         <button className='iteneraryButton' onClick={this.handleClicke}>Your Itinerary </button>
+         <button className='iteneraryButton' onClick={this.handleClicke}>
+           <a  href='./index2.html'>Your Itinerary</a>
+         </button>
        </div>
     );
     }
