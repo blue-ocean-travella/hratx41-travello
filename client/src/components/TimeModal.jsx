@@ -5,15 +5,15 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 const getOpen = (bool) => {
-    let open = ''
+    let open = '';
 
     if (bool === true) {
-        open = 'Currently Open'
+        open = 'Currently Open';
     } else {
         open = 'Currently Closed';
     }
     return open;
-}
+};
 
 const TimeModal = (props) => {
     // console.log('TimeModal props: ', props)
@@ -67,7 +67,7 @@ const TimeModal = (props) => {
             </Modal.Footer>
         </Modal>
     );
-}
+};
 
 
 export default TimeModal;

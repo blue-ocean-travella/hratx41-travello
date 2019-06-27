@@ -35,26 +35,26 @@ app.get("/location", (req, res) => {
   let topSpots, thingsToDo, restaurants, nightLife, dayTrips;
 
   fetch(
-    `https://maps.googleapis.com/maps/api/place/textsearch/json?query=night+life+in+${location}+tx&key=${api}`
+    `https://maps.googleapis.com/maps/api/place/textsearch/json?query=night+life+in+${location}&key=${api}`
   )
     .then(res => res.json())
     .then(data => (nightLife = data.results))
 
     .then(() => {
       fetch(
-        `https://maps.googleapis.com/maps/api/place/textsearch/json?query=outdoor+activities+in+${location}+tx&key=${api}`
+        `https://maps.googleapis.com/maps/api/place/textsearch/json?query=outdoor+activities+in+${location}&key=${api}`
       )
         .then(res => res.json())
         .then(data => (thingsToDo = data.results))
         .then(() => {
           fetch(
-            `https://maps.googleapis.com/maps/api/place/textsearch/json?query=day+trips+in+${location}+tx&key=${api}`
+            `https://maps.googleapis.com/maps/api/place/textsearch/json?query=day+trips+in+${location}&key=${api}`
           )
             .then(res => res.json())
             .then(data => (dayTrips = data.results))
             .then(() => {
               fetch(
-                `https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+${location}+tx&key=${api}`
+                `https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+${location}&key=${api}`
               )
                 .then(res => res.json())
                 .then(data => (restaurants = data.results))
@@ -88,7 +88,7 @@ app.get("/location", (req, res) => {
                   //   if (err) console.log("error", err);
                   // });
                  // console.log("sending to app");
-                 console.log(locationData, 'THIS LOCATION DATA SEARCH LEVEL')
+                //  console.log(locationData, 'THIS LOCATION DATA SEARCH LEVEL')
                   res.send(locationData);
                 })
                 .catch(err => console.log(err));

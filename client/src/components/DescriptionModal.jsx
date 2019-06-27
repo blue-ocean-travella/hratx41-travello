@@ -9,21 +9,21 @@ import Col from 'react-bootstrap/Col';
 const imageStyle = {
     height: '200px',
     width: 'auto'
-}
+};
 
 const getOpen = (bool) => {
-    let open = ''
+    let open = '';
 
     if (bool === true) {
-        open = 'Currently Open'
+        open = 'Currently Open';
     } else {
         open = 'Currently Closed';
     }
     return open;
-}
+};
 
 const DescriptionModal = (props) => {
-    console.log('DescriptionModal props: ', props)
+    console.log('DescriptionModal props: ', props);
 
     return (
         <Modal show={props.show} onHide={props.onHide} className='modal-container'
@@ -87,7 +87,7 @@ const DescriptionModal = (props) => {
             </Modal.Footer>
         </Modal >
     );
-}
+};
 
 
 export default DescriptionModal;

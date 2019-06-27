@@ -3,9 +3,9 @@ const SRC_DIR = path.join(__dirname, '/src');
 const DIST_DIR = path.join(__dirname, '/public');
 const Dotenv = require('dotenv-webpack');
 module.exports = {
-  entry: `${SRC_DIR}/index.js`,
+  entry: {search:`${SRC_DIR}/index.js`, itinerary:`${SRC_DIR}/index2.js`},
   output: {
-  filename: 'bundle.js',
+  filename: '[name].bundle.js',
   path: DIST_DIR
   },
   module : {
@@ -19,6 +19,16 @@ module.exports = {
         test : /\.js?/,
         include : SRC_DIR,
         loader : 'babel-loader'
+      },
+      {
+        test: /\.(png|jp(e*)g|svg)$/,
+        use: [{
+          loader: 'url-loader',
+          options: {
+            limit: 8000, // Convert images < 8kb to base64 strings
+            name: 'images/[hash]-[name].[ext]'
+          },
+        }]
       },
       {
         test: /\.css$/,

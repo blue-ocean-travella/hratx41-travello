@@ -29,7 +29,7 @@ export default class App extends Component {
     if(e.key ==='Enter'){
       this.setState({currentPage: CategoriesAndResults});
     } else if (e.key === undefined) {
-      this.setState({currentPage: testPage});
+     console.log('u clicked');
     }
     
   }
