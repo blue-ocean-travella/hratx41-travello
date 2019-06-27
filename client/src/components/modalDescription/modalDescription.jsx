@@ -19,6 +19,8 @@ const ModalDescription = ({show, onHide, handleClose, handleTimeChange, goToItin
   // let phone = `(${phoneFirstDigits}) ${phoneRestDigits}`;
   
   let hoursOfoperation = dataResult.hoursOfOperations;
+  let lat=  dataResult.lat;
+  let long= dataResult.long;
   
   console.log(hoursOfoperation[0]);
   
@@ -53,8 +55,8 @@ const ModalDescription = ({show, onHide, handleClose, handleTimeChange, goToItin
                 }}
                 zoom={16}
                 center={{
-                  lat: `${dataResult.lat}`,
-                  lng: `${dataResult.long}`
+                  lat: lat,
+                  lng: long
                 }}
               />
             </LoadScript>
