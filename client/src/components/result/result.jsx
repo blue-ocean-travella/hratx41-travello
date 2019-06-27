@@ -10,7 +10,7 @@ class Result extends Component {
     this.state = {
       show: false,
       showTimeModal: false,
-      time: '12:00 pm',
+      time: '0:00',
       // duration: null,
   };
 
@@ -43,48 +43,49 @@ class Result extends Component {
   handleTimeChange(e) {
     let hour = e.hours();
     let minutes = e.minutes().toString();
-    let amOrPm = 'am';
+    // let amOrPm = 'am';
     
     if(minutes.length === 1) {
       minutes = 0 + minutes;
     }
 
-    if(hour === 0) {
-      hour = 12;
-      amOrPm = 'am';
-    } else if (hour === 12) {
-      hour = 12;
-      amOrPm = 'pm';
-    }
+    // if(hour === 0) {
+    //   hour = 12;
+    //   amOrPm = 'am';
+    // } else if (hour === 12) {
+    //   hour = 12;
+    //   amOrPm = 'pm';
+    // }
    
-    if(hour >= 13) {
-      hour =  Number(hour) - 12;
-      amOrPm = 'pm';
-    }
-
+    // if(hour >= 13) {
+    //   hour =  Number(hour) - 12;
+    //   amOrPm = 'pm';
+    // }
+    // console.log(`${hour}:${minutes}`)
     this.setState({
-      time : `${`${hour}:${minutes} ${amOrPm}`}`
+      time : `${`${hour}:${minutes}`}`
     });
   }
 
-
-
   createItineraryObject () {
     const destination = {
+      city: this.props.dataResult.city,
       name: this.props.dataResult.name,
+      hoursOfOperations: this.props.dataResult.hoursOfOperations,
+      long: this.props.dataResult.lng,
+      lat: this.props.dataResult.lat,
+      numberOfReviews:  this.props.dataResult.userRating,
+      stars: this.props.dataResult.rating,
+      addres:  this.props.dataResult.addres,
+      openOrNot: this.props.dataResult.openOrNot,
+      phoneNumber: this.props.dataResult.phoneNumber,
+      photos: this.props.dataResult.photos,
+      websiteUrl:  this.props.dataResult.websiteUrl,
       start_time: this.state.time,
       duration: this.state.duration,
-      description: this.props.dataResult.bigDescription,
-      image: this.props.dataResult.image,
+      longDescription: this.props.dataResult.longDescription,
       category: this.props.currentCategory,
-      lat: 30.265824,
-      lng: -97.74926,
-      uuid: 1,
-
-      
-      
-
-      // category: 
+      //uuid pending
     };
 
     console.log(destination);
@@ -122,7 +123,7 @@ class Result extends Component {
     return (
      <div className="card card_result" style={{width: '24rem'}}>
         <div className="card bg-dark text-white card_result">
-         <img src={this.props.dataResult.image} className="card-img image-result-card" alt="..."/>
+         <img src={this.props.dataResult.photos[0]} className="card-img image-result-card" alt="..."/>
          <a href="#" className='modal-button' onClick={() => this.handleShow()}>
           <div className="card-img-overlay">
            <h5 className="card-title result-position" >{this.props.dataResult.name}</h5>
@@ -143,7 +144,7 @@ class Result extends Component {
                 name='rating'
                 starRatedColor="#f08804"
             />   
-            <span className='result_total_reviews'>{`${this.props.dataResult.userRating} reviews`}</span>
+            <span className='result_total_reviews'>{`${this.props.dataResult.totalReviews} reviews`}</span>
           </div>
           <div className='result_distance_time_section_container'>
             <div className="card-text"> 

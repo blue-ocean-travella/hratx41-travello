@@ -51,10 +51,10 @@ function onChange(value) {
           </div>
         </Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={handleCloseModalTime}>
+        <Button variant="secondary" onClick={handleCloseModalTime} className='closeModalTime'>
          Close
         </Button>
-        <Button variant="primary" onClick={addToItenerary}>
+        <Button variant="secondary" onClick={addToItenerary} className='addToItinerary-Button'>
           Add to itinerary
         </Button>
       </Modal.Footer>

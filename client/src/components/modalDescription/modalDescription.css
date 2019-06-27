@@ -59,7 +59,7 @@ a:hover {
 }
 
 .modal-addres-hours-phone-info {
-  margin-top: 60px;
+  margin-top: 10px;
   font-size:15px;
 }
 
@@ -71,6 +71,17 @@ a:hover {
 .google-map-description {
   padding-top: 10px;
 }
+
+.closeButton-modal-description {
+  border: 3px black solid;
+  background-color: black;
+}
+
+.selectTime-modal-description {
+  border: 3px black solid;
+  background-color: black;
+}
+
 
 
 
