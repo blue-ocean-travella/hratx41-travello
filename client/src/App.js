@@ -315,7 +315,7 @@ export default class App extends Component {
   render() {
     return (
       <>
-        <CategoriesAndResults results={this.state.results} handdleAddToItenerary={this.handleAddToItenerary}  image={this.state.images[0]}/>
+        <CategoriesAndResults results={this.state.results} handdleAddToItenerary={this.handleAddToItenerary}/>
       </>
     );
   }

@@ -1,15 +1,25 @@
 import React, { Component } from 'react';
 import './header.css';
+import unsplash from '../../api/unsplash.js';
+import axios from  'axios';
 
 // class Header extends Component ({city}) => {
 class Header extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      images : [],
+    }
   }
   
   handleClicke () {
     console.log('is cliciked');
   }
+
+  componentDidMount() {
+    axios.get('')
+  }
+
   render() {
     return (
        <div className='header'>
