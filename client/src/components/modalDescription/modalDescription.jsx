@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Modal } from 'react-bootstrap';
-import '../modalDescription/modalDescription.css';
+import '../modalDescription/modalDescription.module.css';
 import StarRatings from '../../../node_modules/react-star-ratings';
 import {GoogleMap, LoadScript} from '@react-google-maps/api';
 const apiKey = process.env.API_KEY;
@@ -23,7 +23,7 @@ const ModalDescription = ({show, onHide, handleClose, handleTimeChange, goToItin
     open = 'Close';
   }
   return (
-    <Modal show={show} onHide={onHide} className='modal-container'
+    <Modal show={show} onHide={onHide} className={styles.modal-container}
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
       centered
@@ -40,9 +40,9 @@ const ModalDescription = ({show, onHide, handleClose, handleTimeChange, goToItin
         </TimePicker> */}
         {/* <TimePicker start="10:00" end="21:00" step={30} /> */}
         {/* <TimePicker  name="defaul"/> */}
-        <div className='imagesMapAndDescriptionContainer'>
-          <div className='imageAndMap-container'>
-            <img src={dataResult.image} className='imagePlace'></img>
+        <div className={styles.imagesMapAndDescriptionContainer}>
+          <div className={styles.imageAndMap-container}>
+            <img src={dataResult.image} className={styles.imagePlace}></img>
             {/* <img src={dataResult.image} className='imageMap'></img> */}
           {/* <img src={dataResult.image}></img> */}
            <div>
@@ -63,7 +63,7 @@ const ModalDescription = ({show, onHide, handleClose, handleTimeChange, goToItin
             </div>
           </div>
           <div>
-            <div className='modalPlaceName'>
+            <div className={styles.modalPlaceName}>
               {dataResult.name}
             </div>
             <div>
@@ -79,13 +79,13 @@ const ModalDescription = ({show, onHide, handleClose, handleTimeChange, goToItin
                 starRatedColor="#f08804"
               />  
               <span>
-                 <a className='modal-totalReviews' href='#'>{dataResult.userRating} Google Reviews</a>
+                 <a className={styles.modal-totalReviews} href='#'>{dataResult.userRating} Google Reviews</a>
               </span>
             </div>
-            <div className='modal-bigDescription'>
+            <div className={styles.modal-bigDescription}>
               {dataResult.bigDescription}
             </div>
-            <div className='modal-addres-hours-phone-info'>
+            <div className={styles.modal-addres-hours-phone-info}>
               <div>
                 <b>Addres:</b> <span>{dataResult.address}</span>
               </div>
