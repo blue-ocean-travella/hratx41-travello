@@ -14,7 +14,7 @@ app.use(express.static("../client/public"));
 app.post("/delete:{itinerary}", (req, res) => {
   let user = req.query.user
   let card = req.query.card
-  let query = {name:user, itinerary: { $elemMatch: { card: card } } }
+  let query =`{name:${user}, itinerary: { $elemMatch: { card: ${card } } }`
   console.log("delete started ");
 
   db.deleteData(query, (err, response) => {
@@ -45,8 +45,8 @@ app.post("/insert:{itenerary}", function(req, res) {
   console.log("update started ", req.query);
   let user = req.query.user
   let card = req.query.card
-  let query = {name:user},{ $push: {itinerary:card}}
- 
+  let query = `{name:${user},{ $push: {itinerary:${card}}`
+
 //may need to use uuid and not user?
   db.insertData(query, (err, response) => {
     if (err) {
@@ -62,7 +62,7 @@ app.get("/select:{itinerary}", function(req, res) {
   console.log("this is req query", req.query);
   let user = req.query.user
   let card = req.query.card
-  let query = {itinerary: {$elemMatch: {card: card}}}
+  let query = `{itinerary: {$elemMatch: {card: ${card}}}`
 
   db.findData(req.query, (err, response) => {
     if (err) {
@@ -92,26 +92,36 @@ app.get("/location", (req, res) => {
     `https://maps.googleapis.com/maps/api/place/textsearch/json?query=night+life+in+${location}&key=${api}`
   )
     .then(res => res.json())
-    .then(data => (nightLife = data.results))
+    .then(async data => {
+      nightLife = await getDetails(data.results);
+    })
 
-    .then(() => {
+    .then(data => {
       fetch(
         `https://maps.googleapis.com/maps/api/place/textsearch/json?query=outdoor+activities+in+${location}&key=${api}`
       )
         .then(res => res.json())
-        .then(data => (thingsToDo = data.results))
+        .then(async data => {
+          thingsToDo = await getDetails(data.results);
+        })
+
         .then(() => {
           fetch(
             `https://maps.googleapis.com/maps/api/place/textsearch/json?query=day+trips+in+${location}&key=${api}`
           )
             .then(res => res.json())
-            .then(data => (dayTrips = data.results))
+
+            .then(async data => {
+              dayTrips = await getDetails(data.results);
+            })
             .then(() => {
               fetch(
                 `https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+${location}&key=${api}`
               )
                 .then(res => res.json())
-                .then(data => (restaurants = data.results))
+                .then(async data => {
+                  restaurants = await getDetails(data.results);
+                })
                 .then(() => {
                   let locationData = {};
                   locationData["nightLife"] = parseData(nightLife);
@@ -155,8 +165,20 @@ app.get("/location", (req, res) => {
 
 let parseData = array => {
   let results = [];
-  let long, lat, name, photo, rating, totalReviews, address, place_id;
-
+  let long,
+    lat,
+    name,
+    photo,
+    rating,
+    totalReviews,
+    address,
+    place_id,
+    openOrNot,
+    websiteUrl,
+    hoursOfOperation,
+    phoneNumber,
+    icon;
+  //console.log("this is array inside parseData", array);
   for (let i = 0; i < array.length; i++) {
     let paragraph = faker.lorem.paragraph();
     let uuid = i;
@@ -168,6 +190,14 @@ let parseData = array => {
     place_id = array[i].place_id;
     rating = array[i].rating;
     totalReviews = array[i].user_ratings_total;
+    photo = array[i].photos;
+    openOrNot = array[i].openOrNot;
+    websiteUrl = array[i].websiteUrl;
+    phoneNumber = array[i].phoneNumber;
+    priceLevel = array[i].priceLevel;
+    formattedAddress = array[i].formatted_address;
+    icon = array[i].icon;
+
     //photo = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=${photoRef}&key=${api}`;
     results.push({
       uuid: uuid,
@@ -175,11 +205,17 @@ let parseData = array => {
       address: address,
       long: long,
       lat: lat,
-      photo: photo,
+      photos: photo,
       rating: rating,
       totalReviews: totalReviews,
       place_id: place_id,
-      description: paragraph
+      description: paragraph,
+      openOrNot: openOrNot,
+      websiteUrl: websiteUrl,
+      hoursOfOperation: hoursOfOperation,
+      priceLevel: priceLevel,
+      phoneNumber: phoneNumber,
+      icon: icon
     });
   }
 
@@ -199,6 +235,47 @@ let topPlaces = (arr1, arr2, arr3, arr4) => {
   let result = newArr1.concat(newArr2, newArr3, newArr4);
 
   return result;
+};
+
+let getDetails = array => {
+  array.map(x => {
+    fetch(
+      `https://maps.googleapis.com/maps/api/place/details/json?placeid=${
+        x.place_id
+      }&fields=name,formatted_phone_number,website,opening_hours,price_level,photos,types&key=${api}`
+    )
+      .then(res => res.json())
+      .then(data => {
+        // console.log("im inside get DEtails", data.result.types);
+        const result = data.result;
+        let photoData = result.photos;
+        let openNowData = result.opening_hours.open_now;
+        let operatingData = result.opening_hours.weekday_text;
+        let priceData = result.price_level;
+        let typeData = result.types;
+        let website = result.website;
+        let phoneNumber = result.formatted_phone_number;
+
+        //console.log("does this exits?", photoData);
+        let photos = [];
+        photoData.map(x => {
+          photos.push(
+            `https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=${
+              x.photo_reference
+            }&key=${api}`
+          );
+        });
+        x.photos = photos;
+        x.hoursOfOperation = operatingData;
+        x.openOrNot = openNowData;
+        x.priceLevel = priceData;
+        x.type = typeData;
+        x.websiteUrl = website;
+        x.phoneNumber = phoneNumber;
+      })
+      .catch(err => console.log(err));
+  });
+  return array;
 };
 
 const port = process.env.PORT || 3009;

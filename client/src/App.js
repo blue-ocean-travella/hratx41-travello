@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import fetch from "node-fetch";
 import Axios from "axios";
 // import './App.css
-//change
+
 const apiKey = process.env.API_KEY;
 
 import Script from "react-load-script";
@@ -11,7 +11,12 @@ export default class Search extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      results: {}
+      city: "",
+      nightLife: [],
+      restaurants: [],
+      thingsToDo: [],
+      dayTrips: [],
+      topSpots: []
     };
 
     this.HandleScriptLoad = this.HandleScriptLoad.bind(this);
@@ -21,33 +26,53 @@ export default class Search extends Component {
     this.getDetails = this.getDetails.bind(this);
   }
 
+  TopSpots(arr1, arr2, arr3, arr4) {
+    arr1.sort((a, b) => a.rating - b.rating);
+    let newArr1 = arr1.slice(-4);
+
+    arr2.sort((a, b) => a.rating - b.rating);
+    let newArr2 = arr2.slice(-4);
+    arr3.sort((a, b) => a.rating - b.rating);
+    let newArr3 = arr3.slice(-4);
+    arr4.sort((a, b) => a.rating - b.rating);
+    let newArr4 = arr4.slice(-4);
+
+    let result = newArr1.concat(newArr2, newArr3, newArr4);
+
+    return result;
+  }
+
   Initialize() {
     Axios.get("/location", {
       params: {
-        city: this.state.results.city
+        city: this.state.city,
+        latitude: this.state.latitude,
+        longitude: this.state.longitude
       }
     })
       .then(data => {
-        console.log("how data is sent from server", data.data);
+       // console.log("how data is sent from server", data.data);
         let nightLife = data.data.nightLife;
         let dayTrips = data.data.dayTrips;
         let restaurants = data.data.restaurants;
         let thingsToDo = data.data.thingsToDo;
         let topSpots = data.data.topSpots;
-        this.state.results.nightLife = nightLife;
-        this.state.results.dayTrips = dayTrips;
-        this.state.results.restaurants = restaurants;
-        this.state.results.thingsToDo = thingsToDo;
-        this.state.results.topSpots = topSpots;
+       
+        this.setState({ nightLife: nightLife });
+        this.setState({ dayTrips: dayTrips });
+        this.setState({ restaurants: restaurants });
+        this.setState({ thingsToDo: thingsToDo });
+        this.setState({ topSpots: topSpots });
       })
-      .then(() => {
-        this.getDetails(this.state.results.nightLife);
-      })
-      .then(() => this.getDetails(this.state.results.restaurants))
-      .then(() => this.getDetails(this.state.results.thingsToDo))
-      .then(() => this.getDetails(this.state.results.dayTrips))
-      .then(() => this.getDetails(this.state.results.topSpots))
-      .then(() => console.log("this is state", this.state))
+    
+      .then(() =>
+        console.log(
+          "this is state",
+          this.state,
+          "hel",
+          this.state.nightLife[0].photos
+        )
+      )
       .catch(err => console.log(err));
   }
 
@@ -77,12 +102,24 @@ export default class Search extends Component {
     // Extract City From Address Object
     let addressObject = this.autocomplete.getPlace();
     let address = addressObject.address_components;
+    document.getElementById(
+      "cityLat"
+    ).value = addressObject.geometry.location.lat();
+    document.getElementById(
+      "cityLng"
+    ).value = addressObject.geometry.location.lng();
+    let lat = addressObject.geometry.location.lat();
+    let long = addressObject.geometry.location.lng();
 
     // Check if address is valid
     if (address) {
       // Set State
-      this.state.results.city = address[0].long_name;
-      this.Initialize();
+      this.setState(
+        {
+          city: address[0].long_name
+        },
+        this.Initialize
+      );
     }
   }
 
