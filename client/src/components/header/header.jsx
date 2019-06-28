@@ -37,19 +37,24 @@ class Header extends Component {
   }
 
   // componentDidMount() {
-  //   axios.get(`https://api.unsplash.com/search/photos?query=canada&client_id=${apiKey}`)
-  //    .then(images => {
-  //      console.log(image.data.results[1]);
-  //      images = image.data.results;
-  //      let image = image = image.data.results[0].urls.full;
+  //   let city =  this.props.city;
+  //   city = city.split(',')[0].toLowerCase();
 
-  //      images.forEach(image => {
-  //        if(image.width > 2000) {
-  //          image  = image.urls.full;
+  //   axios.get(`https://api.unsplash.com/search/photos?query=${city}&client_id=${apiKey}`)
+  //    .then(images => {
+  //     //  console.log(image.data.results[1]);
+  //     //  images = images.data.results;
+  //      let image = images.data.results[1].urls.full;
+  //      let imagesData = images.data.results;
+    
+  //      imagesData.forEach(img => {
+  //        if(img.width > 6000) {
+  //          image = img.urls.full;
   //        }
   //      })
        
   //      this.setState({image});
+  //     console.log(image);
   //    })
   //    .catch(err => {
   //      console.log('here is an error', err);
@@ -60,7 +65,9 @@ class Header extends Component {
 
   render ()  {
 
-    let random = Math.floor(Math.random() * images.length);
+    // let random = Math.floor(Math.random() * images.length);
+    // https://media.nbcwashington.com/images/1200*675/128215212.jpg'
+    // console.log(city);
     return (
        <div className='header'>
          <img src='https://media.nbcwashington.com/images/1200*675/128215212.jpg' className='background-image'></img>
