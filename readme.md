@@ -150,7 +150,7 @@ This project was a brief 1-week sprint where our team tried to complete an MVP f
 
 ## Workflow and Key lessons from your team - specifically those related to: Agile, CI/CD, testing, working with external stakeholders, ticketing, and user stories.
 
-- The team followed the Agile workflow
+- The team followed Agile workflow methodology
 - Everyone did amazing work on the style guides.
 - The team only did work when a ticket was issued
 - Detailed user stories was created during the meetings with the external stakeholders
