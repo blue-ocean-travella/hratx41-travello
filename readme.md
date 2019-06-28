@@ -3,6 +3,7 @@
 
 ## Travella Contributors:
 Contributor | Contributor
+col 2 is | centered
 --- | ---
 ![pic:](https://avatars1.githubusercontent.com/u/42327915?s=400&v=4)|![pic:](https://avatars1.githubusercontent.com/u/42365770?s=400&v=4)
 **[Fawnie du Plessis](https://github.com/fduplessis01)**|**[Gladys Benitez](https://github.com/gladysbenitez)**
