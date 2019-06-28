@@ -90,7 +90,7 @@ class Result extends Component {
       //uuid pending
     };
 
-    console.log(destination);
+    // console.log(destination);
       // axios.post('/api/itinerary', destination)
       //  .then(response => {
       //    console.log(response, 'succesfully posted!')
