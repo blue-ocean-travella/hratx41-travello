@@ -1,5 +1,6 @@
 
-# ![alt text](https://github.com/blue-ocean-travello/hratx41-travello/blob/master/travella.png =100x100)   Travel done the way you like it!
+# ![alt text](https://github.com/blue-ocean-travello/hratx41-travello/blob/master/travella.png =100x)   Travel done the way you like it!
+
 
 ## Travella Contributors:
 
