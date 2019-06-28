@@ -18,17 +18,20 @@ const ModalDescription = ({show, onHide, handleClose, handleTimeChange, goToItin
   // let phoneRestDigits =  dataResult.phone.slice(3);
   // let phone = `(${phoneFirstDigits}) ${phoneRestDigits}`;
   
-  let hoursOfoperation = dataResult.hoursOfOperations;
+  let hoursOfoperations = dataResult.hoursOfOperations;
   let lat=  dataResult.lat;
   let long= dataResult.long;
   
-  console.log(hoursOfoperation[0]);
+  // console.log(hoursOfoperation[0]);
   
   if(dataResult.openOrNot === true) {
     open = 'Open';
   } else {
     open = 'Close';
   }
+  
+
+  
   return (
     <Modal show={show} onHide={onHide} className='modal-container'
       size='lg'
@@ -90,19 +93,15 @@ const ModalDescription = ({show, onHide, handleClose, handleTimeChange, goToItin
                 <b>Addres:</b> <span>{dataResult.address}</span>
               </div>
               <div>
-                <b>Hours of operation:</b>
-                <ul>
-                  <li>{dataResult.hoursOfOperations[0]}</li>
-                  <li>{dataResult.hoursOfOperations[1]}</li>
-                  <li>{dataResult.hoursOfOperations[2]}</li>
-                  <li>{dataResult.hoursOfOperations[3]}</li>
-                  <li>{dataResult.hoursOfOperations[4]}</li>
-                  <li>{dataResult.hoursOfOperations[5]}</li>
-                  <li>{dataResult.hoursOfOperations[6]}</li>
-                </ul>
+                <b>Phone:</b> <span>{dataResult.phoneNumber}</span>
               </div>
               <div>
-                <b>Phone:</b> <span>{dataResult.phoneNumber}</span>
+                <b>Hours of operation:</b>
+                <ul>
+                  {hoursOfoperations.map((hoursOfoperation, i) => {
+                     return <li key={i}>{hoursOfoperation}</li>
+                  })}         
+                </ul>
               </div>
             </div>
           </div>

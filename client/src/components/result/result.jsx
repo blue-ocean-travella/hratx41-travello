@@ -49,6 +49,8 @@ class Result extends Component {
       minutes = 0 + minutes;
     }
 
+
+
     // if(hour === 0) {
     //   hour = 12;
     //   amOrPm = 'am';
@@ -148,9 +150,16 @@ class Result extends Component {
           </div>
           <div className='result_distance_time_section_container'>
             <div className="card-text"> 
-                <span className='address'>{`${this.props.dataResult.address} bla bla bla bla bla bla`}</span>
+                <div>
+                <span className='address'>{`${this.props.dataResult.address}`}</span>
+                </div>
+                <div className='webSite'>
+                  <a href={`${this.props.dataResult.websiteUrl}`}>{this.props.dataResult.websiteUrl}</a>
+                </div>
             </div>
+            <div>
             <a href="#" className="btn btn-primary addToItenerary" onClick={() => this.handleShowModalTime()}>+</a>
+            </div>
             <ModalTime dataResult={this.props.dataResult} show={this.state.showTimeModal} onHide={this.handleCloseModalTime} handleCloseModalTime={this.handleCloseModalTime} handleTimeChange={this.handleTimeChange} addToItenerary={this.createItineraryObject} changeDuration={this.changeDuration}/>
           </div>      
         </div>
@@ -160,3 +169,4 @@ class Result extends Component {
 }
 
 export default Result;
+

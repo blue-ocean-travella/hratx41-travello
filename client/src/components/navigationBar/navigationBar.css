@@ -31,3 +31,30 @@ button:active {
   color: black;
   border-bottom-color: black;
 }
+
+.iteneraryButton {
+  border: none;
+  border-bottom: 1px solid #ffffff;
+  color: #ffffff;
+  background-color: transparent;
+  position: absolute;
+  top: 20px;
+  right: 200px;
+}
+
+.itinerary {
+  border: none;
+  font-family: 'Lato', sans-serif;
+  font-size: 17px;
+  color: #f2994a;
+  letter-spacing: -0.05em;
+  font-weight: 600;
+  outline:none;
+  padding-top: 0px;
+  height:20px;
+}
+
+.itinerary:hover {
+  color: gray;
+  text-decoration: none;
+}

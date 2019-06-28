@@ -33,8 +33,8 @@ export default class App extends Component {
             totalReviews: 150,
             type: ['amusent park', 'point_of_interes', 'establishment'],
             uuid: 1,
-            websiteUrl:  "http:wellarrangedtravel.com",
-            longDescription: 'Barting Springs is a recreational  swimming pool tha is filled entirely with water from nearby  natural  spring. It is located on the grounds of Zilker Park in Austin, Texas. The pool exits within the channel of Barton Creek and utilizes water  from  Main Barton Spring, the fourth largest spring in Texas.',
+            websiteUrl:  "http://wellarrangedtravel.com",
+            longDescription: 'Barting Springs is a recreational  swimming pool tha is filled entirely with water from nearby  natural  spring. It is located on the grounds of Zilker Park in Austin, Texas. The pool exits within the channel of Barton Creek and utilizes water  from  Main Barton Spring, the fourth largest spring in Texas. fjdka jfda fjdal;  fjdkslajf  fjdklsajfkda;sfj  jkfdlajfadlk;  jfkdlsafjda   jfkdlsajfldas jfkdlafj da;  fjdklsafja jfdlsafjda;  jfdas;fja;',
           }, 
           {
             address: '2131 William Barton Dr, Austin, Tx  78456',
