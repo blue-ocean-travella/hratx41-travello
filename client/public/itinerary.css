@@ -605,17 +605,24 @@ button{
 
 /* <----------- TIMELINE CARD CONTENT ------------> */  
 
-.timeline-description {
+.timeline-information {
     margin-top: 12px;
     color: white !important;
-    width: 140px;
-    height: 140px;
     padding-bottom: 5px;
-    text-overflow: ellipsis;
-    white-space: wrap;
-    overflow: hidden;
-    font-size: 14px;
 }
+
+#timeline-description {
+  margin-top: 12px;
+  color: white !important;
+  width: 140px !important;
+  height: 140px !important;
+  padding-bottom: 5px;
+  text-overflow: ellipsis !important;
+  white-space: wrap;
+  overflow: hidden !important;
+  font-size: 14px;
+}
+
 
 .timeline-element-top-container {
     padding: 1em;
@@ -743,6 +750,10 @@ button{
 .itinerary-stars {
       align-items: center;
    }
+
+.description-modal-description {
+  padding-bottom: 25px;
+}
 
 /* <----------- TIME MODAL STYLING ------------> */
 

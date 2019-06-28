@@ -51,6 +51,9 @@ const DescriptionModal = (props) => {
                     <Row>
                         <Col>
                             <div>
+                                <div className="description-modal-description">
+                                    {props.activity.location.description}
+                                </div>
                                 <div className='modal-addres-hours-phone-info'>
                                     <div>
                                         <b>Address: {props.activity.location.address}</b>

@@ -51,31 +51,31 @@ const TimeModal = (props) => {
                 <Container>
                     <Row>
                         <Col xs={4}>Sunday:</Col>
-                        <Col className="modal-time">12:00 PM - 5:00 PM</Col>
+                        <Col className="modal-time">{props.activity.location.hoursOfOperation.sunday}</Col>
                     </Row>
                     <Row>
                         <Col xs={4}>Monday:</Col>
-                        <Col className="modal-time">8:00 AM - 9:00 PM</Col>
+                        <Col className="modal-time">{props.activity.location.hoursOfOperation.monday}</Col>
                     </Row>
                     <Row>
                         <Col xs={4}>Tuesday:</Col>
-                        <Col className="modal-time">8:00 AM - 9:00 PM</Col>
+                        <Col className="modal-time">{props.activity.location.hoursOfOperation.tuesday}</Col>
                     </Row>
                     <Row>
                         <Col xs={4}>Wednesday:</Col>
-                        <Col className="modal-time">8:00 AM - 10:00 PM</Col>
+                        <Col className="modal-time">{props.activity.location.hoursOfOperation.wednesday}</Col>
                     </Row>
                     <Row>
                         <Col xs={4}>Thursday:</Col>
-                        <Col className="modal-time">8:00 AM - 10:00 PM</Col>
+                        <Col className="modal-time">{props.activity.location.hoursOfOperation.thursday}</Col>
                     </Row>
                     <Row>
                         <Col xs={4}>Friday</Col>
-                        <Col className="modal-time">8:00 AM - 12:00 AM</Col>
+                        <Col className="modal-time">{props.activity.location.hoursOfOperation.friday}</Col>
                     </Row>
                     <Row>
                         <Col xs={4}>Saturday:</Col>
-                        <Col className="modal-time">8:00 AM - 12:00 AM</Col>
+                        <Col className="modal-time">{props.activity.location.hoursOfOperation.saturday}</Col>
                     </Row>
                 </Container>
             </Modal.Body>

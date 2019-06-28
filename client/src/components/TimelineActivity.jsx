@@ -137,7 +137,7 @@ class TimelineActivity extends React.Component {
                         <DescriptionModal show={this.state.showDescriptionModal} onHide={this.handleCloseDescriptionModal} handleClose={this.handleCloseDescriptionModal} activity={this.props.activity} />
                         <div className="timeline-information">
                             <div className="time"><span className="duration">Visit Duration:</span> {this.props.activity.location.duration} hr</div>
-                            <div className="timeline-description">
+                            <div id="timeline-description">
                                 {this.props.activity.location.description}
                             </div></div></div>
 
