@@ -3,6 +3,7 @@ import StarRatings from '../../../node_modules/react-star-ratings';
 import ModalDescription from '../modalDescription/modalDescription.jsx';
 import ModalTime from  '../modalTime/modalTime.jsx';
 import '../result/result.css'
+import axios from 'axios';
 
 class Result extends Component {
   constructor(props) {
@@ -11,7 +12,7 @@ class Result extends Component {
       show: false,
       showTimeModal: false,
       time: '0:00',
-      // duration: null,
+      duration: 1,
   };
 
     this.handleShow = this.handleShow.bind(this);
@@ -48,9 +49,6 @@ class Result extends Component {
     if(minutes.length === 1) {
       minutes = 0 + minutes;
     }
-
-
-
     // if(hour === 0) {
     //   hour = 12;
     //   amOrPm = 'am';
@@ -70,15 +68,17 @@ class Result extends Component {
   }
 
   createItineraryObject () {
+    // console.log(this.props.dataResult.city);
+      
     const destination = {
-      city: this.props.dataResult.city,
+      city: this.props.city,
       name: this.props.dataResult.name,
       hoursOfOperations: this.props.dataResult.hoursOfOperations,
-      long: this.props.dataResult.lng,
+      long: this.props.dataResult.long,
       lat: this.props.dataResult.lat,
-      numberOfReviews:  this.props.dataResult.userRating,
+      totalReviews:  this.props.dataResult.totalReviews,
       stars: this.props.dataResult.rating,
-      addres:  this.props.dataResult.addres,
+      address:  this.props.dataResult.address,
       openOrNot: this.props.dataResult.openOrNot,
       phoneNumber: this.props.dataResult.phoneNumber,
       photos: this.props.dataResult.photos,
@@ -91,7 +91,13 @@ class Result extends Component {
     };
 
     console.log(destination);
-
+      // axios.post('/api/itinerary', destination)
+      //  .then(response => {
+      //    console.log(response, 'succesfully posted!')
+      //  })
+      //  .catch(err => {
+      //    console.log(err, 'there is an error')
+      //  })
     // this.props.handdleAddToItenerary(destination);
   }
   goToItinerary () {
@@ -121,11 +127,16 @@ class Result extends Component {
   }
 
   render() {
-    console.log(this.props.id);
+    // console.log(this.props.id);
+    let photo = this.props.dataResult.photos[0];
+    if(photo === undefined)  {
+      photo = 'http://48tx1q1rrcysi4t7l687xbtt.wpengine.netdna-cdn.com/wp-content/uploads/2011/05/Texas-Capitol-Austin-700x483.jpg'
+    }
+
     return (
      <div className="card card_result" style={{width: '24rem'}}>
         <div className="card bg-dark text-white card_result">
-         <img src={this.props.dataResult.photos[0]} className="card-img image-result-card" alt="..."/>
+         <img src={photo} className="card-img image-result-card" alt="..."/>
          <a href="#" className='modal-button' onClick={() => this.handleShow()}>
           <div className="card-img-overlay">
            <h5 className="card-title result-position" >{this.props.dataResult.name}</h5>

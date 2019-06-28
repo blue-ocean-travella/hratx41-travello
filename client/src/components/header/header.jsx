@@ -63,7 +63,7 @@ class Header extends Component {
     let random = Math.floor(Math.random() * images.length);
     return (
        <div className='header'>
-         <img src={images[random]} className='background-image'></img>
+         <img src='https://media.nbcwashington.com/images/1200*675/128215212.jpg' className='background-image'></img>
          <div className='city'>{this.props.city}</div>
        </div>
     );
