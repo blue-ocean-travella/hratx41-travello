@@ -4,7 +4,7 @@ import styles from'./navigationBar.css';
 
 const  handleClick = () => {
   console.log('is cliciked');
-}
+};
 
 const NavigationBar = ({onCategoryChange}) => {
 
@@ -17,10 +17,7 @@ const NavigationBar = ({onCategoryChange}) => {
         <button className='category' onClick={() => onCategoryChange('thingsToDo')}>THINGS TO DO</button>
         <button className='category' onClick={() => onCategoryChange('restaurants')}>FOOD {'&'} DRINK</button>
         <button className='category' onClick={() => onCategoryChange('nightLife')}>NIGHTLIFE</button>
-        <button className='category' onClick={() => onCategoryChange('dayTrips')}>DAY TRIPS</button> 
-        <button className='category' onClick={handleClick}>
-           <a  href='./index2.html' className='itinerary'>YOUR ITINERARY</a>
-        </button>       
+        <button className='category' onClick={() => onCategoryChange('dayTrips')}>DAY TRIPS</button>     
       </div>
     </>
   );   

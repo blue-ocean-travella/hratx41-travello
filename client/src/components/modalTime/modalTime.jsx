@@ -13,8 +13,17 @@ const ModalTime = ({dataResult, show, onHide, handleCloseModalTime, handleTimeCh
 
 const format = 'h:mm a';
 const now = moment().hour(0).minute(0);
+let style = '';
+
 function onChange(value) {
   console.log(value && value.format(format));
+}
+
+function changeStyle() {
+   style = {
+     color: 'pink'
+   }
+   console.log('hello');
 }
   return (
     <Modal show={show} onHide={onHide}
@@ -43,10 +52,10 @@ function onChange(value) {
           <div className='durationTime'>
             <div style={{fontWeight:'bold', textAlign:'center'}}>Duration:</div><br/>
             <div className='durationHoursOptions'>
-                <button className='durationOption' onClick={() => {changeDuration(1);}}> 1Hr </button>
-                <button className='durationOption' onClick={() => {changeDuration(2);}}> 2Hr </button>
-                <button className='durationOption' onClick={() => {changeDuration(3);}}> 3Hr</button>
-                <button className='durationOption' onClick={() => {changeDuration(4);}}> 4Hr </button>
+                <button className='durationOption' onClick={() => {changeDuration(1);}} onMouseEnter={() => {changeStyle()}} style={style}> 1Hr </button>
+                <button className='durationOption' onClick={() => {changeDuration(2);}} onMouseEnter={() => {changeStyle()}} style={style}> 2Hr </button>
+                <button className='durationOption' onClick={() => {changeDuration(3);}} onMouseEnter={() => {changeStyle()}} style={style}> 3Hr</button>
+                <button className='durationOption' onClick={() => {changeDuration(4);}} onMouseEnter={() => {changeStyle()}} style={style}> 4Hr </button>
             </div>
           </div>
         </Modal.Body>

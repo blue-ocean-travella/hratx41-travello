@@ -20,7 +20,7 @@ export default class App extends Component {
         topSpots: [
           {
             address: '2131 William Barton Dr, Austin, Tx  78456',
-            hoursOfOperations: ["Monday: 9:00 AM - 5:00 PM", "Tuesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Thursday: 9:00 AM - 5: 00 AM", "Friday: 9:00 AM - 5: 00 AM", "Saturday: Closed", "Sunday: Closed"],
+            hoursOfOperation: ["Monday: 9:00 AM - 5:00 PM", "Tuesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Thursday: 9:00 AM - 5: 00 AM", "Friday: 9:00 AM - 5: 00 AM", "Saturday: Closed", "Sunday: Closed"],
             lat:30.265824,
             long: -97.74926,
             name: 'Barton Spring Municipal Pool',
@@ -38,7 +38,7 @@ export default class App extends Component {
           }, 
           {
             address: '2131 William Barton Dr, Austin, Tx  78456',
-            hoursOfOperations: ["Monday: 9:00 AM - 5:00 PM", "Tuesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Thursday: 9:00 AM - 5: 00 AM", "Friday: 9:00 AM - 5: 00 AM", "Saturday: Closed", "Sunday: Closed"],
+            hoursOfOperation: ["Monday: 9:00 AM - 5:00 PM", "Tuesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Thursday: 9:00 AM - 5: 00 AM", "Friday: 9:00 AM - 5: 00 AM", "Saturday: Closed", "Sunday: Closed"],
             lat:30.265824,
             long: -97.74926,
             name: 'Barton Spring Municipal Pool',
@@ -56,7 +56,7 @@ export default class App extends Component {
           }, 
           {
             address: '2131 William Barton Dr, Austin, Tx  78456',
-            hoursOfOperations: ["Monday: 9:00 AM - 5:00 PM", "Tuesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Thursday: 9:00 AM - 5: 00 AM", "Friday: 9:00 AM - 5: 00 AM", "Saturday: Closed", "Sunday: Closed"],
+            hoursOfOperation: ["Monday: 9:00 AM - 5:00 PM", "Tuesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Thursday: 9:00 AM - 5: 00 AM", "Friday: 9:00 AM - 5: 00 AM", "Saturday: Closed", "Sunday: Closed"],
             lat:30.265824,
             long: -97.74926,
             name: 'Barton Spring Municipal Pool',
@@ -74,7 +74,7 @@ export default class App extends Component {
           }, 
           {
             address: '2131 William Barton Dr, Austin, Tx  78456',
-            hoursOfOperations: ["Monday: 9:00 AM - 5:00 PM", "Tuesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Thursday: 9:00 AM - 5: 00 AM", "Friday: 9:00 AM - 5: 00 AM", "Saturday: Closed", "Sunday: Closed"],
+            hoursOfOperation: ["Monday: 9:00 AM - 5:00 PM", "Tuesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Thursday: 9:00 AM - 5: 00 AM", "Friday: 9:00 AM - 5: 00 AM", "Saturday: Closed", "Sunday: Closed"],
             lat:30.265824,
             long: -97.74926,
             name: 'Barton Spring Municipal Pool',
@@ -92,7 +92,7 @@ export default class App extends Component {
           }, 
           {
             address: '2131 William Barton Dr, Austin, Tx  78456',
-            hoursOfOperations: ["Monday: 9:00 AM - 5:00 PM", "Tuesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Thursday: 9:00 AM - 5: 00 AM", "Friday: 9:00 AM - 5: 00 AM", "Saturday: Closed", "Sunday: Closed"],
+            hoursOfOperation: ["Monday: 9:00 AM - 5:00 PM", "Tuesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Thursday: 9:00 AM - 5: 00 AM", "Friday: 9:00 AM - 5: 00 AM", "Saturday: Closed", "Sunday: Closed"],
             lat:30.265824,
             long: -97.74926,
             name: 'Barton Spring Municipal Pool',
@@ -110,7 +110,7 @@ export default class App extends Component {
           }, 
           {
             address: '2131 William Barton Dr, Austin, Tx  78456',
-            hoursOfOperations: ["Monday: 9:00 AM - 5:00 PM", "Tuesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Thursday: 9:00 AM - 5: 00 AM", "Friday: 9:00 AM - 5: 00 AM", "Saturday: Closed", "Sunday: Closed"],
+            hoursOfOperation: ["Monday: 9:00 AM - 5:00 PM", "Tuesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Thursday: 9:00 AM - 5: 00 AM", "Friday: 9:00 AM - 5: 00 AM", "Saturday: Closed", "Sunday: Closed"],
             lat:30.265824,
             long: -97.74926,
             name: 'Barton Spring Municipal Pool',
@@ -128,7 +128,7 @@ export default class App extends Component {
           }, 
           {
             address: '2131 William Barton Dr, Austin, Tx  78456',
-            hoursOfOperations: ["Monday: 9:00 AM - 5:00 PM", "Tuesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Thursday: 9:00 AM - 5: 00 AM", "Friday: 9:00 AM - 5: 00 AM", "Saturday: Closed", "Sunday: Closed"],
+            hoursOfOperation: ["Monday: 9:00 AM - 5:00 PM", "Tuesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Thursday: 9:00 AM - 5: 00 AM", "Friday: 9:00 AM - 5: 00 AM", "Saturday: Closed", "Sunday: Closed"],
             lat:30.265824,
             long: -97.74926,
             name: 'Barton Spring Municipal Pool',
@@ -146,7 +146,7 @@ export default class App extends Component {
           }, 
           {
             address: '2131 William Barton Dr, Austin, Tx  78456',
-            hoursOfOperations: ["Monday: 9:00 AM - 5:00 PM", "Tuesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Thursday: 9:00 AM - 5: 00 AM", "Friday: 9:00 AM - 5: 00 AM", "Saturday: Closed", "Sunday: Closed"],
+            hoursOfOperation: ["Monday: 9:00 AM - 5:00 PM", "Tuesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Thursday: 9:00 AM - 5: 00 AM", "Friday: 9:00 AM - 5: 00 AM", "Saturday: Closed", "Sunday: Closed"],
             lat:30.265824,
             long: -97.74926,
             name: 'Barton Spring Municipal Pool',
@@ -166,7 +166,7 @@ export default class App extends Component {
         thingsToDo: [
           {
             address: '2131 William Barton Dr, Austin, Tx  78456',
-            hoursOfOperations: ["Monday: 9:00 AM - 5:00 PM", "Tuesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Thursday: 9:00 AM - 5: 00 AM", "Friday: 9:00 AM - 5: 00 AM", "Saturday: Closed", "Sunday: Closed"],
+            hoursOfOperation: ["Monday: 9:00 AM - 5:00 PM", "Tuesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Thursday: 9:00 AM - 5: 00 AM", "Friday: 9:00 AM - 5: 00 AM", "Saturday: Closed", "Sunday: Closed"],
             lat:30.265824,
             long: -97.74926,
             name: 'Barton Spring Municipal Pool',
@@ -184,7 +184,7 @@ export default class App extends Component {
           }, 
           {
             address: '2131 William Barton Dr, Austin, Tx  78456',
-            hoursOfOperations: ["Monday: 9:00 AM - 5:00 PM", "Tuesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Thursday: 9:00 AM - 5: 00 AM", "Friday: 9:00 AM - 5: 00 AM", "Saturday: Closed", "Sunday: Closed"],
+            hoursOfOperation: ["Monday: 9:00 AM - 5:00 PM", "Tuesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Thursday: 9:00 AM - 5: 00 AM", "Friday: 9:00 AM - 5: 00 AM", "Saturday: Closed", "Sunday: Closed"],
             lat:30.265824,
             long: -97.74926,
             name: 'Barton Spring Municipal Pool',
@@ -202,7 +202,7 @@ export default class App extends Component {
           }, 
           {
             address: '2131 William Barton Dr, Austin, Tx  78456',
-            hoursOfOperations: ["Monday: 9:00 AM - 5:00 PM", "Tuesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Thursday: 9:00 AM - 5: 00 AM", "Friday: 9:00 AM - 5: 00 AM", "Saturday: Closed", "Sunday: Closed"],
+            hoursOfOperation: ["Monday: 9:00 AM - 5:00 PM", "Tuesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Thursday: 9:00 AM - 5: 00 AM", "Friday: 9:00 AM - 5: 00 AM", "Saturday: Closed", "Sunday: Closed"],
             lat:30.265824,
             long: -97.74926,
             name: 'Barton Spring Municipal Pool',
@@ -220,7 +220,7 @@ export default class App extends Component {
           }, 
           {
             address: '2131 William Barton Dr, Austin, Tx  78456',
-            hoursOfOperations: ["Monday: 9:00 AM - 5:00 PM", "Tuesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Thursday: 9:00 AM - 5: 00 AM", "Friday: 9:00 AM - 5: 00 AM", "Saturday: Closed", "Sunday: Closed"],
+            hoursOfOperation: ["Monday: 9:00 AM - 5:00 PM", "Tuesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Thursday: 9:00 AM - 5: 00 AM", "Friday: 9:00 AM - 5: 00 AM", "Saturday: Closed", "Sunday: Closed"],
             lat:30.265824,
             long: -97.74926,
             name: 'Barton Spring Municipal Pool',
@@ -238,7 +238,7 @@ export default class App extends Component {
           }, 
           {
             address: '2131 William Barton Dr, Austin, Tx  78456',
-            hoursOfOperations: ["Monday: 9:00 AM - 5:00 PM", "Tuesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Thursday: 9:00 AM - 5: 00 AM", "Friday: 9:00 AM - 5: 00 AM", "Saturday: Closed", "Sunday: Closed"],
+            hoursOfOperation: ["Monday: 9:00 AM - 5:00 PM", "Tuesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Thursday: 9:00 AM - 5: 00 AM", "Friday: 9:00 AM - 5: 00 AM", "Saturday: Closed", "Sunday: Closed"],
             lat:30.265824,
             long: -97.74926,
             name: 'Barton Spring Municipal Pool',
@@ -256,7 +256,7 @@ export default class App extends Component {
           }, 
           {
             address: '2131 William Barton Dr, Austin, Tx  78456',
-            hoursOfOperations: ["Monday: 9:00 AM - 5:00 PM", "Tuesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Thursday: 9:00 AM - 5: 00 AM", "Friday: 9:00 AM - 5: 00 AM", "Saturday: Closed", "Sunday: Closed"],
+            hoursOfOperation: ["Monday: 9:00 AM - 5:00 PM", "Tuesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Thursday: 9:00 AM - 5: 00 AM", "Friday: 9:00 AM - 5: 00 AM", "Saturday: Closed", "Sunday: Closed"],
             lat:30.265824,
             long: -97.74926,
             name: 'Barton Spring Municipal Pool',
@@ -274,7 +274,7 @@ export default class App extends Component {
           }, 
           {
             address: '2131 William Barton Dr, Austin, Tx  78456',
-            hoursOfOperations: ["Monday: 9:00 AM - 5:00 PM", "Tuesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Thursday: 9:00 AM - 5: 00 AM", "Friday: 9:00 AM - 5: 00 AM", "Saturday: Closed", "Sunday: Closed"],
+            hoursOfOperation: ["Monday: 9:00 AM - 5:00 PM", "Tuesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Thursday: 9:00 AM - 5: 00 AM", "Friday: 9:00 AM - 5: 00 AM", "Saturday: Closed", "Sunday: Closed"],
             lat:30.265824,
             long: -97.74926,
             name: 'Barton Spring Municipal Pool',

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import StarRatings from '../../../node_modules/react-star-ratings';
 import ModalDescription from '../modalDescription/modalDescription.jsx';
 import ModalTime from  '../modalTime/modalTime.jsx';
-import '../result/result.css'
+import '../result/result.css';
 import axios from 'axios';
 
 class Result extends Component {
@@ -12,7 +12,7 @@ class Result extends Component {
       show: false,
       showTimeModal: false,
       time: '0:00',
-      duration: 1,
+      duration: 1
   };
 
     this.handleShow = this.handleShow.bind(this);
@@ -128,10 +128,10 @@ class Result extends Component {
 
   render() {
     // console.log(this.props.id);
-    let photo = this.props.dataResult.photos[0];
-    if(photo === undefined)  {
-      photo = 'http://48tx1q1rrcysi4t7l687xbtt.wpengine.netdna-cdn.com/wp-content/uploads/2011/05/Texas-Capitol-Austin-700x483.jpg'
-    }
+    let photo = this.props.dataResult.photos ? this.props.dataResult.photos[0]: 'http://48tx1q1rrcysi4t7l687xbtt.wpengine.netdna-cdn.com/wp-content/uploads/2011/05/Texas-Capitol-Austin-700x483.jpg';
+    // if(photo === undefined)  {
+    //   photo = 'http://48tx1q1rrcysi4t7l687xbtt.wpengine.netdna-cdn.com/wp-content/uploads/2011/05/Texas-Capitol-Austin-700x483.jpg';
+    // }
 
     return (
      <div className="card card_result" style={{width: '24rem'}}>

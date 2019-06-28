@@ -18,7 +18,7 @@ const ModalDescription = ({show, onHide, handleClose, handleTimeChange, goToItin
   // let phoneRestDigits =  dataResult.phone.slice(3);
   // let phone = `(${phoneFirstDigits}) ${phoneRestDigits}`;
   
-  let hoursOfoperations = dataResult.hoursOfOperations;
+  let hoursOfoperations = dataResult.hoursOfOperation ?  dataResult.hoursOfOperation :  ["Monday: 9:00 AM - 5:00 PM", "Tuesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Thursday: 9:00 AM - 5: 00 AM", "Friday: 9:00 AM - 5: 00 AM", "Saturday: Closed", "Sunday: Closed"] ;
   let lat=  dataResult.lat;
   let long= dataResult.long;
   
@@ -30,7 +30,7 @@ const ModalDescription = ({show, onHide, handleClose, handleTimeChange, goToItin
     open = 'Close';
   }
   
-
+   let photo = dataResult.photo ? dataResult.photo[0] : 'http://48tx1q1rrcysi4t7l687xbtt.wpengine.netdna-cdn.com/wp-content/uploads/2011/05/Texas-Capitol-Austin-700x483.jpg';
   
   return (
     <Modal show={show} onHide={onHide} className='modal-container'
@@ -47,7 +47,7 @@ const ModalDescription = ({show, onHide, handleClose, handleTimeChange, goToItin
       <Modal.Body>   
         <div className='imagesMapAndDescriptionContainer'>
           <div className='imageAndMap-container'>
-            <img src={dataResult.photos[0]} className='imagePlace'></img>
+            <img src={photo} className='imagePlace'></img>
            <div  className='google-map-description'>
             <LoadScript id="timeline-map-script-loader" googleMapsApiKey={apiKey}>
               <GoogleMap
@@ -98,9 +98,9 @@ const ModalDescription = ({show, onHide, handleClose, handleTimeChange, goToItin
               <div>
                 <b>Hours of operation:</b>
                 <ul>
-                  {hoursOfoperations.map((hoursOfoperation, i) => {
-                     return <li key={i}>{hoursOfoperation}</li>
-                  })}         
+                  {hoursOfoperations.map((el, i) => {
+                     return <li key={i}>{el}</li>;
+                  })};         
                 </ul>
               </div>
             </div>

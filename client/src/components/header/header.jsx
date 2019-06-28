@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import './header.css';
 import axios from  'axios';
+// import itinerary from './itinerary.png';
 const apiKey = process.env.A_KEY;
+
 
 const images = [
   'https://www.visittheusa.com/sites/default/files/styles/16_9_1280x720/public/images/hero_media_image/2017-05/23b0b0b9caaa07ee409b693da9bf9003.jpeg?itok=pE5ss3vx',
@@ -23,17 +25,17 @@ const images = [
   'https://cdn.civitatis.com/reino-unido/londres/galeria/london-eye-atardecer.jpg',
   'http://www.talkativeman.com/img/Enormous_Christ_the_Redeemer_Statue_in_Rio_de_Janeiro.jpg',
   'https://www.jetsetter.com/uploads/sites/7/2019/03/bobmd-bungalow-2973-hor-clsc-1160x690.jpg'
-]
+];
 
 
 
 class Header extends Component {
 
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      image: '',
-    }
+      image: ''
+    };
   }
 
   // componentDidMount() {
@@ -70,8 +72,11 @@ class Header extends Component {
     // console.log(city);
     return (
        <div className='header'>
-         <img src='https://media.nbcwashington.com/images/1200*675/128215212.jpg' className='background-image'></img>
+         <img src='https://www.munsch.com/portalresource/lookup/wosid/cp-base-3-11603/image.name=/Austin%20-%20Offices%20Page_Main_Crop.jpg' className='background-image'></img>
          <div className='city'>{this.props.city}</div>
+           <a  href='./index2.html' className='itinerary'>
+             <img src='https://image.flaticon.com/icons/svg/60/60740.svg' className='itinerary'></img> 
+           </a> 
        </div>
     );
   }
