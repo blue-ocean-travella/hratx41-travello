@@ -7,7 +7,6 @@ import CategoriesAndResults from './categoriesAndResults/categoriesAndResults.js
 import Axios from 'axios';
 import fakeData from './thing.js';
 
-
 export default class App extends Component {
   constructor(props) {
     super(props);
