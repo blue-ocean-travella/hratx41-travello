@@ -2,10 +2,8 @@
 # ![alt text](https://github.com/blue-ocean-travello/hratx41-travello/blob/master/travella.png)   Travel done the way you like it!
 
 ## Travella Contributors:
-## [Fawnie du Plessis](https://github.com/fduplessis01)
-![pic:](https://avatars1.githubusercontent.com/u/42327915?s=400&v=4)
-## [Gladys Benitez](https://github.com/gladysbenitez)
-![pic:](https://avatars1.githubusercontent.com/u/42365770?s=400&v=4)
+## [Fawnie du Plessis](https://github.com/fduplessis01) [Gladys Benitez](https://github.com/gladysbenitez)
+![pic:](https://avatars1.githubusercontent.com/u/42327915?s=400&v=4)![pic:](https://avatars1.githubusercontent.com/u/42365770?s=400&v=4)
 ## [Jimmy Hung](https://github.com/jmhung) 
 ![Pic:](https://avatars1.githubusercontent.com/u/10273125?s=400&v=4)
 ## [David Guenther](https://github.com/DcguentherATX)
