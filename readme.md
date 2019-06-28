@@ -1,5 +1,5 @@
 
-#### ![alt text](https://github.com/blue-ocean-travello/hratx41-travello/blob/master/travella.png)   Travel done the way you like it!
+# ![alt text](https://github.com/blue-ocean-travello/hratx41-travello/blob/master/travella.png)   Travel done the way you like it!
 
 ## Travella Contributors:
 
