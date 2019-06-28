@@ -59,13 +59,13 @@ class Itinerary extends React.Component {
                     },
                     longitude: 2.2945,
                     latitude: 48.8584,
-                    reviews: 175,
-                    stars: 4,
+                    numberOfReviews: 175,
+                    rating: 4,
                     open: true,
                     address: '119 Nueces St., Austin, TX 78741',
                     phone: '555-555-5555',
                     website: 'http://www.eiffeltower.com',
-                    image: 'https://img.jakpost.net/c/2017/02/10/2017_02_10_21340_1486708892._large.jpg'
+                    images: ['https://img.jakpost.net/c/2017/02/10/2017_02_10_21340_1486708892._large.jpg', 'https://images.pexels.com/photos/356378/pexels-photo-356378.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', 'https://cdn2.eyeem.com/thumb/30a522b99399660cfd8fc8dc79ca07f8d909bc8c-1533716330320/w/800']
                 }
             }, {
                 uuid: 2,
@@ -87,13 +87,13 @@ class Itinerary extends React.Component {
                     },
                     longitude: 139.796783,
                     latitude: 35.714661,
-                    reviews: 4000,
-                    stars: 3.5,
+                    numberOfReviews: 4000,
+                    rating: 3.5,
                     open: true,
                     address: '119 Nueces St., Austin, TX 78741',
                     phone: '555-555-5555',
                     website: 'http://www.sensojitemple.com',
-                    image: 'https://www.touropia.com/gfx/d/tourist-attractions-in-tokyo/sensoji_temple.jpg?v=29a16b16edae6dc242531c1dd1fb3188'
+                    images: ['https://www.touropia.com/gfx/d/tourist-attractions-in-tokyo/sensoji_temple.jpg?v=29a16b16edae6dc242531c1dd1fb3188', 'https://images.pexels.com/photos/356378/pexels-photo-356378.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', 'https://cdn2.eyeem.com/thumb/30a522b99399660cfd8fc8dc79ca07f8d909bc8c-1533716330320/w/800']
                 }
             }, {
                 uuid: 3,
@@ -115,13 +115,13 @@ class Itinerary extends React.Component {
                     },
                     longitude: -97.7729,
                     latitude: 30.2670,
-                    reviews: 40,
-                    stars: 5,
+                    numberOfReviews: 40,
+                    rating: 5,
                     open: false,
                     address: '119 Nueces St., Austin, TX 78741',
                     phone: '555-555-5555',
                     website: 'http://www.bartonsprings.com',
-                    image: 'https://ak6.picdn.net/shutterstock/videos/1021179886/thumb/1.jpg'
+                    images: ['https://ak6.picdn.net/shutterstock/videos/1021179886/thumb/1.jpg', 'https://images.pexels.com/photos/356378/pexels-photo-356378.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', 'https://cdn2.eyeem.com/thumb/30a522b99399660cfd8fc8dc79ca07f8d909bc8c-1533716330320/w/800']
                 }
             },
             {
