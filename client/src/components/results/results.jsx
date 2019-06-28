@@ -3,7 +3,7 @@ import Result from '../result/result.jsx';
 import '../results/results.css';
 
 const Results = ({ categoryResults = [], handdleAddToItenerary, currentCategory }) => {
-  // console.log(categoryResults, 'RESULTS');
+  console.log(categoryResults, 'RESULTS');
   return (
      <div className='grid-container'>
        {categoryResults.map((result, i) => (

@@ -11,21 +11,28 @@ const apiKey = process.env.API_KEY;
 // import TimePicker from 'react-time-picker';
 // var TimePicker = require('basic-react-timepicker');
 
-const ModalDescription = ({show, onHide, handleClose, handleTimeChange, goToItinerary, time, onTimeChangeHandler, dataResult}) => {
-  let open;
-  // let closeTime=dataResult.time.slice(5);
+const ModalDescription = ({show, onHide, handleClose, handleTimeChange, goToItinerary, time, onTimeChangeHandler, dataResult = {}}) => {
+  // let open;
+  // s
   // let phoneFirstDigits = dataResult.phone.slice(0, 3).join('');
   // let phoneRestDigits =  dataResult.phone.slice(3);
   // let phone = `(${phoneFirstDigits}) ${phoneRestDigits}`;
-  if(dataResult.open === true) {
+  
+  let hoursOfoperation = dataResult.hoursOfOperations;
+  
+  console.log(hoursOfoperation[0]);
+  
+  if(dataResult.openOrNot === true) {
     open = 'Open';
   } else {
     open = 'Close';
   }
   return (
     <Modal show={show} onHide={onHide} className='modal-container'
-      size="lg"
+      size='lg'
+      scrollable='true'
       aria-labelledby="contained-modal-title-vcenter"
+      dialogClassName="modal-200w"
       centered
     >
       
@@ -33,19 +40,10 @@ const ModalDescription = ({show, onHide, handleClose, handleTimeChange, goToItin
         <Modal.Title id='modalTitle'></Modal.Title>
       </Modal.Header>
       <Modal.Body>   
-        {/* <TimePicker className='timePicker'>
-          onChange={handleTimeChange}
-          value={time}
-          disabled= {true}
-        </TimePicker> */}
-        {/* <TimePicker start="10:00" end="21:00" step={30} /> */}
-        {/* <TimePicker  name="defaul"/> */}
         <div className='imagesMapAndDescriptionContainer'>
           <div className='imageAndMap-container'>
-            <img src="https://assets.simpleviewinc.com/simpleview/image/fetch/c_limit,q_75,w_1200/https://assets.simpleviewinc.com/simpleview/image/upload/crm/austin/Barton-Springs-Photo-Credit-Austin-Convention-Visitors-Bureau_72dpi_2b98f9c6-dab3-628a-c9075a49719a59cb.jpg" className='imagePlace'></img>
-            {/* <img src={dataResult.image} className='imageMap'></img> */}
-          {/* <img src={dataResult.image}></img> */}
-           <div>
+            <img src={dataResult.photos[0]} className='imagePlace'></img>
+           <div  className='google-map-description'>
             <LoadScript id="timeline-map-script-loader" googleMapsApiKey={apiKey}>
               <GoogleMap
                 id='timeline-modal-map' 
@@ -55,8 +53,8 @@ const ModalDescription = ({show, onHide, handleClose, handleTimeChange, goToItin
                 }}
                 zoom={16}
                 center={{
-                  lat: 30.265824,
-                  lng: -97.74926
+                  lat: `${dataResult.lat}`,
+                  lng: `${dataResult.long}`
                 }}
               />
             </LoadScript>
@@ -67,43 +65,52 @@ const ModalDescription = ({show, onHide, handleClose, handleTimeChange, goToItin
               {dataResult.name}
             </div>
             <div>
-              <span>{dataResult.rating}</span>
+              <span className='modalDescription_rating'>{dataResult.rating}</span>
               <StarRatings
-                rating={3}
+                rating={Number(dataResult.rating)}
                 starRatedColor="blue"
                 // changeRating={this.changeRating}
-                starDimension="17px"
+                starDimension="13px"
                 starSpacing=".5px"
                 numberOfStars={5}
                 name='rating'
                 starRatedColor="#f08804"
               />  
               <span>
-                 <a className='modal-totalReviews' href='#'>{dataResult.userRating} Google Reviews</a>
+                 <a className='modal-totalReviews' href='#'>{dataResult.totalReviews} Google Reviews</a>
               </span>
             </div>
             <div className='modal-bigDescription'>
-              {dataResult.bigDescription}
+              {dataResult.longDescription}
             </div>
             <div className='modal-addres-hours-phone-info'>
               <div>
                 <b>Addres:</b> <span>{dataResult.address}</span>
               </div>
               <div>
-                <b>Hours:</b> <b>{open}</b> <span>Closes at SOMETHING</span>
+                <b>Hours of operation:</b>
+                <ul>
+                  <li>{dataResult.hoursOfOperations[0]}</li>
+                  <li>{dataResult.hoursOfOperations[1]}</li>
+                  <li>{dataResult.hoursOfOperations[2]}</li>
+                  <li>{dataResult.hoursOfOperations[3]}</li>
+                  <li>{dataResult.hoursOfOperations[4]}</li>
+                  <li>{dataResult.hoursOfOperations[5]}</li>
+                  <li>{dataResult.hoursOfOperations[6]}</li>
+                </ul>
               </div>
               <div>
-                <b>Phone:</b> <span>{dataResult.phone}</span>
+                <b>Phone:</b> <span>{dataResult.phoneNumber}</span>
               </div>
             </div>
           </div>
         </div>
         </Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={handleClose}>
+        <Button variant="secondary" onClick={handleClose} className='closeButton-modal-description'>
         Close
         </Button>
-        <Button variant="primary" onClick={goToItinerary}>
+        <Button variant="secondary" onClick={goToItinerary} className='selectTime-modal-description'>
         Select Time
         </Button>
       </Modal.Footer>

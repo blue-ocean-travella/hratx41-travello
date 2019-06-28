@@ -7,7 +7,7 @@ app.use(express.static('../client/public'));
 require("dotenv").config({ path: "../.env" });
 const fetch = require("node-fetch");
 var faker = require("faker");
-var db = require("./db/index");
+// var db = require("./db/index");
 
 const api = process.env.API_KEY;
 var fs = require("fs")
@@ -81,11 +81,10 @@ app.post("/insert/:{itenerary}", function(req, res) {
 app.get("/location/details", (req, res) => {
   let placeId = req.query.placeId;
   // console.log(placeId);
-  fetch(
-    `https://maps.googleapis.com/maps/api/place/details/json?placeid=${placeId}&fields=name,formatted_phone_number,website,opening_hours,price_level,photos,types&key=${api}`
+  fetch(`https://maps.googleapis.com/maps/api/place/details/json?placeid=${placeId}&fields=name,formatted_phone_number,website,opening_hours,price_level,photos,types&key=${api}`
   )
     .then(res => res.json())
-    .then(data => res.send(data))
+    .then(data => {res.send(data)})
     .catch(err => console.log(err));
 });
 
@@ -93,12 +92,12 @@ app.get("/location", (req, res) => {
   // console.log(req.query);
   let location = req.query.city;
   let topSpots, thingsToDo, restaurants, nightLife, dayTrips;
-
+  //  console.log(location, 'this is location', api,'this is api');
   fetch(
     `https://maps.googleapis.com/maps/api/place/textsearch/json?query=night+life+in+${location}&key=${api}`
   )
     .then(res => res.json())
-    .then(data => (nightLife = data.results))
+    .then(data => {nightLife = data.results})
 
     .then(() => {
       fetch(
@@ -149,6 +148,7 @@ app.get("/location", (req, res) => {
                   // });
                  // console.log("sending to app");
                 //  console.log(locationData, 'THIS LOCATION DATA SEARCH LEVEL')
+                  // console.log(locationData);
                   res.send(locationData);
                 })
                 .catch(err => console.log(err));
@@ -167,7 +167,6 @@ let parseData = array => {
   for (let i = 0; i < array.length; i++) {
     let paragraph = faker.lorem.paragraph();
     let uuid = i;
-
     lat = array[i].geometry.location.lat;
     long = array[i].geometry.location.lat;
     name = array[i].name;
@@ -196,7 +195,6 @@ let parseData = array => {
 let topPlaces = (arr1, arr2, arr3, arr4) => {
   arr1.sort((a, b) => a.rating - b.rating);
   let newArr1 = arr1.slice(-5);
-
   arr2.sort((a, b) => a.rating - b.rating);
   let newArr2 = arr2.slice(-5);
   arr3.sort((a, b) => a.rating - b.rating);

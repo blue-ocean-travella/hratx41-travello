@@ -8,7 +8,7 @@ class CategoriesAndResults extends Component {
     constructor(props) {
       super(props);
       this.state = {
-        currentCategory:'restaurants'
+        currentCategory:'topSpots',
       };
       this.changeCategory = this.changeCategory.bind(this);
     }
@@ -20,12 +20,15 @@ class CategoriesAndResults extends Component {
     }
 
     render() {
-      const category = this.state.currentCategory;
-      // console.log(this.props.results[`${category}`]);
+   
+      var category = this.state.currentCategory;
+      console.log(category);
+      console.log(this.props.results[`${category}`]);
+    
       return (
         <div>
           <div className='headerAndNavigationBar'>
-            <Header city={this.props.results.city} nextPage={this.props.nextPage}/>
+            <Header city={this.props.results.city}/>
             <NavigationBar onCategoryChange={this.changeCategory}/>
           </div> 
           <div className='main-content-results'>

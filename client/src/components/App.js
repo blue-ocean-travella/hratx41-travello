@@ -35,6 +35,7 @@ export default class App extends Component {
   }
 
   setResults(results){
+    console.log(results);
     this.setState({results});
   }
   render(){

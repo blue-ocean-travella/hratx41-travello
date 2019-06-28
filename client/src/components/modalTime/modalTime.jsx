@@ -28,7 +28,7 @@ function onChange(value) {
       <Modal.Body>
          <div className='selectTime-section'> 
           <div style={{fontWeight:'bold', textAlign:'center'}}>Select your time:</div><br/>
-          <div className="selectDropDownTime">
+          <div className='selectDropDownTime'>
             <TimePicker
               showSecond={false}
               defaultValue={now}
@@ -51,10 +51,10 @@ function onChange(value) {
           </div>
         </Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={handleCloseModalTime}>
+        <Button variant="secondary" onClick={handleCloseModalTime} className='closeModalTime'>
          Close
         </Button>
-        <Button variant="primary" onClick={addToItenerary}>
+        <Button variant="secondary" onClick={addToItenerary} className='addToItinerary-Button'>
           Add to itinerary
         </Button>
       </Modal.Footer>

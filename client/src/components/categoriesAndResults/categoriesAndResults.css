@@ -6,7 +6,21 @@
 }
 
 
+
 .main-content-results {
   margin-top: 309px;
-
+  
 }
+/* 
+@media (min-width: 700px) {
+  .main-content-results {
+    background-color: blue;
+  }
+}
+
+@media (min-width: 1000px) {
+  .main-content-results {
+    background-color: green;
+  }
+} */
+
