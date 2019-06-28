@@ -34,12 +34,15 @@ input, select, textarea{
  class SearchBar extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      results:{}
+    this.state = {  
+      nightLife: [],
+      restaurants: [],
+      thingsToDo: [],
+      dayTrips: [],
+      topSpots: []
     };
     this.url  =`ocean.mp3`;
     this.audio = new Audio(this.url);
-
     this.HandleScriptLoad = this.HandleScriptLoad.bind(this);
     this.HandlePlaceSelect = this.HandlePlaceSelect.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
@@ -50,34 +53,41 @@ input, select, textarea{
   Initialize() {
     Axios.get("/location", {
       params: {
-        city: this.state.results.city
-      }})
-      .then(data => {
-        console.log("how data is sent from server", data.data);
-        this.nightLife = data.data.nightLife;
-        this.dayTrips = data.data.dayTrips;
-        this.restaurants = data.data.restaurants;
-        this.thingsToDo = data.data.thingsToDo;
-        this.topSpots = data.data.topSpots;
-        // this.state.results.nightLife = nightLife;
-        // this.state.results.dayTrips = dayTrips;
-        // this.state.results.restaurants = restaurants;
-        // this.state.results.thingsToDo = thingsToDo;
-        // this.state.results.topSpots = topSpots;
-        
+        city: this.state.city,
+        latitude: this.state.latitude,
+        longitude: this.state.longitude
+      }
+    })
+      .then((data) =>{
+      //  console.log("how data is sent from server", data.data);
+        let nightLife = data.data.nightLife;
+        let dayTrips = data.data.dayTrips;
+        let restaurants = data.data.restaurants;
+        let thingsToDo = data.data.thingsToDo;
+        let topSpots = data.data.topSpots;
+       
+        this.setState({ nightLife: nightLife }, 
+          ()=>{this.setState({ dayTrips: dayTrips }, 
+            ()=>{this.setState({ restaurants: restaurants },
+              ()=>{this.setState({ thingsToDo: thingsToDo },
+                ()=>{this.setState({ topSpots: topSpots },()=>{
+                  let results = {
+                    name: this.state.city, 
+                    nightLife: this.state.nightLife, 
+                    restaurants: this.state.restaurants,
+                    thingsToDo: this.state.thingsToDo,
+                    dayTrips: this.state.dayTrips,
+                    topSpots: this.state.topSpots};
+                  this.props.setResults(results);
+                });
+              });
+            });
+          });
+        });
       })
-      .then(() => {
-        console.log('get details of nightlife');
-        this.getDetails(this.nightLife);
+      .then(() =>{
+        // console.log("hel",this.state.nightLife[0].photos);
       })
-      // .then(() => this.getDetails(this.state.results.restaurants))
-      // .then(() => this.getDetails(this.state.results.thingsToDo))
-      // .then(() => this.getDetails(this.state.results.dayTrips))
-      // .then(() => this.getDetails(this.state.results.topSpots))
-      // .then(() => this.props.setResults(this.state.results))
-      // .then(()=> {console.log(this.state.results.dayTrips[0]);
-      //  console.dir(this.state.results.dayTrips[0].hasOwn)})
-      // .then(()=>{})
       .catch(err => console.log(err));
   }
 
@@ -89,30 +99,46 @@ input, select, textarea{
   }
 
   HandleScriptLoad() {
-    // Declare Options For Autocomplete
-    var options = {
+     // Declare Options For Autocomplete
+     var options = {
       types: ["(regions)"]
     }; // To disable any eslint 'google not defined' errors
+
     // Initialize Google Autocomplete
-    /*global google*/ 
-    this.autocomplete = new google.maps.places.Autocomplete(document.getElementById("autocomplete"),options);
+    /*global google*/ this.autocomplete = new google.maps.places.Autocomplete(
+      document.getElementById("autocomplete"),
+      options
+    );
+
     // Fire Event when a suggested name is selected
     this.autocomplete.addListener("place_changed", this.HandlePlaceSelect);
   }
 
   HandlePlaceSelect() {
+
     // Extract City From Address Object
     let addressObject = this.autocomplete.getPlace();
     let address = addressObject.address_components;
+    // document.getElementById(
+    //   "cityLat"
+    // ).value = addressObject.geometry.location.lat();
+    // document.getElementById(
+    //   "cityLng"
+    // ).value = addressObject.geometry.location.lng();
     let lat = addressObject.geometry.location.lat();
     let long = addressObject.geometry.location.lng();
+
     // Check if address is valid
     if (address) {
       // Set State
-        this.state.results.city = address[0].long_name;
-      
-      }
-    }
+      this.setState(
+        {
+          city: address[0].long_name
+        }
+        
+      );
+    
+  }}
   
   
   getDetails(array) {
@@ -123,38 +149,38 @@ input, select, textarea{
         }
       })
         .then(data => {
-          console.log(data.data, 'this is details data from server');
-          // const result = data.data.result;
-          // let photoData = result.photos;
-          // let openNowData = result.opening_hours.open_now;
-          // let operatingData = result.opening_hours.weekday_text;
-          // let priceData = result.price_level;
-          // let typeData = result.types;
-          // let website = result.website;
-          // let phoneNumber = result.formatted_phone_number;
+          const result = data.data.result;
+          let photoData = result.photos;
+          let openNowData = result.opening_hours.open_now;
+          let operatingData = result.opening_hours.weekday_text;
+          let priceData = result.price_level;
+          let typeData = result.types;
+          let website = result.website;
+          let phoneNumber = result.formatted_phone_number;
 
-          // //console.log("does this exits?", photoData);
-          // let photos = [];
-          // photoData.map(x => {
-          //   photos.push(
-          //     `https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=${
-          //       x.photo_reference
-          //     }&key=${apiKey}`
-          //   );
-          // });
-          // x.photos = photos;
-          // x.hoursOfOperation = operatingData;
-          // x.openOrNot = openNowData;
-          // x.priceLevel = priceData;
-          // x.type = typeData;
-          // x.websiteUrl = website;
-          // x.phoneNumber = phoneNumber;
+          //console.log("does this exits?", photoData);
+          let photos = [];
+          photoData.map(x => {
+            photos.push(
+              `https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=${
+                x.photo_reference
+              }&key=${apiKey}`
+            );
+          });
+          x.photos = photos;
+          x.hoursOfOperation = operatingData;
+          x.openOrNot = openNowData;
+          x.priceLevel = priceData;
+          x.type = typeData;
+          x.websiteUrl = website;
+          x.phoneNumber = phoneNumber;
         })
-        .catch(err => console.log('.'));
+        .catch(err => console.log(err));
     });
   }
 
   render(){     
+    
     return ( 
     <>
       <StyledDiv>

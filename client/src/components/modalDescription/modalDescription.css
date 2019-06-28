@@ -60,7 +60,8 @@ a:hover {
 
 .modal-addres-hours-phone-info {
   margin-top: 10px;
-  font-size:15px;
+  font-size:13px;
+
 }
 
 
@@ -80,6 +81,10 @@ a:hover {
 .selectTime-modal-description {
   border: 3px black solid;
   background-color: black;
+}
+
+li {
+  list-style-type: none;
 }
 
 

@@ -73,12 +73,27 @@ a:hover {
 
 .address {
   color: #008000;
-  font-size: 11px;
-  letter-spacing: -0.05em
+  font-size: 12px;
+  letter-spacing: -0.05em;
+  font-family: Lato;
 }
 
 .card-body {
   padding: 0px;
 }
 
+.webSite {
+  font-size: 12px;
+  font-family: Lato;
+  color: #838181
+}
+
+a:hover {
+  color:#838181;
+  text-decoration: none;
+}
+
+.card-text {
+  padding-top: -5px;
+}
 
