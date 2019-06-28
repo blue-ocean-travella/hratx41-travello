@@ -26,22 +26,6 @@ export default class Search extends Component {
     this.getDetails = this.getDetails.bind(this);
   }
 
-  TopSpots(arr1, arr2, arr3, arr4) {
-    arr1.sort((a, b) => a.rating - b.rating);
-    let newArr1 = arr1.slice(-4);
-
-    arr2.sort((a, b) => a.rating - b.rating);
-    let newArr2 = arr2.slice(-4);
-    arr3.sort((a, b) => a.rating - b.rating);
-    let newArr3 = arr3.slice(-4);
-    arr4.sort((a, b) => a.rating - b.rating);
-    let newArr4 = arr4.slice(-4);
-
-    let result = newArr1.concat(newArr2, newArr3, newArr4);
-
-    return result;
-  }
-
   Initialize() {
     Axios.get("/location", {
       params: {
@@ -51,20 +35,20 @@ export default class Search extends Component {
       }
     })
       .then(data => {
-       // console.log("how data is sent from server", data.data);
+        console.log("how data is sent from server", data.data);
         let nightLife = data.data.nightLife;
         let dayTrips = data.data.dayTrips;
         let restaurants = data.data.restaurants;
         let thingsToDo = data.data.thingsToDo;
         let topSpots = data.data.topSpots;
-       
+
         this.setState({ nightLife: nightLife });
         this.setState({ dayTrips: dayTrips });
         this.setState({ restaurants: restaurants });
         this.setState({ thingsToDo: thingsToDo });
         this.setState({ topSpots: topSpots });
       })
-    
+
       .then(() =>
         console.log(
           "this is state",
@@ -102,14 +86,14 @@ export default class Search extends Component {
     // Extract City From Address Object
     let addressObject = this.autocomplete.getPlace();
     let address = addressObject.address_components;
-    document.getElementById(
-      "cityLat"
-    ).value = addressObject.geometry.location.lat();
-    document.getElementById(
-      "cityLng"
-    ).value = addressObject.geometry.location.lng();
-    let lat = addressObject.geometry.location.lat();
-    let long = addressObject.geometry.location.lng();
+    // document.getElementById(
+    //   "cityLat"
+    // ).value = addressObject.geometry.location.lat();
+    // document.getElementById(
+    //   "cityLng"
+    // ).value = addressObject.geometry.location.lng();
+    // let lat = addressObject.geometry.location.lat();
+    // let long = addressObject.geometry.location.lng();
 
     // Check if address is valid
     if (address) {
