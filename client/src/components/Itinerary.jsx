@@ -2,31 +2,13 @@ import React from 'react';
 import Axios from 'axios';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import TimelineActivity from './TimelineActivity.jsx';
-// import DescriptionModal from './DescriptionModal.jsx';
-// import TimeModal from './TimeModal.jsx';
-// import MapModal from './MapModal.jsx';
+
 import ItineraryDropdown from './ItineraryDropdown.jsx';
 
 // images
 
-// import clock from '../assets/images/clock.jpg';
-import logo from '../../assets/images/16a60b31-4a4b-41eb-9cf2-b6f71c4a83e5_200x200.png';
-// import nightlife from '../assets/images/martini.png';
-// import map from '../assets/images/directions.png';
-// import dine from '../assets/images/food.png';
-// import todos from '../assets/images/thingstodo.png';
-// import topSpot from '../assets/images/topspot.png';
-// import dayTrip from '../assets/images/daytrip2.png';
-// import xout from '../assets/images/xout.png';
+import logo from '../../assets/images/travella.png';
 import finishLine from '../../assets/images/finishline.png';
-// import navArrow from '../assets/images/white-down-arrow-png-2.png';
-
-
-// import Row from 'react-bootstrap/Row';
-// import Col from 'react-bootstrap/Col';
-// import Container from 'react-bootstrap/Container'
-
-
 
 class Itinerary extends React.Component {
     constructor(props) {
@@ -34,9 +16,6 @@ class Itinerary extends React.Component {
 
 
         this.state = {
-            // showDescriptionModal: false,
-            // showTimeModal: false,
-            // showMapModal: false,
             backgroundImages: [
                 'https://www.visittheusa.com/sites/default/files/styles/16_9_1280x720/public/images/hero_media_image/2017-05/23b0b0b9caaa07ee409b693da9bf9003.jpeg?itok=pE5ss3vx',
                 'https://media.webjet.com.au/Images/cities/1200x472/TYO1.jpg',
@@ -66,7 +45,7 @@ class Itinerary extends React.Component {
                 {
                     name: 'Eiffel Tower',
                     duration: 1,
-                    description: 'lorem ipsum',
+                    description: 'This is a description of whatever item is located to the left.  This will be lorem ipsum.',
                     startTime: '2:00 PM',
                     category: 'topSpots',
                     hoursOfOperation: 'big string',
@@ -184,13 +163,6 @@ class Itinerary extends React.Component {
             }],
         };
 
-        // this.handleArrowClick = this.handleArrowClick.bind(this);
-        // this.handleShowTimeModal = this.handleShowTimeModal.bind(this);
-        // this.handleCloseTimeModal = this.handleCloseTimeModal.bind(this);
-        // this.handleShowDescriptionModal = this.handleShowDescriptionModal.bind(this);
-        // this.handleCloseDescriptionModal = this.handleCloseDescriptionModal.bind(this);
-        // this.handleShowMapModal = this.handleShowMapModal.bind(this);
-        // this.handleCloseMapModal = this.handleCloseMapModal.bind(this);
         this.handleDeleteItineraryClick = this.handleDeleteItineraryClick.bind(this);
         this.getRandomElement = this.getRandomElement.bind(this);
         this.getImage = this.getImage.bind(this);
@@ -213,34 +185,6 @@ class Itinerary extends React.Component {
         //             console.log('error deleting current inventory: ', error)
         //         })
     }
-
-    // handleArrowClick() {
-
-    // }
-
-    // handleShowDescriptionModal() {
-    //     this.setState({ showDescriptionModal: true });
-    // }
-
-    // handleCloseDescriptionModal() {
-    //     this.setState({ showDescriptionModal: false });
-    // }
-
-    // handleShowTimeModal() {
-    //     this.setState({ showTimeModal: true });
-    // }
-
-    // handleCloseTimeModal() {
-    //     this.setState({ showTimeModal: false });
-    // }
-
-    // handleShowMapModal() {
-    //     this.setState({ showMapModal: true });
-    // }
-
-    // handleCloseMapModal() {
-    //     this.setState({ showMapModal: false });
-    // }
 
 
     componentDidMount() {
@@ -286,215 +230,10 @@ class Itinerary extends React.Component {
                             key={i}
                             position={i}
                             activity={activity}
-                        // handleShowDescriptionModal={this.handleShowDescriptionModal}
-                        // handleCloseDescriptionModal={this.handleCloseDescriptionModal}
-                        // handleShowTimeModal={this.handleShowTimeModal}
-                        // handleCloseTimeModal={this.handleCloseTimeModal}
-                        // handleShowMapModal={this.handleShowMapModal}
-                        // handleCloseMapModal={this.handleCloseMapModal}
                         />)}
-                        {/* <VerticalTimelineElement className="vertical-timeline-element--work"
-                        date="8:00 AM"
-                        iconStyle={{ background: 'rgb(255, 255, 255)', color: '#fff' }}
-                        icon={<img className="nightlife-icon" src={nightlife}></img>}>
-                        {this.state.activities.map((activity, i) => <TimelineActivity key={i} activity={activity} />)}
-                    </VerticalTimelineElement> */}
-
-                        {/* <VerticalTimelineElement
-                            className="vertical-timeline-element--work"
-                            date="8:00 AM"
-                            iconStyle={{ background: 'rgb(255, 255, 255)', color: '#fff' }}
-                            icon={<img className="nightlife-icon" src={nightlife}></img>}
-                        >
-
-                            <div className="timeline-element-outer-container">
-                                <a className="timeline-element-top-container">
-                                    <img src={austin} className="timeline-image" onClick={this.handleShowDescriptionModal}></img>
-                                    <h3 className="vertical-timeline-element-title">Barton Springs</h3>
-                                </a>
-                                <DescriptionModal show={this.state.showDescriptionModal} onHide={this.handleCloseDescriptionModal} handleClose={this.handleCloseDescriptionModal} />
-                                <div className="timeline-information">
-                                    <div className="time"><span className="duration">Visit Duration:</span> 1 hr</div>
-                                    <div className="timeline-description">
-                                        Barton Springs is an outdoor public pool. What a great place to lay out, sip cocktails, and catch some sun.  This is a really long description to see if overflow works.
-            </div></div></div>
-
-                            <div className="timeline-element-container">
-                                <a className="timeline-open btn" onClick={() => this.handleShowTimeModal()}>
-                                    <img className="timeline-clock" src={clock}></img>
-                                </a>
-                                <TimeModal className="time-modal" show={this.state.showTimeModal} onHide={this.handleCloseTimeModal} handleClose={this.handleCloseTimeModal} />
-                                <a className="timeline-goto btn" onClick={this.handleShowMapModal}>
-                                    <img className="timeline-map" src={map}></img>
-                                </a>
-                                <MapModal show={this.state.showMapModal} onHide={this.handleCloseMapModal} handleClose={this.handleCloseMapModal} />
-                                <a className="remove-container btn">
-                                    <img className="remove-image" src={xout}></img>
-                                </a>
-                            </div>
-                        </VerticalTimelineElement>
-                        <VerticalTimelineElement
-                            className="vertical-timeline-element--work"
-                            date="8:00 AM"
-                            iconStyle={{ background: 'rgb(255, 255, 255)', color: '#fff' }}
-                            icon={<img className="nightlife-icon" src={dine}></img>}
 
 
-                        >
-                            <div className="timeline-element-outer-container">
-                                <a className="timeline-element-top-container">
-                                    <img src={austin} className="timeline-image"></img>
-                                    <h3 className="vertical-timeline-element-title">Barton Springs</h3>
-                                </a>
-                                <div className="timeline-information">
-                                    <div className="time"><span className="duration">Visit Duration:</span> 1 hr</div>
-                                    <div className="timeline-description">
-                                        Barton Springs is an outdoor public pool. What a great place to lay out, sip cocktails, and catch some sun.  This is a really long description to see if overflow works.
-            </div></div></div>
-                            <div className="timeline-element-container">
-                                <div className="timeline-open btn">
-                                    <img className="timeline-clock" src={clock}></img>
-                                </div>
-                                <div className="timeline-goto btn">
-                                    <img className="timeline-map" src={map}></img>
-                                </div>
-                            </div>
-                        </VerticalTimelineElement>
-                        <VerticalTimelineElement
-                            className="vertical-timeline-element--work"
-                            date="8:00 AM"
-                            iconStyle={{ background: 'rgb(255, 255, 255)', color: '#fff' }}
-                            icon={<img className="nightlife-icon" src={todos}></img>}
 
-
-                        >
-                            <div className="timeline-element-outer-container">
-                                <div className="timeline-element-top-container">
-                                    <img src={austin} className="timeline-image"></img>
-                                    <h3 className="vertical-timeline-element-title">Barton Springs</h3>
-                                </div>
-                                <div className="timeline-information">
-                                    <div className="time"><span className="duration">Visit Duration:</span> 1 hr</div>
-                                    <div className="timeline-description">
-                                        Barton Springs is an outdoor public pool. What a great place to lay out, sip cocktails, and catch some sun.  This is a really long description to see if overflow works.
-            </div></div></div>
-                            <div className="timeline-element-container">
-                                <div className="timeline-open btn">
-                                    <img className="timeline-clock" src={clock}></img>
-                                </div>
-                                <div className="timeline-goto btn">
-                                    <img className="timeline-map" src={map}></img>
-                                </div>
-                            </div>
-                        </VerticalTimelineElement>
-                        <VerticalTimelineElement
-                            className="vertical-timeline-element--work"
-                            date="8:00 AM"
-                            iconStyle={{ background: 'rgb(255, 255, 255)', color: '#fff' }}
-                            icon={<img className="nightlife-icon" src={dayTrip}></img>}
-
-
-                        >
-                            <div className="timeline-element-outer-container">
-                                <div className="timeline-element-top-container">
-                                    <img src={austin} className="timeline-image"></img>
-                                    <h3 className="vertical-timeline-element-title">Barton Springs</h3>
-                                </div>
-                                <div className="timeline-information">
-                                    <div className="time"><span className="duration">Visit Duration:</span> 1 hr</div>
-                                    <div className="timeline-description">
-                                        Barton Springs is an outdoor public pool. What a great place to lay out, sip cocktails, and catch some sun.  This is a really long description to see if overflow works.
-            </div></div></div>
-                            <div className="timeline-element-container">
-                                <div className="timeline-open btn">
-                                    <img className="timeline-clock" src={clock}></img>
-                                </div>
-                                <div className="timeline-goto btn">
-                                    <img className="timeline-map" src={map}></img>
-                                </div>
-                            </div>
-                        </VerticalTimelineElement>
-                        <VerticalTimelineElement
-                            className="vertical-timeline-element--work"
-                            date="8:00 AM"
-                            iconStyle={{ background: 'rgb(255, 255, 255)', color: '#fff' }}
-                            icon={<img className="nightlife-icon" src={topSpot}></img>}
-
-
-                        >
-                            <div className="timeline-element-outer-container">
-                                <div className="timeline-element-top-container">
-                                    <img src={austin} className="timeline-image"></img>
-                                    <h3 className="vertical-timeline-element-title">Barton Springs</h3>
-                                </div>
-                                <div className="timeline-information">
-                                    <div className="time"><span className="duration">Visit Duration:</span> 1 hr</div>
-                                    <div className="timeline-description">
-                                        Barton Springs is an outdoor public pool. What a great place to lay out, sip cocktails, and catch some sun.  This is a really long description to see if overflow works.
-            </div></div></div>
-                            <div className="timeline-element-container">
-                                <div className="timeline-open btn">
-                                    <img className="timeline-clock" src={clock}></img>
-                                </div>
-                                <div className="timeline-goto btn">
-                                    <img className="timeline-map" src={map}></img>
-                                </div>
-                            </div>
-                        </VerticalTimelineElement>
-                        <VerticalTimelineElement
-                            className="vertical-timeline-element--work"
-                            date="8:00 AM"
-                            iconStyle={{ background: 'rgb(255, 255, 255)', color: '#fff' }}
-                            icon={<img className="nightlife-icon" src={dine}></img>}
-
-
-                        >
-                            <div className="timeline-element-outer-container">
-                                <div className="timeline-element-top-container">
-                                    <img src={austin} className="timeline-image"></img>
-                                    <h3 className="vertical-timeline-element-title">Barton Springs</h3>
-                                </div>
-                                <div className="timeline-information">
-                                    <div className="time"><span className="duration">Visit Duration:</span> 1 hr</div>
-                                    <div className="timeline-description">
-                                        Barton Springs is an outdoor public pool. What a great place to lay out, sip cocktails, and catch some sun.  This is a really long description to see if overflow works.
-            </div></div></div>
-                            <div className="timeline-element-container">
-                                <div className="timeline-open btn">
-                                    <img className="timeline-clock" src={clock}></img>
-                                </div>
-                                <div className="timeline-goto btn">
-                                    <img className="timeline-map" src={map}></img>
-                                </div>
-                            </div>
-                        </VerticalTimelineElement>
-                        <VerticalTimelineElement
-                            className="vertical-timeline-element--work"
-                            date="8:00 AM"
-                            iconStyle={{ background: 'rgb(255, 255, 255)', color: '#fff' }}
-                            icon={<img className="nightlife-icon" src={nightlife}></img>}
-
-
-                        >
-                            <div className="timeline-element-outer-container">
-                                <div className="timeline-element-top-container">
-                                    <img src={austin} className="timeline-image"></img>
-                                    <h3 className="vertical-timeline-element-title">Barton Springs</h3>
-                                </div>
-                                <div className="timeline-information">
-                                    <div className="time"><span className="duration">Visit Duration:</span> 1 hr</div>
-                                    <div className="timeline-description">
-                                        Barton Springs is an outdoor public pool. What a great place to lay out, sip cocktails, and catch some sun.  This is a really long description to see if overflow works.
-            </div></div></div>
-                            <div className="timeline-element-container">
-                                <div className="timeline-open btn">
-                                    <img className="timeline-clock" src={clock}></img>
-                                </div>
-                                <div className="timeline-goto btn">
-                                    <img className="timeline-map" src={map}></img>
-                                </div>
-                            </div>
-                        </VerticalTimelineElement> */}
                         <VerticalTimelineElement
                             iconStyle={{ background: 'rgb(255, 255, 255)', color: '#fff' }}
                             icon={<img className="nightlife-icon" src={finishLine}></img>}
@@ -503,7 +242,7 @@ class Itinerary extends React.Component {
                     <div className="footer"></div>
                 </div >
             </div>
-        );
+        )
     }
 }
 

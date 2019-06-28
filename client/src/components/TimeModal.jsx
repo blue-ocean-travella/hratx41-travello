@@ -9,7 +9,8 @@ const getOpen = (bool) => {
 
     if (bool === true) {
         open = 'Currently Open';
-        // document.getElementById("time-modal-open").className = 'open';
+        // var change = open.fontcolor('green');
+        // document.getElementById("#open").innerHTML = change;
     } else {
         open = 'Currently Closed';
         // let target = document.getElementById("time-modal-open");
@@ -19,7 +20,21 @@ const getOpen = (bool) => {
     return open;
 }
 
+const getColor = (bool) => {
+    let color = '';
+
+    if (bool === true) {
+        color = 'green';
+    } else {
+        color = 'red';
+    }
+    return color;
+}
+
 const TimeModal = (props) => {
+
+    let color = getColor(props.activity.location.open);
+
     // console.log('TimeModal props: ', props)
     return (
         <Modal show={props.show} onHide={props.onHide}
@@ -29,7 +44,7 @@ const TimeModal = (props) => {
             <Modal.Header closeButton>
                 <Modal.Title id="modalTitle">{props.activity.location.name}
                     <div className="time-modal-hours">Hours of Operation:</div>
-                    <div id="time-modal-open">{getOpen(props.activity.location.open)}</div>
+                    <div id="time-modal-open" style={color = { color }}>{getOpen(props.activity.location.open)}</div>
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>

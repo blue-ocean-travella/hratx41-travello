@@ -470,7 +470,7 @@ body {
 /* <----------- BACKGROUND IMAGE ------------> */
 
 .timeline-image {
-    height: auto;
+    height: 165px;
     width: 250px;
   }
 
@@ -574,7 +574,7 @@ button{
  }
 
  #dropdown-menu-align-right {
-   margin-right: -25px;
+   margin-right: -30px;
    border: none;
    outline: none;
  }
@@ -625,6 +625,7 @@ button{
   display: inline-flex;
   flex-direction: row;
   width: 400px;
+  height: 208px;
   padding-bottom: 1em;
 }
 
@@ -678,6 +679,10 @@ button{
     justify-content: center;
     border-top: 1px solid white;
     width: 33%;
+  }
+
+  .timeline-open:hover, .timeline-goto:hover, .remove-container:hover {
+    background-color: black;
   }
 
 .timeline-clock, .up-arrow, .remove-image {

@@ -4,7 +4,6 @@ import StarRatings from '../../node_modules/react-star-ratings';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-// import '../public/main.css';
 
 const imageStyle = {
     height: '200px',
@@ -22,8 +21,20 @@ const getOpen = (bool) => {
     return open;
 };
 
+const getColor = (bool) => {
+    let color = '';
+
+    if (bool === true) {
+        color = 'green';
+    } else {
+        color = 'red';
+    }
+    return color;
+}
+
 const DescriptionModal = (props) => {
-    console.log('DescriptionModal props: ', props);
+    // console.log('DescriptionModal props: ', props);
+    let color = getColor(props.activity.location.open);
 
     return (
         <Modal show={props.show} onHide={props.onHide} className='modal-container'
@@ -45,7 +56,7 @@ const DescriptionModal = (props) => {
                                         <b>Address: {props.activity.location.address}</b>
                                     </div>
                                     <div>
-                                        <b>Hours: {getOpen(props.activity.location.open)}</b>
+                                        <b>Hours: <span style={color = { color }}>{getOpen(props.activity.location.open)}</span></b>
                                     </div>
                                     <div>
                                         <b>Phone: {props.activity.location.phone}</b>
