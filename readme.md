@@ -10,6 +10,7 @@ Contributor | Contributor
 **[Jimmy Hung](https://github.com/jmhung)**| **[David Guenther](https://github.com/DcguentherATX)**
 ![pic:](https://avatars2.githubusercontent.com/u/39739180?s=400&v=4)|![pic:](https://avatars0.githubusercontent.com/u/46331990?s=400&v=4)
 **[Maria Navarro](https://github.com/MariaJose)**|**[Louis Rangel](https://github.com/lui914)**
+col 2 is centered
 
 
 ## Introduction
