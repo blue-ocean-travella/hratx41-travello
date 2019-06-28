@@ -78,15 +78,15 @@ var fs = require("fs")
 
 
 
-app.get("/location/details", (req, res) => {
-  let placeId = req.query.placeId;
-  // console.log(placeId);
-  fetch(`https://maps.googleapis.com/maps/api/place/details/json?placeid=${placeId}&fields=name,formatted_phone_number,website,opening_hours,price_level,photos,types&key=${api}`
-  )
-    .then(res => res.json())
-    .then(data => {res.send(data)})
-    .catch(err => console.log(err));
-});
+// app.get("/location/details", (req, res) => {
+//   let placeId = req.query.placeId;
+//   // console.log(placeId);
+//   fetch(`https://maps.googleapis.com/maps/api/place/details/json?placeid=${placeId}&fields=name,formatted_phone_number,website,opening_hours,price_level,photos,types&key=${api}`
+//   )
+//     .then(res => res.json())
+//     .then(data => {res.send(data)})
+//     .catch(err => console.log(err));
+// });
 
 app.get("/location", (req, res) => {
   //console.log(req.query);
@@ -102,7 +102,7 @@ app.get("/location", (req, res) => {
     })
 
     .then(data => {
-      fetch( 
+      fetch(
         `https://maps.googleapis.com/maps/api/place/textsearch/json?query=outdoor+activities+in+${location}&key=${api}`
       )
         .then(res => res.json())
@@ -112,20 +112,20 @@ app.get("/location", (req, res) => {
 
         .then(() => {
           fetch(
-            `https://maps.googleapis.com/maps/api/place/textsearch/json?query=day+trips+in+${location}&key=${api}`
+            `https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+${location}&key=${api}`
           )
             .then(res => res.json())
 
             .then(async data => {
-              dayTrips = await getDetails(data.results);
+              restaurants = await getDetails(data.results);
             })
             .then(() => {
               fetch(
-                `https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+${location}&key=${api}`
+                `https://maps.googleapis.com/maps/api/place/textsearch/json?query=day+trips+in+${location}&key=${api}`
               )
                 .then(res => res.json())
                 .then(async data => {
-                  restaurants = await getDetails(data.results);
+                  dayTrips = await getDetails(data.results);
                 })
                 .then(() => {
                   let locationData = {};
@@ -201,8 +201,8 @@ let parseData = array => {
     phoneNumber = array[i].phoneNumber;
     priceLevel = array[i].priceLevel;
     formattedAddress = array[i].formatted_address;
-    icon = array[i].icon;
     hoursOfOperation = array[i].hoursOfOperation;
+    icon = array[i].icon;
 
     //photo = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=${photoRef}&key=${api}`;
     results.push({
@@ -238,14 +238,16 @@ let topPlaces = (arr1, arr2, arr3, arr4) => {
   let newArr3 = arr3.slice(-5);
   arr4.sort((a, b) => a.rating - b.rating);
   let newArr4 = arr4.slice(-6);
+
   let result = newArr1.concat(newArr2, newArr3, newArr4);
 
   return result;
 };
 
-let getDetails = array => {
-  array.map(x => {
-    fetch(
+let getDetails = async array => {
+  for (let i = 0; i < array.length; i++) {
+    let x = array[i];
+    await fetch(
       `https://maps.googleapis.com/maps/api/place/details/json?placeid=${
         x.place_id
       }&fields=name,formatted_phone_number,website,opening_hours,price_level,photos,types&key=${api}`
@@ -254,6 +256,7 @@ let getDetails = array => {
       .then(data => {
         // console.log("im inside get DEtails", data.result.types);
         const result = data.result;
+
         let photoData = result.photos;
         let openNowData = result.opening_hours.open_now;
         let operatingData = result.opening_hours.weekday_text;
@@ -278,12 +281,14 @@ let getDetails = array => {
         x.type = typeData;
         x.websiteUrl = website;
         x.phoneNumber = phoneNumber;
+        // console.log(x);
       })
       .catch(err => console.log(err));
-  });
+    //console.log(array[0]);
+  }
+  //console.log(array[0]);
   return array;
 };
-
 
 
 var port = process.env.PORT || 8000;
