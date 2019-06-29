@@ -79,7 +79,7 @@ render () {
           </div>
         </Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={this.propshandleCloseModalTime} className='closeModalTime'>
+        <Button variant="secondary" onClick={this.props.handleCloseModalTime} className='closeModalTime'>
          Close
         </Button>
         <Button variant="secondary" onClick={this.props.addToItenerary} className='addToItinerary-Button'>
