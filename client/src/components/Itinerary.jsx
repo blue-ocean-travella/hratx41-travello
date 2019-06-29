@@ -137,6 +137,44 @@ class Itinerary extends React.Component {
             .then((response) => {
                 console.log('successfully deleted current itinerary: ', response)
             })
+        Axios.get('/itineraries', { params: { uuid: 1 } })
+            .then((response) => {
+                // console.log('front end response: ', typeof response.data);
+                if (response.data === '') {
+                    this.setState({
+                        city: '',
+                        activities: [{
+                            name: 'Eiffel Tower',
+                            duration: 1,
+                            description: 'Please select activities for your itinerary',
+                            startTime: '2:00 PM',
+                            category: 'topSpots',
+                            hoursOfOperation: [
+                                'sunday: 12:00 PM - 5:00 PM',
+                                'monday: 8:00 AM - 10:00 PM',
+                                'tuesday: 8:00 AM - 10:00 PM',
+                                'wednesday: 8:00 AM - 11:00 PM',
+                                'thursday: 8:00 AM - 11:00 PM',
+                                'friday: 8:00 AM - 12:00 AM',
+                                'saturday: 8:00 AM - 12:00 AM',
+                            ],
+                            longitude: 2.2945,
+                            latitude: 48.8584,
+                            numberOfReviews: 175,
+                            rating: 4,
+                            open: true,
+                            address: '119 Nueces St., Austin, TX 78741',
+                            phone: '555-555-5555',
+                            website: 'http://www.eiffeltower.com',
+                            images: ['https://img.jakpost.net/c/2017/02/10/2017_02_10_21340_1486708892._large.jpg', 'https://images.pexels.com/photos/356378/pexels-photo-356378.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', 'https://cdn2.eyeem.com/thumb/30a522b99399660cfd8fc8dc79ca07f8d909bc8c-1533716330320/w/800']
+                        }]
+                    })
+                } else {
+                    this.setState({
+                        activities: []
+                    })
+                }
+            })
             .catch((error) => {
                 console.log('error deleting current inventory: ', error)
             })
@@ -152,7 +190,7 @@ class Itinerary extends React.Component {
             }
         })
             .then((response) => {
-                console.log('successfully delete itinerary item')
+                console.log('successfully deleted itinerary item')
             })
         Axios.get('/itineraries', { params: { uuid: 1 } })
             .then((response) => {
@@ -172,9 +210,40 @@ class Itinerary extends React.Component {
         Axios.get('/itineraries', { params: { uuid: 1 } })
             .then((response) => {
                 console.log('front end response: ', response.data);
-                this.setState({
-                    activities: response.data
-                })
+                if (response.data === '') {
+                    this.setState({
+                        city: '',
+                        activities: [{
+                            name: 'Eiffel Tower',
+                            duration: 1,
+                            description: 'Please select activities for your itinerary',
+                            startTime: '2:00 PM',
+                            category: 'topSpots',
+                            hoursOfOperation: [
+                                'sunday: 12:00 PM - 5:00 PM',
+                                'monday: 8:00 AM - 10:00 PM',
+                                'tuesday: 8:00 AM - 10:00 PM',
+                                'wednesday: 8:00 AM - 11:00 PM',
+                                'thursday: 8:00 AM - 11:00 PM',
+                                'friday: 8:00 AM - 12:00 AM',
+                                'saturday: 8:00 AM - 12:00 AM',
+                            ],
+                            longitude: 2.2945,
+                            latitude: 48.8584,
+                            numberOfReviews: 175,
+                            rating: 4,
+                            open: true,
+                            address: '119 Nueces St., Austin, TX 78741',
+                            phone: '555-555-5555',
+                            website: 'http://www.eiffeltower.com',
+                            images: ['https://img.jakpost.net/c/2017/02/10/2017_02_10_21340_1486708892._large.jpg', 'https://images.pexels.com/photos/356378/pexels-photo-356378.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', 'https://cdn2.eyeem.com/thumb/30a522b99399660cfd8fc8dc79ca07f8d909bc8c-1533716330320/w/800']
+                        }]
+                    })
+                } else {
+                    this.setState({
+                        activities: []
+                    })
+                }
             })
             .catch((error) => {
                 console.log('client side error retrieving itinerary: ', error)

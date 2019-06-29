@@ -33,9 +33,9 @@ app.get('/itineraries', (req, res) => {
             console.log('server error reading record: ', id)
             res.end();
         } else {
-            if (data === null) {
+            if (data.length === 0) {
                 console.log('error: record does not exist: ', id);
-                res.send('error, record does not exist');
+                res.send(undefined);
             } else {
                 console.log('server succesfully read record:')
                 res.send(data[0].activities);
