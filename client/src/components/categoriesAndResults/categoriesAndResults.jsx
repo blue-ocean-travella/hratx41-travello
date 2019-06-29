@@ -19,6 +19,7 @@ class CategoriesAndResults extends Component {
       });
     }
 
+
     render() {
       const category = this.state.currentCategory;
       // console.log(this.props.results[`${category}`]);
@@ -26,7 +27,7 @@ class CategoriesAndResults extends Component {
         <div>
           <div className='headerAndNavigationBar'>
             <Header city={this.props.results.city}/>
-            <NavigationBar onCategoryChange={this.changeCategory}/>
+            <NavigationBar onCategoryChange={this.changeCategory} currentCategory={this.state.currentCategory}/>
           </div> 
           <div className='main-content-results'>
             <Results city={this.props.results.city} categoryResults={this.props.results[`${category}`]} handdleAddToItenerary={this.props.handdleAddToItenerary} currentCategory={this.state.currentCategory}/>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Button, Modal } from 'react-bootstrap';
 import '../modalTime/modalTime.css';
 import TimePicker from 'rc-time-picker';
@@ -9,30 +9,49 @@ import '../../../node_modules/rc-time-picker/assets/index.css';
 // import TimePicker from 'react-time-picker';
 // var TimePicker = require('basic-react-timepicker');
 
-const ModalTime = ({dataResult, show, onHide, handleCloseModalTime, handleTimeChange, addToItenerary, changeDuration }) => { 
+// const ModalTime = ({dataResult, show, onHide, handleCloseModalTime, handleTimeChange, addToItenerary, changeDuration }) => { 
 
-const format = 'h:mm a';
-const now = moment().hour(0).minute(0);
-let style = '';
+class ModalTime extends Component {
 
-function onChange(value) {
-  console.log(value && value.format(format));
+constructor(props) {
+  super(props);
+  this.state = {
+    activeDuration: null
+  }
+
+  this.changeStyleWhenClicked = this.changeStyleWhenClicked.bind(this);
+  this.handleClickToChangeStyleAndDuration = this.handleClickToChangeStyleAndDuration.bind(this);
 }
 
-function changeStyle() {
-   style = {
-     color: 'pink'
-   }
-   console.log('hello');
+changeStyleWhenClicked (key) {
+  this.setState({
+    activeDuration: key
+  })
+  
 }
+
+handleClickToChangeStyleAndDuration (duration) {
+  this.props.changeDuration(duration);
+  this.changeStyleWhenClicked(duration);
+}
+
+
+// function onChange(value) {
+//   console.log(value && value.format(format));
+// }
+
+render () {
+  const format = 'h:mm a';
+  const now = moment().hour(0).minute(0);
   return (
-    <Modal show={show} onHide={onHide}
+  
+    <Modal show={this.props.show} onHide={this.props.onHide}
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
       
       <Modal.Header closeButton>
-        <Modal.Title id='modalTitle'>{dataResult.name}</Modal.Title>
+        <Modal.Title id='modalTitle'>{this.props.dataResult.name}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
          <div className='selectTime-section'> 
@@ -42,7 +61,7 @@ function changeStyle() {
               showSecond={false}
               defaultValue={now}
               className="xxx"
-              onChange={handleTimeChange}
+              onChange={this.props.handleTimeChange}
               format={format}
               use12Hours
               inputReadOnly
@@ -52,24 +71,29 @@ function changeStyle() {
           <div className='durationTime'>
             <div style={{fontWeight:'bold', textAlign:'center'}}>Duration:</div><br/>
             <div className='durationHoursOptions'>
-                <button className='durationOption' onClick={() => {changeDuration(1);}} onMouseEnter={() => {changeStyle()}} style={style}> 1Hr </button>
-                <button className='durationOption' onClick={() => {changeDuration(2);}} onMouseEnter={() => {changeStyle()}} style={style}> 2Hr </button>
-                <button className='durationOption' onClick={() => {changeDuration(3);}} onMouseEnter={() => {changeStyle()}} style={style}> 3Hr</button>
-                <button className='durationOption' onClick={() => {changeDuration(4);}} onMouseEnter={() => {changeStyle()}} style={style}> 4Hr </button>
+                <button className={`durationOption ${this.state.activeDuration === 1 ? 'activeDuration' :  ''}`} onClick={() => {this.handleClickToChangeStyleAndDuration(1);}} style={this.state.style}> 1Hr </button>
+                <button className={`durationOption ${this.state.activeDuration === 2 ? 'activeDuration' :  ''}`} onClick={() => {this.handleClickToChangeStyleAndDuration(2);}} style={this.state.style}> 2Hr </button>
+                <button className={`durationOption ${this.state.activeDuration === 3 ? 'activeDuration' :  ''}`} onClick={() => {this.handleClickToChangeStyleAndDuration(3);}} style={this.state.style}> 3Hr</button>
+                <button className={`durationOption ${this.state.activeDuration === 4 ? 'activeDuration' :  ''}`} onClick={() => {this.handleClickToChangeStyleAndDuration(4);}} style={this.state.style}> 4Hr </button>
             </div>
           </div>
         </Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={handleCloseModalTime} className='closeModalTime'>
+        <Button variant="secondary" onClick={this.propshandleCloseModalTime} className='closeModalTime'>
          Close
         </Button>
-        <Button variant="secondary" onClick={addToItenerary} className='addToItinerary-Button'>
+        <Button variant="secondary" onClick={this.props.addToItenerary} className='addToItinerary-Button'>
           Add to itinerary
         </Button>
       </Modal.Footer>
     </Modal>
   );
+}
 };
 
+// const callChangeDurationAndStyleFunctions = (changeDuration, number, styleChanger) => {
+//    changeDuration(number);
+//    styleChanger();  
+// }
 export default ModalTime;
   

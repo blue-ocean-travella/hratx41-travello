@@ -6,18 +6,18 @@ const  handleClick = () => {
   console.log('is cliciked');
 };
 
-const NavigationBar = ({onCategoryChange}) => {
+const NavigationBar = ({onCategoryChange, currentCategory}) => {
 
  
 
   return (
     <>
       <div className='navigationBar'>
-        <button className='category' onClick={() => onCategoryChange('topSpots')}>TOP SPOTS</button>
-        <button className='category' onClick={() => onCategoryChange('thingsToDo')}>THINGS TO DO</button>
-        <button className='category' onClick={() => onCategoryChange('restaurants')}>FOOD {'&'} DRINK</button>
-        <button className='category' onClick={() => onCategoryChange('nightLife')}>NIGHTLIFE</button>
-        <button className='category' onClick={() => onCategoryChange('dayTrips')}>DAY TRIPS</button>     
+        <button className={`category ${currentCategory === 'topSpots' ? 'changeCurrentCategory' : ''}`} onClick={() => onCategoryChange('topSpots')}>TOP SPOTS</button>
+        <button className={`category ${currentCategory === 'thingsToDo' ? 'changeCurrentCategory' : ''}`} onClick={() => onCategoryChange('thingsToDo')}>THINGS TO DO</button>
+        <button className={`category ${currentCategory === 'restaurants' ? 'changeCurrentCategory' : ''}`} onClick={() => onCategoryChange('restaurants')}>FOOD {'&'} DRINK</button>
+        <button className={`category ${currentCategory === 'nightLife' ? 'changeCurrentCategory' : ''}`} onClick={() => onCategoryChange('nightLife')}>NIGHTLIFE</button>
+        <button className={`category ${currentCategory === 'dayTrips' ? 'changeCurrentCategory' : ''}`} onClick={() => onCategoryChange('dayTrips')}>DAY TRIPS</button>     
       </div>
     </>
   );   

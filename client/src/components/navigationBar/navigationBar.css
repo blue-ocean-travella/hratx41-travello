@@ -32,6 +32,10 @@ button:active {
   border-bottom-color: black;
 }
 
+.changeCurrentCategory {
+  color: #f2994a;
+}
+
 /* .iteneraryButton {
   border: none;
   border-bottom: 1px solid #ffffff;
