@@ -13,6 +13,8 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components'; 
 import Axios from 'axios';
 import Script from 'react-load-script';
+import Input from './input';
+
 const apiKey = process.env.API_KEY;
 
 console.log(apiKey);
@@ -80,7 +82,7 @@ export default function SearchBar(props) {
       onKeyDown={toggleDrawer(side, false)}
     >
       <List >
-      <img style={{paddingTop:"50px", paddingLeft:"55px",height:"170px", width:'auto'}} src="3ac62a16-a8a2-4ed6-a29a-6d8df9a6106f_200x200 (1).png"></img>   
+      <img style={{paddingTop:"43px", paddingLeft:"50px",height:"170px", width:'auto'}} src="3ac62a16-a8a2-4ed6-a29a-6d8df9a6106f_200x200 (1).png"></img>   
          </List>
       <Divider style={{backgroundColor:"white"}} />
       <List style={{height:'100%'}}>
@@ -94,7 +96,7 @@ export default function SearchBar(props) {
   );
         
   return (
-    <div>
+    <div id="bootstrap-overrides">
     
    <div >
    <div style={{position:"relative", height:"0", paddingBottom:"56.22%",width:"100%"}}>
@@ -110,9 +112,10 @@ export default function SearchBar(props) {
 
    </div> 
    <div>
-   <input id='autoComplete' onChange={props.onInputChange} onKeyPress={props.onSubmit} style={{display:"flex",flexDirection:"row" ,position:"absolute", marginTop:'20', bottom:"20",top:'14%', left:'38%' , justifyContent:"center",
-        fontFamily: "Helvetica Neue",fontStyle: 'normal',fontSize: '45px',border:"none", borderBottom:"4px solid black",textAlign:'center', opacity:"0.8",backgroundColor:'transparent', height:"45px", marginTop:'350px', width:'580px',borderBottomColor:'white'}} type="text" placeholder="Where are you going?" name="search"></input>
-    </div>
+
+<Input  nextPage={props.nextPage} />
+
+</div>
 </div>
 </div>
     
@@ -172,3 +175,12 @@ input, select, textarea{
 
 }`; 
 
+
+
+
+
+
+
+
+/* <input id='autoComplete' onChange=props.onInputChange onKeyPress=props.onSubmit style=display:"flex",flexDirection:"row" ,position:"absolute", marginTop:'20', bottom:"20",top:'14%', left:'38%' , justifyContent:"center",
+        fontFamily: "Helvetica Neue",fontStyle: 'normal',fontSize: '45px',border:"none", borderBottom:"4px solid black",textAlign:'center', opacity:"0.8",backgroundColor:'transparent', height:"45px", marginTop:'350px', width:'580px',borderBottomColor:'white'}} type="text" placeholder="Where are you going?" name="search"></input> */

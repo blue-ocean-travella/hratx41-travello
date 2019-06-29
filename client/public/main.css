@@ -17,7 +17,17 @@ body > div.MuiDrawer-root.MuiDrawer-modal > div.MuiBackdrop-root{
     font-weight: bold !important;
    
 }
-
+* {
+    -webkit-box-sizing: content-box;
+       -moz-box-sizing: content-box;
+            box-sizing: content-box;
+  }
+  *:before,
+  *:after {
+    -webkit-box-sizing: content-box;
+       -moz-box-sizing: content-box;
+            box-sizing: content-box;
+  }
 
 .MuiListItem-root {
   text-align: center!important;

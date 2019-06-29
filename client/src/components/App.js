@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components'; 
-import SearchBar from './searchBar/searchBar.jsx';
+import SearchBar from './searchBar.js';
 import testPage from './testPage.jsx';
 import CategoriesAndResults from './categoriesAndResults/categoriesAndResults.jsx';
 import Axios from 'axios';
 import fakeData from './thing.js';
+import Connect from './connect.js';
 
 export default class App extends Component {
   constructor(props) {
@@ -40,9 +41,8 @@ export default class App extends Component {
   render(){
     return (
       <>
-      
+      {/* <Connect/> */}
       <this.state.currentPage results={this.state.results} setResults={this.setResults} nextPage={this.nextPage}/>
-      
      </>
      );
   }
