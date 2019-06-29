@@ -88,7 +88,7 @@ const DescriptionModal = (props) => {
                             </div></Col>
                         <Col>
                             <div className='imageAndMap-container'>
-                                <img className='description-image' style={imageStyle} src={props.activity.images[2]}></img>
+                                <img className='description-image' style={imageStyle} src={props.activity.images[0]}></img>
                             </div>
                         </Col>
                     </Row>
