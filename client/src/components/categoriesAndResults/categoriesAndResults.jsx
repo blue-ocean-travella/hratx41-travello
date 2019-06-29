@@ -25,7 +25,7 @@ class CategoriesAndResults extends Component {
       return (
         <div>
           <div className='headerAndNavigationBar'>
-            <Header city={this.props.results.city}/>
+            <Header city={this.props.results.city} banner={this.props.results.banner}/>
             <NavigationBar onCategoryChange={this.changeCategory} currentCategory={this.state.currentCategory}/>
           </div> 
           <div className='main-content-results'>

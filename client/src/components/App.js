@@ -34,7 +34,7 @@ export default class App extends Component {
   }
 
   setResults(results){
-    console.log(results);
+    // console.log(results.banner,'this is resultsssssss');
     this.setState({results},()=>{this.nextPage({key:'Enter'});});
   }
   render(){

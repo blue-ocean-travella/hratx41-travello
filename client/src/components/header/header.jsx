@@ -46,9 +46,10 @@ class Header extends Component {
     // let random = Math.floor(Math.random() * images.length);
     // https://media.nbcwashington.com/images/1200*675/128215212.jpg'
     // console.log(city);
+    // console.log(this.props.banner);
     return (
       <div className='header'>
-      <img src='https://www.munsch.com/portalresource/lookup/wosid/cp-base-3-11603/image.name=/Austin%20-%20Offices%20Page_Main_Crop.jpg' className='background-image'></img>
+      <img src={this.props.banner} className='background-image'></img>
       <div className='city'>{this.props.city}</div>
         <a  href='./index2.html' className='itinerary'>
           <img src='https://image.flaticon.com/icons/svg/60/60740.svg' className='itinerary'></img> 
