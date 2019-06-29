@@ -6,6 +6,8 @@ const  handleClick = () => {
   console.log('is cliciked');
 };
 
+//
+
 const NavigationBar = ({onCategoryChange, currentCategory}) => {
 
  
