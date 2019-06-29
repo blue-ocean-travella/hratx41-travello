@@ -1,10 +1,11 @@
 
-# ![alt text](https://github.com/blue-ocean-travello/hratx41-travello/blob/master/travella.png)   Travel done the way you like it!
+# <img src="https://github.com/blue-ocean-travello/hratx41-travello/blob/master/travella.png" width="100" height="100" />  Travel done the way you like it!
+
 
 ## Travella Contributors:
 
 ![pic:](https://avatars1.githubusercontent.com/u/42327915?s=400&v=4)|![pic:](https://avatars1.githubusercontent.com/u/42365770?s=400&v=4) | ![Pic:](https://avatars1.githubusercontent.com/u/10273125?s=400&v=4)|![pic:](https://avatars2.githubusercontent.com/u/46075198?s=400&v=4) | ![pic:](https://avatars2.githubusercontent.com/u/39739180?s=400&v=4)|![pic:](https://avatars0.githubusercontent.com/u/46331990?s=400&v=4)
---- | --- | --- | --- | --- | ---
+:---: | :---: | :---: | :---: | :---: | :---:
 **[Fawnie du Plessis](https://github.com/fduplessis01)**| **[Gladys Benitez](https://github.com/gladysbenitez)** | **[Jimmy Hung](https://github.com/jmhung)** | **[David Guenther](https://github.com/DcguentherATX)** | **[Maria Navarro](https://github.com/MariaJose)**|**[Louis Rangel](https://github.com/lui914)**
 
 ## Introduction
@@ -199,14 +200,14 @@ This project was a brief 1-week sprint where our team tried to complete an MVP f
 ## What additional features do you plan to add, how do you plan to implement those features?
 
 - Additional features
-     * Adding a login page with authentication
-     * Adding multiple users
-     * Adding multiple cities to the itinerary
-     * Adding multiple dates to the itinerary
-     * Email/google calendar or share with friend options to itinarary
-     * Swapping around activities on the itineratry time line
-     * Clicking on the icons on the itinaray page to give you similar option to change the activity
-     * If time is already allocated to an activity the user is informed.
+     - [ ] Adding a login page with authentication
+     - [ ] Adding multiple users
+     - [ ] Adding multiple cities to the itinerary
+     - [ ] Adding multiple dates to the itinerary
+     - [ ] Email/google calendar or share with friend options to itinarary
+     - [ ] Swapping around activities on the itineratry time line
+     - [ ] Clicking on the icons on the itinaray page to give you similar option to change the activity
+     - [ ] If time is already allocated to an activity the user is informed.
 
     * Future refactoring?
     * Additional dev ops considerations?
