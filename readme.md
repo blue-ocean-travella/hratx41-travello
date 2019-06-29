@@ -200,7 +200,7 @@ This project was a brief 1-week sprint where our team tried to complete an MVP f
 ## What additional features do you plan to add, how do you plan to implement those features?
 
 - Additional features
-     - [] Adding a login page with authentication
+     - [ ] Adding a login page with authentication
      - [] Adding multiple users
      - [] Adding multiple cities to the itinerary
      - [] Adding multiple dates to the itinerary
