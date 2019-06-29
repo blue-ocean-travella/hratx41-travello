@@ -92,7 +92,9 @@ export default function SearchBar(props) {
       </List>
     </div>
   );
+
         
+
   return (
     <div>
     

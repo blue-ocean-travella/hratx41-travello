@@ -99,6 +99,7 @@ class Result extends Component {
       //    console.log(err, 'there is an error')
       //  })
     // this.props.handdleAddToItenerary(destination);
+    this.setState({ showTimeModal: false });
   }
   goToItinerary () {
     this.setState({
@@ -112,18 +113,9 @@ class Result extends Component {
   }
 
   changeDuration (duration) {
-    // console.log(this.state.duration, 'before')
-    // this.setState({
-    //   duration : duration,
-    // })
-    // this.setState((prevState) => {duration: duration})
-    // this.setState({duration: duration}, () => {
-    //   console.log(this.state.duration, 'inside set')
-    //   this.setState({duration: duration});
-    // })
 
     this.setState({duration: duration});
-    // console.log(this.state.duration, 'after');
+
   }
 
   render() {
