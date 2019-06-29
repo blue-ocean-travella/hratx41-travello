@@ -200,14 +200,14 @@ This project was a brief 1-week sprint where our team tried to complete an MVP f
 ## What additional features do you plan to add, how do you plan to implement those features?
 
 - Additional features
-     * Adding a login page with authentication
-     * Adding multiple users
-     * Adding multiple cities to the itinerary
-     * Adding multiple dates to the itinerary
-     * Email/google calendar or share with friend options to itinarary
-     * Swapping around activities on the itineratry time line
-     * Clicking on the icons on the itinaray page to give you similar option to change the activity
-     * If time is already allocated to an activity the user is informed.
+     - [] Adding a login page with authentication
+     - [] Adding multiple users
+     - [] Adding multiple cities to the itinerary
+     - [] Adding multiple dates to the itinerary
+     - [] Email/google calendar or share with friend options to itinarary
+     - [] Swapping around activities on the itineratry time line
+     - [] Clicking on the icons on the itinaray page to give you similar option to change the activity
+     - [] If time is already allocated to an activity the user is informed.
 
     * Future refactoring?
     * Additional dev ops considerations?
