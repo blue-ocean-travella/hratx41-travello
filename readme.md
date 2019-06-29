@@ -119,6 +119,8 @@ This project was a brief 1-week sprint where our team tried to complete an MVP f
 
 ![:pic](https://github.com/blue-ocean-travella/hratx41-travello/blob/master/Travella%20Wire%20frame%20Two.png)
 
+![:pic](https://github.com/blue-ocean-travella/hratx41-travello/blob/master/Travella%20Wire%20Frame%20Three.png)
+
 
     * What were the user stories /  what was MVP (mention Minimal Viable Product)
   
