@@ -43,15 +43,23 @@ input, select, textarea{
     <>
       <StyledDiv>
       <div style={{position:"relative", height:"0", paddingBottom:"56.22%",width:"100%"}}>
+
+      
       <img style={{ width:'100%', height:'350px'}}src="https://66.media.tumblr.com/4bd366bfa60ba6b4dd9c3b2f7887117f/tumblr_pl6w5dbxrt1qc5yjd_540.jpg"></img>
+
+
+
+
         <div style={{display:"flex",flexDirection:"row" ,position:"absolute", top:'0', left:'0', width:'100%', height:'160px', justifyContent:"space-between"}}>
 
-          <img style={{paddingTop:"40px", paddingLeft:"40px", opacity:"0.8",height:"150px", width:'auto'}} src="3ac62a16-a8a2-4ed6-a29a-6d8df9a6106f_200x200 (1).png"></img>
+          <img style={{paddingTop:"40px", paddingLeft:"40px", opacity:"0.8",height:"150px", width:'auto'}} 
+          src="3ac62a16-a8a2-4ed6-a29a-6d8df9a6106f_200x200 (1).png"></img>
+
          <div style={{marginTop:'70px',display:'flex',justifyContent:'space-between'}}>
-          <img style={{paddingTop:"40px", paddingLeft:"40px", opacity:"0.8",height:"150px", width:'auto'}} src="facebook.png"></img>
-          <img style={{paddingTop:"40px", paddingLeft:"40px", opacity:"0.8",height:"150px", width:'auto'}} src="kisspng-baba-ghanoush-falafel-tabbouleh-party-battle-egg-white-instagram-logo-5b15d23f208202.3068722215281567351332.png"></img>
-          <img style={{paddingTop:"40px", paddingLeft:"40px", opacity:"0.8",height:"150px", width:'auto'}} src="Twitter.png"></img>
-          <img style={{paddingTop:"40px", paddingLeft:"40px", opacity:"0.8",height:"150px", width:'auto'}} src="youtube.png"></img>
+          <img style={{paddingTop:"40px", paddingLeft:"40px", opacity:"0.8",height:"90px", width:'auto'}} src="facebook.png"></img>
+          <img style={{paddingTop:"40px", paddingLeft:"40px", opacity:"0.8",height:"90px", width:'auto'}} src="kisspng-baba-ghanoush-falafel-tabbouleh-party-battle-egg-white-instagram-logo-5b15d23f208202.3068722215281567351332.png"></img>
+          <img style={{paddingTop:"40px", paddingLeft:"40px", opacity:"0.8",height:"90px", width:'auto'}} src="Twitter.png"></img>
+          <img style={{paddingTop:"40px", paddingLeft:"40px", opacity:"0.8",height:"90px", width:'auto'}} src="youtube.png"></img>
           </div>
           
           <img style={{paddingTop:"60px", paddingRight:"40px",opacity:"0.8",height:"100px", width:'auto'}} src="white-down-arrow-png-2.png">

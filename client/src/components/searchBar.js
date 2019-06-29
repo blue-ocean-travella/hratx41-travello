@@ -14,6 +14,10 @@ import styled from 'styled-components';
 import Axios from 'axios';
 import Script from 'react-load-script';
 import Input from './input';
+import '../../public/connect.css';
+
+
+
 
 const apiKey = process.env.API_KEY;
 
@@ -86,11 +90,34 @@ export default function SearchBar(props) {
          </List>
       <Divider style={{backgroundColor:"white"}} />
       <List style={{height:'100%'}}>
-        {['About', 'Itinerary', 'Our Picks','Connect','Press'].map((text, index) => (
+
+        {/* {['About', 'Itinerary', 'Our Picks','Connect','Press'].map((text, index) => (
           <ListItem button key={text} style={{color:"white"}}>
             <ListItemText primary={text} />
           </ListItem>
-        ))}
+        ))} */}
+
+       <ListItem button key='About' style={{color:"white"}}>
+            <ListItemText primary='About' />
+          </ListItem>
+          <ListItem button key='Itinerary' style={{color:"white"}}>
+            <ListItemText primary='Itinerary' />
+          </ListItem>
+          <ListItem button key='Our Picks' style={{color:"white"}}>
+            <ListItemText primary='Our Picks' />
+          </ListItem>
+
+
+          <ListItem button key='Connect' style={{color:"white"}}>
+          <a className='connect' href='socialMedia.html'>
+            <ListItemText primary='Connect' />
+          </a>
+          </ListItem>
+
+          <ListItem button key='Press' style={{color:"white"}}>
+            <ListItemText primary='Press' />
+          </ListItem>
+
       </List>
     </div>
   );
