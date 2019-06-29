@@ -169,7 +169,7 @@ This project was a brief 1-week sprint where our team completed an MVP for an ex
 - Commit messages need to be more descriptive
 - **write down key take aways from code review - Jimmy**
 - Testing need to be done after each feature and before any reviewing is actioned
-- Link to Travella Trollo Board : [trello](https://trello.com/b/fYpFS8h7/travella)
+- [**Link to: Travella Trello Board**](https://trello.com/b/fYpFS8h7/travella)
 - All tickets was completed
 - We did a total of 40 implementation tickets as well as bug tickets, research tickets and info tickets
 - We did minimal test writing and this is a focus point to continue to work on
