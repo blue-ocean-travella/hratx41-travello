@@ -38,7 +38,7 @@ class Itinerary extends React.Component {
                 'https://www.jetsetter.com/uploads/sites/7/2019/03/bobmd-bungalow-2973-hor-clsc-1160x690.jpg'
             ],
             backgroundImage: '',
-            city: 'Paris',
+            city: 'Mexico City',
             username: 'Lucy',
             uuid: 1,
             activities: [{
@@ -119,6 +119,7 @@ class Itinerary extends React.Component {
             ],
         };
 
+        this.handleDeleteItemClick = this.handleDeleteItemClick.bind(this);
         this.handleDeleteItineraryClick = this.handleDeleteItineraryClick.bind(this);
         this.getRandomElement = this.getRandomElement.bind(this);
         this.getImage = this.getImage.bind(this);
@@ -127,19 +128,35 @@ class Itinerary extends React.Component {
     handleDeleteItineraryClick(event) {
         event.preventDefault();
         console.log('delete entire itinerary');
-        // let city = this.state.city;
 
-        // Axios.delete('/itineraries', {
-        //     params: {
-        //         city: city
-        //     }
-        // })
-        //     .then((response) => {
-        //         console.log('successfully deleted current itinerary: ', response)
-        //     })
-        //     .catch((error) => {
-        //         console.log('error deleting current inventory: ', error)
-        //     })
+        Axios.delete('/itineraries', {
+            params: {
+                uuid: 1
+            }
+        })
+            .then((response) => {
+                console.log('successfully deleted current itinerary: ', response)
+            })
+            .catch((error) => {
+                console.log('error deleting current inventory: ', error)
+            })
+    }
+
+    handleDeleteItemClick(event) {
+        let currentItem = event.target.getAttribute('value');
+
+        Axios.delete('/activity', {
+            params: {
+                uuid: 1,
+                name: currentItem
+            }
+        })
+            .then((response) => {
+                console.log('successfully delete itinerary item')
+            })
+            .catch((err) => {
+                console.log('error deleting item')
+            })
     }
 
 
@@ -190,6 +207,8 @@ class Itinerary extends React.Component {
                             key={i}
                             position={i}
                             activity={activity}
+                            uuid={i}
+                            handleDeleteItemClick={this.handleDeleteItemClick}
                         />)}
 
 

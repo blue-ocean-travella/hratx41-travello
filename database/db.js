@@ -45,16 +45,16 @@ const itinerarySchema = mongoose.Schema({
 
 const itinerary = mongoose.model('itinerary', itinerarySchema);
 
-// const createRecord = (obj) => {
-//     itinerary.create(obj, (err, data) => {
-//         if (err) {
-//             console.log('error inserting record', err);
-//         } else {
-//             console.log('record successfully entered', data);
-//             // cb(null, data);
-//         }
-//     })
-// }
+const createRecord = (obj) => {
+    itinerary.create(obj, (err, data) => {
+        if (err) {
+            console.log('error inserting record', err);
+        } else {
+            console.log('record successfully entered', data);
+            // cb(null, data);
+        }
+    })
+}
 
 // const readRecord = (obj) => {
 //     restaurant.findOne(obj, (err, data) => {
@@ -68,7 +68,7 @@ const itinerary = mongoose.model('itinerary', itinerarySchema);
 //     })
 // }
 
-const findAll = (obj, callback) => {
+const findOne = (obj, callback) => {
     console.log('db obj: ', obj);
     itinerary.find(obj, (err, activities) => {
         if (err) {
@@ -90,22 +90,38 @@ const findAll = (obj, callback) => {
 //     })
 // }
 
-// const deleteRecord = (obj, cb) => {
-//     restaurant.deleteOne(obj, (err, data) => {
-//         if (err) {
-//             console.log('error deleting record', err)
-//             cb(err, null);
-//         } else {
-//             console.log('record deleted successfully', data);
-//             cb(null, err);
-//         }
-//     })
-// }
+const deleteItinerary = (obj, cb) => {
+    // console.log('inside database delete', obj)
+    itinerary.deleteOne(obj, (err, data) => {
+        if (err) {
+            console.log('error deleting record', err)
+            cb(err, null);
+        } else {
+            console.log('record deleted successfully', data);
+            cb(null, data);
+        }
+    })
+}
+
+const deleteActivity = (obj, cb) => {
+    console.log('inside database delete activity', obj)
+    itinerary.update(
+        { uuid: obj.uuid },
+        { $pull: { 'activities': { name: obj.name } } }, (err, data) => {
+            if (err) {
+                console.log('error deleting activity', err)
+                cb(err, null);
+            } else {
+                console.log('activity deleted successfully', data);
+                cb(null, data);
+            }
+        })
+}
 
 // createRecord({
 //     uuid: 1,
 //     username: 'Lucy',
-//     city: 'Phuket',
+//     city: 'New York',
 //     activities:
 //         [{
 //             name: 'Barton Springs',
@@ -362,4 +378,4 @@ const findAll = (obj, callback) => {
 
 
 
-module.exports = { findAll };
+module.exports = { findOne, deleteItinerary, deleteActivity };

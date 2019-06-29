@@ -34,8 +34,24 @@ const getColor = (bool) => {
 const TimeModal = (props) => {
 
     let color = getColor(props.activity.open);
+    let dailyHours = {
+        sunday: '',
+        monday: '',
+        tuesday: '',
+        wednesday: '',
+        thursday: '',
+        friday: '',
+        saturday: ''
+    }
 
-    // console.log('TimeModal props: ', props)
+    for (var i = 0; i < props.activity.hoursOfOperation.length; i++) {
+        let day = props.activity.hoursOfOperation[i];
+        let split = day.split(': ');
+        dailyHours[split[0]] = split[1];
+        // console.log(dailyHours);
+
+    }
+    // console.log('TimeModal props: ', props.activity.hoursOfOperation)
     return (
         <Modal show={props.show} onHide={props.onHide}
             aria-labelledby="contained-modal-title-vcenter"
@@ -51,31 +67,31 @@ const TimeModal = (props) => {
                 <Container>
                     <Row>
                         <Col xs={4}>Sunday:</Col>
-                        <Col className="modal-time">{props.activity.hoursOfOperation.sunday}</Col>
+                        <Col className="modal-time">{dailyHours.sunday}</Col>
                     </Row>
                     <Row>
                         <Col xs={4}>Monday:</Col>
-                        <Col className="modal-time">{props.activity.hoursOfOperation.monday}</Col>
+                        <Col className="modal-time">{dailyHours.monday}</Col>
                     </Row>
                     <Row>
                         <Col xs={4}>Tuesday:</Col>
-                        <Col className="modal-time">{props.activity.hoursOfOperation.tuesday}</Col>
+                        <Col className="modal-time">{dailyHours.tuesday}</Col>
                     </Row>
                     <Row>
                         <Col xs={4}>Wednesday:</Col>
-                        <Col className="modal-time">{props.activity.hoursOfOperation.wednesday}</Col>
+                        <Col className="modal-time">{dailyHours.wednesday}</Col>
                     </Row>
                     <Row>
                         <Col xs={4}>Thursday:</Col>
-                        <Col className="modal-time">{props.activity.hoursOfOperation.thursday}</Col>
+                        <Col className="modal-time">{dailyHours.thursday}</Col>
                     </Row>
                     <Row>
                         <Col xs={4}>Friday</Col>
-                        <Col className="modal-time">{props.activity.hoursOfOperation.friday}</Col>
+                        <Col className="modal-time">{dailyHours.friday}</Col>
                     </Row>
                     <Row>
                         <Col xs={4}>Saturday:</Col>
-                        <Col className="modal-time">{props.activity.hoursOfOperation.saturday}</Col>
+                        <Col className="modal-time">{dailyHours.saturday}</Col>
                     </Row>
                 </Container>
             </Modal.Body>

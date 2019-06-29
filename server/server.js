@@ -27,8 +27,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/itineraries', (req, res) => {
     // console.log('q', req.query)
-    let id = (req.query.uuid);
-    db.findAll({ uuid: id }, (err, data) => {
+    let id = req.query.uuid;
+    db.findOne({ uuid: id }, (err, data) => {
         if (err) {
             console.log('server error reading record: ', id)
             res.end();
@@ -37,9 +37,37 @@ app.get('/itineraries', (req, res) => {
                 console.log('error: record does not exist: ', id);
                 res.send('error, record does not exist');
             } else {
-                console.log('server succesfully read record:', data[0].activities)
+                console.log('server succesfully read record:')
                 res.send(data[0].activities);
             }
+        }
+    })
+})
+
+app.delete('/itineraries', (req, res) => {
+    console.log('delete req', req.query);
+    let id = req.query.uuid;
+    db.deleteItinerary({ uuid: id }, (err, data) => {
+        if (err) {
+            console.log('error deleting record: ', id);
+            res.send('record not found');
+        } else {
+            console.log('server successfully deleted record: ', id);
+            res.end();
+        }
+    })
+})
+
+app.delete('/activity', (req, res) => {
+    console.log('delete one', req.query)
+    let id = req.query.uuid;
+    let name = req.query.name;
+    db.deleteActivity({ uuid: id, name: name }, (err, data) => {
+        if (err) {
+            console.log('error deleting activity');
+        } else {
+            console.log('server successfully deleted activity', name);
+            res.send(data);
         }
     })
 })

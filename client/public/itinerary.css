@@ -574,7 +574,7 @@ button{
  }
 
  #dropdown-menu-align-right {
-   margin-right: -30px;
+   margin-right: -30px !important;
    border: none;
    outline: none;
  }
@@ -715,7 +715,7 @@ button{
     border-radius: 50%;
 }
 
-  .right-arrow{
+  .right-arrow {
     background-color: white;
     border-radius: 50%;
     height: 30px;

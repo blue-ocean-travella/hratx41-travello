@@ -30,10 +30,9 @@ class TimelineActivity extends React.Component {
         this.state = {
             showDescriptionModal: false,
             showTimeModal: false,
-            showMapModal: false
+            showMapModal: false,
         };
 
-        this.handleDeleteItemClick = this.handleDeleteItemClick.bind(this);
         this.handleShowTimeModal = this.handleShowTimeModal.bind(this);
         this.handleCloseTimeModal = this.handleCloseTimeModal.bind(this);
         this.handleShowDescriptionModal = this.handleShowDescriptionModal.bind(this);
@@ -43,20 +42,6 @@ class TimelineActivity extends React.Component {
         this.getPosition = this.getPosition.bind(this);
         this.getIcon = this.getIcon.bind(this);
 
-    }
-
-    // delete function
-
-    handleDeleteItemClick(event) {
-        // let currentItineraryUuid = event.target.value.uuid;
-        console.log('delete one clicked');
-        // Axios.delete('/itineraries', { params: { uuid: currentItineraryUuid } })
-        //     .then((response) => {
-        //         console.log('item correctly deleted from itinerary: ', response)
-        //     })
-        //     .catch((error) => {
-        //         console.log('error deleting itinerary item: ', error)
-        //     })
     }
 
     // modal open/close functions
@@ -118,6 +103,7 @@ class TimelineActivity extends React.Component {
     }
 
     render() {
+        console.log('ugachaka', this.props.activity.name)
         return (
             < div className="timeline-line" >
                 <VerticalTimelineElement
@@ -126,6 +112,7 @@ class TimelineActivity extends React.Component {
                     iconStyle={{ background: 'rgb(255, 255, 255)', color: '#fff' }}
                     icon={<img className="nightlife-icon" src={this.getIcon(this.props.activity.category)}></img>}
                     position={this.getPosition(this.props.position)}
+                    key={this.props.activity.position}
                 >
 
                     <div className="timeline-element-outer-container">
@@ -149,8 +136,8 @@ class TimelineActivity extends React.Component {
                             <img className="timeline-map" src={map}></img>
                         </a>
                         <MapModal show={this.state.showMapModal} onHide={this.handleCloseMapModal} handleClose={this.handleCloseMapModal} activity={this.props.activity} />
-                        <a className="remove-container btn" onClick={this.handeleDeleteClick}>
-                            <img onClick={this.handleDeleteItemClick} className="remove-image" src={xout}></img>
+                        <a className="remove-container btn">
+                            <img onClick={this.props.handleDeleteItemClick} className="remove-image" value={this.props.activity.name} src={xout}></img>
                         </a>
                     </div>
                 </ VerticalTimelineElement>
