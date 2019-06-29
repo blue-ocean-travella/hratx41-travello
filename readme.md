@@ -8,12 +8,14 @@
 :---: | :---: | :---: | :---: | :---: | :---:
 **[Fawnie du Plessis](https://github.com/fduplessis01)**| **[Gladys Benitez](https://github.com/gladysbenitez)** | **[Jimmy Hung](https://github.com/jmhung)** | **[David Guenther](https://github.com/DcguentherATX)** | **[Maria Navarro](https://github.com/MariaJose)**|**[Louis Rangel](https://github.com/lui914)**
 
+
 ## Introduction
 
 This project was a brief 1-week sprint where our team tried to complete an MVP for an external user **Eric Anthony**
 
  - Our goal is to do MVP with some additional functionality. 
  - Vissually we want the application to look amazing and include some additional features beyond MVP.
+
 
 ## What does the app do? 
 
@@ -28,6 +30,7 @@ This project was a brief 1-week sprint where our team tried to complete an MVP f
  - Users custom build their itinerary at a click of a button.
  - User can edit changes or delete any options choosen and easily make changes to their itinerary.
 
+
 ## Tech stack
 
 - ReactJS
@@ -37,9 +40,11 @@ This project was a brief 1-week sprint where our team tried to complete an MVP f
 - NodeJS and Express
 - Google API 
 - Bootstrap
+- Material UI
 - Figma
 - Jest
 - Travis CI
+
 
 ## Technical Challenges and research that you anticipated
 
@@ -81,17 +86,11 @@ This project was a brief 1-week sprint where our team tried to complete an MVP f
   * Why
   * What
   * How
-  
-- Testing with Jest and Travis CI
-  * Why
-  * What
-  * How
-  
--
  
 
     * Why, what was the plan to overcome those challenges?
     * What did you learn?
+  
   
 ## Challenges that were unexpected
 
@@ -121,8 +120,6 @@ This project was a brief 1-week sprint where our team tried to complete an MVP f
 
 ![:pic](https://github.com/blue-ocean-travella/hratx41-travello/blob/master/Travella%20Wire%20Frame%20Three.png)
 
-
-    * What were the user stories /  what was MVP (mention Minimal Viable Product)
   
 ## How does the app work?
 
@@ -138,10 +135,6 @@ This project was a brief 1-week sprint where our team tried to complete an MVP f
 - The Itenarary Page component displays the options using Reacts time line library
 - The user have the option to delete the options selected in the itenarary, or display more info on options.
 
-    * What happens behind the scenes when the user interacts with it? 
-    * OR What are all the place the data travels?  What happens to that data?
-    * Optionally include a diagram
-    * How does the tech stack come together?
 
 ## What research was required?
 
@@ -157,6 +150,7 @@ This project was a brief 1-week sprint where our team tried to complete an MVP f
     * React router for pagenation
     * React vertical Time Line component for the itinerary time line page
     * React Google maps to add maps to all pages and activities
+
 
 ## Workflow and Key lessons from your team - specifically those related to: Agile, CI/CD, testing, working with external stakeholders, ticketing, and user stories.
 
@@ -174,11 +168,13 @@ This project was a brief 1-week sprint where our team tried to complete an MVP f
     * Writing tests
     * Link to your trello board, discuss completed tickets
 
+
 ## Any non-MVP tickets (optional)
 
  - Code refactorings
  - Performance Optimizations
  - Additional features
+
 
 ## Notes from your Sprint Retro
   
@@ -205,6 +201,7 @@ This project was a brief 1-week sprint where our team tried to complete an MVP f
 - Setting up a moch data base
     * For future projects we need to setup a moch data base with moch data
     * We need to better understand what data the API is giving us back vs what we expected to get back
+
 
 ## What additional features do you plan to add, how do you plan to implement those features?
 
