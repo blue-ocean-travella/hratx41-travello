@@ -32,7 +32,7 @@ button:active {
   border-bottom-color: black;
 }
 
-.changeCurrentCategory {
+.changeClickedCurrentCategory {
   color: #f2994a;
 }
 
