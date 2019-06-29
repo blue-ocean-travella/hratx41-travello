@@ -113,6 +113,10 @@ This project was a brief 1-week sprint where our team tried to complete an MVP f
   
 ## Video Demo / Screen shot walkthrough of the app 
 
+### Wire Frame Screen Shots
+
+![pic:](https://github.com/blue-ocean-travella/hratx41-travello/blob/master/Travella%20Wire%20Frame%20One.png)
+
     * What were the user stories /  what was MVP (mention Minimal Viable Product)
   
 ## How does the app work?
