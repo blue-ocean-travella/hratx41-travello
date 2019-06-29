@@ -201,3 +201,92 @@ export default class Search extends Component {
 //       .catch(err => console.log(err));
 //   });
 // }
+
+
+
+
+
+fetch(
+    `https://maps.googleapis.com/maps/api/place/textsearch/json?query=night+life+in+${location}&key=${api}`
+)
+    .then(res => res.json())
+    .then(async data => {
+        restaurants = await getDetails(data.results);
+        nightLife = await getDetails(data.results);
+    })
+
+    
+        fetch(
+            `https://maps.googleapis.com/maps/api/place/textsearch/json?query=outdoor+activities+in+${location}&key=${api}`
+        )
+            .then(res => res.json())
+            .then(async data => {
+                thingsToDo = await getDetails(data.results);
+            })
+
+            
+                fetch(
+                    `https://maps.googleapis.com/maps/api/place/textsearch/json?query=day+trips+in+${location}&key=${api}`
+                )
+                    .then(res => res.json())
+
+                    .then(async data => {
+                        dayTrips = await getDetails(data.results);
+                    })
+                    
+                     let getRestaurants = Promise.resolve(  fetch(
+                            `https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+${location}&key=${api}`
+                        )
+                            .then(res => res.json())
+                            .then(async data => {
+                                restaurants = await getDetails(data.results);
+                            );
+
+
+
+
+
+
+
+
+
+
+
+
+
+let getDayTrips = () => {
+    fetch(
+        `https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+${location}&key=${api}`
+    )
+        .then(res => res.json())
+        .then(async data => {
+            restaurants = await getDetails(data.results);
+        });
+};
+let getNightLife = () => {
+    fetch(
+        `https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+${location}&key=${api}`
+    )
+        .then(res => res.json())
+        .then(async data => {
+            nightLife = await getDetails(data.results);
+        });
+};
+let getThingsToDo = () => {
+    fetch(
+        `https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+${location}&key=${api}`
+    )
+        .then(res => res.json())
+        .then(async data => {
+            thingsToDo = await getDetails(data.results);
+        });
+};
+let getRestaurants = () => {
+    fetch(
+        `https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+${location}&key=${api}`
+    )
+        .then(res => res.json())
+        .then(async data => {
+            restaurants = await getDetails(data.results);
+        });
+};

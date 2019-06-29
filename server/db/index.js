@@ -29,9 +29,9 @@ let firstUser = new Users({
     name:"Lui",
     itinerary:[]
 })
-Users.save((err)=>{
+// Users.save((err)=>{
 
-})
+// })
 /////////////////CRUDS//////////////////////////////
 
 const deleteData = (obj, cb) => {
@@ -58,9 +58,9 @@ const findData = (obj, cb) => {
   });
 };
 
-const updateData = (query, cb) => {
+const updateData = (find,update, cb) => {
     
-    Users.findOneAndUpdate(query,(err, info) => {
+    Users.findOneAndUpdate(find,update,(err, info) => {
     if (err) {
       console.log(err);
     } else {
@@ -79,6 +79,16 @@ const insertData = (object, cb) => {
   });
 };
 
+const saveData = (object,cb)=>{
+    Users.create(object,(err,info)=>{
+        if(err){
+            console.log(err)
+        }else{
+            cb(null,info)
+        }
+    })
+}
+
 /////////////////CRUDS//////////////////////////////
 
-module.exports = { User, insertData };
+module.exports = { Users, insertData,updateData,saveData };
