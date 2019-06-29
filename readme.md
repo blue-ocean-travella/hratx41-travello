@@ -53,8 +53,8 @@ This project was a brief 1-week sprint where our team completed an MVP for an ex
 
 ## Technical Challenges and research that you anticipated
 
-- Using figma to visually build out the user interface
-  * Gladys to get back to me
+- Using figma to visually build out the user interface **Gladys to complete**
+  * Why
   * What
   * How
 
@@ -68,10 +68,10 @@ This project was a brief 1-week sprint where our team completed an MVP for an ex
   * Obstacles we faced was modals hidden behind the back ground.
   * 
   
-- Material UI
-  * Gladys to give info
-  *
-  *
+- Material UI **Gladys to complete**
+  * Why
+  * What
+  * When
   
 - Git workflow
   * Ensuring the team follows a set workflow as we working off one code base. 
