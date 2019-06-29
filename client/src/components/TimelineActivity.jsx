@@ -103,7 +103,7 @@ class TimelineActivity extends React.Component {
     }
 
     render() {
-        console.log('ugachaka', this.props.activity.name)
+        // console.log('ugachaka', this.props.activity.name)
         return (
             < div className="timeline-line" >
                 <VerticalTimelineElement

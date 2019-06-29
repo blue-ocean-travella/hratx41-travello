@@ -45,7 +45,7 @@ app.get('/itineraries', (req, res) => {
 })
 
 app.delete('/itineraries', (req, res) => {
-    console.log('delete req', req.query);
+    // console.log('delete req', req.query);
     let id = req.query.uuid;
     db.deleteItinerary({ uuid: id }, (err, data) => {
         if (err) {
@@ -59,7 +59,7 @@ app.delete('/itineraries', (req, res) => {
 })
 
 app.delete('/activity', (req, res) => {
-    console.log('delete one', req.query)
+    // console.log('delete one', req.query)
     let id = req.query.uuid;
     let name = req.query.name;
     db.deleteActivity({ uuid: id, name: name }, (err, data) => {

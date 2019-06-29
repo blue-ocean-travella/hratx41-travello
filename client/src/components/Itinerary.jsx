@@ -154,6 +154,13 @@ class Itinerary extends React.Component {
             .then((response) => {
                 console.log('successfully delete itinerary item')
             })
+        Axios.get('/itineraries', { params: { uuid: 1 } })
+            .then((response) => {
+                console.log('front end response: ', response.data);
+                this.setState({
+                    activities: response.data
+                })
+            })
             .catch((err) => {
                 console.log('error deleting item')
             })
