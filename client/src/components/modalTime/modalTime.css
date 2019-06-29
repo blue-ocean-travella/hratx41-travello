@@ -52,7 +52,16 @@
   background-color: black;
 }
 
+.durationOption:visited {
+  background-color: white;
+  color: black;
+}
 /* .selectTime-section {
   display:flex;
   justify-content: center;
 } */
+
+.activeDuration {
+  background-color: black;
+  color: white;
+}

@@ -94,7 +94,9 @@ export default function SearchBar(props) {
       </List>
     </div>
   );
+
         
+
   return (
     <div id="bootstrap-overrides">
     
