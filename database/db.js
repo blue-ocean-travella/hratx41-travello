@@ -1,7 +1,6 @@
 // THIS IS THE MONGODB
 
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
 const fs = require('fs');
 //const dbinfo = require('./atlasinfo.js');
 
@@ -13,6 +12,11 @@ mongoose.connect('mongodb://localhost:27017/itineraries', { useNewUrlParser: tru
     }
 });
 
+const db = mongoose.connection;
+
+db.on('error', console.error.bind(console, 'coinnection error:'));
+
+const Schema = mongoose.Schema;
 
 const itinerarySchema = mongoose.Schema({
     uuid: Number,
@@ -41,34 +45,36 @@ const itinerarySchema = mongoose.Schema({
 
 const itinerary = mongoose.model('itinerary', itinerarySchema);
 
-// const createRecord = (obj, cb) => {
+// const createRecord = (obj) => {
 //     itinerary.create(obj, (err, data) => {
 //         if (err) {
 //             console.log('error inserting record', err);
 //         } else {
 //             console.log('record successfully entered', data);
-//             cb(null, data);
+//             // cb(null, data);
 //         }
 //     })
 // }
 
-// const readRecord = (obj, cb) => {
+// const readRecord = (obj) => {
 //     restaurant.findOne(obj, (err, data) => {
 //         if (err) {
 //             console.log('error retrieving record', err);
 //             cb(err, null);
 //         } else {
 //             console.log('record successfully retrieved', data);
-//             cb(null, data);
+//             // cb(null, data);
 //         }
 //     })
 // }
 
 const findAll = (obj, callback) => {
+    console.log('db obj: ', obj);
     itinerary.find(obj, (err, activities) => {
         if (err) {
             console.log('error reading db', err);
         }
+        console.log('activities: ', activities);
         callback(null, activities);
     })
 }

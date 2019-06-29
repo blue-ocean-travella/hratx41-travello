@@ -146,15 +146,18 @@ class Itinerary extends React.Component {
     componentDidMount() {
         // let uuid = (this.state.uuid);
         Axios.get('/itineraries', { params: { uuid: 1 } })
-            .then(function (response) {
-                console.log(response);
+            .then((response) => {
+                console.log('front end response: ', response.data);
+                this.setState({
+                    activities: response.data
+                })
             })
-            .catch(function (error) {
+            .catch((error) => {
                 console.log('client side error retrieving itinerary: ', error)
             })
 
         this.setState({
-            backgroundImage: this.getImage()
+            backgroundImage: this.getImage(),
         });
     }
 

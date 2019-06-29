@@ -1,11 +1,11 @@
 // const createError = require('http-errors');
 // const logger = require('morgan');
 const express = require('express');
-const app = express();
 const bodyParser = require('body-parser');
 const port = 3000;
+const app = express();
 
-app.use(express.static('../client/public.index.html'));
+app.use(express.static('../client/public'));
 const db = require('../database/db.js');
 
 app.use(bodyParser.json());
@@ -26,19 +26,23 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // app.use('/api/example', example)
 
 app.get('/itineraries', (req, res) => {
-    console.log('queries', req)
-    res.send(req);
-    // db.findAll((err, activities) => {
-    //     if (err) {
-    //         console.log('error returning from db', err);
-    //         res.statusCode = 400;
-    //         res.end();
-    //     } else {
-    //         console.log(res.data);
-    //         res.end();
-    // }
+    // console.log('q', req.query)
+    let id = (req.query.uuid);
+    db.findAll({ uuid: id }, (err, data) => {
+        if (err) {
+            console.log('server error reading record: ', id)
+            res.end();
+        } else {
+            if (data === null) {
+                console.log('error: record does not exist: ', id);
+                res.send('error, record does not exist');
+            } else {
+                console.log('server succesfully read record:', data[0].activities)
+                res.send(data[0].activities);
+            }
+        }
+    })
 })
-// })
 
 // catch 404 and forward to error handler
 // app.use(function (req, res, next) {
