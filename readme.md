@@ -39,7 +39,10 @@ This project was a brief 1-week sprint where our team completed an MVP for an ex
 - JavaScript
 - Axios
 - MongoDB
+- Mongoose
 - NodeJS and Express
+- Node-Fetch
+- Async Await
 - Google API 
 - Bootstrap
 - Material UI
@@ -78,9 +81,10 @@ This project was a brief 1-week sprint where our team completed an MVP for an ex
   * We set up a Git Workflow document for the team to guide everyone and also did one on one session.
   
 - Navigation of front end pages
-  * Why - get info from Jimmy
-  * What
-  * How
+  * Issue we faced was the ccs files not interacting correcly.
+  * Had to seperate each components css into it own css page and added it to the component
+  * Componenets need to share state and use the sae HTML page
+  * Native React was used to dynamicly render each component by setting state with conditional rendering
   
 - Data flow between each component, server and database
   * Ensuring that the team fully understand the data stucktures we will be working with.
@@ -89,14 +93,10 @@ This project was a brief 1-week sprint where our team completed an MVP for an ex
   * We did whiteboard session with the whole team talking and drawing out the flow of data.
   * Team members worked in pairs and groups to ensure everyne is interacting with the data correctly.
   
-- Using Google API to scrape data from Google
-  * Why
-  * What
-  * How
- 
-
-    * Why, what was the plan to overcome those challenges?
-    * What did you learn?
+- Using Google API to parse data from Google
+  * Google API was robust enough and offered all the data we needed for our application
+  * Google API had additional references attached to the data that allowed us to search more spesific data as needed.
+  * Doing multiple API requests was challenging with asynchronous data and parsing all the data that was needed.
   
   
 ## Challenges that were unexpected
@@ -167,13 +167,13 @@ This project was a brief 1-week sprint where our team completed an MVP for an ex
 - Detailed user stories was created during the meetings with the external stakeholders
 - We need to follow the Gitworkflow more carefully and adhere to the procedures set out with regards to rebasing
 - Commit messages need to be more descriptive
+- **write down key take aways from code review - Jimmy**
 - Testing need to be done after each feature and before any reviewing is actioned
-
-    * Your git workflow, style guides, commit guides, etc
-    * What did you learn from the process
-    * What were key takeaways from stand ups, code reviews, etc
-    * Writing tests
-    * Link to your trello board, discuss completed tickets
+- Link to Travella Trollo Board : [trello](https://trello.com/b/fYpFS8h7/travella)
+- All tickets was completed
+- We did a total of 40 implementation tickets as well as bug tickets, research tickets and info tickets
+- We did minimal test writing and this is a focus point to continue to work on
+- We used Jest to write tests and Travis CI to intergrate the tests
 
 
 ## Any non-MVP tickets (optional)
@@ -221,10 +221,4 @@ This project was a brief 1-week sprint where our team completed an MVP for an ex
      - [ ] Swapping around activities on the itineratry time line
      - [ ] Clicking on the icons on the itinaray page to give you similar option to change the activity
      - [ ] If time is already allocated to an activity the user is informed.
-
-    * Future refactoring?
-    * Additional dev ops considerations?
-    * UI/UX additions?
-
-
-
+     - [ ] Continuous refactoring of code
