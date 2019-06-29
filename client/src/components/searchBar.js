@@ -115,7 +115,7 @@ export default function SearchBar(props) {
    </div> 
    <div>
 
-<Input  nextPage={props.nextPage} />
+<Input setResults={props.setResults} nextPage={props.nextPage} />
 
 </div>
 </div>
