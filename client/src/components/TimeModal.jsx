@@ -33,7 +33,7 @@ const getColor = (bool) => {
 
 const TimeModal = (props) => {
 
-    let color = getColor(props.activity.location.open);
+    let color = getColor(props.activity.open);
 
     // console.log('TimeModal props: ', props)
     return (
@@ -42,40 +42,40 @@ const TimeModal = (props) => {
             centered
         >
             <Modal.Header closeButton>
-                <Modal.Title id="modalTitle">{props.activity.location.name}
+                <Modal.Title id="modalTitle">{props.activity.name}
                     <div className="time-modal-hours">Hours of Operation:</div>
-                    <div id="time-modal-open" style={color = { color }}>{getOpen(props.activity.location.open)}</div>
+                    <div id="time-modal-open" style={color = { color }}>{getOpen(props.activity.open)}</div>
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <Container>
                     <Row>
                         <Col xs={4}>Sunday:</Col>
-                        <Col className="modal-time">{props.activity.location.hoursOfOperation.sunday}</Col>
+                        <Col className="modal-time">{props.activity.hoursOfOperation.sunday}</Col>
                     </Row>
                     <Row>
                         <Col xs={4}>Monday:</Col>
-                        <Col className="modal-time">{props.activity.location.hoursOfOperation.monday}</Col>
+                        <Col className="modal-time">{props.activity.hoursOfOperation.monday}</Col>
                     </Row>
                     <Row>
                         <Col xs={4}>Tuesday:</Col>
-                        <Col className="modal-time">{props.activity.location.hoursOfOperation.tuesday}</Col>
+                        <Col className="modal-time">{props.activity.hoursOfOperation.tuesday}</Col>
                     </Row>
                     <Row>
                         <Col xs={4}>Wednesday:</Col>
-                        <Col className="modal-time">{props.activity.location.hoursOfOperation.wednesday}</Col>
+                        <Col className="modal-time">{props.activity.hoursOfOperation.wednesday}</Col>
                     </Row>
                     <Row>
                         <Col xs={4}>Thursday:</Col>
-                        <Col className="modal-time">{props.activity.location.hoursOfOperation.thursday}</Col>
+                        <Col className="modal-time">{props.activity.hoursOfOperation.thursday}</Col>
                     </Row>
                     <Row>
                         <Col xs={4}>Friday</Col>
-                        <Col className="modal-time">{props.activity.location.hoursOfOperation.friday}</Col>
+                        <Col className="modal-time">{props.activity.hoursOfOperation.friday}</Col>
                     </Row>
                     <Row>
                         <Col xs={4}>Saturday:</Col>
-                        <Col className="modal-time">{props.activity.location.hoursOfOperation.saturday}</Col>
+                        <Col className="modal-time">{props.activity.hoursOfOperation.saturday}</Col>
                     </Row>
                 </Container>
             </Modal.Body>

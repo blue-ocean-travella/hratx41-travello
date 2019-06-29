@@ -118,27 +118,26 @@ class TimelineActivity extends React.Component {
     }
 
     render() {
-
         return (
             < div className="timeline-line" >
                 <VerticalTimelineElement
                     className="vertical-timeline-element--work"
-                    date={this.props.activity.location.startTime}
+                    date={this.props.activity.startTime}
                     iconStyle={{ background: 'rgb(255, 255, 255)', color: '#fff' }}
-                    icon={<img className="nightlife-icon" src={this.getIcon(this.props.activity.location.category)}></img>}
+                    icon={<img className="nightlife-icon" src={this.getIcon(this.props.activity.category)}></img>}
                     position={this.getPosition(this.props.position)}
                 >
 
                     <div className="timeline-element-outer-container">
                         <a className="timeline-element-top-container">
-                            <img src={this.props.activity.location.image} className="timeline-image" onClick={this.handleShowDescriptionModal}></img>
-                            <h3 className="vertical-timeline-element-title">{this.props.activity.location.name}</h3>
+                            <img src={this.props.activity.images[0]} className="timeline-image" onClick={this.handleShowDescriptionModal}></img>
+                            <h3 className="vertical-timeline-element-title">{this.props.activity.name}</h3>
                         </a>
                         <DescriptionModal show={this.state.showDescriptionModal} onHide={this.handleCloseDescriptionModal} handleClose={this.handleCloseDescriptionModal} activity={this.props.activity} />
                         <div className="timeline-information">
-                            <div className="time"><span className="duration">Visit Duration:</span> {this.props.activity.location.duration} hr</div>
+                            <div className="time"><span className="duration">Visit Duration:</span> {this.props.activity.duration} hr</div>
                             <div id="timeline-description">
-                                {this.props.activity.location.description}
+                                {this.props.activity.description}
                             </div></div></div>
 
                     <div className="timeline-element-container">

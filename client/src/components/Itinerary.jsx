@@ -39,176 +39,84 @@ class Itinerary extends React.Component {
             ],
             backgroundImage: '',
             city: 'Paris',
-            itineraryItems: [{
-                uuid: 1,
-                location:
-                {
-                    name: 'Eiffel Tower',
-                    duration: 1,
-                    description: 'This is a description of whatever item is located to the left.  This will be lorem ipsum until we can get the actual description from our APi.  I have to keep typing to make this really long so I can style my containers and make sure that the overflow is handled correctly.  That is so much funnnnnnnnnnnn!',
-                    startTime: '2:00 PM',
-                    category: 'topSpots',
-                    hoursOfOperation: {
-                        sunday: '12:00 PM - 5:00 PM',
-                        monday: '8:00 AM - 10:00 PM',
-                        tuesday: '8:00 AM - 10:00 PM',
-                        wednesday: '8:00 AM - 11:00 PM',
-                        thursday: '8:00 AM - 11:00 PM',
-                        friday: '8:00 AM - 12:00 AM',
-                        saturday: '8:00 AM - 12:00 AM',
-                    },
-                    longitude: 2.2945,
-                    latitude: 48.8584,
-                    numberOfReviews: 175,
-                    rating: 4,
-                    open: true,
-                    address: '119 Nueces St., Austin, TX 78741',
-                    phone: '555-555-5555',
-                    website: 'http://www.eiffeltower.com',
-                    images: ['https://img.jakpost.net/c/2017/02/10/2017_02_10_21340_1486708892._large.jpg', 'https://images.pexels.com/photos/356378/pexels-photo-356378.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', 'https://cdn2.eyeem.com/thumb/30a522b99399660cfd8fc8dc79ca07f8d909bc8c-1533716330320/w/800']
-                }
-            }, {
-                uuid: 2,
-                location:
-                {
-                    name: 'Sensoji Temple',
-                    duration: 3,
-                    description: 'lorem ipsum',
-                    startTime: '7:00 PM',
-                    category: 'thingsToDo',
-                    hoursOfOperation: {
-                        sunday: '12:00 PM - 5:00 PM',
-                        monday: '8:00 AM - 10:00 PM',
-                        tuesday: '8:00 AM - 10:00 PM',
-                        wednesday: '8:00 AM - 11:00 PM',
-                        thursday: '8:00 AM - 11:00 PM',
-                        friday: '8:00 AM - 12:00 AM',
-                        saturday: '8:00 AM - 12:00 AM',
-                    },
-                    longitude: 139.796783,
-                    latitude: 35.714661,
-                    numberOfReviews: 4000,
-                    rating: 3.5,
-                    open: true,
-                    address: '119 Nueces St., Austin, TX 78741',
-                    phone: '555-555-5555',
-                    website: 'http://www.sensojitemple.com',
-                    images: ['https://www.touropia.com/gfx/d/tourist-attractions-in-tokyo/sensoji_temple.jpg?v=29a16b16edae6dc242531c1dd1fb3188', 'https://images.pexels.com/photos/356378/pexels-photo-356378.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', 'https://cdn2.eyeem.com/thumb/30a522b99399660cfd8fc8dc79ca07f8d909bc8c-1533716330320/w/800']
-                }
-            }, {
-                uuid: 3,
-                location:
-                {
-                    name: 'Barton Springs',
-                    duration: 2,
-                    description: 'lorem ipsum',
-                    startTime: '4:00 PM',
-                    category: 'nightLife',
-                    hoursOfOperation: {
-                        sunday: '12:00 PM - 5:00 PM',
-                        monday: '8:00 AM - 10:00 PM',
-                        tuesday: '8:00 AM - 10:00 PM',
-                        wednesday: '8:00 AM - 11:00 PM',
-                        thursday: '8:00 AM - 11:00 PM',
-                        friday: '8:00 AM - 12:00 AM',
-                        saturday: '8:00 AM - 12:00 AM',
-                    },
-                    longitude: -97.7729,
-                    latitude: 30.2670,
-                    numberOfReviews: 40,
-                    rating: 5,
-                    open: false,
-                    address: '119 Nueces St., Austin, TX 78741',
-                    phone: '555-555-5555',
-                    website: 'http://www.bartonsprings.com',
-                    images: ['https://ak6.picdn.net/shutterstock/videos/1021179886/thumb/1.jpg', 'https://images.pexels.com/photos/356378/pexels-photo-356378.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', 'https://cdn2.eyeem.com/thumb/30a522b99399660cfd8fc8dc79ca07f8d909bc8c-1533716330320/w/800']
-                }
+            username: 'Lucy',
+            uuid: 1,
+            activities: [{
+                name: 'Eiffel Tower',
+                duration: 1,
+                description: 'This is a description of whatever item is located to the left.  This will be lorem ipsum until we can get the actual description from our APi.  I have to keep typing to make this really long so I can style my containers and make sure that the overflow is handled correctly.  That is so much funnnnnnnnnnnn!',
+                startTime: '2:00 PM',
+                category: 'topSpots',
+                hoursOfOperation: {
+                    sunday: '12:00 PM - 5:00 PM',
+                    monday: '8:00 AM - 10:00 PM',
+                    tuesday: '8:00 AM - 10:00 PM',
+                    wednesday: '8:00 AM - 11:00 PM',
+                    thursday: '8:00 AM - 11:00 PM',
+                    friday: '8:00 AM - 12:00 AM',
+                    saturday: '8:00 AM - 12:00 AM',
+                },
+                longitude: 2.2945,
+                latitude: 48.8584,
+                numberOfReviews: 175,
+                rating: 4,
+                open: true,
+                address: '119 Nueces St., Austin, TX 78741',
+                phone: '555-555-5555',
+                website: 'http://www.eiffeltower.com',
+                images: ['https://img.jakpost.net/c/2017/02/10/2017_02_10_21340_1486708892._large.jpg', 'https://images.pexels.com/photos/356378/pexels-photo-356378.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', 'https://cdn2.eyeem.com/thumb/30a522b99399660cfd8fc8dc79ca07f8d909bc8c-1533716330320/w/800']
             },
             {
-                uuid: 4,
-                location:
-                {
-                    name: 'Eiffel Tower',
-                    duration: 1,
-                    description: 'lorem ipsum',
-                    startTime: '2:00 PM',
-                    category: 'restaurants',
-                    hoursOfOperation: {
-                        sunday: '12:00 PM - 5:00 PM',
-                        monday: '8:00 AM - 10:00 PM',
-                        tuesday: '8:00 AM - 10:00 PM',
-                        wednesday: '8:00 AM - 11:00 PM',
-                        thursday: '8:00 AM - 11:00 PM',
-                        friday: '8:00 AM - 12:00 AM',
-                        saturday: '8:00 AM - 12:00 AM',
-                    },
-                    longitude: 2.2945,
-                    latitude: 48.8584,
-                    reviews: 175,
-                    stars: 4,
-                    open: true,
-                    address: '119 Nueces St., Austin, TX 78741',
-                    phone: '555-555-5555',
-                    website: 'http://www.eiffeltower.com',
-                    image: 'https://img.jakpost.net/c/2017/02/10/2017_02_10_21340_1486708892._large.jpg'
-                }
-            }, {
-                uuid: 5,
-                location:
-                {
-                    name: 'Sensoji Temple',
-                    duration: 3,
-                    description: 'lorem ipsum',
-                    startTime: '7:00 PM',
-                    category: 'dayTrips',
-                    hoursOfOperation: {
-                        sunday: '12:00 PM - 5:00 PM',
-                        monday: '8:00 AM - 10:00 PM',
-                        tuesday: '8:00 AM - 10:00 PM',
-                        wednesday: '8:00 AM - 11:00 PM',
-                        thursday: '8:00 AM - 11:00 PM',
-                        friday: '8:00 AM - 12:00 AM',
-                        saturday: '8:00 AM - 12:00 AM',
-                    },
-                    longitude: 139.796783,
-                    latitude: 35.714661,
-                    reviews: 4000,
-                    stars: 3.5,
-                    open: true,
-                    address: '119 Nueces St., Austin, TX 78741',
-                    phone: '555-555-5555',
-                    website: 'http://www.sensojitemple.com',
-                    image: 'https://www.touropia.com/gfx/d/tourist-attractions-in-tokyo/sensoji_temple.jpg?v=29a16b16edae6dc242531c1dd1fb3188'
-                }
-            }, {
-                uuid: 6,
-                location:
-                {
-                    name: 'Barton Springs',
-                    duration: 2,
-                    description: 'lorem ipsum',
-                    startTime: '4:00 PM',
-                    category: 'topSpots',
-                    hoursOfOperation: {
-                        sunday: '12:00 PM - 5:00 PM',
-                        monday: '8:00 AM - 10:00 PM',
-                        tuesday: '8:00 AM - 10:00 PM',
-                        wednesday: '8:00 AM - 11:00 PM',
-                        thursday: '8:00 AM - 11:00 PM',
-                        friday: '8:00 AM - 12:00 AM',
-                        saturday: '8:00 AM - 12:00 AM',
-                    },
-                    longitude: -97.7729,
-                    latitude: 30.2670,
-                    reviews: 40,
-                    stars: 5,
-                    open: false,
-                    address: '119 Nueces St., Austin, TX 78741',
-                    phone: '555-555-5555',
-                    website: 'http://www.bartonsprings.com',
-                    image: 'https://ak6.picdn.net/shutterstock/videos/1021179886/thumb/1.jpg'
-                }
-            }],
+                name: 'Sensoji Temple',
+                duration: 3,
+                description: 'lorem ipsum',
+                startTime: '7:00 PM',
+                category: 'thingsToDo',
+                hoursOfOperation: {
+                    sunday: '12:00 PM - 5:00 PM',
+                    monday: '8:00 AM - 10:00 PM',
+                    tuesday: '8:00 AM - 10:00 PM',
+                    wednesday: '8:00 AM - 11:00 PM',
+                    thursday: '8:00 AM - 11:00 PM',
+                    friday: '8:00 AM - 12:00 AM',
+                    saturday: '8:00 AM - 12:00 AM',
+                },
+                longitude: 139.796783,
+                latitude: 35.714661,
+                numberOfReviews: 4000,
+                rating: 3.5,
+                open: true,
+                address: '119 Nueces St., Austin, TX 78741',
+                phone: '555-555-5555',
+                website: 'http://www.sensojitemple.com',
+                images: ['https://www.touropia.com/gfx/d/tourist-attractions-in-tokyo/sensoji_temple.jpg?v=29a16b16edae6dc242531c1dd1fb3188', 'https://images.pexels.com/photos/356378/pexels-photo-356378.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', 'https://cdn2.eyeem.com/thumb/30a522b99399660cfd8fc8dc79ca07f8d909bc8c-1533716330320/w/800']
+            },
+            {
+                name: 'Barton Springs',
+                duration: 2,
+                description: 'lorem ipsum',
+                startTime: '4:00 PM',
+                category: 'nightLife',
+                hoursOfOperation: {
+                    sunday: '12:00 PM - 5:00 PM',
+                    monday: '8:00 AM - 10:00 PM',
+                    tuesday: '8:00 AM - 10:00 PM',
+                    wednesday: '8:00 AM - 11:00 PM',
+                    thursday: '8:00 AM - 11:00 PM',
+                    friday: '8:00 AM - 12:00 AM',
+                    saturday: '8:00 AM - 12:00 AM',
+                },
+                longitude: -97.7729,
+                latitude: 30.2670,
+                numberOfReviews: 40,
+                rating: 5,
+                open: false,
+                address: '119 Nueces St., Austin, TX 78741',
+                phone: '555-555-5555',
+                website: 'http://www.bartonsprings.com',
+                images: ['https://ak6.picdn.net/shutterstock/videos/1021179886/thumb/1.jpg', 'https://images.pexels.com/photos/356378/pexels-photo-356378.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', 'https://cdn2.eyeem.com/thumb/30a522b99399660cfd8fc8dc79ca07f8d909bc8c-1533716330320/w/800']
+            }
+            ],
         };
 
         this.handleDeleteItineraryClick = this.handleDeleteItineraryClick.bind(this);
@@ -221,32 +129,33 @@ class Itinerary extends React.Component {
         console.log('delete entire itinerary');
         // let city = this.state.city;
 
-        //     Axios.delete('/itineraries', {
-        //         params: {
-        //             city: city
-        //         }
+        // Axios.delete('/itineraries', {
+        //     params: {
+        //         city: city
+        //     }
+        // })
+        //     .then((response) => {
+        //         console.log('successfully deleted current itinerary: ', response)
         //     })
-        //         .then((response) => {
-        //             console.log('successfully deleted current itinerary: ', response)
-        //         })
-        //         .catch((error) => {
-        //             console.log('error deleting current inventory: ', error)
-        //         })
+        //     .catch((error) => {
+        //         console.log('error deleting current inventory: ', error)
+        //     })
     }
 
 
     componentDidMount() {
-        let uuid = (this.state.uuid);
+        // let uuid = (this.state.uuid);
+        Axios.get('/itineraries', { params: { uuid: 1 } })
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log('client side error retrieving itinerary: ', error)
+            })
+
         this.setState({
             backgroundImage: this.getImage()
         });
-        // Axios.get(`/itineraries?uuid=${uuid}`)
-        //     .then(function (response) {
-        //         console.log(response);
-        //     })
-        //     .catch(function (error) {
-        //         console.log('client side error retrieving itinerary: ', error)
-        //     })
     }
 
     // background image functions
@@ -274,7 +183,7 @@ class Itinerary extends React.Component {
                     </div>
 
                     <VerticalTimeline className="timeline-line">
-                        {this.state.itineraryItems.map((activity, i) => <TimelineActivity
+                        {this.state.activities.map((activity, i) => <TimelineActivity
                             key={i}
                             position={i}
                             activity={activity}

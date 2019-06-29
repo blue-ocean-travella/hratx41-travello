@@ -1,7 +1,8 @@
-const router = require('express').Router();
+// const router = require('express').Router();
 
-router.get('/', (req, res) => {
-    res.json({data:['dolphins', 'manatees', 'sea turles']})
-})
+// // router.get('/itineraries', (req, res) => {
+// //     console.log(req.params);
+// //     res.send()
+// // })
 
-module.exports = router;
+// module.exports = router;
