@@ -13,7 +13,7 @@
 
 <div >
 
-This project was a brief 1-week sprint where our team tried to complete an MVP for an external user **Eric Anthony**
+This project was a brief 1-week sprint where our team completed an MVP for an external user, Eric Anthony
 
  - Our goal is to do MVP with some additional functionality. 
  - Vissually we want the application to look amazing and include some additional features beyond MVP.
@@ -51,7 +51,7 @@ This project was a brief 1-week sprint where our team tried to complete an MVP f
 ## Technical Challenges and research that you anticipated
 
 - Using figma to visually build out the user interface
-  * Why
+  * Gladys to get back to me
   * What
   * How
 
@@ -65,6 +65,11 @@ This project was a brief 1-week sprint where our team tried to complete an MVP f
   * Obstacles we faced was modals hidden behind the back ground.
   * 
   
+- Material UI
+  * Gladys to give info
+  *
+  *
+  
 - Git workflow
   * Ensuring the team follows a set workflow as we working off one code base. 
   * Correctly working off feature branches when the team creates new features. 
@@ -73,7 +78,7 @@ This project was a brief 1-week sprint where our team tried to complete an MVP f
   * We set up a Git Workflow document for the team to guide everyone and also did one on one session.
   
 - Navigation of front end pages
-  * Why
+  * Why - get info from Jimmy
   * What
   * How
   
@@ -146,7 +151,7 @@ This project was a brief 1-week sprint where our team tried to complete an MVP f
     * OnSplash API
 - Researching new technologies and additional libreries with React.
     * Boostrap for styling
-    * Matrial UI  for styling
+    * Material UI  for styling
     * Travis CI for Testing
     * Jest for testing
     * React router for pagenation
