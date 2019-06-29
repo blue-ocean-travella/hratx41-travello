@@ -11,6 +11,8 @@
 
 ## Introduction
 
+<div >
+
 This project was a brief 1-week sprint where our team tried to complete an MVP for an external user **Eric Anthony**
 
  - Our goal is to do MVP with some additional functionality. 
