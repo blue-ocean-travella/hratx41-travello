@@ -1,5 +1,5 @@
 
-# <img src="https://github.com/blue-ocean-travello/hratx41-travello/blob/master/travella.png" width="150" height="150" />  Travel done the way you like it!
+### <img src="https://github.com/blue-ocean-travello/hratx41-travello/blob/master/travella.png" width="150" height="150" />  Travel done the way you like it!
 
 
 ## Travella Contributors:
