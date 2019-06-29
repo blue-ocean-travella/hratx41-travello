@@ -241,7 +241,7 @@ class Itinerary extends React.Component {
                     })
                 } else {
                     this.setState({
-                        activities: []
+                        activities: response.data
                     })
                 }
             })
