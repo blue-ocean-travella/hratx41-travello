@@ -2,14 +2,23 @@ const path = require('path');
 const SRC_DIR = path.join(__dirname, '/src');
 const DIST_DIR = path.join(__dirname, '/public');
 const Dotenv = require('dotenv-webpack');
+<<<<<<< HEAD
+=======
+
+>>>>>>> itinerary
 module.exports = {
   entry: {search:`${SRC_DIR}/index.js`, itinerary:`${SRC_DIR}/index2.js`, connect:`${SRC_DIR}/index3.js`},
   output: {
+<<<<<<< HEAD
   filename: '[name].bundle.js',
   path: DIST_DIR
+=======
+    filename: 'bundle.js',
+    path: DIST_DIR
+>>>>>>> itinerary
   },
-  module : {
-    rules : [
+  module: {
+    rules: [
       {
         test: /\.(js|mjs|jsx)$/,
         enforce: 'pre',
@@ -17,10 +26,19 @@ module.exports = {
         loader: 'eslint-loader'
       },
       {
-        test : /\.js?/,
-        include : SRC_DIR,
-        exclude: /node_modules/,
-        loader : 'babel-loader'
+        test: /\.js?/,
+        include: SRC_DIR,
+        loader: 'babel-loader'
+      },
+      {
+        test: /\.(png|jp(e*)g|svg)$/,
+        use: [{
+          loader: 'url-loader',
+          options: {
+            limit: 8000, // Convert images < 8kb to base64 strings
+            name: 'images/[hash]-[name].[ext]'
+          },
+        }]
       },
       {
         test: /\.(png|jp(e*)g|svg)$/,

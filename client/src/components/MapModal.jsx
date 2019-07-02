@@ -4,8 +4,8 @@ import { GoogleMap, LoadScript } from '@react-google-maps/api';
 const apiKey = process.env.API_KEY;
 
 const MapModal = (props) => {
-    let latitude = props.activity.location.latitude;
-    let longitude = props.activity.location.longitude;
+    let latitude = props.activity.latitude;
+    let longitude = props.activity.longitude;
     // console.log('MapModal props: ', props)
     return (
         <Modal show={props.show} onHide={props.onHide}
@@ -14,7 +14,7 @@ const MapModal = (props) => {
             centered
         >
             <Modal.Header closeButton>
-                <Modal.Title id="modalTitle">{props.activity.location.name}<div className="modal-map">Map</div></Modal.Title>
+                <Modal.Title id="modalTitle">{props.activity.name}<div className="modal-map">Map</div></Modal.Title>
             </Modal.Header>
             <Modal.Body className="map-modal-body">
                 <LoadScript
