@@ -7,7 +7,7 @@ app.use(express.static('../client/public'));
 require("dotenv").config({ path: "../.env" });
 const fetch = require("node-fetch");
 var faker = require("faker");
-// var db = require("./db/index");
+const db = require('./db/index.js');
 const api = process.env.API_KEY;
 var fs = require("fs")
 
@@ -271,6 +271,68 @@ let getDetails = async array => {
   return array;
 };
 
+
+app.get('/itineraries', (req, res) => {
+  // console.log('q', req.query)
+  let id = req.query.uuid;
+  db.findOne({ uuid: id }, (err, data) => {
+      if (err) {
+          console.log('server error reading record: ', id)
+          res.end();
+      } else {
+          if (data.length === 0) {
+              console.log('error: record does not exist: ', id);
+              res.send(undefined);
+          } else {
+              console.log('server succesfully read record:', id)
+              res.send(data[0]);
+          }
+      }
+  })
+})
+
+app.delete('/itineraries', (req, res) => {
+  // console.log('delete req', req.query);
+  let id = req.query.uuid;
+  db.deleteItinerary({ uuid: id }, (err, data) => {
+      if (err) {
+          console.log('error deleting record: ', id);
+          res.send('record not found');
+      } else {
+          console.log('server successfully deleted record: ', id);
+          res.end();
+      }
+  })
+})
+
+app.delete('/activity', (req, res) => {
+  // console.log('delete one', req.query)
+  let id = req.query.uuid;
+  let name = req.query.name;
+  db.deleteActivity({ uuid: id, name: name }, (err, data) => {
+      if (err) {
+          console.log('error deleting activity');
+      } else {
+          console.log('server successfully deleted activity', name);
+          res.send(data);
+      }
+  })
+})
+
+app.put('/activity', (req, res) => {
+  let id = 1;
+  let activity = req.query.destination;
+  let city = req.query.city;
+
+  db.insertActivity({ uuid: id, city: city, activity: activity }, (err, data) => {
+      if (err) {
+          console.log('error inserting single');
+      } else {
+          console.log('server successfully inserted activity', activity);
+          res.send(data)
+      }
+  })
+})
 
 var port = process.env.PORT || 8000;
 app.listen(port, ()=>{console.log(`listening at ${port}`)})
