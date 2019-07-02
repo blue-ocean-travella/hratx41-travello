@@ -44,12 +44,13 @@ class TimelineActivity extends React.Component {
 
     }
 
-    // delete function
+    // modal open/close functions
 
-    handleDeleteItemClick(event) {
-        // let currentItineraryUuid = event.target.value.uuid;
-        console.log('delete one clicked');
-        // Axios.delete('/itineraries', { params: { uuid: currentItineraryUuid } })
+    handleShowDescriptionModal() {
+        this.setState({ showDescriptionModal: true });
+    }
+
+    handleCloseDescriptionModal() {
         this.setState({ showDescriptionModal: false });
     }
 

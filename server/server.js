@@ -3,7 +3,6 @@
 // const  {connect, User, NightLife, Restaurant, DayTrip, ThingsToDo} = require('./db/index.js')
 const express = require('express');
 const bodyParser = require('body-parser');
-const port = 3000;
 const app = express();
 app.use(express.static('../client/public'));
 require("dotenv").config({ path: "../.env" });
@@ -14,7 +13,7 @@ const api = process.env.API_KEY;
 var fs = require("fs")
 
 app.use(express.static('../client/public'));
-const db = require('../database/db.js');
+// const db = require('../database/db.js');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

@@ -4,9 +4,9 @@ import styled from 'styled-components';
 import SearchBar from './searchBar.js';
 import testPage from './testPage.jsx';
 import CategoriesAndResults from './categoriesAndResults/categoriesAndResults.jsx';
-import Axios from 'axios';
+// import Axios from 'axios';
 import fakeData from './thing.js';
-import Connect from './connect.js';
+import Connect from './Connect.js';
 
 export default class App extends Component {
   constructor(props) {
