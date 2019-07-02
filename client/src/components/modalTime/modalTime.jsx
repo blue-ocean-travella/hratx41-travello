@@ -17,7 +17,7 @@ constructor(props) {
   super(props);
   this.state = {
     activeDuration: null
-  }
+  };
 
   this.changeStyleWhenClicked = this.changeStyleWhenClicked.bind(this);
   this.handleClickToChangeStyleAndDuration = this.handleClickToChangeStyleAndDuration.bind(this);
@@ -26,7 +26,7 @@ constructor(props) {
 changeStyleWhenClicked (key) {
   this.setState({
     activeDuration: key
-  })
+  });
   
 }
 

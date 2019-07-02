@@ -89,15 +89,15 @@ class Result extends Component {
       category: this.props.currentCategory,
       //uuid pending
     };
-
+    // /activity
     // console.log(destination);
-      // axios.post('/api/itinerary', destination)
-      //  .then(response => {
-      //    console.log(response, 'succesfully posted!')
-      //  })
-      //  .catch(err => {
-      //    console.log(err, 'there is an error')
-      //  })
+      axios.post('/itinerary', destination)
+       .then(response => {
+         console.log(response, 'succesfully posted!')
+       })
+       .catch(err => {
+         console.log(err, 'there is an error')
+       })
     // this.props.handdleAddToItenerary(destination);
     // console.log(destination, 'this is destination');
     this.setState({ showTimeModal: false });
@@ -129,6 +129,7 @@ class Result extends Component {
 
   render() {
     // console.log(this.props.id);
+    console.log(this.props.dataResult);
     let photo = this.props.dataResult.photos ? this.props.dataResult.photos[0]: 'http://48tx1q1rrcysi4t7l687xbtt.wpengine.netdna-cdn.com/wp-content/uploads/2011/05/Texas-Capitol-Austin-700x483.jpg';
     // if(photo === undefined)  {
     //   photo = 'http://48tx1q1rrcysi4t7l687xbtt.wpengine.netdna-cdn.com/wp-content/uploads/2011/05/Texas-Capitol-Austin-700x483.jpg';

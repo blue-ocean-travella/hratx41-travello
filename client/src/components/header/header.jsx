@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './header.css';
 import axios from  'axios';
+
 // import itinerary from './itinerary.png';
 const apiKey = process.env.A_KEY;
 
@@ -74,9 +75,11 @@ class Header extends Component {
        <div className='header'>
          <img src='https://www.munsch.com/portalresource/lookup/wosid/cp-base-3-11603/image.name=/Austin%20-%20Offices%20Page_Main_Crop.jpg' className='background-image'></img>
          <div className='city'>{this.props.city}</div>
-           <a  href='./index2.html' className='itinerary'>
-             <img src='https://image.flaticon.com/icons/svg/60/60740.svg' className='itinerary'></img> 
-           </a> 
+         <div>
+           <button className='itinerary'>
+             <a href='./index2.html' className='linkTag'>Your Itinerary</a> 
+           </button>
+         </div>
        </div>
     );
   }

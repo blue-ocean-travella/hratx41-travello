@@ -30,7 +30,7 @@ const ModalDescription = ({show, onHide, handleClose, handleTimeChange, goToItin
     open = 'Close';
   }
   
-   let photo = dataResult.photo ? dataResult.photo[0] : 'http://48tx1q1rrcysi4t7l687xbtt.wpengine.netdna-cdn.com/wp-content/uploads/2011/05/Texas-Capitol-Austin-700x483.jpg';
+   let photo = Array.isArray(dataResult.photos) ? dataResult.photos[0] : 'http://48tx1q1rrcysi4t7l687xbtt.wpengine.netdna-cdn.com/wp-content/uploads/2011/05/Texas-Capitol-Austin-700x483.jpg';
   
   return (
     <Modal show={show} onHide={onHide} className='modal-container'
@@ -86,7 +86,7 @@ const ModalDescription = ({show, onHide, handleClose, handleTimeChange, goToItin
               </span>
             </div>
             <div className='modal-bigDescription'>
-              {dataResult.longDescription}
+              {dataResult.description}
             </div>
             <div className='modal-addres-hours-phone-info'>
               <div>
