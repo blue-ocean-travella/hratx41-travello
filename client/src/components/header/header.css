@@ -1,44 +1,59 @@
 body {
- margin: 0px;
-}
-.header {
-  /* background-image: url('https://www.americaninno.com/wp-content/uploads/2017/08/32197839955_7884912348_k.jpg'); */
-  /* background-repeat: no-repeat;
-  background-size: 1800px 400px;
-  height: 250px; 
-  padding-left: 250px;
-  padding-top: 30px;
-  font-size: 50px;
-  color: #ffffff;
-  font-family: Arial, Helvetica, sans-serif;
-  width: 100%; */
-  position: relative;
-}
-
-.background-image {
-  width: 100%;
-  height: 245px;
-}
-
-.city {
-  position: absolute;
-  top: 20px;
-  left: 200px;
-  font-size: 50px;
-  color: #ffffff;
-  font-family: 'Lato', sans-serif;
-
-}
-
-.ul {
-  padding-left: 15px;
-}
-
-.itinerary {
-  position: absolute;
-  top: 20px;
-  right: 24px;
-  font-size: 50px;
-  height: 50px;
-  width: 50px;
-}
+  margin: 0px;
+ }
+ .header {
+   /* background-image: url('https://www.americaninno.com/wp-content/uploads/2017/08/32197839955_7884912348_k.jpg'); */
+   /* background-repeat: no-repeat;
+   background-size: 1800px 400px;
+   height: 250px; 
+   padding-left: 250px;
+   padding-top: 30px;
+   font-size: 50px;
+   color: #ffffff;
+   font-family: Arial, Helvetica, sans-serif;
+   width: 100%; */
+   position: relative;
+ }
+ 
+ .background-image {
+   width: 100%;
+   height: 245px;
+ }
+ 
+ .city {
+   position: absolute;
+   top: 20px;
+   left: 200px;
+   font-size: 50px;
+   color: #ffffff;
+   font-family: 'Lato', sans-serif;
+ 
+ }
+ 
+ .ul {
+   padding-left: 15px;
+ }
+ 
+ .itinerary {
+   position: absolute;
+   top: 30px;
+   right: 40px;
+   height: 40px;
+   width: 150px;
+   background-color: #ffffff;
+   border-color: #ffffff;
+   border-radius: 5px;
+   opacity: .8;
+ }
+ 
+ .linkTag:hover {
+   color: black;
+ }
+ 
+ .linkTag {
+   width: 100px;
+   height: 20px;
+   font-size: 20px;
+   color: black;
+ }
+ 

@@ -69,35 +69,35 @@ class Result extends Component {
 
   createItineraryObject() {
     // console.log(this.props.dataResult.city);
-
+      
+    
     const destination = {
       city: this.props.city,
       name: this.props.dataResult.name,
-      hoursOfOperations: this.props.dataResult.hoursOfOperations,
-      long: this.props.dataResult.long,
-      lat: this.props.dataResult.lat,
-      totalReviews: this.props.dataResult.totalReviews,
-      stars: this.props.dataResult.rating,
-      address: this.props.dataResult.address,
-      openOrNot: this.props.dataResult.openOrNot,
-      phoneNumber: this.props.dataResult.phoneNumber,
-      photos: this.props.dataResult.photos,
-      websiteUrl: this.props.dataResult.websiteUrl,
-      start_time: this.state.time,
+      hoursOfOperation: this.props.dataResult.hoursOfOperations,
+      longitude: this.props.dataResult.long,
+      latitude: this.props.dataResult.lat,
+      numberOfReviews:  this.props.dataResult.totalReviews,
+      rating: this.props.dataResult.rating,
+      address:  this.props.dataResult.address,
+      open: this.props.dataResult.openOrNot,
+      phone: this.props.dataResult.phoneNumber,
+      images: this.props.dataResult.photos,
+      website:  this.props.dataResult.websiteUrl,
+      startTime: this.state.time,
       duration: this.state.duration,
-      longDescription: this.props.dataResult.longDescription,
-      category: this.props.currentCategory,
-      //uuid pending
+      description: this.props.dataResult.description,
+      category: this.props.currentCategory   
     };
     // console.log('this is Marias destination: ', destination)
     // console.log(destination);
-    // axios.post('/api/itinerary', destination)
-    //  .then(response => {
-    //    console.log(response, 'succesfully posted!')
-    //  })
-    //  .catch(err => {
-    //    console.log(err, 'there is an error')
-    //  })
+    axios.post('/activity', destination)
+       .then(response => {
+         console.log(response, 'succesfully posted!')
+       })
+       .catch(err => {
+         console.log(err, 'there is an error')
+       })
     // this.props.handdleAddToItenerary(destination);
     this.setState({ showTimeModal: false });
   }
