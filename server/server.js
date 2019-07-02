@@ -8,12 +8,12 @@ app.use(express.static('../client/public'));
 require("dotenv").config({ path: "../.env" });
 const fetch = require("node-fetch");
 var faker = require("faker");
-const db = require('./db/index.js');
+// const db = require('./db/index.js');
 const api = process.env.API_KEY;
 var fs = require("fs")
 
 app.use(express.static('../client/public'));
-// const db = require('../database/db.js');
+const db = require('../database/db.js');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -84,76 +84,76 @@ app.get("/location", (req, res) => {
   // let location = req.query.city;
   // let topSpots, thingsToDo, restaurants, nightLife, dayTrips;
 
-//  let prom1 = fetch(
-//     `https://maps.googleapis.com/maps/api/place/textsearch/json?query=night+life+in+${location}&key=${api}`
-//   )
-//     .then(res => res.json())
-//     .then(async data => {
-//       nightLife = await getDetails(data.results);
-//     })
+  //  let prom1 = fetch(
+  //     `https://maps.googleapis.com/maps/api/place/textsearch/json?query=night+life+in+${location}&key=${api}`
+  //   )
+  //     .then(res => res.json())
+  //     .then(async data => {
+  //       nightLife = await getDetails(data.results);
+  //     })
 
-   
-//     let prom2 =  fetch(
-//         `https://maps.googleapis.com/maps/api/place/textsearch/json?query=outdoor+activities+in+${location}&key=${api}`
-//       )
-//         .then(res => res.json())
-//         .then(async data => {
-//           thingsToDo = await getDetails(data.results);
-//         })
 
-        
-//        let prom3 = fetch(
-//             `https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+${location}&key=${api}`
-//           )
-//             .then(res => res.json())
+  //     let prom2 =  fetch(
+  //         `https://maps.googleapis.com/maps/api/place/textsearch/json?query=outdoor+activities+in+${location}&key=${api}`
+  //       )
+  //         .then(res => res.json())
+  //         .then(async data => {
+  //           thingsToDo = await getDetails(data.results);
+  //         })
 
-//             .then(async data => {
-//               restaurants = await getDetails(data.results);
-//             })
-           
-//            let prom4 = fetch(
-//                 `https://maps.googleapis.com/maps/api/place/textsearch/json?query=day+trips+in+${location}&key=${api}`
-//               )
-//                 .then(res => res.json())
-//                 .then(async data => {
-//                   dayTrips = await getDetails(data.results);
-//                 })
-//                 Promise.all([prom1,prom2,prom3,prom4])
-//                 .then(() => {
-//                   let locationData = {};
-//                   locationData["nightLife"] = parseData(nightLife);
-//                   locationData["restaurants"] = parseData(restaurants);
-//                   locationData["thingsToDo"] = parseData(thingsToDo);
-//                   locationData["dayTrips"] = parseData(dayTrips);
 
-//                   //res.send(locationData);
-//                   return locationData;
-//                 })
-//                 .then(locationData => {
-//                   let nightLife = locationData.nightLife;
-//                   let dayTrips = locationData.dayTrips;
-//                   let restaurants = locationData.restaurants;
-//                   let thingsToDo = locationData.thingsToDo;
-//                   // addPhotos(nightLife, dayTrips, restaurants, thingsToDo);
-//                   let topSpots = topPlaces(
-//                     nightLife,
-//                     dayTrips,
-//                     restaurants,
-//                     thingsToDo
-//                   );
+  //        let prom3 = fetch(
+  //             `https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+${location}&key=${api}`
+  //           )
+  //             .then(res => res.json())
 
-//                   locationData.topSpots = topSpots;
+  //             .then(async data => {
+  //               restaurants = await getDetails(data.results);
+  //             })
 
-//                   // let string = JSON.stringify(locationData);
-//                   // fs.writeFile("thing.json", string, function(err, result) {
-//                   //   if (err) console.log("error", err);
-//                   // });
-//                   // console.log("sending to app");
-//                   res.send(locationData);
-//                 })
-              
-    
-//     .catch(err => console.log(err));
+  //            let prom4 = fetch(
+  //                 `https://maps.googleapis.com/maps/api/place/textsearch/json?query=day+trips+in+${location}&key=${api}`
+  //               )
+  //                 .then(res => res.json())
+  //                 .then(async data => {
+  //                   dayTrips = await getDetails(data.results);
+  //                 })
+  //                 Promise.all([prom1,prom2,prom3,prom4])
+  //                 .then(() => {
+  //                   let locationData = {};
+  //                   locationData["nightLife"] = parseData(nightLife);
+  //                   locationData["restaurants"] = parseData(restaurants);
+  //                   locationData["thingsToDo"] = parseData(thingsToDo);
+  //                   locationData["dayTrips"] = parseData(dayTrips);
+
+  //                   //res.send(locationData);
+  //                   return locationData;
+  //                 })
+  //                 .then(locationData => {
+  //                   let nightLife = locationData.nightLife;
+  //                   let dayTrips = locationData.dayTrips;
+  //                   let restaurants = locationData.restaurants;
+  //                   let thingsToDo = locationData.thingsToDo;
+  //                   // addPhotos(nightLife, dayTrips, restaurants, thingsToDo);
+  //                   let topSpots = topPlaces(
+  //                     nightLife,
+  //                     dayTrips,
+  //                     restaurants,
+  //                     thingsToDo
+  //                   );
+
+  //                   locationData.topSpots = topSpots;
+
+  //                   // let string = JSON.stringify(locationData);
+  //                   // fs.writeFile("thing.json", string, function(err, result) {
+  //                   //   if (err) console.log("error", err);
+  //                   // });
+  //                   // console.log("sending to app");
+  //                   res.send(locationData);
+  //                 })
+
+
+  //     .catch(err => console.log(err));
 });
 
 let parseData = array => {
@@ -237,7 +237,7 @@ let getDetails = async array => {
     let x = array[i];
     await fetch(
       `https://maps.googleapis.com/maps/api/place/details/json?placeid=${
-        x.place_id
+      x.place_id
       }&fields=name,formatted_phone_number,website,opening_hours,price_level,photos,types&key=${api}`
     )
       .then(res => res.json())
@@ -258,7 +258,7 @@ let getDetails = async array => {
         photoData.map(x => {
           photos.push(
             `https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=${
-              x.photo_reference
+            x.photo_reference
             }&key=${api}`
           );
         });
@@ -283,18 +283,18 @@ app.get('/itineraries', (req, res) => {
   // console.log('q', req.query)
   let id = req.query.uuid;
   db.findOne({ uuid: id }, (err, data) => {
-      if (err) {
-          console.log('server error reading record: ', id)
-          res.end();
+    if (err) {
+      console.log('server error reading record: ', id)
+      res.end();
+    } else {
+      if (data.length === 0) {
+        console.log('error: record does not exist: ', id);
+        res.send(undefined);
       } else {
-          if (data.length === 0) {
-              console.log('error: record does not exist: ', id);
-              res.send(undefined);
-          } else {
-              console.log('server succesfully read record:', id)
-              res.send(data[0]);
-          }
+        console.log('server succesfully read record:', id)
+        res.send(data);
       }
+    }
   })
 })
 
@@ -302,13 +302,13 @@ app.delete('/itineraries', (req, res) => {
   // console.log('delete req', req.query);
   let id = req.query.uuid;
   db.deleteItinerary({ uuid: id }, (err, data) => {
-      if (err) {
-          console.log('error deleting record: ', id);
-          res.send('record not found');
-      } else {
-          console.log('server successfully deleted record: ', id);
-          res.end();
-      }
+    if (err) {
+      console.log('error deleting record: ', id);
+      res.send('record not found');
+    } else {
+      console.log('server successfully deleted record: ', id);
+      res.end();
+    }
   })
 })
 
@@ -317,12 +317,12 @@ app.delete('/activity', (req, res) => {
   let id = req.query.uuid;
   let name = req.query.name;
   db.deleteActivity({ uuid: id, name: name }, (err, data) => {
-      if (err) {
-          console.log('error deleting activity');
-      } else {
-          console.log('server successfully deleted activity', name);
-          res.send(data);
-      }
+    if (err) {
+      console.log('error deleting activity');
+    } else {
+      console.log('server successfully deleted activity', name);
+      res.send(data);
+    }
   })
 })
 
@@ -332,17 +332,17 @@ app.put('/activity', (req, res) => {
   let city = req.query.city;
 
   db.insertActivity({ uuid: id, city: city, activity: activity }, (err, data) => {
-      if (err) {
-          console.log('error inserting single');
-      } else {
-          console.log('server successfully inserted activity', activity);
-          res.send(data)
-      }
+    if (err) {
+      console.log('error inserting single');
+    } else {
+      console.log('server successfully inserted activity', activity);
+      res.send(data)
+    }
   })
 })
 
 var port = process.env.PORT || 8000;
-app.listen(port, ()=>{console.log(`listening at ${port}`)})
+app.listen(port, () => { console.log(`listening at ${port}`) })
 
 
 module.exports = app;

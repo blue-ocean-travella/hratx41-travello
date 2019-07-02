@@ -64,58 +64,7 @@ class Itinerary extends React.Component {
                 phone: '555-555-5555',
                 website: 'http://www.eiffeltower.com',
                 images: ['https://img.jakpost.net/c/2017/02/10/2017_02_10_21340_1486708892._large.jpg', 'https://images.pexels.com/photos/356378/pexels-photo-356378.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', 'https://cdn2.eyeem.com/thumb/30a522b99399660cfd8fc8dc79ca07f8d909bc8c-1533716330320/w/800']
-            },
-            {
-                name: 'Sensoji Temple',
-                duration: 3,
-                description: 'lorem ipsum',
-                startTime: '7:00 PM',
-                category: 'thingsToDo',
-                hoursOfOperation: [
-                    'sunday: 12:00 PM - 5:00 PM',
-                    'monday: 8:00 AM - 10:00 PM',
-                    'tuesday: 8:00 AM - 10:00 PM',
-                    'wednesday: 8:00 AM - 11:00 PM',
-                    'thursday: 8:00 AM - 11:00 PM',
-                    'friday: 8:00 AM - 12:00 AM',
-                    'saturday: 8:00 AM - 12:00 AM',
-                ],
-                longitude: 139.796783,
-                latitude: 35.714661,
-                numberOfReviews: 4000,
-                rating: 3.5,
-                open: true,
-                address: '119 Nueces St., Austin, TX 78741',
-                phone: '555-555-5555',
-                website: 'http://www.sensojitemple.com',
-                images: ['https://www.touropia.com/gfx/d/tourist-attractions-in-tokyo/sensoji_temple.jpg?v=29a16b16edae6dc242531c1dd1fb3188', 'https://images.pexels.com/photos/356378/pexels-photo-356378.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', 'https://cdn2.eyeem.com/thumb/30a522b99399660cfd8fc8dc79ca07f8d909bc8c-1533716330320/w/800']
-            },
-            {
-                name: 'Barton Springs',
-                duration: 2,
-                description: 'lorem ipsum',
-                startTime: '4:00 PM',
-                category: 'nightLife',
-                hoursOfOperation: [
-                    'sunday: 12:00 PM - 5:00 PM',
-                    'monday: 8:00 AM - 10:00 PM',
-                    'tuesday: 8:00 AM - 10:00 PM',
-                    'wednesday: 8:00 AM - 11:00 PM',
-                    'thursday: 8:00 AM - 11:00 PM',
-                    'friday: 8:00 AM - 12:00 AM',
-                    'saturday: 8:00 AM - 12:00 AM',
-                ],
-                longitude: -97.7729,
-                latitude: 30.2670,
-                numberOfReviews: 40,
-                rating: 5,
-                open: false,
-                address: '119 Nueces St., Austin, TX 78741',
-                phone: '555-555-5555',
-                website: 'http://www.bartonsprings.com',
-                images: ['https://ak6.picdn.net/shutterstock/videos/1021179886/thumb/1.jpg', 'https://images.pexels.com/photos/356378/pexels-photo-356378.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', 'https://cdn2.eyeem.com/thumb/30a522b99399660cfd8fc8dc79ca07f8d909bc8c-1533716330320/w/800']
-            }
-            ],
+            }],
         };
 
         this.handleDeleteItemClick = this.handleDeleteItemClick.bind(this);
@@ -170,6 +119,7 @@ class Itinerary extends React.Component {
                     })
                 } else {
                     this.setState({
+                        city: '',
                         activities: []
                     })
                 }
@@ -181,6 +131,7 @@ class Itinerary extends React.Component {
 
     handleDeleteItemClick(event) {
         let currentItem = event.target.getAttribute('value');
+        // console.log('deletion target:', currentItem);
 
         Axios.delete('/activity', {
             params: {
@@ -193,9 +144,10 @@ class Itinerary extends React.Component {
             })
         Axios.get('/itineraries', { params: { uuid: 1 } })
             .then((response) => {
-                console.log('front end response: ', response.data);
+                // console.log('response after deletion: ', response.data.activities);
                 this.setState({
-                    activities: response.data
+                    city: response.data[0].city,
+                    activities: response.data[0].activities
                 })
             })
             .catch((err) => {
@@ -206,9 +158,9 @@ class Itinerary extends React.Component {
 
     componentDidMount() {
         // let uuid = (this.state.uuid);
-        Axios.get('/itineraries', { params: { uuid: 2 } })
+        Axios.get('/itineraries', { params: { uuid: 1 } })
             .then((response) => {
-                console.log('front end response: ', response);
+                console.log('front end response: ', response.data[0]);
                 if (response.data === '') {
                     this.setState({
                         city: '',
@@ -241,8 +193,8 @@ class Itinerary extends React.Component {
                 } else {
                     console.log('getting a response here')
                     this.setState({
-                        city: '',
-                        activities: response.data.activities
+                        city: response.data[0].city,
+                        activities: response.data[0].activities
                     })
                 }
             })
