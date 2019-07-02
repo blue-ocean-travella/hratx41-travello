@@ -2,20 +2,11 @@ const path = require('path');
 const SRC_DIR = path.join(__dirname, '/src');
 const DIST_DIR = path.join(__dirname, '/public');
 const Dotenv = require('dotenv-webpack');
-<<<<<<< HEAD
-=======
-
->>>>>>> itinerary
 module.exports = {
   entry: {search:`${SRC_DIR}/index.js`, itinerary:`${SRC_DIR}/index2.js`, connect:`${SRC_DIR}/index3.js`},
   output: {
-<<<<<<< HEAD
   filename: '[name].bundle.js',
   path: DIST_DIR
-=======
-    filename: 'bundle.js',
-    path: DIST_DIR
->>>>>>> itinerary
   },
   module: {
     rules: [
