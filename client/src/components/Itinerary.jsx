@@ -38,7 +38,7 @@ class Itinerary extends React.Component {
                 'https://www.jetsetter.com/uploads/sites/7/2019/03/bobmd-bungalow-2973-hor-clsc-1160x690.jpg'
             ],
             backgroundImage: '',
-            city: 'Mexico City',
+            city: 'Paris',
             username: 'Lucy',
             uuid: 1,
             activities: [{
@@ -47,15 +47,15 @@ class Itinerary extends React.Component {
                 description: 'This is a description of whatever item is located to the left.  This will be lorem ipsum until we can get the actual description from our APi.  I have to keep typing to make this really long so I can style my containers and make sure that the overflow is handled correctly.  That is so much funnnnnnnnnnnn!',
                 startTime: '2:00 PM',
                 category: 'topSpots',
-                hoursOfOperation: {
-                    sunday: '12:00 PM - 5:00 PM',
-                    monday: '8:00 AM - 10:00 PM',
-                    tuesday: '8:00 AM - 10:00 PM',
-                    wednesday: '8:00 AM - 11:00 PM',
-                    thursday: '8:00 AM - 11:00 PM',
-                    friday: '8:00 AM - 12:00 AM',
-                    saturday: '8:00 AM - 12:00 AM',
-                },
+                hoursOfOperation: [
+                    'sunday: 12:00 PM - 5:00 PM',
+                    'monday: 8:00 AM - 10:00 PM',
+                    'tuesday: 8:00 AM - 10:00 PM',
+                    'wednesday: 8:00 AM - 11:00 PM',
+                    'thursday: 8:00 AM - 11:00 PM',
+                    'friday: 8:00 AM - 12:00 AM',
+                    'saturday: 8:00 AM - 12:00 AM',
+                ],
                 longitude: 2.2945,
                 latitude: 48.8584,
                 numberOfReviews: 175,
@@ -72,15 +72,15 @@ class Itinerary extends React.Component {
                 description: 'lorem ipsum',
                 startTime: '7:00 PM',
                 category: 'thingsToDo',
-                hoursOfOperation: {
-                    sunday: '12:00 PM - 5:00 PM',
-                    monday: '8:00 AM - 10:00 PM',
-                    tuesday: '8:00 AM - 10:00 PM',
-                    wednesday: '8:00 AM - 11:00 PM',
-                    thursday: '8:00 AM - 11:00 PM',
-                    friday: '8:00 AM - 12:00 AM',
-                    saturday: '8:00 AM - 12:00 AM',
-                },
+                hoursOfOperation: [
+                    'sunday: 12:00 PM - 5:00 PM',
+                    'monday: 8:00 AM - 10:00 PM',
+                    'tuesday: 8:00 AM - 10:00 PM',
+                    'wednesday: 8:00 AM - 11:00 PM',
+                    'thursday: 8:00 AM - 11:00 PM',
+                    'friday: 8:00 AM - 12:00 AM',
+                    'saturday: 8:00 AM - 12:00 AM',
+                ],
                 longitude: 139.796783,
                 latitude: 35.714661,
                 numberOfReviews: 4000,
@@ -97,15 +97,15 @@ class Itinerary extends React.Component {
                 description: 'lorem ipsum',
                 startTime: '4:00 PM',
                 category: 'nightLife',
-                hoursOfOperation: {
-                    sunday: '12:00 PM - 5:00 PM',
-                    monday: '8:00 AM - 10:00 PM',
-                    tuesday: '8:00 AM - 10:00 PM',
-                    wednesday: '8:00 AM - 11:00 PM',
-                    thursday: '8:00 AM - 11:00 PM',
-                    friday: '8:00 AM - 12:00 AM',
-                    saturday: '8:00 AM - 12:00 AM',
-                },
+                hoursOfOperation: [
+                    'sunday: 12:00 PM - 5:00 PM',
+                    'monday: 8:00 AM - 10:00 PM',
+                    'tuesday: 8:00 AM - 10:00 PM',
+                    'wednesday: 8:00 AM - 11:00 PM',
+                    'thursday: 8:00 AM - 11:00 PM',
+                    'friday: 8:00 AM - 12:00 AM',
+                    'saturday: 8:00 AM - 12:00 AM',
+                ],
                 longitude: -97.7729,
                 latitude: 30.2670,
                 numberOfReviews: 40,
@@ -207,9 +207,9 @@ class Itinerary extends React.Component {
 
     componentDidMount() {
         // let uuid = (this.state.uuid);
-        Axios.get('/itineraries', { params: { uuid: 1 } })
+        Axios.get('/itineraries', { params: { uuid: 2 } })
             .then((response) => {
-                console.log('front end response: ', response.data);
+                console.log('front end response: ', response);
                 if (response.data === '') {
                     this.setState({
                         city: '',
@@ -240,8 +240,10 @@ class Itinerary extends React.Component {
                         }]
                     })
                 } else {
+                    console.log('getting a response here')
                     this.setState({
-                        activities: response.data
+                        city: '',
+                        activities: response.data.activities
                     })
                 }
             })

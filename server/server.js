@@ -37,8 +37,8 @@ app.get('/itineraries', (req, res) => {
                 console.log('error: record does not exist: ', id);
                 res.send(undefined);
             } else {
-                console.log('server succesfully read record:')
-                res.send(data[0].activities);
+                console.log('server succesfully read record:', id)
+                res.send(data[0]);
             }
         }
     })
@@ -68,6 +68,19 @@ app.delete('/activity', (req, res) => {
         } else {
             console.log('server successfully deleted activity', name);
             res.send(data);
+        }
+    })
+})
+
+app.put('/activity', (req, res) => {
+    let id = 1;
+    let activity = req.query.activity;
+    db.insertActivity({ uuid: id, activity: activity }, (err, data) => {
+        if (err) {
+            console.log('error inserting single');
+        } else {
+            console.log('server successfully inserted activity', activity);
+            res.send(data)
         }
     })
 })
