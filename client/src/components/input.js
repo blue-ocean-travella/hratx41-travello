@@ -172,7 +172,7 @@ class Input extends Component{
     onLoad={this.HandleScriptLoad}
     onClick={this.Initialize}
    />
-    <input id='autocomplete' onChange={this.props.onInputChange}  onKeyDown={this.handleKeyDown} style={{ fontFamily: 'Lato',fontStyle: 'normal', fontWeight:'bold',fontSize: '28px',border:"none", borderBottom:"3px solid black",textAlign:'center', opacity:"0.8",backgroundColor:'transparent', height:"45px", marginTop:'525px', width:'450px', marginLeft: '835px',
+    <input id='autocomplete' onChange={this.props.onInputChange}  onKeyDown={this.handleKeyDown} style={{ fontFamily: 'Lato',fontStyle: 'normal', fontWeight:'bold',fontSize: '28px',border:"none", borderBottom:"3px solid black",textAlign:'center', opacity:"0.8",backgroundColor:'transparent', height:"45px", marginTop:'490px', width:'450px', marginLeft: '700px',
 borderBottomColor:'white'}} type="text" placeholder="What's Your Destination?" name="search"></input>
   </>
      );
