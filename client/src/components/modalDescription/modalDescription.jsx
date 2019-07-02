@@ -88,7 +88,7 @@ const ModalDescription = ({show, onHide, handleClose, handleTimeChange, goToItin
               </span>
             </div>
             <div className='modal-bigDescription'>
-              {dataResult.longDescription}
+              {dataResult.description}
             </div>
             <div className='modal-addres-hours-phone-info'>
               <div>

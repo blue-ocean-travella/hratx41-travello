@@ -18,6 +18,7 @@ app.use(express.static('../client/public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+let hello;
 
 app.get("/location", (req, res) => {
   console.log(req.query);

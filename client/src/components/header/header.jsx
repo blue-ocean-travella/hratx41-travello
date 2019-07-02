@@ -49,11 +49,13 @@ class Header extends Component {
     // console.log(this.props.banner);
     return (
       <div className='header'>
-      <img src={this.props.banner} className='background-image'></img>
-      <div className='city'>{this.props.city}</div>
-        <a  href='./index2.html' className='itinerary'>
-          <img src='https://image.flaticon.com/icons/svg/60/60740.svg' className='itinerary'></img> 
-        </a> 
+        <img src={this.props.banner} className='background-image'></img>
+        <div className='city'>{this.props.city}</div>
+        <div>
+           <button className='itinerary'>
+             <a href='./index2.html' className='linkTag'>Your Itinerary</a> 
+           </button>
+         </div>
     </div>
 
     );
