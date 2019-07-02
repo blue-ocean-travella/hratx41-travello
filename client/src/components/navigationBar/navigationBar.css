@@ -32,7 +32,10 @@ button:active {
   border-bottom-color: black;
 }
 
-.iteneraryButton {
+.changeClickedCurrentCategory {
+  color: #f2994a;
+}
+/* .iteneraryButton {
   border: none;
   border-bottom: 1px solid #ffffff;
   color: #ffffff;
@@ -40,8 +43,8 @@ button:active {
   position: absolute;
   top: 20px;
   right: 200px;
-}
-
+} */
+/* 
 .itinerary {
   border: none;
   font-family: 'Lato', sans-serif;
@@ -52,9 +55,9 @@ button:active {
   outline:none;
   padding-top: 0px;
   height:20px;
-}
+} */
 
-.itinerary:hover {
+/* .itinerary:hover {
   color: gray;
   text-decoration: none;
-}
+} */

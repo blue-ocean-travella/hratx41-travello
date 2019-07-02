@@ -99,6 +99,7 @@ class Result extends Component {
       //    console.log(err, 'there is an error')
       //  })
     // this.props.handdleAddToItenerary(destination);
+    this.setState({ showTimeModal: false });
   }
   goToItinerary () {
     this.setState({
@@ -112,24 +113,19 @@ class Result extends Component {
   }
 
   changeDuration (duration) {
-    // console.log(this.state.duration, 'before')
-    // this.setState({
-    //   duration : duration,
-    // })
-    // this.setState((prevState) => {duration: duration})
-    // this.setState({duration: duration}, () => {
-    //   console.log(this.state.duration, 'inside set')
-    //   this.setState({duration: duration});
-    // })
 
     this.setState({duration: duration});
-    // console.log(this.state.duration, 'after');
+
   }
 
   render() {
     // console.log(this.props.id);
     // console.log(this.props.dataResult.photos, 'THIS IS DATARESULT')
+<<<<<<< HEAD
     let photo = this.props.dataResult.photos? this.props.dataResult.photos[0]:  "http://48tx1q1rrcysi4t7l687xbtt.wpengine.netdna-cdn.com/wp-content/uploads/2011/05/Texas-Capitol-Austin-700x483.jpg";
+=======
+    let photo = (this.props.dataResult.photos && this.props.dataResult.photos.length > 1)? this.props.dataResult.photos[0]:'http://48tx1q1rrcysi4t7l687xbtt.wpengine.netdna-cdn.com/wp-content/uploads/2011/05/Texas-Capitol-Austin-700x483.jpg';
+>>>>>>> 3ec2b6ac0b60ec7ebf2f7c20af5faf9e119fe0ac
 
     return (
      <div className="card card_result" style={{width: '24rem'}}>

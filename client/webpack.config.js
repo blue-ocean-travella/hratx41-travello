@@ -3,13 +3,13 @@ const SRC_DIR = path.join(__dirname, '/src');
 const DIST_DIR = path.join(__dirname, '/public');
 const Dotenv = require('dotenv-webpack');
 module.exports = {
-  entry: {search:`${SRC_DIR}/index.js`, itinerary:`${SRC_DIR}/index2.js`},
+  entry: {search:`${SRC_DIR}/index.js`, itinerary:`${SRC_DIR}/index2.js`, connect:`${SRC_DIR}/index3.js`},
   output: {
   filename: '[name].bundle.js',
   path: DIST_DIR
   },
-  module : {
-    rules : [
+  module: {
+    rules: [
       {
         test: /\.(js|mjs|jsx)$/,
         enforce: 'pre',
@@ -17,10 +17,9 @@ module.exports = {
         loader: 'eslint-loader'
       },
       {
-        test : /\.js?/,
-        include : SRC_DIR,
-        exclude: /node_modules/,
-        loader : 'babel-loader'
+        test: /\.js?/,
+        include: SRC_DIR,
+        loader: 'babel-loader'
       },
       {
         test: /\.(png|jp(e*)g|svg)$/,

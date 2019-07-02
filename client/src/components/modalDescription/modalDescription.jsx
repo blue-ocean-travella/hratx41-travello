@@ -21,7 +21,7 @@ const ModalDescription = ({show, onHide, handleClose, handleTimeChange, goToItin
   let hoursOfoperations = dataResult.hoursOfOperation || ["Monday: 9:00 AM - 5:00 PM", "Tuesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Wednesday: 9:00 AM - 5: 00 AM", "Thursday: 9:00 AM - 5: 00 AM", "Friday: 9:00 AM - 5: 00 AM", "Saturday: Closed", "Sunday: Closed"];
   let lat=  dataResult.lat;
   let long= dataResult.long;
-  
+  // console.log(lat, long, 'this is LAT LONG')
   // console.log(hoursOfoperation[0]);
   
   if(dataResult.openOrNot === true) {
@@ -29,8 +29,14 @@ const ModalDescription = ({show, onHide, handleClose, handleTimeChange, goToItin
   } else {
     open = 'Close';
   }
+<<<<<<< HEAD
  
  let photo = dataResult.photos ? dataResult.photos[0]: "http://48tx1q1rrcysi4t7l687xbtt.wpengine.netdna-cdn.com/wp-content/uploads/2011/05/Texas-Capitol-Austin-700x483.jpg";
+=======
+  
+//  console.log(dataResult.photos, 'this is PHOTOS');
+ let photo = Array.isArray(dataResult.photos) ? dataResult.photos[0]: 'http://48tx1q1rrcysi4t7l687xbtt.wpengine.netdna-cdn.com/wp-content/uploads/2011/05/Texas-Capitol-Austin-700x483.jpg';
+>>>>>>> 3ec2b6ac0b60ec7ebf2f7c20af5faf9e119fe0ac
   
   return (
     <Modal show={show} onHide={onHide} className='modal-container'
@@ -56,6 +62,7 @@ const ModalDescription = ({show, onHide, handleClose, handleTimeChange, goToItin
                   height: '200px',
                   width: '350px'
                 }}
+                 
                 zoom={16}
                 center={{
                   lat: lat,

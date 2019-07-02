@@ -4,7 +4,6 @@ import StarRatings from '../../node_modules/react-star-ratings';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-// import '../public/main.css';
 
 const imageStyle = {
     height: '200px',
@@ -22,8 +21,20 @@ const getOpen = (bool) => {
     return open;
 };
 
+const getColor = (bool) => {
+    let color = '';
+
+    if (bool === true) {
+        color = 'green';
+    } else {
+        color = 'red';
+    }
+    return color;
+}
+
 const DescriptionModal = (props) => {
     // console.log('DescriptionModal props: ', props);
+    let color = getColor(props.activity.open);
 
     return (
         <Modal show={props.show} onHide={props.onHide} className='modal-container'
@@ -33,30 +44,33 @@ const DescriptionModal = (props) => {
         >
 
             <Modal.Header closeButton>
-                <Modal.Title id='modalTitle'>{props.activity.location.name}</Modal.Title>
+                <Modal.Title id='modalTitle'>{props.activity.name}</Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <Container >
                     <Row>
                         <Col>
                             <div>
+                                <div className="description-modal-description">
+                                    {props.activity.description}
+                                </div>
                                 <div className='modal-addres-hours-phone-info'>
                                     <div>
-                                        <b>Address: {props.activity.location.address}</b>
+                                        <b>Address: {props.activity.address}</b>
                                     </div>
                                     <div>
-                                        <b>Hours: {getOpen(props.activity.location.open)}</b>
+                                        <b>Hours: <span style={color = { color }}>{getOpen(props.activity.open)}</span></b>
                                     </div>
                                     <div>
-                                        <b>Phone: {props.activity.location.phone}</b>
+                                        <b>Phone: {props.activity.phone}</b>
                                     </div>
                                 </div>
                                 <span>
-                                    <a className='modal-totalReviews' href='#'> {props.activity.location.reviews} Google Reviews</a>
+                                    <a className='modal-totalReviews' href='#'> {props.activity.numberOfReviews} Google Reviews</a>
                                 </span>
                                 <div className="itinerary-stars">
                                     <StarRatings
-                                        rating={props.activity.location.stars}
+                                        rating={props.activity.rating}
                                         starRatedColor="blue"
                                         // changeRating={this.changeRating}
                                         starDimension="17px"
@@ -69,12 +83,12 @@ const DescriptionModal = (props) => {
                                 <div className='modal-bigDescription'>
                                 </div>
                                 <div>
-                                    <span>Website: <a href={props.activity.location.website}>{props.activity.location.website}</a></span>
+                                    <span>Website: <a href={props.activity.website}>{props.activity.website}</a></span>
                                 </div>
                             </div></Col>
                         <Col>
                             <div className='imageAndMap-container'>
-                                <img className='description-image' style={imageStyle} src={props.activity.location.image}></img>
+                                <img className='description-image' style={imageStyle} src={props.activity.images[0]}></img>
                             </div>
                         </Col>
                     </Row>

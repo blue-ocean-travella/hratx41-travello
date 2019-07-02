@@ -2,31 +2,12 @@ import React from 'react';
 import Axios from 'axios';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import TimelineActivity from './TimelineActivity.jsx';
-// import DescriptionModal from './DescriptionModal.jsx';
-// import TimeModal from './TimeModal.jsx';
-// import MapModal from './MapModal.jsx';
 import ItineraryDropdown from './ItineraryDropdown.jsx';
 
 // images
 
-// import clock from '../assets/images/clock.jpg';
-import logo from '../../assets/images/16a60b31-4a4b-41eb-9cf2-b6f71c4a83e5_200x200.png';
-// import nightlife from '../assets/images/martini.png';
-// import map from '../assets/images/directions.png';
-// import dine from '../assets/images/food.png';
-// import todos from '../assets/images/thingstodo.png';
-// import topSpot from '../assets/images/topspot.png';
-// import dayTrip from '../assets/images/daytrip2.png';
-// import xout from '../assets/images/xout.png';
+import logo from '../../assets/images/travella.png';
 import finishLine from '../../assets/images/finishline.png';
-// import navArrow from '../assets/images/white-down-arrow-png-2.png';
-
-
-// import Row from 'react-bootstrap/Row';
-// import Col from 'react-bootstrap/Col';
-// import Container from 'react-bootstrap/Container'
-
-
 
 class Itinerary extends React.Component {
     constructor(props) {
@@ -34,9 +15,6 @@ class Itinerary extends React.Component {
 
 
         this.state = {
-            // showDescriptionModal: false,
-            // showTimeModal: false,
-            // showMapModal: false,
             backgroundImages: [
                 'https://www.visittheusa.com/sites/default/files/styles/16_9_1280x720/public/images/hero_media_image/2017-05/23b0b0b9caaa07ee409b693da9bf9003.jpeg?itok=pE5ss3vx',
                 'https://media.webjet.com.au/Images/cities/1200x472/TYO1.jpg',
@@ -60,137 +38,87 @@ class Itinerary extends React.Component {
             ],
             backgroundImage: '',
             city: 'Paris',
-            itineraryItems: [{
-                uuid: 1,
-                location:
-                {
-                    name: 'Eiffel Tower',
-                    duration: 1,
-                    description: 'lorem ipsum',
-                    startTime: '2:00 PM',
-                    category: 'topSpots',
-                    hoursOfOperation: 'big string',
-                    longitude: 2.2945,
-                    latitude: 48.8584,
-                    reviews: 175,
-                    stars: 4,
-                    open: true,
-                    address: '119 Nueces St., Austin, TX 78741',
-                    phone: '555-555-5555',
-                    website: 'http://www.eiffeltower.com',
-                    image: 'https://img.jakpost.net/c/2017/02/10/2017_02_10_21340_1486708892._large.jpg'
-                }
-            }, {
-                uuid: 2,
-                location:
-                {
-                    name: 'Sensoji Temple',
-                    duration: 3,
-                    description: 'lorem ipsum',
-                    startTime: '7:00 PM',
-                    category: 'thingsToDo',
-                    hoursOfOperation: 'big string',
-                    longitude: 139.796783,
-                    latitude: 35.714661,
-                    reviews: 4000,
-                    stars: 3.5,
-                    open: true,
-                    address: '119 Nueces St., Austin, TX 78741',
-                    phone: '555-555-5555',
-                    website: 'http://www.sensojitemple.com',
-                    image: 'https://www.touropia.com/gfx/d/tourist-attractions-in-tokyo/sensoji_temple.jpg?v=29a16b16edae6dc242531c1dd1fb3188'
-                }
-            }, {
-                uuid: 3,
-                location:
-                {
-                    name: 'Barton Springs',
-                    duration: 2,
-                    description: 'lorem ipsum',
-                    startTime: '4:00 PM',
-                    category: 'nightLife',
-                    hoursOfOperation: 'big string',
-                    longitude: -97.7729,
-                    latitude: 30.2670,
-                    reviews: 40,
-                    stars: 5,
-                    open: false,
-                    address: '119 Nueces St., Austin, TX 78741',
-                    phone: '555-555-5555',
-                    website: 'http://www.bartonsprings.com',
-                    image: 'https://ak6.picdn.net/shutterstock/videos/1021179886/thumb/1.jpg'
-                }
+            username: 'Lucy',
+            uuid: 1,
+            activities: [{
+                name: 'Eiffel Tower',
+                duration: 1,
+                description: 'This is a description of whatever item is located to the left.  This will be lorem ipsum until we can get the actual description from our APi.  I have to keep typing to make this really long so I can style my containers and make sure that the overflow is handled correctly.  That is so much funnnnnnnnnnnn!',
+                startTime: '2:00 PM',
+                category: 'topSpots',
+                hoursOfOperation: [
+                    'sunday: 12:00 PM - 5:00 PM',
+                    'monday: 8:00 AM - 10:00 PM',
+                    'tuesday: 8:00 AM - 10:00 PM',
+                    'wednesday: 8:00 AM - 11:00 PM',
+                    'thursday: 8:00 AM - 11:00 PM',
+                    'friday: 8:00 AM - 12:00 AM',
+                    'saturday: 8:00 AM - 12:00 AM',
+                ],
+                longitude: 2.2945,
+                latitude: 48.8584,
+                numberOfReviews: 175,
+                rating: 4,
+                open: true,
+                address: '119 Nueces St., Austin, TX 78741',
+                phone: '555-555-5555',
+                website: 'http://www.eiffeltower.com',
+                images: ['https://img.jakpost.net/c/2017/02/10/2017_02_10_21340_1486708892._large.jpg', 'https://images.pexels.com/photos/356378/pexels-photo-356378.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', 'https://cdn2.eyeem.com/thumb/30a522b99399660cfd8fc8dc79ca07f8d909bc8c-1533716330320/w/800']
             },
             {
-                uuid: 4,
-                location:
-                {
-                    name: 'Eiffel Tower',
-                    duration: 1,
-                    description: 'lorem ipsum',
-                    startTime: '2:00 PM',
-                    category: 'restaurants',
-                    hoursOfOperation: 'big string',
-                    longitude: 2.2945,
-                    latitude: 48.8584,
-                    reviews: 175,
-                    stars: 4,
-                    open: true,
-                    address: '119 Nueces St., Austin, TX 78741',
-                    phone: '555-555-5555',
-                    website: 'http://www.eiffeltower.com',
-                    image: 'https://img.jakpost.net/c/2017/02/10/2017_02_10_21340_1486708892._large.jpg'
-                }
-            }, {
-                uuid: 5,
-                location:
-                {
-                    name: 'Sensoji Temple',
-                    duration: 3,
-                    description: 'lorem ipsum',
-                    startTime: '7:00 PM',
-                    category: 'dayTrips',
-                    hoursOfOperation: 'big string',
-                    longitude: 139.796783,
-                    latitude: 35.714661,
-                    reviews: 4000,
-                    stars: 3.5,
-                    open: true,
-                    address: '119 Nueces St., Austin, TX 78741',
-                    phone: '555-555-5555',
-                    website: 'http://www.sensojitemple.com',
-                    image: 'https://www.touropia.com/gfx/d/tourist-attractions-in-tokyo/sensoji_temple.jpg?v=29a16b16edae6dc242531c1dd1fb3188'
-                }
-            }, {
-                uuid: 6,
-                location:
-                {
-                    name: 'Barton Springs',
-                    duration: 2,
-                    description: 'lorem ipsum',
-                    startTime: '4:00 PM',
-                    category: 'topSpots',
-                    hoursOfOperation: 'big string',
-                    longitude: -97.7729,
-                    latitude: 30.2670,
-                    reviews: 40,
-                    stars: 5,
-                    open: false,
-                    address: '119 Nueces St., Austin, TX 78741',
-                    phone: '555-555-5555',
-                    website: 'http://www.bartonsprings.com',
-                    image: 'https://ak6.picdn.net/shutterstock/videos/1021179886/thumb/1.jpg'
-                }
-            }],
+                name: 'Sensoji Temple',
+                duration: 3,
+                description: 'lorem ipsum',
+                startTime: '7:00 PM',
+                category: 'thingsToDo',
+                hoursOfOperation: [
+                    'sunday: 12:00 PM - 5:00 PM',
+                    'monday: 8:00 AM - 10:00 PM',
+                    'tuesday: 8:00 AM - 10:00 PM',
+                    'wednesday: 8:00 AM - 11:00 PM',
+                    'thursday: 8:00 AM - 11:00 PM',
+                    'friday: 8:00 AM - 12:00 AM',
+                    'saturday: 8:00 AM - 12:00 AM',
+                ],
+                longitude: 139.796783,
+                latitude: 35.714661,
+                numberOfReviews: 4000,
+                rating: 3.5,
+                open: true,
+                address: '119 Nueces St., Austin, TX 78741',
+                phone: '555-555-5555',
+                website: 'http://www.sensojitemple.com',
+                images: ['https://www.touropia.com/gfx/d/tourist-attractions-in-tokyo/sensoji_temple.jpg?v=29a16b16edae6dc242531c1dd1fb3188', 'https://images.pexels.com/photos/356378/pexels-photo-356378.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', 'https://cdn2.eyeem.com/thumb/30a522b99399660cfd8fc8dc79ca07f8d909bc8c-1533716330320/w/800']
+            },
+            {
+                name: 'Barton Springs',
+                duration: 2,
+                description: 'lorem ipsum',
+                startTime: '4:00 PM',
+                category: 'nightLife',
+                hoursOfOperation: [
+                    'sunday: 12:00 PM - 5:00 PM',
+                    'monday: 8:00 AM - 10:00 PM',
+                    'tuesday: 8:00 AM - 10:00 PM',
+                    'wednesday: 8:00 AM - 11:00 PM',
+                    'thursday: 8:00 AM - 11:00 PM',
+                    'friday: 8:00 AM - 12:00 AM',
+                    'saturday: 8:00 AM - 12:00 AM',
+                ],
+                longitude: -97.7729,
+                latitude: 30.2670,
+                numberOfReviews: 40,
+                rating: 5,
+                open: false,
+                address: '119 Nueces St., Austin, TX 78741',
+                phone: '555-555-5555',
+                website: 'http://www.bartonsprings.com',
+                images: ['https://ak6.picdn.net/shutterstock/videos/1021179886/thumb/1.jpg', 'https://images.pexels.com/photos/356378/pexels-photo-356378.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', 'https://cdn2.eyeem.com/thumb/30a522b99399660cfd8fc8dc79ca07f8d909bc8c-1533716330320/w/800']
+            }
+            ],
         };
 
-        // this.handleArrowClick = this.handleArrowClick.bind(this);
-        // this.handleShowTimeModal = this.handleShowTimeModal.bind(this);
-        // this.handleCloseTimeModal = this.handleCloseTimeModal.bind(this);
-        // this.handleShowDescriptionModal = this.handleShowDescriptionModal.bind(this);
-        // this.handleCloseDescriptionModal = this.handleCloseDescriptionModal.bind(this);
-        // this.handleShowMapModal = this.handleShowMapModal.bind(this);
-        // this.handleCloseMapModal = this.handleCloseMapModal.bind(this);
+        this.handleDeleteItemClick = this.handleDeleteItemClick.bind(this);
         this.handleDeleteItineraryClick = this.handleDeleteItineraryClick.bind(this);
         this.getRandomElement = this.getRandomElement.bind(this);
         this.getImage = this.getImage.bind(this);
@@ -199,62 +127,132 @@ class Itinerary extends React.Component {
     handleDeleteItineraryClick(event) {
         event.preventDefault();
         console.log('delete entire itinerary');
-        // let city = this.state.city;
 
-        //     Axios.delete('/itineraries', {
-        //         params: {
-        //             city: city
-        //         }
-        //     })
-        //         .then((response) => {
-        //             console.log('successfully deleted current itinerary: ', response)
-        //         })
-        //         .catch((error) => {
-        //             console.log('error deleting current inventory: ', error)
-        //         })
+        Axios.delete('/itineraries', {
+            params: {
+                uuid: 1
+            }
+        })
+            .then((response) => {
+                console.log('successfully deleted current itinerary: ', response)
+            })
+        Axios.get('/itineraries', { params: { uuid: 1 } })
+            .then((response) => {
+                // console.log('front end response: ', typeof response.data);
+                if (response.data === '') {
+                    this.setState({
+                        city: '',
+                        activities: [{
+                            name: 'Eiffel Tower',
+                            duration: 1,
+                            description: 'Please select activities for your itinerary',
+                            startTime: '2:00 PM',
+                            category: 'topSpots',
+                            hoursOfOperation: [
+                                'sunday: 12:00 PM - 5:00 PM',
+                                'monday: 8:00 AM - 10:00 PM',
+                                'tuesday: 8:00 AM - 10:00 PM',
+                                'wednesday: 8:00 AM - 11:00 PM',
+                                'thursday: 8:00 AM - 11:00 PM',
+                                'friday: 8:00 AM - 12:00 AM',
+                                'saturday: 8:00 AM - 12:00 AM',
+                            ],
+                            longitude: 2.2945,
+                            latitude: 48.8584,
+                            numberOfReviews: 175,
+                            rating: 4,
+                            open: true,
+                            address: '119 Nueces St., Austin, TX 78741',
+                            phone: '555-555-5555',
+                            website: 'http://www.eiffeltower.com',
+                            images: ['https://img.jakpost.net/c/2017/02/10/2017_02_10_21340_1486708892._large.jpg', 'https://images.pexels.com/photos/356378/pexels-photo-356378.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', 'https://cdn2.eyeem.com/thumb/30a522b99399660cfd8fc8dc79ca07f8d909bc8c-1533716330320/w/800']
+                        }]
+                    })
+                } else {
+                    this.setState({
+                        activities: []
+                    })
+                }
+            })
+            .catch((error) => {
+                console.log('error deleting current inventory: ', error)
+            })
     }
 
-    // handleArrowClick() {
+    handleDeleteItemClick(event) {
+        let currentItem = event.target.getAttribute('value');
 
-    // }
-
-    // handleShowDescriptionModal() {
-    //     this.setState({ showDescriptionModal: true });
-    // }
-
-    // handleCloseDescriptionModal() {
-    //     this.setState({ showDescriptionModal: false });
-    // }
-
-    // handleShowTimeModal() {
-    //     this.setState({ showTimeModal: true });
-    // }
-
-    // handleCloseTimeModal() {
-    //     this.setState({ showTimeModal: false });
-    // }
-
-    // handleShowMapModal() {
-    //     this.setState({ showMapModal: true });
-    // }
-
-    // handleCloseMapModal() {
-    //     this.setState({ showMapModal: false });
-    // }
+        Axios.delete('/activity', {
+            params: {
+                uuid: 1,
+                name: currentItem
+            }
+        })
+            .then((response) => {
+                console.log('successfully deleted itinerary item')
+            })
+        Axios.get('/itineraries', { params: { uuid: 1 } })
+            .then((response) => {
+                console.log('front end response: ', response.data);
+                this.setState({
+                    activities: response.data
+                })
+            })
+            .catch((err) => {
+                console.log('error deleting item')
+            })
+    }
 
 
     componentDidMount() {
-        let uuid = (this.state.uuid);
+        // let uuid = (this.state.uuid);
+        Axios.get('/itineraries', { params: { uuid: 2 } })
+            .then((response) => {
+                console.log('front end response: ', response);
+                if (response.data === '') {
+                    this.setState({
+                        city: '',
+                        activities: [{
+                            name: 'Eiffel Tower',
+                            duration: 1,
+                            description: 'Please select activities for your itinerary',
+                            startTime: '2:00 PM',
+                            category: 'topSpots',
+                            hoursOfOperation: [
+                                'sunday: 12:00 PM - 5:00 PM',
+                                'monday: 8:00 AM - 10:00 PM',
+                                'tuesday: 8:00 AM - 10:00 PM',
+                                'wednesday: 8:00 AM - 11:00 PM',
+                                'thursday: 8:00 AM - 11:00 PM',
+                                'friday: 8:00 AM - 12:00 AM',
+                                'saturday: 8:00 AM - 12:00 AM',
+                            ],
+                            longitude: 2.2945,
+                            latitude: 48.8584,
+                            numberOfReviews: 175,
+                            rating: 4,
+                            open: true,
+                            address: '119 Nueces St., Austin, TX 78741',
+                            phone: '555-555-5555',
+                            website: 'http://www.eiffeltower.com',
+                            images: ['https://img.jakpost.net/c/2017/02/10/2017_02_10_21340_1486708892._large.jpg', 'https://images.pexels.com/photos/356378/pexels-photo-356378.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', 'https://cdn2.eyeem.com/thumb/30a522b99399660cfd8fc8dc79ca07f8d909bc8c-1533716330320/w/800']
+                        }]
+                    })
+                } else {
+                    console.log('getting a response here')
+                    this.setState({
+                        city: '',
+                        activities: response.data.activities
+                    })
+                }
+            })
+            .catch((error) => {
+                console.log('client side error retrieving itinerary: ', error)
+            })
+
         this.setState({
-            backgroundImage: this.getImage()
+            backgroundImage: this.getImage(),
         });
-        // Axios.get(`/itineraries?uuid=${uuid}`)
-        //     .then(function (response) {
-        //         console.log(response);
-        //     })
-        //     .catch(function (error) {
-        //         console.log('client side error retrieving itinerary: ', error)
-        //     })
     }
 
     // background image functions
@@ -282,219 +280,16 @@ class Itinerary extends React.Component {
                     </div>
 
                     <VerticalTimeline className="timeline-line">
-                        {this.state.itineraryItems.map((activity, i) => <TimelineActivity
+                        {this.state.activities.map((activity, i) => <TimelineActivity
                             key={i}
                             position={i}
                             activity={activity}
-                        // handleShowDescriptionModal={this.handleShowDescriptionModal}
-                        // handleCloseDescriptionModal={this.handleCloseDescriptionModal}
-                        // handleShowTimeModal={this.handleShowTimeModal}
-                        // handleCloseTimeModal={this.handleCloseTimeModal}
-                        // handleShowMapModal={this.handleShowMapModal}
-                        // handleCloseMapModal={this.handleCloseMapModal}
+                            uuid={i}
+                            handleDeleteItemClick={this.handleDeleteItemClick}
                         />)}
-                        {/* <VerticalTimelineElement className="vertical-timeline-element--work"
-                        date="8:00 AM"
-                        iconStyle={{ background: 'rgb(255, 255, 255)', color: '#fff' }}
-                        icon={<img className="nightlife-icon" src={nightlife}></img>}>
-                        {this.state.activities.map((activity, i) => <TimelineActivity key={i} activity={activity} />)}
-                    </VerticalTimelineElement> */}
-
-                        {/* <VerticalTimelineElement
-                            className="vertical-timeline-element--work"
-                            date="8:00 AM"
-                            iconStyle={{ background: 'rgb(255, 255, 255)', color: '#fff' }}
-                            icon={<img className="nightlife-icon" src={nightlife}></img>}
-                        >
-
-                            <div className="timeline-element-outer-container">
-                                <a className="timeline-element-top-container">
-                                    <img src={austin} className="timeline-image" onClick={this.handleShowDescriptionModal}></img>
-                                    <h3 className="vertical-timeline-element-title">Barton Springs</h3>
-                                </a>
-                                <DescriptionModal show={this.state.showDescriptionModal} onHide={this.handleCloseDescriptionModal} handleClose={this.handleCloseDescriptionModal} />
-                                <div className="timeline-information">
-                                    <div className="time"><span className="duration">Visit Duration:</span> 1 hr</div>
-                                    <div className="timeline-description">
-                                        Barton Springs is an outdoor public pool. What a great place to lay out, sip cocktails, and catch some sun.  This is a really long description to see if overflow works.
-            </div></div></div>
-
-                            <div className="timeline-element-container">
-                                <a className="timeline-open btn" onClick={() => this.handleShowTimeModal()}>
-                                    <img className="timeline-clock" src={clock}></img>
-                                </a>
-                                <TimeModal className="time-modal" show={this.state.showTimeModal} onHide={this.handleCloseTimeModal} handleClose={this.handleCloseTimeModal} />
-                                <a className="timeline-goto btn" onClick={this.handleShowMapModal}>
-                                    <img className="timeline-map" src={map}></img>
-                                </a>
-                                <MapModal show={this.state.showMapModal} onHide={this.handleCloseMapModal} handleClose={this.handleCloseMapModal} />
-                                <a className="remove-container btn">
-                                    <img className="remove-image" src={xout}></img>
-                                </a>
-                            </div>
-                        </VerticalTimelineElement>
-                        <VerticalTimelineElement
-                            className="vertical-timeline-element--work"
-                            date="8:00 AM"
-                            iconStyle={{ background: 'rgb(255, 255, 255)', color: '#fff' }}
-                            icon={<img className="nightlife-icon" src={dine}></img>}
 
 
-                        >
-                            <div className="timeline-element-outer-container">
-                                <a className="timeline-element-top-container">
-                                    <img src={austin} className="timeline-image"></img>
-                                    <h3 className="vertical-timeline-element-title">Barton Springs</h3>
-                                </a>
-                                <div className="timeline-information">
-                                    <div className="time"><span className="duration">Visit Duration:</span> 1 hr</div>
-                                    <div className="timeline-description">
-                                        Barton Springs is an outdoor public pool. What a great place to lay out, sip cocktails, and catch some sun.  This is a really long description to see if overflow works.
-            </div></div></div>
-                            <div className="timeline-element-container">
-                                <div className="timeline-open btn">
-                                    <img className="timeline-clock" src={clock}></img>
-                                </div>
-                                <div className="timeline-goto btn">
-                                    <img className="timeline-map" src={map}></img>
-                                </div>
-                            </div>
-                        </VerticalTimelineElement>
-                        <VerticalTimelineElement
-                            className="vertical-timeline-element--work"
-                            date="8:00 AM"
-                            iconStyle={{ background: 'rgb(255, 255, 255)', color: '#fff' }}
-                            icon={<img className="nightlife-icon" src={todos}></img>}
 
-
-                        >
-                            <div className="timeline-element-outer-container">
-                                <div className="timeline-element-top-container">
-                                    <img src={austin} className="timeline-image"></img>
-                                    <h3 className="vertical-timeline-element-title">Barton Springs</h3>
-                                </div>
-                                <div className="timeline-information">
-                                    <div className="time"><span className="duration">Visit Duration:</span> 1 hr</div>
-                                    <div className="timeline-description">
-                                        Barton Springs is an outdoor public pool. What a great place to lay out, sip cocktails, and catch some sun.  This is a really long description to see if overflow works.
-            </div></div></div>
-                            <div className="timeline-element-container">
-                                <div className="timeline-open btn">
-                                    <img className="timeline-clock" src={clock}></img>
-                                </div>
-                                <div className="timeline-goto btn">
-                                    <img className="timeline-map" src={map}></img>
-                                </div>
-                            </div>
-                        </VerticalTimelineElement>
-                        <VerticalTimelineElement
-                            className="vertical-timeline-element--work"
-                            date="8:00 AM"
-                            iconStyle={{ background: 'rgb(255, 255, 255)', color: '#fff' }}
-                            icon={<img className="nightlife-icon" src={dayTrip}></img>}
-
-
-                        >
-                            <div className="timeline-element-outer-container">
-                                <div className="timeline-element-top-container">
-                                    <img src={austin} className="timeline-image"></img>
-                                    <h3 className="vertical-timeline-element-title">Barton Springs</h3>
-                                </div>
-                                <div className="timeline-information">
-                                    <div className="time"><span className="duration">Visit Duration:</span> 1 hr</div>
-                                    <div className="timeline-description">
-                                        Barton Springs is an outdoor public pool. What a great place to lay out, sip cocktails, and catch some sun.  This is a really long description to see if overflow works.
-            </div></div></div>
-                            <div className="timeline-element-container">
-                                <div className="timeline-open btn">
-                                    <img className="timeline-clock" src={clock}></img>
-                                </div>
-                                <div className="timeline-goto btn">
-                                    <img className="timeline-map" src={map}></img>
-                                </div>
-                            </div>
-                        </VerticalTimelineElement>
-                        <VerticalTimelineElement
-                            className="vertical-timeline-element--work"
-                            date="8:00 AM"
-                            iconStyle={{ background: 'rgb(255, 255, 255)', color: '#fff' }}
-                            icon={<img className="nightlife-icon" src={topSpot}></img>}
-
-
-                        >
-                            <div className="timeline-element-outer-container">
-                                <div className="timeline-element-top-container">
-                                    <img src={austin} className="timeline-image"></img>
-                                    <h3 className="vertical-timeline-element-title">Barton Springs</h3>
-                                </div>
-                                <div className="timeline-information">
-                                    <div className="time"><span className="duration">Visit Duration:</span> 1 hr</div>
-                                    <div className="timeline-description">
-                                        Barton Springs is an outdoor public pool. What a great place to lay out, sip cocktails, and catch some sun.  This is a really long description to see if overflow works.
-            </div></div></div>
-                            <div className="timeline-element-container">
-                                <div className="timeline-open btn">
-                                    <img className="timeline-clock" src={clock}></img>
-                                </div>
-                                <div className="timeline-goto btn">
-                                    <img className="timeline-map" src={map}></img>
-                                </div>
-                            </div>
-                        </VerticalTimelineElement>
-                        <VerticalTimelineElement
-                            className="vertical-timeline-element--work"
-                            date="8:00 AM"
-                            iconStyle={{ background: 'rgb(255, 255, 255)', color: '#fff' }}
-                            icon={<img className="nightlife-icon" src={dine}></img>}
-
-
-                        >
-                            <div className="timeline-element-outer-container">
-                                <div className="timeline-element-top-container">
-                                    <img src={austin} className="timeline-image"></img>
-                                    <h3 className="vertical-timeline-element-title">Barton Springs</h3>
-                                </div>
-                                <div className="timeline-information">
-                                    <div className="time"><span className="duration">Visit Duration:</span> 1 hr</div>
-                                    <div className="timeline-description">
-                                        Barton Springs is an outdoor public pool. What a great place to lay out, sip cocktails, and catch some sun.  This is a really long description to see if overflow works.
-            </div></div></div>
-                            <div className="timeline-element-container">
-                                <div className="timeline-open btn">
-                                    <img className="timeline-clock" src={clock}></img>
-                                </div>
-                                <div className="timeline-goto btn">
-                                    <img className="timeline-map" src={map}></img>
-                                </div>
-                            </div>
-                        </VerticalTimelineElement>
-                        <VerticalTimelineElement
-                            className="vertical-timeline-element--work"
-                            date="8:00 AM"
-                            iconStyle={{ background: 'rgb(255, 255, 255)', color: '#fff' }}
-                            icon={<img className="nightlife-icon" src={nightlife}></img>}
-
-
-                        >
-                            <div className="timeline-element-outer-container">
-                                <div className="timeline-element-top-container">
-                                    <img src={austin} className="timeline-image"></img>
-                                    <h3 className="vertical-timeline-element-title">Barton Springs</h3>
-                                </div>
-                                <div className="timeline-information">
-                                    <div className="time"><span className="duration">Visit Duration:</span> 1 hr</div>
-                                    <div className="timeline-description">
-                                        Barton Springs is an outdoor public pool. What a great place to lay out, sip cocktails, and catch some sun.  This is a really long description to see if overflow works.
-            </div></div></div>
-                            <div className="timeline-element-container">
-                                <div className="timeline-open btn">
-                                    <img className="timeline-clock" src={clock}></img>
-                                </div>
-                                <div className="timeline-goto btn">
-                                    <img className="timeline-map" src={map}></img>
-                                </div>
-                            </div>
-                        </VerticalTimelineElement> */}
                         <VerticalTimelineElement
                             iconStyle={{ background: 'rgb(255, 255, 255)', color: '#fff' }}
                             icon={<img className="nightlife-icon" src={finishLine}></img>}
@@ -503,7 +298,7 @@ class Itinerary extends React.Component {
                     <div className="footer"></div>
                 </div >
             </div>
-        );
+        )
     }
 }
 

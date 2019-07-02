@@ -5,7 +5,7 @@ import Axios from 'axios';
 import Script from 'react-load-script';
 const apiKey = process.env.API_KEY;
 
-console.log(apiKey);
+// console.log(apiKey);
 const StyledDiv = styled.div` 
 input::-webkit-input-placeholder { /* WebKit browsers */
     color:    #fff;
@@ -35,6 +35,7 @@ input, select, textarea{
   constructor(props) {
     super(props);
     this.state = {  
+      banner:'',
       nightLife: [],
       restaurants: [],
       thingsToDo: [],
@@ -60,30 +61,18 @@ input, select, textarea{
     })
       .then((data) =>{
       //  console.log("how data is sent from server", data.data);
-        let nightLife = data.data.nightLife;
-        let dayTrips = data.data.dayTrips;
-        let restaurants = data.data.restaurants;
-        let thingsToDo = data.data.thingsToDo;
-        let topSpots = data.data.topSpots;
+
+      let results = {
+        city: this.state.city, 
+        banner: data.data.banner,
+        nightLife: data.data.nightLife, 
+        restaurants: data.data.restaurants,
+        thingsToDo: data.data.thingsToDo,
+        dayTrips: data.data.dayTrips,
+        topSpots: data.data.topSpots};
+
+      this.props.setResults(results);
        
-        this.setState({ nightLife: nightLife }, 
-          ()=>{this.setState({ dayTrips: dayTrips }, 
-            ()=>{this.setState({ restaurants: restaurants },
-              ()=>{this.setState({ thingsToDo: thingsToDo },
-                ()=>{this.setState({ topSpots: topSpots },()=>{
-                  let results = {
-                    name: this.state.city, 
-                    nightLife: this.state.nightLife, 
-                    restaurants: this.state.restaurants,
-                    thingsToDo: this.state.thingsToDo,
-                    dayTrips: this.state.dayTrips,
-                    topSpots: this.state.topSpots};
-                  this.props.setResults(results);
-                });
-              });
-            });
-          });
-        });
       })
       .then(() =>{
         // console.log("hel",this.state.nightLife[0].photos);
