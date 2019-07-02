@@ -5,7 +5,7 @@ import Axios from 'axios';
 import Script from 'react-load-script';
 const apiKey = process.env.API_KEY;
 
-console.log(apiKey);
+// console.log(apiKey);
 const StyledDiv = styled.div` 
 input::-webkit-input-placeholder { /* WebKit browsers */
     color:    #fff;

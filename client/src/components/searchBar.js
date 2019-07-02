@@ -21,7 +21,7 @@ import '../../public/connect.css';
 
 const apiKey = process.env.API_KEY;
 
-console.log(apiKey);
+// console.log(apiKey);
 
 const useStyles = makeStyles({
   list: {

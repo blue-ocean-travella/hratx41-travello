@@ -60,8 +60,8 @@ const ModalDescription = ({show, onHide, handleClose, handleTimeChange, goToItin
                  
                 zoom={16}
                 center={{
-                  lat: 25.76332,
-                  lng: 25.76332
+                  lat: lat,
+                  lng: long
                 }}
               />
             </LoadScript>
