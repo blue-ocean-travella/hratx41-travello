@@ -167,7 +167,11 @@ This project was a brief 1-week sprint where our team completed an MVP for an ex
 - Detailed user stories was created during the meetings with the external stakeholders
 - We need to follow the Gitworkflow more carefully and adhere to the procedures set out with regards to rebasing
 - Commit messages need to be more descriptive
-- **write down key take aways from code review - Jimmy**
+- Code Review
+  * Folder structure and data structure need to be defined upfront.
+  * conflicts will only be tracted if the naming conventions was adhere too
+  * Before the merging happens the developer need to remove any innecessary info include packages etc.
+  * Adhere to commiting and following the gitworkflow that was set out
 - Testing need to be done after each feature and before any reviewing is actioned
 - [**Link to: Travella Trello Board**](https://trello.com/b/fYpFS8h7/travella)
 - All tickets was completed
