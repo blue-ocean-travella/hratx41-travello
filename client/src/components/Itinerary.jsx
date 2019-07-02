@@ -131,7 +131,7 @@ class Itinerary extends React.Component {
 
         Axios.delete('/itineraries', {
             params: {
-                uuid: 1
+                uuid: 3
             }
         })
             .then((response) => {
@@ -207,7 +207,7 @@ class Itinerary extends React.Component {
 
     componentDidMount() {
         // let uuid = (this.state.uuid);
-        Axios.get('/itineraries', { params: { uuid: 2 } })
+        Axios.get('/itineraries', { params: { uuid: 1 } })
             .then((response) => {
                 console.log('front end response: ', response);
                 if (response.data === '') {
@@ -240,10 +240,10 @@ class Itinerary extends React.Component {
                         }]
                     })
                 } else {
-                    console.log('getting a response here')
+                    console.log('getting a response here: ', response)
                     this.setState({
-                        city: '',
-                        activities: response.data.activities
+                        city: response.data[0].city,
+                        activities: response.data[0].activities
                     })
                 }
             })

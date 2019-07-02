@@ -37,8 +37,8 @@ app.get('/itineraries', (req, res) => {
                 console.log('error: record does not exist: ', id);
                 res.send(undefined);
             } else {
-                console.log('server succesfully read record:', id)
-                res.send(data[0]);
+                console.log('server succesfully read record:', data)
+                res.send(data);
             }
         }
     })
