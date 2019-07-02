@@ -68,10 +68,10 @@ This project was a brief 1-week sprint where our team completed an MVP for an ex
   * Obstacles we faced was modals hidden behind the back ground.
   * 
   
-- Material UI **Gladys to complete**
-  * Why
-  * What
-  * When
+- Material UI 
+  * Material UI has a responsive beautiful sidebar menu that overlays over the main page. 
+  * Material UI is a popular UI library that the team agreed to learn and use.
+ 
   
 - Git workflow
   * Ensuring the team follows a set workflow as we working off one code base. 
