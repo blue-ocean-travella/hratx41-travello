@@ -19,7 +19,7 @@ app.get("/location", (req, res) => {
   let austin, newYork, barcelona, capeTown, miami, tokyo;
   console.log(location);
   if (location === "Austin") {
-    fs.readFile("./json data/Austin.json", (err, results) => {
+    fs.readFile("./json_data/Austin.json", (err, results) => {
       if (err) {
         console.log(err);
       } else {
@@ -30,7 +30,7 @@ app.get("/location", (req, res) => {
   }
 
   if (location === "New York") {
-    fs.readFile("./json data/newYork.json", (err, results) => {
+    fs.readFile("./json_data/NewYork.json", (err, results) => {
       if (err) {
         console.log(err);
       } else {
@@ -39,7 +39,7 @@ app.get("/location", (req, res) => {
     });
   }
   if (location === "Barcelona") {
-    fs.readFile("./json data/barcelona.json", (err, results) => {
+    fs.readFile("./json_data/Barcelona.json", (err, results) => {
       if (err) {
         console.log(err);
       } else {
@@ -48,7 +48,7 @@ app.get("/location", (req, res) => {
     });
   }
   if (location === "Cape Town") {
-    fs.readFile("./json data/capeTown.json", (err, results) => {
+    fs.readFile("./json_data/CapeTown.json", (err, results) => {
       if (err) {
         console.log(err);
       } else {
@@ -57,7 +57,7 @@ app.get("/location", (req, res) => {
     });
   }
   if (location === "Miami") {
-    fs.readFile("./json data/miami.json", (err, results) => {
+    fs.readFile("./json_data/Miami.json", (err, results) => {
       if (err) {
         console.log(err);
       } else {
@@ -66,7 +66,7 @@ app.get("/location", (req, res) => {
     });
   }
   if (location === "Tokyo") {
-    fs.readFile("./json data/tokyo.json", (err, results) => {
+    fs.readFile("./json_data/Tokyo.json", (err, results) => {
       if (err) {
         console.log(err);
       } else {
