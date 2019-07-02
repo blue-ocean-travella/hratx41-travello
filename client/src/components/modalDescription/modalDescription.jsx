@@ -47,7 +47,7 @@ const ModalDescription = ({show, onHide, handleClose, handleTimeChange, goToItin
       <Modal.Body>   
         <div className='imagesMapAndDescriptionContainer'>
           <div className='imageAndMap-container'>
-            <img src={photo} className='imagePlace'></img>
+            <img src={photo} alt={dataResult.name} className='imagePlace'></img>
            <div  className='google-map-description'>
             <LoadScript id="timeline-map-script-loader" googleMapsApiKey={apiKey}>
               <GoogleMap

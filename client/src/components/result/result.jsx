@@ -87,11 +87,11 @@ class Result extends Component {
       duration: this.state.duration,
       longDescription: this.props.dataResult.longDescription,
       category: this.props.currentCategory,
-      //uuid pending
+     
     };
     // /activity
     // console.log(destination);
-      axios.post('/itinerary', destination)
+      axios.post('/activity', destination)
        .then(response => {
          console.log(response, 'succesfully posted!')
        })
