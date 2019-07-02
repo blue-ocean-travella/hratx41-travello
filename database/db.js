@@ -60,6 +60,7 @@ const insertActivity = (obj, cb) => {
     console.log('inserting activity to db: ', obj)
     itinerary.update(
         { uuid: obj.uuid },
+        { city: obj.city },
         { $push: { 'activities': obj.activity } }, (err, data) => {
             if (err) {
                 console.log('error inserting activity into db: ', err)

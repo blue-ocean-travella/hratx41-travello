@@ -74,8 +74,10 @@ app.delete('/activity', (req, res) => {
 
 app.put('/activity', (req, res) => {
     let id = 1;
-    let activity = req.query.activity;
-    db.insertActivity({ uuid: id, activity: activity }, (err, data) => {
+    let activity = req.query.destination;
+    let city = req.query.city;
+
+    db.insertActivity({ uuid: id, city: city, activity: activity }, (err, data) => {
         if (err) {
             console.log('error inserting single');
         } else {
