@@ -121,7 +121,7 @@ class Result extends Component {
   render() {
     // console.log(this.props.id);
     // console.log(this.props.dataResult.photos, 'THIS IS DATARESULT')
-    let photo = this.props.dataResult.photos? this.props.dataResult.photos[0]:'http://48tx1q1rrcysi4t7l687xbtt.wpengine.netdna-cdn.com/wp-content/uploads/2011/05/Texas-Capitol-Austin-700x483.jpg';
+    let photo = (this.props.dataResult.photos && this.props.dataResult.photos.length > 1)? this.props.dataResult.photos[0]:'http://48tx1q1rrcysi4t7l687xbtt.wpengine.netdna-cdn.com/wp-content/uploads/2011/05/Texas-Capitol-Austin-700x483.jpg';
 
     return (
      <div className="card card_result" style={{width: '24rem'}}>
