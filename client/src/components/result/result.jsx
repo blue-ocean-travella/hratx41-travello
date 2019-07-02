@@ -89,7 +89,7 @@ class Result extends Component {
       category: this.props.currentCategory,
       //uuid pending
     };
-
+    // console.log('this is Marias destination: ', destination)
     // console.log(destination);
     // axios.post('/api/itinerary', destination)
     //  .then(response => {

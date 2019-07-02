@@ -329,7 +329,9 @@ app.delete('/activity', (req, res) => {
 app.put('/activity', (req, res) => {
   let id = 1;
   let activity = req.query.destination;
-  let city = req.query.city;
+  let city = req.query.destination.city;
+
+  console.log(id, city, activity);
 
   db.insertActivity({ uuid: id, city: city, activity: activity }, (err, data) => {
     if (err) {

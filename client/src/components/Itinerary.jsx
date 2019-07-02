@@ -79,13 +79,13 @@ class Itinerary extends React.Component {
 
         Axios.delete('/itineraries', {
             params: {
-                uuid: 2
+                uuid: 1
             }
         })
             .then((response) => {
                 console.log('successfully deleted current itinerary: ', response)
             })
-        Axios.get('/itineraries', { params: { uuid: 2 } })
+        Axios.get('/itineraries', { params: { uuid: 1 } })
             .then((response) => {
                 // console.log('front end response: ', typeof response.data);
                 if (response.data === '') {
@@ -135,14 +135,14 @@ class Itinerary extends React.Component {
 
         Axios.delete('/activity', {
             params: {
-                uuid: 2,
+                uuid: 1,
                 name: currentItem
             }
         })
             .then((response) => {
                 console.log('successfully deleted itinerary item')
             })
-        Axios.get('/itineraries', { params: { uuid: 2 } })
+        Axios.get('/itineraries', { params: { uuid: 1 } })
             .then((response) => {
                 // console.log('response after deletion: ', response.data.activities);
                 this.setState({
@@ -158,7 +158,7 @@ class Itinerary extends React.Component {
 
     componentDidMount() {
         // let uuid = (this.state.uuid);
-        Axios.get('/itineraries', { params: { uuid: 2 } })
+        Axios.get('/itineraries', { params: { uuid: 1 } })
             .then((response) => {
                 console.log('front end response: ', response.data[0]);
                 if (response.data === '') {
