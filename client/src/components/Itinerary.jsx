@@ -90,6 +90,7 @@ class Itinerary extends React.Component {
                 // console.log('front end response: ', typeof response.data);
                 if (response.data === '') {
                     this.setState({
+                        uuid: 1,
                         city: '',
                         activities: [{
                             name: 'Eiffel Tower',
