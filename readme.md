@@ -55,25 +55,23 @@ This project was a brief 1-week sprint where our team completed an MVP for an ex
 ## Technical Challenges and research that you anticipated
 
 - Using figma to visually build out the user interface 
-  * We used figma because it was a recommended visualization tool.
-  * Best option to visually create the wireframes.
-  * Offered a great way for the team to gather feedback all in one place.
+  * We used figma as it was a great fit as a visualization tool with the needs of our product.
+  * We used Figma to create amazing visual wireframe layouts for our application.
+  * Figma offered a great way for the team to gather feedback all in one place.
 
 - Using the React vertical time line library to create an itenerary with a vertical time line
-  * Best option to visaully display the itenarary for our travel application
-  * Obstacles we faced was working with with the main back ground images and bootstrap modals
-  * Reading documentations with trail and error until we resolved all bugs
+  * Best option to visaully display the itenarary for our travel application.
+  * Obstacles we faced was working with with the main back ground images and bootstrap modals.
+  * Reading documentations with trail and error until we resolved all bugs.
   
 - Using React bootstrap for styling and modals
   * Bootstrap offered grid styling layout with an option to use cards and modals. For our project this was a perfect fit.
   * Obstacles we faced was modals hidden behind the back ground.
-  * 
   
 - Material UI 
   * Material UI has a responsive beautiful sidebar menu that overlays over the main page. 
   * Material UI is a popular UI library that the team agreed to learn and use.
  
-  
 - Git workflow
   * Ensuring the team follows a set workflow as we working off one code base. 
   * Correctly working off feature branches when the team creates new features. 
