@@ -54,10 +54,10 @@ This project was a brief 1-week sprint where our team completed an MVP for an ex
 
 ## Technical Challenges and research that you anticipated
 
-- Using figma to visually build out the user interface **Gladys to complete**
-  * Why
-  * What
-  * How
+- Using figma to visually build out the user interface 
+  * We used figma because it was a recommended visualization tool.
+  * Best option to visually create the wireframes.
+  * Offered a great way for the team to gather feedback all in one place.
 
 - Using the React vertical time line library to create an itenerary with a vertical time line
   * Best option to visaully display the itenarary for our travel application
