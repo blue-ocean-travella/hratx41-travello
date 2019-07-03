@@ -23,6 +23,7 @@ const itinerarySchema = mongoose.Schema({
     username: String,
     city: String,
     activities: [{
+        city: String,
         name: String,
         duration: Number,
         description: String,
@@ -68,6 +69,10 @@ const insertActivity = (obj, cb) => {
                 cb(null, data);
             }
         }
+    )
+    itinerary.update(
+        { uuid: obj.uuid },
+        { $set: { city: obj.city } },
     )
 }
 

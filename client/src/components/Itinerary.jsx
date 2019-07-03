@@ -192,9 +192,9 @@ class Itinerary extends React.Component {
                         }]
                     })
                 } else {
-                    console.log('getting a response here')
+                    console.log('getting a response here', response)
                     this.setState({
-                        city: response.data[0].city,
+                        city: response.data[0].activities[0].city,
                         activities: response.data[0].activities
                     })
                 }
