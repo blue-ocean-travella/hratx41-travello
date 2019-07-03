@@ -69,35 +69,35 @@ class Result extends Component {
 
   createItineraryObject() {
     // console.log(this.props.dataResult.city);
-      
-    
+
+
     const destination = {
       city: this.props.city,
       name: this.props.dataResult.name,
       hoursOfOperation: this.props.dataResult.hoursOfOperations,
       longitude: this.props.dataResult.long,
       latitude: this.props.dataResult.lat,
-      numberOfReviews:  this.props.dataResult.totalReviews,
+      numberOfReviews: this.props.dataResult.totalReviews,
       rating: this.props.dataResult.rating,
-      address:  this.props.dataResult.address,
+      address: this.props.dataResult.address,
       open: this.props.dataResult.openOrNot,
       phone: this.props.dataResult.phoneNumber,
       images: this.props.dataResult.photos,
-      website:  this.props.dataResult.websiteUrl,
+      website: this.props.dataResult.websiteUrl,
       startTime: this.state.time,
       duration: this.state.duration,
       description: this.props.dataResult.description,
-      category: this.props.currentCategory   
+      category: this.props.currentCategory
     };
-    // console.log('this is Marias destination: ', destination)
+    console.log('this is Marias destination: ', destination)
     // console.log(destination);
     axios.post('/activity', destination)
-       .then(response => {
-         console.log(response, 'succesfully posted!')
-       })
-       .catch(err => {
-         console.log(err, 'there is an error')
-       })
+      .then(response => {
+        console.log(response, 'succesfully posted!')
+      })
+      .catch(err => {
+        console.log(err, 'there is an error')
+      })
     // this.props.handdleAddToItenerary(destination);
     this.setState({ showTimeModal: false });
   }
