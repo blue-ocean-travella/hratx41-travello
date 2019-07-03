@@ -74,7 +74,7 @@ class Result extends Component {
     const destination = {
       city: this.props.city,
       name: this.props.dataResult.name,
-      hoursOfOperation: this.props.dataResult.hoursOfOperations,
+      hoursOfOperation: this.props.dataResult.hoursOfOperation,
       longitude: this.props.dataResult.long,
       latitude: this.props.dataResult.lat,
       numberOfReviews: this.props.dataResult.totalReviews,

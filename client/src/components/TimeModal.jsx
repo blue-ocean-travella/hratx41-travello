@@ -35,13 +35,13 @@ const TimeModal = (props) => {
 
     let color = getColor(props.activity.open);
     let dailyHours = {
-        sunday: '',
-        monday: '',
-        tuesday: '',
-        wednesday: '',
-        thursday: '',
-        friday: '',
-        saturday: ''
+        Sunday: '',
+        Monday: '',
+        Tuesday: '',
+        Wednesday: '',
+        Thursday: '',
+        Friday: '',
+        Saturday: ''
     }
 
     for (var i = 0; i < props.activity.hoursOfOperation.length; i++) {
@@ -67,31 +67,31 @@ const TimeModal = (props) => {
                 <Container>
                     <Row>
                         <Col xs={4}>Sunday:</Col>
-                        <Col className="modal-time">{dailyHours.sunday}</Col>
+                        <Col className="modal-time">{dailyHours.Sunday}</Col>
                     </Row>
                     <Row>
                         <Col xs={4}>Monday:</Col>
-                        <Col className="modal-time">{dailyHours.monday}</Col>
+                        <Col className="modal-time">{dailyHours.Monday}</Col>
                     </Row>
                     <Row>
                         <Col xs={4}>Tuesday:</Col>
-                        <Col className="modal-time">{dailyHours.tuesday}</Col>
+                        <Col className="modal-time">{dailyHours.Tuesday}</Col>
                     </Row>
                     <Row>
                         <Col xs={4}>Wednesday:</Col>
-                        <Col className="modal-time">{dailyHours.wednesday}</Col>
+                        <Col className="modal-time">{dailyHours.Wednesday}</Col>
                     </Row>
                     <Row>
                         <Col xs={4}>Thursday:</Col>
-                        <Col className="modal-time">{dailyHours.thursday}</Col>
+                        <Col className="modal-time">{dailyHours.Thursday}</Col>
                     </Row>
                     <Row>
                         <Col xs={4}>Friday</Col>
-                        <Col className="modal-time">{dailyHours.friday}</Col>
+                        <Col className="modal-time">{dailyHours.Friday}</Col>
                     </Row>
                     <Row>
                         <Col xs={4}>Saturday:</Col>
-                        <Col className="modal-time">{dailyHours.saturday}</Col>
+                        <Col className="modal-time">{dailyHours.Saturday}</Col>
                     </Row>
                 </Container>
             </Modal.Body>
