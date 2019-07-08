@@ -13,11 +13,9 @@ Project Manager | UI Owner | Architecture Owner | Engineer | Engineer | Engineer
 ## Introduction
 
 <div >
-
-This project was a brief 1-week sprint where our team completed an MVP for an external user, Eric Anthony
-
+ - We would like to bring a better user experience for frequent travellers 
  - Our goal is to do MVP with some additional functionality. 
- - Vissually we want the application to look amazing and include some additional features beyond MVP.
+ - Visually we want the application to look amazing and include some additional features beyond MVP.
 
 
 ## What does the app do? 
