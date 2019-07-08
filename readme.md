@@ -13,9 +13,9 @@ Project Manager | UI Owner | Architecture Owner | Engineer | Engineer | Engineer
 ## Introduction
 
 <div >
- - We would like to bring a better user experience for frequent travellers 
- - Our goal is to do MVP with some additional functionality. 
- - Visually we want the application to look amazing and include some additional features beyond MVP.
+ - We would like to bring a better user experience for frequent travellers </br>
+ - Our goal is to do MVP with some additional functionality.  </br>
+ - Visually we want the application to look amazing and include some additional features beyond MVP. </br>
 
 
 ## What does the app do? 
